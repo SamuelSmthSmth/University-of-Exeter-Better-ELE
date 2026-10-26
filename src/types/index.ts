@@ -33,13 +33,11 @@ export interface PairedProblemSheet {
 export interface ExamPaper {
   id: string;
   moduleCode: string;
-  year: string;           // e.g. "2024", "2023"
-  session: 'Jan' | 'May' | 'Aug' | 'Other';
+  year: string;           // e.g. "2026", "2025"
+  session: 'Jan' | 'May' | 'Other';
   title: string;
   filename: string;
   pdfUrl: string;
-  hasSolution: boolean;
-  solutionUrl?: string;
   isLocal?: boolean;
   fileSize?: string;
 }

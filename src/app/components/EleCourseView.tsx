@@ -3,17 +3,21 @@ import {
   ArrowLeft,
   BookOpen,
   Calendar,
+  Clock,
   Download,
   ExternalLink,
+  FileCheck2,
   FileText,
   GraduationCap,
+  HelpCircle,
   Mail,
+  Play,
+  Search,
+  Sparkles,
   User,
   Video,
-  Clock,
-  Columns,
-  Play,
   X,
+  AlertCircle,
 } from 'lucide-react';
 import { Course, CourseResource, ExamPaper, PanoptoRecording } from '../../types';
 import { EleGeometricPattern } from './EleGeometricPattern';
@@ -24,10 +28,6 @@ interface EleCourseViewProps {
   course: Course;
   onBack: () => void;
   onOpenDocument: (doc: { id: string; title: string; url: string }) => void;
-  onOpenDualDocuments?: (
-    doc1: { id: string; title: string; url: string },
-    doc2: { id: string; title: string; url: string }
-  ) => void;
   onOpenCalendarModal?: (initialTab?: 'calendar' | 'manage' | 'export') => void;
 }
 
@@ -37,11 +37,10 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
   course,
   onBack,
   onOpenDocument,
-  onOpenDualDocuments,
 }) => {
   const [activeTab, setActiveTab] = useState<TabType>('notes');
   const [activePanopto, setActivePanopto] = useState<PanoptoRecording | null>(null);
-  const [examSessionFilter, setExamSessionFilter] = useState<'all' | 'Jan' | 'May' | 'Aug'>('all');
+  const [examSessionFilter, setExamSessionFilter] = useState<'all' | 'Jan' | 'May'>('all');
   const [examSearch, setExamSearch] = useState('');
 
   // Flatten all course resources
@@ -54,18 +53,26 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
     return allResources.filter(r => r.category === 'slide' || r.category === 'general');
   }, [allResources]);
 
-  // Paired problem sheets
+  // Paired problem sheets (Formative)
   const pairedSheets = useMemo(() => {
     return pairProblemSheets(allResources);
   }, [allResources]);
 
-  // Exam papers (from course or auto-generated candidate papers)
+  // Summative deadlines & midterms for this course
+  const summativeMidterms = useMemo(() => {
+    return course.deadlines || [];
+  }, [course.deadlines]);
+
+  // Exam papers (Jan & May only - no August papers)
   const examPapers = useMemo(() => {
     const list = course.examPapers && course.examPapers.length > 0 
       ? course.examPapers 
       : generateCandidatePapers(course.code);
 
     return list.filter(p => {
+      // Exclude August session entirely
+      if (p.session === ('Aug' as any)) return false;
+      
       const matchesSession = examSessionFilter === 'all' || p.session === examSessionFilter;
       const matchesQuery = !examSearch.trim() || 
         p.title.toLowerCase().includes(examSearch.toLowerCase()) || 
@@ -80,7 +87,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
     if (course.recordings && course.recordings.length > 0) {
       return course.recordings;
     }
-    // Generate clean lecture recording list
+    // Clean lecture recording list
     return [
       {
         id: `${course.code}-rec-1`,
@@ -88,7 +95,8 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
         date: "23 Sep 2026",
         duration: "50 mins",
         lecturer: course.convenor.name,
-        panoptoUrl: `https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#query=${course.code}`,
+        panoptoUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?query=${course.code}`,
+        embedUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?query=${course.code}&instance=MoodleELE2&autoplay=true&offerviewer=true`,
       },
       {
         id: `${course.code}-rec-2`,
@@ -96,7 +104,8 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
         date: "25 Sep 2026",
         duration: "49 mins",
         lecturer: course.convenor.name,
-        panoptoUrl: `https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#query=${course.code}`,
+        panoptoUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?query=${course.code}`,
+        embedUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?query=${course.code}&instance=MoodleELE2&autoplay=true&offerviewer=true`,
       },
       {
         id: `${course.code}-rec-3`,
@@ -104,7 +113,8 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
         date: "30 Sep 2026",
         duration: "52 mins",
         lecturer: course.convenor.name,
-        panoptoUrl: `https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#query=${course.code}`,
+        panoptoUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?query=${course.code}`,
+        embedUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?query=${course.code}&instance=MoodleELE2&autoplay=true&offerviewer=true`,
       },
       {
         id: `${course.code}-rec-4`,
@@ -112,7 +122,8 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
         date: "02 Oct 2026",
         duration: "48 mins",
         lecturer: course.convenor.name,
-        panoptoUrl: `https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#query=${course.code}`,
+        panoptoUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?query=${course.code}`,
+        embedUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?query=${course.code}&instance=MoodleELE2&autoplay=true&offerviewer=true`,
       },
       {
         id: `${course.code}-rec-5`,
@@ -120,7 +131,8 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
         date: "07 Oct 2026",
         duration: "51 mins",
         lecturer: course.convenor.name,
-        panoptoUrl: `https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#query=${course.code}`,
+        panoptoUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?query=${course.code}`,
+        embedUrl: `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?query=${course.code}&instance=MoodleELE2&autoplay=true&offerviewer=true`,
       },
     ];
   }, [course]);
@@ -202,7 +214,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             </span>
           </button>
 
-          {/* 2. Problem Sheets */}
+          {/* 2. Problem Sheets (Formative & Midterms) */}
           <button
             onClick={() => setActiveTab('sheets')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
@@ -212,11 +224,11 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             }`}
           >
             <FileText size={16} />
-            <span>Problem Sheets</span>
+            <span>Problem Sheets & Midterms</span>
             <span className={`px-1.5 py-0.2 rounded-full text-[10.5px] font-mono ${
               activeTab === 'sheets' ? 'bg-white/20 text-white dark:text-[#003C3C]' : 'bg-muted text-muted-foreground'
             }`}>
-              {pairedSheets.length}
+              {pairedSheets.length + summativeMidterms.length}
             </span>
           </button>
 
@@ -257,216 +269,264 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
           </button>
         </div>
 
-        {/* ── TAB 1: Lecture Notes ────────────────────────────────────────── */}
+        {/* ── TAB 1: Lecture Notes (Dense Card Grid) ───────────────────────── */}
         {activeTab === 'notes' && (
-          <div className="space-y-3">
+          <div>
             {noteResources.length === 0 ? (
               <div className="p-8 text-center text-muted-foreground bg-card border border-border rounded-2xl">
                 No lecture notes uploaded yet.
               </div>
             ) : (
-              noteResources.map(note => (
-                <div
-                  key={note.id}
-                  className="bg-card border border-border rounded-xl p-4 shadow-xs hover:border-[#007A6B] dark:hover:border-[#00C4AD] transition-all flex items-center justify-between gap-4"
-                >
-                  <div className="min-w-0 flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] flex items-center justify-center shrink-0">
-                      <BookOpen size={18} />
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="text-sm font-semibold text-foreground truncate">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                {noteResources.map(note => (
+                  <div
+                    key={note.id}
+                    onClick={() =>
+                      onOpenDocument({
+                        id: note.id,
+                        title: note.name,
+                        url: note.fileUrl,
+                      })
+                    }
+                    className="group bg-card border border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD] rounded-xl p-4 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <div className="w-8 h-8 rounded-lg bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] flex items-center justify-center font-bold shrink-0">
+                          <BookOpen size={16} />
+                        </div>
+                        <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-muted text-muted-foreground">
+                          {note.fileSize || 'PDF'}
+                        </span>
+                      </div>
+                      <h4 className="text-sm font-semibold text-foreground group-hover:text-[#007A6B] dark:group-hover:text-[#00C4AD] transition-colors line-clamp-2">
                         {note.name}
                       </h4>
-                      {note.fileSize && (
-                        <p className="text-xs text-muted-foreground">{note.fileSize}</p>
+                      {note.originalSection && (
+                        <p className="text-[11px] text-muted-foreground truncate mt-1">
+                          {note.originalSection}
+                        </p>
                       )}
                     </div>
-                  </div>
 
-                  <div className="flex items-center gap-2 shrink-0">
-                    <button
-                      type="button"
-                      onClick={() =>
-                        onOpenDocument({
-                          id: note.id,
-                          title: note.name,
-                          url: note.fileUrl,
-                        })
-                      }
-                      className="px-3.5 py-1.5 rounded-lg bg-[#007A6B] hover:bg-[#006a5d] text-white text-xs font-semibold transition-colors cursor-pointer"
-                    >
-                      Open Note
-                    </button>
+                    <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between text-xs font-semibold text-[#007A6B] dark:text-[#00C4AD]">
+                      <span>Open Note</span>
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    </div>
                   </div>
-                </div>
-              ))
+                ))}
+              </div>
             )}
           </div>
         )}
 
-        {/* ── TAB 2: Problem Sheets ───────────────────────────────────────── */}
+        {/* ── TAB 2: Problem Sheets & Summative Midterms ───────────────────── */}
         {activeTab === 'sheets' && (
-          <div className="space-y-3">
-            {pairedSheets.length === 0 ? (
-              <div className="p-8 text-center text-muted-foreground bg-card border border-border rounded-2xl">
-                No problem sheets available for this module.
-              </div>
-            ) : (
-              pairedSheets.map(sheet => {
-                const hasSol = !!sheet.solutionPaper;
-                return (
-                  <div
-                    key={sheet.sheetNumber}
-                    className="bg-card border border-border rounded-xl p-4 shadow-xs hover:border-[#007A6B] dark:hover:border-[#00C4AD] transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-4"
-                  >
-                    <div className="min-w-0 flex items-center gap-3">
-                      <div className="w-8 h-8 rounded-lg bg-muted text-[#007A6B] dark:text-[#00C4AD] font-mono font-bold text-xs flex items-center justify-center shrink-0">
-                        #{sheet.sheetNumber}
+          <div className="space-y-6">
+            {/* Summative Midterms & Continuous Assessments */}
+            {summativeMidterms.length > 0 && (
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <AlertCircle size={16} className="text-amber-500" />
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+                      Summative Midterm Tests & Coursework
+                    </h3>
+                  </div>
+                  <span className="text-xs text-muted-foreground font-mono">
+                    Official Exeter Submissions
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                  {summativeMidterms.map(midterm => (
+                    <div
+                      key={midterm.id}
+                      className="bg-card border border-amber-500/25 dark:border-amber-500/30 rounded-xl p-4 shadow-xs flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-amber-500/15 text-amber-600 dark:text-amber-400">
+                            Summative {midterm.weighting ? `· ${midterm.weighting}%` : ''}
+                          </span>
+                          <span className="text-[11px] text-muted-foreground flex items-center gap-1">
+                            <Calendar size={11} />
+                            {new Date(midterm.dueDate).toLocaleDateString('en-GB', {
+                              day: 'numeric',
+                              month: 'short',
+                              year: 'numeric',
+                            })}
+                          </span>
+                        </div>
+                        <h4 className="text-sm font-bold text-foreground">
+                          {midterm.title}
+                        </h4>
+                        {midterm.description && (
+                          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
+                            {midterm.description}
+                          </p>
+                        )}
                       </div>
-                      <div className="min-w-0">
-                        <h4 className="text-sm font-semibold text-foreground truncate">
+
+                      <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
+                        <span className={`text-[11px] font-semibold ${
+                          midterm.submissionStatus === 'submitted'
+                            ? 'text-emerald-600 dark:text-emerald-400'
+                            : 'text-amber-600 dark:text-amber-400'
+                        }`}>
+                          {midterm.submissionStatus === 'submitted' ? 'Submitted' : 'Pending Submission'}
+                        </span>
+                        <a
+                          href={midterm.officialSubmissionUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="px-3 py-1.5 rounded-lg bg-[#007A6B] hover:bg-[#006a5d] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors"
+                        >
+                          <span>Submit on ELE</span>
+                          <ExternalLink size={12} />
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Formative Problem Sheets */}
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+                  Weekly Problem Sheets
+                </h3>
+                <span className="text-xs text-muted-foreground font-mono">
+                  {pairedSheets.length} sheets
+                </span>
+              </div>
+
+              {pairedSheets.length === 0 ? (
+                <div className="p-8 text-center text-muted-foreground bg-card border border-border rounded-2xl">
+                  No problem sheets available for this module.
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                  {pairedSheets.map(sheet => (
+                    <div
+                      key={sheet.sheetNumber}
+                      onClick={() =>
+                        onOpenDocument({
+                          id: sheet.questionPaper.id,
+                          title: sheet.title,
+                          url: sheet.questionPaper.fileUrl,
+                        })
+                      }
+                      className="group bg-card border border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD] rounded-xl p-4 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
+                    >
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <span className="w-8 h-8 rounded-lg bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] font-mono font-bold text-xs flex items-center justify-center shrink-0">
+                            #{String(sheet.sheetNumber).padStart(2, '0')}
+                          </span>
+                          <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-muted text-muted-foreground uppercase">
+                            Formative
+                          </span>
+                        </div>
+                        <h4 className="text-sm font-semibold text-foreground group-hover:text-[#007A6B] dark:group-hover:text-[#00C4AD] transition-colors line-clamp-2">
                           {sheet.title}
                         </h4>
                       </div>
-                    </div>
 
-                    <div className="flex items-center gap-2 shrink-0 flex-wrap">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          onOpenDocument({
-                            id: sheet.questionPaper.id,
-                            title: sheet.title,
-                            url: sheet.questionPaper.fileUrl,
-                          })
-                        }
-                        className="px-3 py-1.5 rounded-lg bg-muted hover:bg-muted/80 text-foreground text-xs font-semibold transition-colors cursor-pointer"
-                      >
-                        Open Sheet
-                      </button>
-
-                      {hasSol && onOpenDualDocuments && (
-                        <button
-                          type="button"
-                          onClick={() =>
-                            onOpenDualDocuments(
-                              {
-                                id: sheet.questionPaper.id,
-                                title: `${sheet.title} (Sheet)`,
-                                url: sheet.questionPaper.fileUrl,
-                              },
-                              {
-                                id: sheet.solutionPaper!.id,
-                                title: `${sheet.title} (Solution)`,
-                                url: sheet.solutionPaper!.fileUrl,
-                              }
-                            )
-                          }
-                          className="px-3 py-1.5 rounded-lg bg-[#007A6B] hover:bg-[#006a5d] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
-                        >
-                          <Columns size={13} />
-                          <span>Split with Solution</span>
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                );
-              })
-            )}
-          </div>
-        )}
-
-        {/* ── TAB 3: Past Papers ─────────────────────────────────────────── */}
-        {activeTab === 'exams' && (
-          <div className="space-y-4">
-            {/* Session filter chips */}
-            <div className="flex items-center gap-2">
-              {(['all', 'Jan', 'May', 'Aug'] as const).map(session => (
-                <button
-                  key={session}
-                  type="button"
-                  onClick={() => setExamSessionFilter(session)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-                    examSessionFilter === session
-                      ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C]'
-                      : 'bg-muted text-muted-foreground hover:text-foreground'
-                  }`}
-                >
-                  {session === 'all' ? 'All Sessions' : `${session} Exams`}
-                </button>
-              ))}
-            </div>
-
-            <div className="space-y-3">
-              {examPapers.length === 0 ? (
-                <div className="p-8 text-center text-muted-foreground bg-card border border-border rounded-2xl">
-                  No past exam papers found for this session.
-                </div>
-              ) : (
-                examPapers.map(paper => (
-                  <div
-                    key={paper.id}
-                    className="bg-card border border-border rounded-xl p-4 shadow-xs hover:border-[#007A6B] dark:hover:border-[#00C4AD] transition-all flex items-center justify-between gap-4"
-                  >
-                    <div className="min-w-0 flex items-center gap-3">
-                      <span className="px-2 py-1 rounded bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] font-mono font-bold text-xs">
-                        {paper.session} {paper.year}
-                      </span>
-                      <div className="min-w-0">
-                        <h4 className="text-sm font-semibold text-foreground truncate">
-                          {paper.title}
-                        </h4>
+                      <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between text-xs font-semibold text-[#007A6B] dark:text-[#00C4AD]">
+                        <span>Open Sheet</span>
+                        <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                       </div>
                     </div>
-
-                    <div className="flex items-center gap-2 shrink-0">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          onOpenDocument({
-                            id: paper.id,
-                            title: paper.title,
-                            url: paper.pdfUrl,
-                          })
-                        }
-                        className="px-3 py-1.5 rounded-lg bg-muted hover:bg-muted/80 text-foreground text-xs font-semibold transition-colors cursor-pointer"
-                      >
-                        Open Paper
-                      </button>
-
-                      {paper.hasSolution && paper.solutionUrl && onOpenDualDocuments && (
-                        <button
-                          type="button"
-                          onClick={() =>
-                            onOpenDualDocuments(
-                              {
-                                id: paper.id,
-                                title: `${paper.year} Exam`,
-                                url: paper.pdfUrl,
-                              },
-                              {
-                                id: `${paper.id}-sol`,
-                                title: `${paper.year} Solution`,
-                                url: paper.solutionUrl!,
-                              }
-                            )
-                          }
-                          className="px-3 py-1.5 rounded-lg bg-[#007A6B] hover:bg-[#006a5d] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer"
-                        >
-                          <Columns size={13} />
-                          <span>Split with Solution</span>
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                ))
+                  ))}
+                </div>
               )}
             </div>
           </div>
         )}
 
-        {/* ── TAB 4: Panopto Recordings ───────────────────────────────────── */}
+        {/* ── TAB 3: Past Papers (Grid, No Aug, No Solutions) ─────────────── */}
+        {activeTab === 'exams' && (
+          <div className="space-y-4">
+            {/* Session filter chips & Search */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex items-center gap-2">
+                {(['all', 'Jan', 'May'] as const).map(session => (
+                  <button
+                    key={session}
+                    type="button"
+                    onClick={() => setExamSessionFilter(session)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
+                      examSessionFilter === session
+                        ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C]'
+                        : 'bg-muted text-muted-foreground hover:text-foreground'
+                    }`}
+                  >
+                    {session === 'all' ? 'All Sessions' : `${session} Exams`}
+                  </button>
+                ))}
+              </div>
+
+              <div className="relative w-full sm:w-64">
+                <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder="Filter by year or paper..."
+                  value={examSearch}
+                  onChange={e => setExamSearch(e.target.value)}
+                  className="w-full pl-8 pr-3 py-1.5 rounded-lg bg-card border border-border text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-[#007A6B] dark:focus:border-[#00C4AD]"
+                />
+              </div>
+            </div>
+
+            {/* Papers Grid */}
+            {examPapers.length === 0 ? (
+              <div className="p-8 text-center text-muted-foreground bg-card border border-border rounded-2xl">
+                No past exam papers found for this session.
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
+                {examPapers.map(paper => (
+                  <div
+                    key={paper.id}
+                    onClick={() =>
+                      onOpenDocument({
+                        id: paper.id,
+                        title: paper.title,
+                        url: paper.pdfUrl,
+                      })
+                    }
+                    className="group bg-card border border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD] rounded-xl p-4 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className="px-2.5 py-1 rounded bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] font-mono font-bold text-xs uppercase">
+                          {paper.session} {paper.year}
+                        </span>
+                        <GraduationCap size={16} className="text-muted-foreground group-hover:text-[#007A6B] dark:group-hover:text-[#00C4AD] transition-colors" />
+                      </div>
+                      <h4 className="text-sm font-semibold text-foreground group-hover:text-[#007A6B] dark:group-hover:text-[#00C4AD] transition-colors line-clamp-2">
+                        {paper.title}
+                      </h4>
+                      <p className="text-[11px] font-mono text-muted-foreground mt-1">
+                        {paper.filename}
+                      </p>
+                    </div>
+
+                    <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between text-xs font-semibold text-[#007A6B] dark:text-[#00C4AD]">
+                      <span>Open Paper</span>
+                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+
+        {/* ── TAB 4: Panopto Recordings (Grid & Player) ───────────────────── */}
         {activeTab === 'panopto' && (
           <div className="space-y-4">
             {/* Active Panopto In-App Player */}
@@ -531,42 +591,48 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
               </a>
             </div>
 
-            <div className="space-y-3">
+            {/* Recordings Card Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
               {panoptoRecordings.map(rec => {
                 const isCurrentActive = activePanopto?.id === rec.id;
                 return (
                   <div
                     key={rec.id}
-                    className={`bg-card border rounded-xl p-4 shadow-xs transition-all flex items-center justify-between gap-4 ${
+                    className={`bg-card border rounded-xl p-4 shadow-xs transition-all flex flex-col justify-between ${
                       isCurrentActive
                         ? 'border-[#007A6B] dark:border-[#00C4AD] ring-1 ring-[#007A6B] dark:ring-[#00C4AD]'
                         : 'border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD]'
                     }`}
                   >
-                    <div className="min-w-0 flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-lg bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] flex items-center justify-center shrink-0">
-                        <Play size={16} />
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-3">
+                        <span className="text-[11px] font-mono text-muted-foreground flex items-center gap-1">
+                          <Clock size={11} /> {rec.duration}
+                        </span>
+                        <span className="text-[11px] text-muted-foreground">
+                          {rec.date}
+                        </span>
                       </div>
-                      <div className="min-w-0">
-                        <h4 className="text-sm font-semibold text-foreground truncate">
-                          {rec.title}
-                        </h4>
-                        <p className="text-xs text-muted-foreground flex items-center gap-2 mt-0.5">
-                          <span className="flex items-center gap-1"><Clock size={11} /> {rec.duration}</span>
-                          <span>•</span>
-                          <span>{rec.date}</span>
-                          {rec.lecturer && <span>• {rec.lecturer}</span>}
+
+                      <h4 className="text-sm font-semibold text-foreground line-clamp-2">
+                        {rec.title}
+                      </h4>
+
+                      {rec.lecturer && (
+                        <p className="text-xs text-muted-foreground flex items-center gap-1.5 mt-2">
+                          <User size={12} />
+                          <span className="truncate">{rec.lecturer}</span>
                         </p>
-                      </div>
+                      )}
                     </div>
 
-                    <div className="flex items-center gap-2 shrink-0">
+                    <div className="mt-4 pt-3 border-t border-border flex items-center justify-between gap-2">
                       <button
                         type="button"
                         onClick={() => setActivePanopto(rec)}
                         className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer ${
                           isCurrentActive
-                            ? 'bg-[#007A6B] dark:bg-[#00C4AD] text-white dark:text-[#003C3C]'
+                            ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C]'
                             : 'bg-[#007A6B]/15 hover:bg-[#007A6B]/25 text-[#007A6B] dark:text-[#00C4AD]'
                         }`}
                       >

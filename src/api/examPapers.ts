@@ -7,7 +7,7 @@ import { ExamPaper } from '../types';
  * e.g. MTH1002-22Jan.pdf, MTH1001-24May.pdf
  */
 
-export const SESSIONS = ['May', 'Jan', 'Aug'] as const;
+export const SESSIONS = ['Jan', 'May'] as const;
 export type ExamSession = typeof SESSIONS[number];
 
 // Candidate years (e.g. 2018 to 2026)
@@ -60,7 +60,7 @@ const KNOWN_LOCAL_PAPERS: Record<string, string[]> = {
 
 /**
  * Generates valid candidate exam paper queries for a given module code.
- * Strictly respects term exam sessions so non-existent exams (e.g. May for Autumn modules) are omitted.
+ * Strictly respects term exam sessions so non-existent exams are omitted.
  */
 export function generateCandidatePapers(moduleCode: string): ExamPaper[] {
   const cleanCode = moduleCode.trim().toUpperCase();
@@ -71,23 +71,17 @@ export function generateCandidatePapers(moduleCode: string): ExamPaper[] {
   for (const year of YEARS_TO_PROBE) {
     for (const session of validSessions) {
       const filename = `${cleanCode}-${year.short}${session}.pdf`;
-      const sessionLabel = session === 'Jan' ? 'January Exam' : session === 'May' ? 'May/June Exam' : 'August Exam';
+      const sessionLabel = session === 'Jan' ? 'January Exam' : 'May/June Exam';
       
       let isLocal = localList.includes(filename);
       let pdfUrl = isLocal ? `/materials/past_papers/${cleanCode}/${filename}` : buildExamPaperUrl(filename);
-      let solutionUrl: string | undefined = undefined;
-      let hasSolution = false;
 
-      // Special handling for MTH2008 where we have full local questions & solutions (2019 - 2026)
+      // Local questions for MTH2008 (2019 - 2026)
       if (cleanCode === 'MTH2008' && session === 'Jan') {
         const yearInt = parseInt(year.full, 10);
         if (yearInt >= 2019 && yearInt <= 2026) {
           isLocal = true;
           pdfUrl = `/materials/MTH2008/past_papers/January${year.full}_Questions.pdf`;
-          solutionUrl = year.full === '2026'
-            ? `/materials/MTH2008/past_papers/January2026Solutions.pdf`
-            : `/materials/MTH2008/past_papers/January${year.full}_Solutions.pdf`;
-          hasSolution = true;
         }
       }
 
@@ -99,8 +93,6 @@ export function generateCandidatePapers(moduleCode: string): ExamPaper[] {
         title: `${year.full} ${sessionLabel}`,
         filename,
         pdfUrl,
-        hasSolution,
-        solutionUrl,
         isLocal,
       });
     }

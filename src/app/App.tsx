@@ -8,7 +8,7 @@ import {
   Share2, Trash2, Workflow, Columns3, LayoutGrid, ShieldAlert, Printer, Undo2,
   Bell, MessageSquare, Scale, Download, Plus, Bookmark, HelpCircle,
   FileSpreadsheet, Map as MapIcon, Check, ExternalLink, Accessibility, Sparkles, User, Menu, Calendar,
-  Heart
+  Heart, Settings
 } from "lucide-react";
 import { PrintView } from "./PrintView";
 import { EleGeometricPattern } from "./components/EleGeometricPattern";
@@ -19,6 +19,8 @@ import { useTimetable } from "../api/timetable";
 import { TimetableCalendarModal } from "./components/TimetableCalendarModal";
 import { IntroSplash } from "./components/IntroSplash";
 import { AccessibilityModal, applyA11ySettings, DEFAULT_A11Y_SETTINGS } from "./components/AccessibilityModal";
+import { PreferencesModal } from "./components/PreferencesModal";
+import { shouldRunDailySync, checkAllModules } from "../services/syncService";
 import { MobilePlannerView } from "./components/MobilePlannerView";
 import { ModuleDiscoveryModal } from "./components/ModuleDiscoveryModal";
 import type { DiscoveryState } from "./utils/moduleDiscovery";
@@ -2452,6 +2454,14 @@ export default function App() {
   const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false);
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
   const [isCookieBannerForced, setIsCookieBannerForced] = useState(false);
+  const [isPreferencesModalOpen, setIsPreferencesModalOpen] = useState(false);
+
+  // Automated background daily sync check
+  useEffect(() => {
+    if (shouldRunDailySync()) {
+      checkAllModules().catch(console.error);
+    }
+  }, []);
 
   // Initialize accessibility settings on app startup
   useEffect(() => {
@@ -3443,16 +3453,17 @@ export default function App() {
                         <span>Profile</span>
                         <ExternalLink size={12} className="opacity-40 group-hover:opacity-100 transition-opacity" />
                       </a>
-                      <a
-                        href="https://ele.exeter.ac.uk/user/preferences.php"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => setOpenNavDropdown(null)}
-                        className="px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group"
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setOpenNavDropdown(null);
+                          setIsPreferencesModalOpen(true);
+                        }}
+                        className="w-full px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between text-left text-xs font-medium cursor-pointer"
                       >
-                        <span>Preferences</span>
-                        <ExternalLink size={12} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-                      </a>
+                        <span>Preferences & Sync</span>
+                        <Settings size={13} className="opacity-60" />
+                      </button>
                       <div className="border-t border-border/60 my-1" />
                       <button
                         type="button"
@@ -3554,7 +3565,6 @@ export default function App() {
                 course={selectedCourse}
                 onBack={() => setSelectedCourse(null)}
                 onOpenDocument={handleOpenDocument}
-                onOpenDualDocuments={handleOpenDualDocuments}
                 onOpenCalendarModal={handleOpenCalendarModal}
               />
             )}
@@ -3833,6 +3843,12 @@ export default function App() {
         <AccessibilityModal
           isOpen={isA11yModalOpen}
           onClose={() => setIsA11yModalOpen(false)}
+        />
+
+        {/* Sync & Scraping Preferences Modal */}
+        <PreferencesModal
+          isOpen={isPreferencesModalOpen}
+          onClose={() => setIsPreferencesModalOpen(false)}
         />
       </div>
     </RewindModeContext.Provider>
