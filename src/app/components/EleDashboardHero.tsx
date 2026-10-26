@@ -12,7 +12,6 @@ import {
   RotateCcw,
   FileText,
   MapPin,
-  Sparkles,
 } from "lucide-react";
 import { EleGeometricPattern } from "./EleGeometricPattern";
 import { TimetableEvent, getEventTheme } from "../../api/timetable";
@@ -313,9 +312,8 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
             <div className="space-y-4">
               <div className="flex items-center justify-between text-xs sm:text-sm text-muted-foreground px-1">
                 <span>
-                  Showing <strong>{filteredCourses.length}</strong> of <strong>{MOCK_COURSES.length}</strong> enrolled modules
+                  <strong>{filteredCourses.length}</strong> / <strong>{MOCK_COURSES.length}</strong> modules
                 </span>
-                <span className="text-xs">Exeter Learning Environment (ELE 3)</span>
               </div>
 
               {filteredCourses.length === 0 ? (
@@ -342,11 +340,6 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
                       {/* Thumbnail Geometric Header Banner */}
                       <div className="h-28 sm:h-32 relative overflow-hidden rounded-t-2xl">
                         <EleGeometricPattern seed={course.code} height="100%" />
-                        <div className="absolute top-3 left-3">
-                          <span className="px-2.5 py-1 rounded-md bg-[#00C4AD] text-[#003C3C] text-xs font-mono font-bold shadow-xs">
-                            {course.code}
-                          </span>
-                        </div>
                       </div>
 
                       {/* Course Information */}
@@ -373,9 +366,6 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
                       className="p-4 hover:bg-muted/40 transition-colors cursor-pointer flex items-center justify-between gap-4"
                     >
                       <div className="min-w-0 flex-1">
-                        <span className="text-xs font-mono font-bold text-[#007A6B] dark:text-[#00C4AD] block mb-0.5">
-                          {course.code}
-                        </span>
                         <h3 className="text-[15px] font-semibold text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors truncate">
                           {course.title}
                         </h3>
@@ -432,10 +422,6 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
                 >
                   University Email <ExternalLink size={11} />
                 </a>
-              </div>
-              <div className="text-left sm:text-right text-[11px] text-muted-foreground">
-                <span className="font-semibold text-foreground/80 block">ELE 3 · Samuel's Personal Learning Hub</span>
-                <span>Fast, offline-ready course companion.</span>
               </div>
             </div>
           </div>
@@ -670,17 +656,6 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
               >
                 Go to calendar... <ExternalLink size={12} />
               </button>
-            </div>
-
-            {/* 3. Quick Tips Card */}
-            <div className="bg-muted/40 border border-border rounded-2xl p-4 text-xs text-muted-foreground space-y-2">
-              <div className="flex items-center gap-2 font-bold text-foreground text-sm">
-                <Sparkles size={16} className="text-[#007A6B] dark:text-[#00C4AD]" />
-                <span>ELE 3 Quick Tip</span>
-              </div>
-              <p className="leading-relaxed">
-                Click any module to open its lecture notes, problem sheets, and past papers. Offline materials stored in <code className="font-mono bg-card px-1 py-0.5 rounded text-[11px]">/materials/</code> load instantly without internet.
-              </p>
             </div>
           </div>
         </div>

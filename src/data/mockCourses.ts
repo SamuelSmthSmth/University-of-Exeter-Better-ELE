@@ -23,9 +23,9 @@ export const MOCK_COURSES: Course[] = [
     isPinned: true,
     progressPercentage: 0,
     convenor: {
-      name: "Prof. Stuart Townley & Dr. Peter Ashwin",
-      email: "s.b.townley@exeter.ac.uk",
-      officeHours: "Wednesdays 11:00 - 12:00 (Harrison 312)"
+      name: "Dr. Joanne Mason",
+      email: "J.Mason@exeter.ac.uk",
+      officeHours: "Thursdays 14:00 - 15:00 (Harrison 312)"
     },
     panoptoFolderUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331003-mth2003%22",
     recordings: [
@@ -334,8 +334,8 @@ export const MOCK_COURSES: Course[] = [
     isPinned: true,
     progressPercentage: 0,
     convenor: {
-      name: "Dr. Ana Rute Neves",
-      email: "a.r.neves@exeter.ac.uk",
+      name: "Tony Samuel",
+      email: "a.samuel@exeter.ac.uk",
       officeHours: "Mondays 14:00 - 16:00 (Harrison 208)"
     },
     panoptoFolderUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331008-mth2008%22",
@@ -607,8 +607,8 @@ export const MOCK_COURSES: Course[] = [
     isPinned: true,
     progressPercentage: 0,
     convenor: {
-      name: "Prof. Nigel Byott",
-      email: "n.p.byott@exeter.ac.uk",
+      name: "Gihan Marasingha",
+      email: "G.Marasingha@exeter.ac.uk",
       officeHours: "Tuesdays 14:00 - 16:00 (Harrison 102)"
     },
     panoptoFolderUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331010-mth2010%22",
@@ -2877,8 +2877,8 @@ export const MOCK_COURSES: Course[] = [
     isPinned: false,
     progressPercentage: 0,
     convenor: {
-      name: "Dr. Danny Williamson",
-      email: "d.williamson@exeter.ac.uk"
+      name: "Dr. Chaitra Nagaraja",
+      email: "C.Nagaraja@exeter.ac.uk"
     },
     recordings: [
       {

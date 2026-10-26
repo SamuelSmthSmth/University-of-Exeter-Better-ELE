@@ -22,6 +22,7 @@ import { ModuleDiscoveryModal } from "./components/ModuleDiscoveryModal";
 import type { DiscoveryState } from "./utils/moduleDiscovery";
 import { useIsDesktop } from "./hooks/useIsDesktop";
 import { EleCourseView } from "./components/EleCourseView";
+import { InAppBrowserModal } from "./components/InAppBrowserModal";
 import { DocumentSidePanel, OpenDocument } from "./components/reader/DocumentSidePanel";
 import { Course } from "../types";
 import { MOCK_COURSES } from "../data/mockCourses";
@@ -2497,6 +2498,16 @@ export default function App() {
   const [isTermsModalOpen, setIsTermsModalOpen] = useState(false);
   const [isCookieBannerForced, setIsCookieBannerForced] = useState(false);
   const [isPreferencesModalOpen, setIsPreferencesModalOpen] = useState(false);
+  const [inAppBrowser, setInAppBrowser] = useState<{ isOpen: boolean; url: string; title: string }>({
+    isOpen: false,
+    url: '',
+    title: '',
+  });
+
+  const openInAppBrowser = (url: string, title: string) => {
+    setInAppBrowser({ isOpen: true, url, title });
+    setOpenNavDropdown(null);
+  };
 
   // Automated background daily sync check
   useEffect(() => {
@@ -2654,30 +2665,6 @@ export default function App() {
     <RewindModeContext.Provider value={{ isRewindMode, setIsRewindMode }}>
       <div className="flex flex-col h-screen overflow-hidden bg-background text-foreground print:h-auto print:overflow-visible">
         <IntroSplash />
-
-        {/* ── Ultra-thin Custom In-App Drag Bar (Window Drag Region & Native Frame Replacement) ── */}
-        <div
-          className="h-7 w-full shrink-0 flex items-center justify-between px-3 select-none bg-[#020808] border-b border-white/[0.06] text-white/40 text-[11px] z-50 print:hidden"
-          style={{ WebkitAppRegion: 'drag' } as any}
-        >
-          <div className="flex items-center gap-2" style={{ WebkitAppRegion: 'no-drag' } as any}>
-            <img src="/ele3-emblem.png" alt="ELE 3" className="w-3.5 h-3.5 rounded-full object-cover" />
-            <span className="font-semibold text-white/60 tracking-wider text-[10px] uppercase font-mono">ELE 3</span>
-            {selectedCourse && (
-              <>
-                <span className="text-white/20">/</span>
-                <span className="text-[#00C4AD] font-mono text-[10px] font-semibold">{selectedCourse.code}</span>
-              </>
-            )}
-          </div>
-
-          <div className="flex items-center gap-3" style={{ WebkitAppRegion: 'no-drag' } as any}>
-            <span className="text-[10px] text-white/30 hidden sm:inline font-mono">Exeter Learning Environment</span>
-            <div className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00C4AD]/70" title="Connected" />
-            </div>
-          </div>
-        </div>
 
 
 
@@ -2895,13 +2882,19 @@ export default function App() {
             </div>
           </header>
         ) : isDesktop ? (
-          <header className="shrink-0 bg-[#003C3C] text-white print:hidden shadow-xs z-30">
+          <header
+            className="shrink-0 bg-[#003C3C] text-white print:hidden shadow-xs z-30 select-none"
+            style={{ WebkitAppRegion: 'drag' } as any}
+          >
           {/* Main Nav Bar */}
           <div className="flex items-center justify-between px-3 sm:px-6 h-[58px] gap-4">
-            {/* Left: Brand + Dashboard + View Switcher */}
-            <div className="flex items-center h-full gap-2.5 sm:gap-3.5 shrink-0">
+            {/* Left: Brand + View Switcher */}
+            <div className="flex items-center h-full gap-2.5 sm:gap-3.5 shrink-0" style={{ WebkitAppRegion: 'no-drag' } as any}>
               <div
-                onClick={() => setProgrammeCode(null)}
+                onClick={() => {
+                  setProgrammeCode(null);
+                  handleBackToDashboard();
+                }}
                 className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity shrink-0 py-2"
                 title="Return to Dashboard"
               >
@@ -2911,31 +2904,6 @@ export default function App() {
                   className="h-8 w-auto shrink-0"
                 />
               </div>
-
-              {/* Dashboard Return Button */}
-              <button
-                onClick={() => {
-                  setProgrammeCode(null);
-                  handleBackToDashboard();
-                }}
-                className={`h-9 px-3 rounded-xl flex items-center gap-1.5 text-xs font-bold transition-all cursor-pointer ${
-                  !programmeCode && !selectedCourse
-                    ? "bg-[#00A693] text-white shadow-xs"
-                    : "text-white/80 hover:text-white hover:bg-white/10"
-                }`}
-                title="Return to Dashboard"
-              >
-                <LayoutGrid size={14} />
-                <span className="hidden xs:inline">Dashboard</span>
-              </button>
-
-              {/* Active Course Hub Pill in Header */}
-              {selectedCourse && (
-                <div className="flex items-center gap-2 px-3 py-1 bg-white/10 rounded-xl text-white text-xs font-mono font-bold">
-                  <span>{selectedCourse.code}</span>
-                  <span className="hidden sm:inline font-sans font-normal opacity-80">· {selectedCourse.title}</span>
-                </div>
-              )}
 
               {/* View Switcher: Course Structure & Skill Tree & Matchmaker (shown when programme is active) */}
               {programmeCode && (
@@ -3008,40 +2976,35 @@ export default function App() {
                         ELE Support
                       </div>
                       <div className="py-1">
-                        <a
-                          href="https://ele.exeter.ac.uk/course/view.php?id=27644"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => setOpenNavDropdown(null)}
-                          className="px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group"
+                        <button
+                          type="button"
+                          onClick={() => openInAppBrowser("https://ele.exeter.ac.uk/course/view.php?id=27644", "Student Support")}
+                          className="w-full text-left px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group cursor-pointer"
                         >
                           <span>Student Support</span>
                           <ExternalLink size={12} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-                        </a>
-                        <a
-                          href="https://ele.exeter.ac.uk/course/view.php?id=4956"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => setOpenNavDropdown(null)}
-                          className="px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group"
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => openInAppBrowser("https://ele.exeter.ac.uk/course/view.php?id=4956", "Staff Support")}
+                          className="w-full text-left px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group cursor-pointer"
                         >
                           <span>Staff Support</span>
                           <ExternalLink size={12} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-                        </a>
+                        </button>
                       </div>
                     </div>
                   )}
                 </div>
 
                 {/* 3. Library (direct link) */}
-                <a
-                  href="https://www.exeter.ac.uk/departments/library/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="h-full px-2.5 flex items-center text-[14.5px] font-bold text-white hover:bg-white/10 transition-colors"
+                <button
+                  type="button"
+                  onClick={() => openInAppBrowser("https://www.exeter.ac.uk/departments/library/", "University Library")}
+                  className="h-full px-2.5 flex items-center text-[14.5px] font-bold text-white hover:bg-white/10 transition-colors cursor-pointer"
                 >
                   Library
-                </a>
+                </button>
 
                 {/* 4. Daily Tools ▾ */}
                 <div className="relative h-full flex items-center">
@@ -3087,28 +3050,27 @@ export default function App() {
                                 <span>{item.label}</span>
                                 <span className="text-[9.5px] uppercase font-bold text-white bg-[#007A6B] dark:bg-[#00A693] px-1.5 py-0.5 rounded">Sync</span>
                               </div>
-                              <a
-                                href={item.href}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={e => e.stopPropagation()}
-                                title="Open MyTimetable in new tab"
+                              <button
+                                type="button"
+                                onClick={e => {
+                                  e.stopPropagation();
+                                  openInAppBrowser(item.href, item.label);
+                                }}
+                                title="Open in app"
                               >
                                 <ExternalLink size={12} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-                              </a>
+                              </button>
                             </div>
                           ) : (
-                            <a
+                            <button
                               key={item.label}
-                              href={item.href}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              onClick={() => setOpenNavDropdown(null)}
-                              className="px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group"
+                              type="button"
+                              onClick={() => openInAppBrowser(item.href, item.label)}
+                              className="w-full text-left px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group cursor-pointer"
                             >
                               <span>{item.label}</span>
                               <ExternalLink size={12} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-                            </a>
+                            </button>
                           )
                         )}
                       </div>
@@ -3149,17 +3111,15 @@ export default function App() {
                           { label: "Referencing", href: "https://libguides.exeter.ac.uk/referencing" },
                           { label: "GenAI Guidance", href: "https://libguides.exeter.ac.uk/referencing/generativeai" },
                         ].map(item => (
-                          <a
+                          <button
                             key={item.label}
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => setOpenNavDropdown(null)}
-                            className="px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group"
+                            type="button"
+                            onClick={() => openInAppBrowser(item.href, item.label)}
+                            className="w-full text-left px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group cursor-pointer"
                           >
                             <span>{item.label}</span>
                             <ExternalLink size={12} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-                          </a>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -3196,17 +3156,15 @@ export default function App() {
                           { label: "Students Homepage", href: "https://www.exeter.ac.uk/students/" },
                           { label: "Career Support", href: "https://www.exeter.ac.uk/careers/" },
                         ].map(item => (
-                          <a
+                          <button
                             key={item.label}
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => setOpenNavDropdown(null)}
-                            className="px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group"
+                            type="button"
+                            onClick={() => openInAppBrowser(item.href, item.label)}
+                            className="w-full text-left px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group cursor-pointer"
                           >
                             <span>{item.label}</span>
                             <ExternalLink size={12} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-                          </a>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -3243,17 +3201,15 @@ export default function App() {
                           { label: "Wellbeing Toolkit", href: "https://ele.exeter.ac.uk/course/view.php?id=7295" },
                           { label: "Book a wellbeing appointment", href: "https://www.exeter.ac.uk/students/wellbeing/devon/contact/makeanappointment/" },
                         ].map(item => (
-                          <a
+                          <button
                             key={item.label}
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => setOpenNavDropdown(null)}
-                            className="px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group"
+                            type="button"
+                            onClick={() => openInAppBrowser(item.href, item.label)}
+                            className="w-full text-left px-4 py-2 hover:bg-muted text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors flex items-center justify-between group cursor-pointer"
                           >
                             <span>{item.label}</span>
                             <ExternalLink size={12} className="opacity-40 group-hover:opacity-100 transition-opacity" />
-                          </a>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -3848,6 +3804,14 @@ export default function App() {
         <PreferencesModal
           isOpen={isPreferencesModalOpen}
           onClose={() => setIsPreferencesModalOpen(false)}
+        />
+
+        {/* In-App Browser for External University Links */}
+        <InAppBrowserModal
+          isOpen={inAppBrowser.isOpen}
+          url={inAppBrowser.url}
+          title={inAppBrowser.title}
+          onClose={() => setInAppBrowser(s => ({ ...s, isOpen: false }))}
         />
       </div>
     </RewindModeContext.Provider>

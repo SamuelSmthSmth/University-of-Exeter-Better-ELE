@@ -245,11 +245,6 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
             
             <div className="absolute bottom-4 left-4 sm:left-6 right-4 sm:right-6 text-white">
-              <div className="flex items-center gap-2 mb-1">
-                <span className="px-2.5 py-0.5 rounded-md bg-[#00C4AD] text-[#003C3C] text-xs font-mono font-black uppercase tracking-wider shadow-xs">
-                  {course.code}
-                </span>
-              </div>
               <h1 className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white drop-shadow-xs">
                 {course.title}
               </h1>
@@ -288,14 +283,14 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             onClick={() => handleTabChange('notes')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
               activeTab === 'notes'
-                ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs'
+                ? 'bg-[#003C3C] dark:bg-[#005A4E] text-white shadow-xs'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted'
             }`}
           >
             <BookOpen size={16} />
             <span>Lecture Notes</span>
             <span className={`px-1.5 py-0.2 rounded-full text-[10.5px] font-mono ${
-              activeTab === 'notes' ? 'bg-white/20 text-white dark:text-[#003C3C]' : 'bg-muted text-muted-foreground'
+              activeTab === 'notes' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
             }`}>
               {noteResources.length}
             </span>
@@ -306,14 +301,14 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             onClick={() => handleTabChange('sheets')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
               activeTab === 'sheets'
-                ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs'
+                ? 'bg-[#003C3C] dark:bg-[#005A4E] text-white shadow-xs'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted'
             }`}
           >
             <FileText size={16} />
             <span>Problem Sheets</span>
             <span className={`px-1.5 py-0.2 rounded-full text-[10.5px] font-mono ${
-              activeTab === 'sheets' ? 'bg-white/20 text-white dark:text-[#003C3C]' : 'bg-muted text-muted-foreground'
+              activeTab === 'sheets' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
             }`}>
               {pairedSheets.length}
             </span>
@@ -324,14 +319,14 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             onClick={() => handleTabChange('exams')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
               activeTab === 'exams'
-                ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs'
+                ? 'bg-[#003C3C] dark:bg-[#005A4E] text-white shadow-xs'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted'
             }`}
           >
             <GraduationCap size={16} />
             <span>Past Papers</span>
             <span className={`px-1.5 py-0.2 rounded-full text-[10.5px] font-mono ${
-              activeTab === 'exams' ? 'bg-white/20 text-white dark:text-[#003C3C]' : 'bg-muted text-muted-foreground'
+              activeTab === 'exams' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
             }`}>
               {examPapers.length}
             </span>
@@ -342,14 +337,14 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             onClick={() => handleTabChange('panopto')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
               activeTab === 'panopto'
-                ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs'
+                ? 'bg-[#003C3C] dark:bg-[#005A4E] text-white shadow-xs'
                 : 'text-muted-foreground hover:text-foreground hover:bg-muted'
             }`}
           >
             <Video size={16} />
             <span>Panopto Recordings</span>
             <span className={`px-1.5 py-0.2 rounded-full text-[10.5px] font-mono ${
-              activeTab === 'panopto' ? 'bg-white/20 text-white dark:text-[#003C3C]' : 'bg-muted text-muted-foreground'
+              activeTab === 'panopto' ? 'bg-white/20 text-white' : 'bg-muted text-muted-foreground'
             }`}>
               {panoptoRecordings.length}
             </span>
