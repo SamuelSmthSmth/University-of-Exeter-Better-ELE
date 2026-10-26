@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo } from "react";
 import {
   Search,
   Clock,
@@ -16,115 +16,88 @@ import {
   RotateCcw,
   FileText,
   MapPin,
-  BookOpen,
   GraduationCap,
-  CheckCircle,
+  FileCheck,
+  Sparkles,
+  BookOpen,
 } from "lucide-react";
-import PROGRAMMES from "../../data/programmes.json";
 import { EleGeometricPattern } from "./EleGeometricPattern";
 import { TimetableEvent, getEventTheme } from "../../api/timetable";
-import { useIsDesktop } from "../hooks/useIsDesktop";
 import { MOCK_COURSES } from "../../data/mockCourses";
 import { Course } from "../../types";
 
 interface EleDashboardHeroProps {
-  onSelectProgramme: (code: string) => void;
-  onSelectCourse?: (course: Course) => void;
-  recentProgrammes?: string[];
+  onSelectCourse: (course: Course) => void;
+  recentCourseCodes?: string[];
   timetableEvents?: TimetableEvent[];
   onOpenCalendarModal?: (initialTab?: "calendar" | "manage" | "export") => void;
   onOpenAccessibility?: () => void;
-  onOpenPrivacy?: () => void;
-  onOpenTerms?: () => void;
-  onOpenCookies?: () => void;
 }
 
-const DISCIPLINES = [
-  { label: "All Programmes", query: "" },
-  { label: "Mathematics & Stats", query: "Math" },
-  { label: "Computer Science", query: "Computer" },
-  { label: "Engineering", query: "Engineering" },
-  { label: "Business & Management", query: "Business" },
-  { label: "Law", query: "Law" },
-  { label: "Physics & Astronomy", query: "Physics" },
-  { label: "Psychology & Health", query: "Psychology" },
-  { label: "Economics & Finance", query: "Economics" },
-  { label: "Geography & Environment", query: "Geography" },
-  { label: "Biosciences & Medicine", query: "Bio" },
+const TERMS = [
+  { label: "All Terms", value: "All" },
+  { label: "Term 1 (Autumn)", value: "Term 1" },
+  { label: "Term 2 (Spring)", value: "Term 2" },
+  { label: "Whole Year", value: "Term 1 and 2" },
 ];
 
-const AWARDS = [
-  { label: "All Awards", value: "" },
-  { label: "BSc (Hons)", value: "BSc" },
-  { label: "BA (Hons)", value: "BA" },
-  { label: "BEng / MEng (Engineering)", value: "Eng" },
-  { label: "LLB (Law)", value: "LLB" },
-  { label: "Integrated Masters (MMath/MSci/etc)", value: "Masters" },
-  { label: "Medical / Health", value: "Medical" },
+const STAGES = [
+  { label: "All Stages", value: "All" },
+  { label: "Stage 2 (Current)", value: "2" },
+  { label: "Stage 1", value: "1" },
 ];
-
-const PATHWAYS = [
-  { label: "All Pathways", value: "" },
-  { label: "Standard Full-Time", value: "standard" },
-  { label: "With Study Abroad", value: "abroad" },
-  { label: "With Placement / Industry", value: "placement" },
-];
-
-const DURATIONS = [
-  { label: "All Durations", value: "" },
-  { label: "3-Year Programmes", value: "3" },
-  { label: "4-Year Programmes", value: "4" },
-];
-
-const DESKTOP_PAGE_SIZE = 12;
-const MOBILE_PAGE_SIZE = 6;
 
 export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
-  onSelectProgramme,
   onSelectCourse,
-  recentProgrammes = [],
+  recentCourseCodes = [],
   timetableEvents = [],
   onOpenCalendarModal,
   onOpenAccessibility,
-  onOpenPrivacy,
-  onOpenTerms,
-  onOpenCookies,
 }) => {
-  const isDesktop = useIsDesktop();
-  const pageSize = isDesktop ? DESKTOP_PAGE_SIZE : MOBILE_PAGE_SIZE;
-
-  const [catalogMode, setCatalogMode] = useState<"myCourses" | "programmes">("myCourses");
   const [search, setSearch] = useState("");
-  const [sidebarSearch, setSidebarSearch] = useState("");
-  const [selectedDiscipline, setSelectedDiscipline] = useState("");
-  const [selectedAward, setSelectedAward] = useState("");
-  const [selectedPathway, setSelectedPathway] = useState("");
-  const [selectedDuration, setSelectedDuration] = useState("");
-  const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
-  const [filterView, setFilterView] = useState<"All" | "In progress" | "Future">("All");
+  const [selectedTerm, setSelectedTerm] = useState("All");
+  const [selectedStage, setSelectedStage] = useState("All");
+  const [sortOrder, setSortOrder] = useState<"code" | "title" | "progress">("code");
   const [cardLayout, setCardLayout] = useState<"Card" | "List">("Card");
-  const [bannerDismissed, setBannerDismissed] = useState(false);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-  // Filtered enrolled modules (for myCourses view)
+  // Filtered enrolled modules for Samuel
   const filteredCourses = useMemo(() => {
-    const q = (search || sidebarSearch).trim().toLowerCase();
-    let list = MOCK_COURSES;
-    if (filterView === "In progress") {
-      list = list.filter(c => c.progressPercentage > 0 && c.progressPercentage < 100);
-    } else if (filterView === "Future") {
-      list = list.filter(c => c.progressPercentage === 0);
-    }
+    let list = [...MOCK_COURSES];
+    const q = search.trim().toLowerCase();
+
     if (q) {
-      list = list.filter(c =>
-        c.code.toLowerCase().includes(q) ||
-        c.title.toLowerCase().includes(q) ||
-        c.convenor.name.toLowerCase().includes(q)
+      list = list.filter(
+        c =>
+          c.code.toLowerCase().includes(q) ||
+          c.title.toLowerCase().includes(q) ||
+          c.convenor.name.toLowerCase().includes(q)
       );
     }
+
+    if (selectedTerm !== "All") {
+      list = list.filter(c => c.term === selectedTerm);
+    }
+
+    if (selectedStage !== "All") {
+      list = list.filter(c => c.stage === Number(selectedStage));
+    }
+
+    list.sort((a, b) => {
+      if (sortOrder === "title") return a.title.localeCompare(b.title);
+      if (sortOrder === "progress") return b.progressPercentage - a.progressPercentage;
+      return a.code.localeCompare(b.code);
+    });
+
     return list;
-  }, [search, sidebarSearch, filterView]);
+  }, [search, selectedTerm, selectedStage, sortOrder]);
+
+  // Recent courses
+  const recentCourses = useMemo(() => {
+    return recentCourseCodes
+      .map(code => MOCK_COURSES.find(c => c.code === code))
+      .filter((c): c is Course => !!c)
+      .slice(0, 3);
+  }, [recentCourseCodes]);
 
   // Interactive calendar month state (starts September 2026 where academic semester begins)
   const [calendarDate, setCalendarDate] = useState<Date>(() => new Date(2026, 8, 1));
@@ -146,129 +119,51 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
   const currentMonthName = calendarDate.toLocaleDateString("en-GB", { month: "long" });
   const currentYear = calendarDate.getFullYear();
 
-  // Reset to page 1 whenever any filter criteria changes
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [search, sidebarSearch, selectedDiscipline, selectedAward, selectedPathway, selectedDuration, sortOrder]);
-
-  const hasActiveFilters = Boolean(
-    search || sidebarSearch || selectedDiscipline || selectedAward || selectedPathway || selectedDuration
-  );
-
-  const resetAllFilters = () => {
-    setSearch("");
-    setSidebarSearch("");
-    setSelectedDiscipline("");
-    setSelectedAward("");
-    setSelectedPathway("");
-    setSelectedDuration("");
-    setCurrentPage(1);
-  };
-
-  // Filtered programmes with multi-criteria support
-  const filtered = useMemo(() => {
-    let list = PROGRAMMES;
-
-    // Discipline filter
-    if (selectedDiscipline) {
-      const d = selectedDiscipline.toLowerCase();
-      list = list.filter(p => p.label.toLowerCase().includes(d) || p.code.toLowerCase().includes(d));
-    }
-
-    // Award filter
-    if (selectedAward) {
-      if (selectedAward === "BSc") list = list.filter(p => p.label.includes("BSc"));
-      else if (selectedAward === "BA") list = list.filter(p => p.label.includes("BA"));
-      else if (selectedAward === "Eng") list = list.filter(p => /Eng|Engineering/i.test(p.label));
-      else if (selectedAward === "LLB") list = list.filter(p => p.label.includes("LLB"));
-      else if (selectedAward === "Masters") list = list.filter(p => /MMath|MSci|MEng|MChem|MPhys|MBus|Master/i.test(p.label));
-      else if (selectedAward === "Medical") list = list.filter(p => /BMBS|Medical|Nursing|Medicine/i.test(p.label));
-    }
-
-    // Pathway filter
-    if (selectedPathway) {
-      if (selectedPathway === "abroad") list = list.filter(p => /Abroad/i.test(p.label));
-      else if (selectedPathway === "placement") list = list.filter(p => /Placement|Industry|Experience/i.test(p.label));
-      else if (selectedPathway === "standard") list = list.filter(p => !/Abroad|Placement|Industry|Experience/i.test(p.label));
-    }
-
-    // Duration filter
-    if (selectedDuration) {
-      if (selectedDuration === "3") list = list.filter(p => p.code.startsWith("UF") && p.code.charAt(3) === "3");
-      else if (selectedDuration === "4") list = list.filter(p => p.code.startsWith("UF") && p.code.charAt(3) === "4");
-    }
-
-    // Search query
-    const activeQuery = (search || sidebarSearch).trim().toLowerCase();
-    if (activeQuery) {
-      list = list.filter(p => p.label.toLowerCase().includes(activeQuery) || p.code.toLowerCase().includes(activeQuery));
-    }
-
-    if (sortOrder === "desc") {
-      list = [...list].reverse();
-    }
-
-    return list;
-  }, [search, sidebarSearch, selectedDiscipline, selectedAward, selectedPathway, selectedDuration, sortOrder]);
-
-  const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
-  const safePage = Math.min(currentPage, totalPages);
-
-  // Paginated to 6 on mobile, 12 on desktop
-  const paginated = useMemo(() => {
-    const start = (safePage - 1) * pageSize;
-    return filtered.slice(start, start + pageSize);
-  }, [filtered, safePage, pageSize]);
-
-  const recentItems = useMemo(() => {
-    return recentProgrammes
-      .map(code => PROGRAMMES.find(p => p.code === code))
-      .filter(Boolean) as { code: string; label: string }[];
-  }, [recentProgrammes]);
-
-  // Dynamic calendar days generation with authentic timetable event highlights
   const calendarDays = useMemo(() => {
     const year = calendarDate.getFullYear();
     const month = calendarDate.getMonth();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
-    // Monday is 0, Sunday is 6
-    const firstDay = (new Date(year, month, 1).getDay() + 6) % 7;
+    const firstDay = new Date(year, month, 1).getDay();
+    const totalDays = new Date(year, month + 1, 0).getDate();
+    const offset = firstDay === 0 ? 6 : firstDay - 1; // Mon = 0
 
-    const days: {
+    const days: Array<{
       d: number | null;
       date?: Date;
-      isCurrentDay?: boolean;
       hasEvents?: boolean;
       events?: TimetableEvent[];
-    }[] = [];
+      isCurrentDay?: boolean;
+    }> = [];
 
-    // Pad beginning blanks
-    for (let i = 0; i < firstDay; i++) {
+    for (let i = 0; i < offset; i++) {
       days.push({ d: null });
     }
 
-    // Days in current month
-    for (let d = 1; d <= daysInMonth; d++) {
-      const dateObj = new Date(year, month, d);
-      // Exeter simulated 'today' is 8 Sept 2026
-      const isCurrentDay = year === 2026 && month === 8 && d === 8;
+    const today = new Date();
+    const isThisMonth = today.getFullYear() === year && today.getMonth() === month;
 
-      const dayEvts = (timetableEvents || []).filter(e => {
+    for (let d = 1; d <= totalDays; d++) {
+      const cellDate = new Date(year, month, d);
+      const isCurrentDay = isThisMonth && today.getDate() === d;
+
+      const dayEvents = (timetableEvents || []).filter(e => {
         if (!e || !e.start) return false;
-        const ed = new Date(e.start);
-        return !isNaN(ed.getTime()) && ed.getFullYear() === year && ed.getMonth() === month && ed.getDate() === d;
+        const eDate = new Date(e.start);
+        return (
+          eDate.getFullYear() === year &&
+          eDate.getMonth() === month &&
+          eDate.getDate() === d
+        );
       });
 
       days.push({
         d,
-        date: dateObj,
+        date: cellDate,
+        hasEvents: dayEvents.length > 0,
+        events: dayEvents,
         isCurrentDay,
-        hasEvents: dayEvts.length > 0,
-        events: dayEvts,
       });
     }
 
-    // Pad ending blanks to fill full 7-col grid
     while (days.length % 7 !== 0) {
       days.push({ d: null });
     }
@@ -281,792 +176,372 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
     return (timetableEvents || []).filter(e => e && e.start).slice(0, 3);
   }, [timetableEvents]);
 
+  const hasActiveFilters = search || selectedTerm !== "All" || selectedStage !== "All";
+
+  const resetAllFilters = () => {
+    setSearch("");
+    setSelectedTerm("All");
+    setSelectedStage("All");
+  };
+
   return (
     <div className="flex-1 overflow-y-auto bg-[#F9F9F9] dark:bg-background text-foreground relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
 
-        {/* ── Top Notice Banner matching ELE screenshot ───────────────────────── */}
-        {!bannerDismissed && (
-          <div className="bg-[#E2EDE5] dark:bg-[#003C3C]/40 border border-[#D0E1D4] dark:border-[#005c5c] rounded-2xl p-4 text-[14px] leading-relaxed text-[#1D2125] dark:text-[#E8F5F3] flex items-start justify-between gap-4 shadow-xs">
-            <div className="flex-1">
-              <span className="font-bold text-[#155724] dark:text-[#4ade80]">New Editor and More:</span>{" "}
-              We have updated the Programme Planner for the <strong>2026/27 academic year</strong> with full module prerequisites, credit rules, and interactive skill trees. Choose your degree programme below or explore available modules directly from the official TimeEdit timetable.
-            </div>
-            <button
-              onClick={() => setBannerDismissed(true)}
-              className="text-muted-foreground hover:text-foreground p-1 shrink-0 rounded-full transition-colors"
-              title="Dismiss announcement"
-            >
-              <X size={16} />
-            </button>
+        {/* ── Dashboard Heading & Student Status ──────────────────────────── */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-border/60 pb-5">
+          <div>
+            <h1 className="text-[28px] font-bold tracking-tight text-[#1D2125] dark:text-foreground">
+              Dashboard
+            </h1>
+            <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+              MMath Mathematics (Honours) · Stage 2 · 2026/27 Academic Year
+            </p>
           </div>
-        )}
 
-        {/* ── Dashboard Heading matching ELE screenshot ──────────────────────── */}
-        <div>
-          <h1 className="text-[28px] font-bold tracking-tight text-[#1D2125] dark:text-foreground">
-            Dashboard
-          </h1>
+          <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-card border border-border text-xs font-semibold shadow-2xs">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span>Stage 2 Active</span>
+            </div>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-card border border-border text-xs font-semibold shadow-2xs">
+              <GraduationCap size={14} className="text-[#007A6B] dark:text-[#00C4AD]" />
+              <span>14 Modules</span>
+            </div>
+            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-card border border-border text-xs font-semibold shadow-2xs">
+              <FileCheck size={14} className="text-[#007A6B] dark:text-[#00C4AD]" />
+              <span>Offline Ready</span>
+            </div>
+          </div>
         </div>
 
-        {/* ── Main 2-Column Layout (Content + ELE Right Sidebar) ─────────────── */}
+        {/* ── Main 2-Column Layout (Courses + Sidebar) ───────────────────── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
           {/* Left / Center Main Content (8 cols on lg) */}
           <div className="lg:col-span-8 space-y-6">
 
-            {/* ── Ask SID Card matching ELE screenshot ─────────────────────────── */}
-            <div className="bg-card border border-border rounded-2xl p-5 sm:p-6 shadow-xs flex flex-col sm:flex-row items-center gap-6">
-              {/* SID Green Badge with Sideways S:D Mascot linking to Ask SID Online */}
-              <a
-                href="https://sid.exeter.ac.uk/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-48 sm:w-52 h-24 sm:h-28 bg-[#007A6B] hover:bg-[#006e60] rounded-xl flex items-center justify-between text-white shrink-0 p-4 shadow-sm select-none transition-all hover:scale-[1.02] group"
-                title="Open Ask SID Online in a new tab"
-              >
-                {/* Exeter SID Smiley Face Mascot */}
-                <div className="flex flex-col items-center justify-center pr-2 border-r border-white/25">
-                  <div className="text-2xl sm:text-3xl font-black -rotate-90 tracking-tighter select-none group-hover:scale-110 transition-transform">
-                    :D
-                  </div>
-                  <span className="text-[10px] font-bold tracking-widest uppercase text-white/90 mt-1">
-                    SID
-                  </span>
-                </div>
-                {/* Text on right of badge */}
-                <div className="pl-3 flex-1 flex flex-col justify-center">
-                  <div className="text-lg sm:text-xl font-bold leading-tight">Ask</div>
-                  <div className="text-2xl sm:text-3xl font-black tracking-tight leading-none">SID</div>
-                  <div className="text-[11px] font-bold tracking-wider text-[#A3E5DC] uppercase mt-0.5 flex items-center gap-1">
-                    ONLINE <ExternalLink size={10} />
-                  </div>
-                </div>
-              </a>
-
-              {/* SID Explanation Text */}
-              <div className="text-[14.5px] sm:text-[15px] text-[#333333] dark:text-muted-foreground leading-relaxed">
-                The new, improved{" "}
-                <a
-                  href="https://sid.exeter.ac.uk/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-bold text-[#007A6B] dark:text-[#00C4AD] hover:underline inline-flex items-center gap-1"
-                >
-                  SID Online Service <ExternalLink size={13} />
-                </a>{" "}
-                is your first point of contact for most student queries, including course module approvals, Hub/Info Point support, and degree registry. Select your course below to begin planning your academic stages for 2026/27.
-              </div>
-            </div>
-
-            {/* ── Recently Opened Programmes (if any) ────────────────────────── */}
-            {recentItems.length > 0 && (
+            {/* ── Recent Courses (if any) ─────────────────────────────────── */}
+            {recentCourses.length > 0 && (
               <div>
-                <h2 className="text-sm font-bold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
-                  <Clock size={16} className="text-[#007A6B]" />
-                  Recent Programmes
+                <h2 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-3 flex items-center gap-2">
+                  <Clock size={14} className="text-[#007A6B] dark:text-[#00C4AD]" />
+                  Recently Viewed
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {recentItems.map(item => (
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {recentCourses.map(course => (
                     <div
-                      key={item.code}
-                      onClick={() => onSelectProgramme(item.code)}
-                      className="bg-card border border-border rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-[#007A6B] cursor-pointer transition-all group"
+                      key={course.code}
+                      onClick={() => onSelectCourse(course)}
+                      className="bg-card border border-border rounded-xl p-3 shadow-xs hover:border-[#007A6B] dark:hover:border-[#00C4AD] cursor-pointer transition-all flex items-center justify-between group"
                     >
-                      <EleGeometricPattern seed={item.code} height={70} />
-                      <div className="p-4">
+                      <div className="min-w-0 pr-2">
                         <span className="text-xs font-mono font-bold text-[#007A6B] dark:text-[#00C4AD]">
-                          {item.code}
+                          {course.code}
                         </span>
-                        <h3 className="text-sm font-semibold text-foreground group-hover:text-[#007A6B] transition-colors line-clamp-2 mt-1">
-                          {item.label}
-                        </h3>
+                        <div className="text-xs font-medium text-foreground truncate group-hover:text-[#007A6B] dark:group-hover:text-[#00C4AD] transition-colors">
+                          {course.title}
+                        </div>
                       </div>
+                      <ArrowRight size={14} className="text-muted-foreground group-hover:translate-x-0.5 group-hover:text-[#007A6B] transition-all shrink-0" />
                     </div>
                   ))}
                 </div>
               </div>
             )}
 
-            {/* ── ELE Mode Switcher: My Courses vs All Programmes ──────────── */}
-            <div className="flex items-center gap-2 border-b border-border/80 pb-3">
-              <button
-                type="button"
-                onClick={() => setCatalogMode("myCourses")}
-                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer ${
-                  catalogMode === "myCourses"
-                    ? "bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                <GraduationCap size={16} />
-                <span>My Courses (Active 2026/27)</span>
-                <span className={`px-1.5 py-0.2 rounded-full text-[10.5px] font-mono ${
-                  catalogMode === "myCourses" ? "bg-white/20 text-white dark:text-[#003C3C]" : "bg-muted text-muted-foreground"
-                }`}>
-                  {MOCK_COURSES.length}
-                </span>
-              </button>
-
-              <button
-                type="button"
-                onClick={() => setCatalogMode("programmes")}
-                className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer ${
-                  catalogMode === "programmes"
-                    ? "bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted"
-                }`}
-              >
-                <BookOpen size={16} />
-                <span>All Degree Programmes Directory</span>
-                <span className={`px-1.5 py-0.2 rounded-full text-[10.5px] font-mono ${
-                  catalogMode === "programmes" ? "bg-white/20 text-white dark:text-[#003C3C]" : "bg-muted text-muted-foreground"
-                }`}>
-                  1,245
-                </span>
-              </button>
-            </div>
-
-            {/* ── Filter Bar with Enhanced Multi-Filter Controls ────────────── */}
+            {/* ── Filter Bar ────────────────────────────────────────────── */}
             <div className="bg-card border border-border rounded-2xl p-4 sm:p-5 shadow-xs space-y-3 sm:space-y-4">
-              {/* Mobile Filter Layout (< md) */}
-              <div className="block md:hidden space-y-3">
-                {/* Search Input (Touch-friendly 48px height, 16px font to prevent auto-zoom) */}
-                <div className="relative w-full">
-                  <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
+              <div className="flex flex-wrap items-center gap-3">
+                {/* Search Input */}
+                <div className="relative flex-1 min-w-[200px]">
+                  <Search size={15} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
                   <input
                     type="text"
                     value={search}
                     onChange={e => setSearch(e.target.value)}
-                    placeholder="Search programmes (e.g. Maths, CS)..."
-                    className="w-full h-12 pl-10 pr-10 bg-muted/50 border border-border rounded-2xl text-base text-foreground focus:outline-none focus:ring-2 focus:ring-[#007A6B] placeholder:text-muted-foreground"
+                    placeholder="Search modules (e.g. MTH2008, Real Analysis, Markus Mueller)..."
+                    className="w-full h-10 pl-9 pr-9 bg-muted/40 border border-border rounded-xl text-sm text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B] dark:focus:ring-[#00C4AD] placeholder:text-muted-foreground transition-all"
                   />
                   {search && (
                     <button
                       onClick={() => setSearch("")}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 p-1 text-muted-foreground hover:text-foreground"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
                     >
-                      <X size={16} />
+                      <X size={15} />
                     </button>
                   )}
                 </div>
 
-                {/* Mobile Quick Action Buttons */}
-                <div className="flex items-center gap-2">
-                  <button
-                    type="button"
-                    onClick={() => setSortOrder(prev => (prev === "asc" ? "desc" : "asc"))}
-                    className="flex-1 h-11 px-3 bg-muted/60 hover:bg-muted border border-border rounded-xl text-xs font-bold text-foreground flex items-center justify-center gap-1.5 active:scale-95 transition-all"
-                  >
-                    <span>Sort: {sortOrder === "asc" ? "A-Z" : "Z-A"}</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setMobileFiltersOpen(v => !v)}
-                    className={`flex-1 h-11 px-3 border rounded-xl text-xs font-bold flex items-center justify-center gap-1.5 active:scale-95 transition-all ${
-                      hasActiveFilters || mobileFiltersOpen
-                        ? "bg-[#003C3C] dark:bg-[#00A693] text-white border-transparent shadow-xs"
-                        : "bg-muted/60 hover:bg-muted border-border text-foreground"
-                    }`}
-                  >
-                    <Filter size={14} />
-                    <span>Filters</span>
-                    {hasActiveFilters && (
-                      <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                    )}
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setCardLayout(l => (l === "Card" ? "List" : "Card"))}
-                    className="h-11 px-3.5 bg-muted/60 hover:bg-muted border border-border rounded-xl text-xs font-bold text-foreground flex items-center justify-center gap-1 active:scale-95 transition-all"
-                  >
-                    <span>{cardLayout}</span>
-                  </button>
-                </div>
-
-                {/* Mobile Quick Filter Chips (1-tap filtering for top categories) */}
-                <div className="flex items-center gap-1.5 overflow-x-auto scrollbar-none pb-0.5 pt-1">
-                  {[
-                    { label: "All Programmes", active: !selectedAward && !selectedDuration && !selectedPathway, onClick: resetAllFilters },
-                    { label: "BSc (Hons)", active: selectedAward === "BSc", onClick: () => setSelectedAward(a => (a === "BSc" ? "" : "BSc")) },
-                    { label: "Masters / MMath", active: selectedAward === "Masters", onClick: () => setSelectedAward(a => (a === "Masters" ? "" : "Masters")) },
-                    { label: "3-Year", active: selectedDuration === "3", onClick: () => setSelectedDuration(d => (d === "3" ? "" : "3")) },
-                    { label: "4-Year", active: selectedDuration === "4", onClick: () => setSelectedDuration(d => (d === "4" ? "" : "4")) },
-                    { label: "With Placement", active: selectedPathway === "placement", onClick: () => setSelectedPathway(p => (p === "placement" ? "" : "placement")) },
-                  ].map(chip => (
-                    <button
-                      key={chip.label}
-                      type="button"
-                      onClick={chip.onClick}
-                      className={`px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap shrink-0 active:scale-95 transition-all cursor-pointer ${
-                        chip.active
-                          ? "bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-2xs ring-1 ring-[#003C3C] dark:ring-[#00C4AD]"
-                          : "bg-muted/70 hover:bg-muted text-muted-foreground hover:text-foreground border border-border/80"
-                      }`}
-                    >
-                      {chip.label}
-                    </button>
+                {/* Term Filter */}
+                <select
+                  value={selectedTerm}
+                  onChange={e => setSelectedTerm(e.target.value)}
+                  className="h-10 px-3 rounded-xl border border-border bg-card text-xs font-medium text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B] cursor-pointer"
+                >
+                  {TERMS.map(t => (
+                    <option key={t.label} value={t.value}>
+                      {t.label}
+                    </option>
                   ))}
-                </div>
+                </select>
 
-                {/* Collapsible Mobile Filter Details */}
-                {mobileFiltersOpen && (
-                  <div className="p-3 bg-muted/30 border border-border rounded-xl space-y-3 pt-3 animate-in fade-in duration-150">
-                    <div className="grid grid-cols-1 gap-2">
-                      <div>
-                        <label className="block text-[11px] font-bold uppercase text-muted-foreground mb-1">
-                          Degree Award
-                        </label>
-                        <select
-                          value={selectedAward}
-                          onChange={e => setSelectedAward(e.target.value)}
-                          className="w-full h-10 px-3 rounded-xl border border-border bg-card text-xs font-medium text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B]"
-                        >
-                          {AWARDS.map(a => (
-                            <option key={a.label} value={a.value}>{a.label}</option>
-                          ))}
-                        </select>
-                      </div>
+                {/* Stage Filter */}
+                <select
+                  value={selectedStage}
+                  onChange={e => setSelectedStage(e.target.value)}
+                  className="h-10 px-3 rounded-xl border border-border bg-card text-xs font-medium text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B] cursor-pointer"
+                >
+                  {STAGES.map(s => (
+                    <option key={s.label} value={s.value}>
+                      {s.label}
+                    </option>
+                  ))}
+                </select>
 
-                      <div className="grid grid-cols-2 gap-2">
-                        <div>
-                          <label className="block text-[11px] font-bold uppercase text-muted-foreground mb-1">
-                            Pathway
-                          </label>
-                          <select
-                            value={selectedPathway}
-                            onChange={e => setSelectedPathway(e.target.value)}
-                            className="w-full h-10 px-3 rounded-xl border border-border bg-card text-xs font-medium text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B]"
-                          >
-                            {PATHWAYS.map(p => (
-                              <option key={p.label} value={p.value}>{p.label}</option>
-                            ))}
-                          </select>
-                        </div>
+                {/* Sort Order */}
+                <select
+                  value={sortOrder}
+                  onChange={e => setSortOrder(e.target.value as any)}
+                  className="h-10 px-3 rounded-xl border border-border bg-card text-xs font-medium text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B] cursor-pointer"
+                >
+                  <option value="code">Sort by Code</option>
+                  <option value="title">Sort by Title</option>
+                  <option value="progress">Sort by Progress</option>
+                </select>
 
-                        <div>
-                          <label className="block text-[11px] font-bold uppercase text-muted-foreground mb-1">
-                            Duration
-                          </label>
-                          <select
-                            value={selectedDuration}
-                            onChange={e => setSelectedDuration(e.target.value)}
-                            className="w-full h-10 px-3 rounded-xl border border-border bg-card text-xs font-medium text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B]"
-                          >
-                            {DURATIONS.map(d => (
-                              <option key={d.label} value={d.value}>{d.label}</option>
-                            ))}
-                          </select>
-                        </div>
-                      </div>
-                    </div>
+                {/* Card / List View Toggle */}
+                <button
+                  type="button"
+                  onClick={() => setCardLayout(l => (l === "Card" ? "List" : "Card"))}
+                  className="h-10 px-3.5 rounded-xl border border-border bg-card hover:bg-muted text-xs font-medium text-foreground flex items-center gap-1.5 transition-colors cursor-pointer"
+                  title="Switch between Card and List view"
+                >
+                  <span>{cardLayout} view</span>
+                </button>
 
-                    {hasActiveFilters && (
-                      <button
-                        type="button"
-                        onClick={resetAllFilters}
-                        className="w-full py-2 rounded-xl text-xs font-bold text-rose-600 dark:text-rose-400 bg-rose-500/10 hover:bg-rose-500/20 flex items-center justify-center gap-1.5 transition-colors"
-                      >
-                        <RotateCcw size={13} /> Reset All Filters
-                      </button>
-                    )}
-                  </div>
+                {/* Reset Filters */}
+                {hasActiveFilters && (
+                  <button
+                    type="button"
+                    onClick={resetAllFilters}
+                    className="h-10 px-3 rounded-xl text-xs font-medium text-[#007A6B] dark:text-[#00C4AD] hover:bg-muted flex items-center gap-1 transition-colors"
+                  >
+                    <RotateCcw size={12} /> Reset
+                  </button>
                 )}
-              </div>
-
-              {/* Desktop Filter Layout (>= md) */}
-              <div className="hidden md:block space-y-4">
-                <div className="flex flex-wrap items-center gap-3">
-                  {/* 1. All / In Progress dropdown */}
-                  <div className="relative">
-                    <button
-                      onClick={() => setFilterView(v => (v === "All" ? "In progress" : "All"))}
-                      className="h-10 px-4 bg-card hover:bg-muted border border-border rounded-xl text-[14px] text-foreground font-normal flex items-center gap-2 transition-colors shadow-2xs"
-                    >
-                      <span>{filterView}</span>
-                      <ChevronDown size={15} className="text-muted-foreground" />
-                    </button>
-                  </div>
-
-                  {/* 2. Search Input */}
-                  <div className="relative flex-1 min-w-[220px]">
-                    <input
-                      type="text"
-                      value={search}
-                      onChange={e => setSearch(e.target.value)}
-                      placeholder="Search by programme title or code..."
-                      className="w-full h-10 pl-4 pr-9 bg-card border border-border rounded-xl text-[14px] text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B] placeholder:text-muted-foreground shadow-2xs"
-                    />
-                    {search ? (
-                      <button
-                        onClick={() => setSearch("")}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground"
-                      >
-                        <X size={15} />
-                      </button>
-                    ) : (
-                      <Search size={15} className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
-                    )}
-                  </div>
-
-                  {/* 3. Sort by Course Name dropdown */}
-                  <button
-                    onClick={() => setSortOrder(prev => (prev === "asc" ? "desc" : "asc"))}
-                    className="h-10 px-4 bg-card hover:bg-muted border border-border rounded-xl text-[14px] text-foreground font-normal flex items-center gap-2 transition-colors shadow-2xs"
-                  >
-                    <span>Sort by course name {sortOrder === "desc" ? "(Z-A)" : ""}</span>
-                    <ChevronDown size={15} className="text-muted-foreground" />
-                  </button>
-
-                  {/* 4. Card / List View dropdown */}
-                  <button
-                    onClick={() => setCardLayout(l => (l === "Card" ? "List" : "Card"))}
-                    className="h-10 px-4 bg-card hover:bg-muted border border-border rounded-xl text-[14px] text-foreground font-normal flex items-center gap-2 transition-colors shadow-2xs"
-                  >
-                    <span>{cardLayout}</span>
-                    <ChevronDown size={15} className="text-muted-foreground" />
-                  </button>
-                </div>
-
-                {/* Advanced Secondary Filters: Degree Award, Pathway, and Duration */}
-                <div className="flex flex-wrap items-center gap-2.5 pt-1 border-t border-border/60">
-                  <span className="text-xs font-semibold text-muted-foreground flex items-center gap-1 shrink-0 mr-1">
-                    <Filter size={13} className="text-[#007A6B]" /> Filters:
-                  </span>
-
-                  {/* Award Type Filter */}
-                  <select
-                    value={selectedAward}
-                    onChange={e => setSelectedAward(e.target.value)}
-                    className="h-8 px-3 rounded-lg border border-border bg-card text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B] cursor-pointer"
-                  >
-                    {AWARDS.map(a => (
-                      <option key={a.label} value={a.value}>
-                        {a.label}
-                      </option>
-                    ))}
-                  </select>
-
-                  {/* Study Pathway Filter */}
-                  <select
-                    value={selectedPathway}
-                    onChange={e => setSelectedPathway(e.target.value)}
-                    className="h-8 px-3 rounded-lg border border-border bg-card text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B] cursor-pointer"
-                  >
-                    {PATHWAYS.map(p => (
-                      <option key={p.label} value={p.value}>
-                        {p.label}
-                      </option>
-                    ))}
-                  </select>
-
-                  {/* Duration Filter */}
-                  <select
-                    value={selectedDuration}
-                    onChange={e => setSelectedDuration(e.target.value)}
-                    className="h-8 px-3 rounded-lg border border-border bg-card text-xs text-foreground focus:outline-none focus:ring-1 focus:ring-[#007A6B] cursor-pointer"
-                  >
-                    {DURATIONS.map(d => (
-                      <option key={d.label} value={d.value}>
-                        {d.label}
-                      </option>
-                    ))}
-                  </select>
-
-                  {/* Reset Filters button if any are active */}
-                  {hasActiveFilters && (
-                    <button
-                      onClick={resetAllFilters}
-                      className="h-8 px-2.5 rounded-lg text-xs font-medium text-[#007A6B] dark:text-[#00C4AD] hover:bg-muted flex items-center gap-1 transition-colors"
-                    >
-                      <RotateCcw size={12} /> Clear all
-                    </button>
-                  )}
-                </div>
-              </div>
-
-              {/* Discipline Quick Chips */}
-              <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 scrollbar-none">
-                {DISCIPLINES.map(d => {
-                  const active = selectedDiscipline === d.query;
-                  return (
-                    <button
-                      key={d.label}
-                      onClick={() => setSelectedDiscipline(d.query)}
-                      className={`px-3.5 py-2 rounded-xl text-xs sm:text-[12.5px] font-semibold whitespace-nowrap transition-all shrink-0 ${
-                        active
-                          ? "bg-[#003C3C] dark:bg-[#00A693] text-white shadow-xs"
-                          : "bg-muted/70 text-muted-foreground hover:bg-muted hover:text-foreground border border-border/50"
-                      }`}
-                    >
-                      {d.label}
-                    </button>
-                  );
-                })}
               </div>
             </div>
 
-            {/* ── Course Cards Grid ─────────────────────────────────────────── */}
-            <div>
-              {catalogMode === "myCourses" ? (
-                <div className="space-y-4">
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-3 px-1">
-                    <span>
-                      Showing <strong>{filteredCourses.length}</strong> enrolled modules · 2026/27 Academic Year
-                    </span>
-                    <span className="hidden sm:inline text-xs">Exeter Learning Environment (ELE 2)</span>
-                  </div>
+            {/* ── Courses Count & Grid ───────────────────────────────────── */}
+            <div className="space-y-4">
+              <div className="flex items-center justify-between text-xs sm:text-sm text-muted-foreground px-1">
+                <span>
+                  Showing <strong>{filteredCourses.length}</strong> of <strong>{MOCK_COURSES.length}</strong> enrolled modules
+                </span>
+                <span className="text-xs">Exeter Learning Environment (ELE 2)</span>
+              </div>
 
-                  {filteredCourses.length === 0 ? (
-                    <div className="bg-card border border-border rounded-2xl p-12 text-center text-muted-foreground shadow-xs">
-                      <Search size={40} className="mx-auto mb-3 opacity-30 text-[#007A6B]" />
-                      <p className="font-semibold text-foreground text-base">No enrolled courses match your criteria</p>
-                      <p className="text-sm mt-1">Try clearing your search query or reset the filter.</p>
-                      <button
-                        onClick={() => { setSearch(""); setFilterView("All"); }}
-                        className="mt-4 px-4 py-2 rounded-xl bg-[#007A6B] text-white text-xs font-semibold hover:bg-[#006a5d] transition-colors"
+              {filteredCourses.length === 0 ? (
+                <div className="bg-card border border-border rounded-2xl p-12 text-center text-muted-foreground shadow-xs">
+                  <Search size={36} className="mx-auto mb-3 opacity-30 text-[#007A6B]" />
+                  <p className="font-semibold text-foreground text-base">No modules match your filter</p>
+                  <p className="text-sm mt-1">Try clearing your search query or reset the term selection.</p>
+                  <button
+                    onClick={resetAllFilters}
+                    className="mt-4 px-4 py-2 rounded-xl bg-[#007A6B] text-white text-xs font-semibold hover:bg-[#006a5d] transition-colors"
+                  >
+                    Reset Filters
+                  </button>
+                </div>
+              ) : cardLayout === "Card" ? (
+                /* Card Layout */
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
+                  {filteredCourses.map(course => {
+                    const hasLocalNotes = course.sections.some(s =>
+                      s.resources.some(r => r.fileUrl?.startsWith("/materials/"))
+                    );
+                    const totalSheets = course.sections
+                      .flatMap(s => s.resources)
+                      .filter(r => r.category === "problem_sheet").length;
+
+                    return (
+                      <div
+                        key={course.id}
+                        onClick={() => onSelectCourse(course)}
+                        className="bg-card border border-border rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-[#007A6B] active:scale-[0.99] cursor-pointer transition-all flex flex-col group"
                       >
-                        Reset Filter
-                      </button>
-                    </div>
-                  ) : cardLayout === "Card" ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-                      {filteredCourses.map(course => (
-                        <div
-                          key={course.id}
-                          onClick={() => onSelectCourse ? onSelectCourse(course) : onSelectProgramme(course.code)}
-                          className="bg-card border border-border rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-[#007A6B] active:scale-[0.99] cursor-pointer transition-all flex flex-col group"
-                        >
-                          {/* Thumbnail Geometric Header Banner */}
-                          <div className="h-28 sm:h-36 relative overflow-hidden rounded-t-2xl">
-                            <EleGeometricPattern seed={course.code} height="100%" />
-                            <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                              <span className="px-2 py-0.5 rounded-md bg-[#00C4AD] text-[#003C3C] text-xs font-mono font-bold shadow-xs">
-                                {course.code}
-                              </span>
-                              <span className="px-2 py-0.5 rounded-md bg-black/40 backdrop-blur-xs text-white text-[11px] font-medium">
-                                {course.term}
-                              </span>
-                            </div>
+                        {/* Thumbnail Geometric Header Banner */}
+                        <div className="h-28 sm:h-36 relative overflow-hidden rounded-t-2xl">
+                          <EleGeometricPattern seed={course.code} height="100%" />
+                          <div className="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap">
+                            <span className="px-2 py-0.5 rounded-md bg-[#00C4AD] text-[#003C3C] text-xs font-mono font-bold shadow-xs">
+                              {course.code}
+                            </span>
+                            <span className="px-2 py-0.5 rounded-md bg-black/40 backdrop-blur-xs text-white text-[11px] font-medium">
+                              {course.term}
+                            </span>
                           </div>
 
-                          {/* Course Information */}
-                          <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-                            <div>
-                              <h3 className="text-[16.5px] sm:text-[15px] font-bold text-[#007A6B] dark:text-[#00C4AD] group-hover:underline transition-all leading-snug line-clamp-2 mb-1.5">
-                                {course.title}
-                              </h3>
-                              <p className="text-xs text-muted-foreground font-medium">
-                                {course.convenor.name} · Stage {course.stage} · {course.credits} Credits
-                              </p>
-
-                              {/* Term Progress Bar */}
-                              <div className="mt-3 space-y-1">
-                                <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-                                  <span>Course Progress</span>
-                                  <span className="font-semibold text-foreground">{course.progressPercentage}%</span>
-                                </div>
-                                <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
-                                  <div
-                                    className="h-full bg-[#007A6B] dark:bg-[#00C4AD] rounded-full transition-all duration-300"
-                                    style={{ width: `${course.progressPercentage}%` }}
-                                  />
-                                </div>
-                              </div>
-
-                              {/* Badges: Past Papers & Deadlines */}
-                              <div className="flex items-center gap-2 mt-3 flex-wrap">
-                                <span className="px-2 py-0.5 rounded-md bg-muted text-[11px] font-medium text-foreground border border-border">
-                                  {course.examPapers?.length || 8} Past Papers
-                                </span>
-                                {(course.deadlines?.length || 0) > 0 && (
-                                  <span className="px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-600 dark:text-rose-400 text-[11px] font-medium border border-rose-500/20">
-                                    {course.deadlines?.length} Deadlines
-                                  </span>
-                                )}
-                              </div>
-                            </div>
-
-                            <div className="mt-4 pt-3 border-t border-border/70 flex items-center justify-between text-xs text-muted-foreground">
-                              <span className="font-bold text-sm text-[#007A6B] dark:text-[#00C4AD] group-hover:translate-x-0.5 transition-transform flex items-center gap-1.5">
-                                Open Course Hub <ArrowRight size={15} />
+                          {hasLocalNotes && (
+                            <div className="absolute top-3 right-3">
+                              <span className="px-2 py-0.5 rounded-md bg-emerald-500/90 text-white text-[10px] font-bold shadow-xs flex items-center gap-1">
+                                <FileCheck size={10} /> Local PDF
                               </span>
-                              <button
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  if (onSelectCourse) onSelectCourse(course);
-                                  else onSelectProgramme(course.code);
-                                }}
-                                className="p-1.5 hover:text-foreground text-muted-foreground rounded-lg"
-                                title="Course options"
-                              >
-                                <MoreVertical size={18} />
-                              </button>
                             </div>
-                          </div>
+                          )}
                         </div>
-                      ))}
-                    </div>
-                  ) : (
-                    /* List View for My Courses */
-                    <div className="bg-card border border-border rounded-2xl divide-y divide-border shadow-xs overflow-hidden">
-                      {filteredCourses.map(course => (
-                        <div
-                          key={course.id}
-                          onClick={() => onSelectCourse ? onSelectCourse(course) : onSelectProgramme(course.code)}
-                          className="p-4 hover:bg-muted/40 transition-colors cursor-pointer flex items-center justify-between gap-4"
-                        >
-                          <div className="min-w-0 flex-1">
-                            <div className="flex items-center gap-2 mb-0.5">
-                              <span className="text-xs font-mono font-bold text-[#007A6B] dark:text-[#00C4AD]">
-                                {course.code}
-                              </span>
-                              <span className="text-[11px] text-muted-foreground">
-                                · {course.term} · {course.convenor.name}
-                              </span>
-                            </div>
-                            <h3 className="text-[15px] font-semibold text-foreground hover:text-[#007A6B] transition-colors truncate">
+
+                        {/* Course Information */}
+                        <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                          <div>
+                            <h3 className="text-[16px] sm:text-[15px] font-bold text-[#007A6B] dark:text-[#00C4AD] group-hover:underline transition-all leading-snug line-clamp-2 mb-1.5">
                               {course.title}
                             </h3>
+                            <p className="text-xs text-muted-foreground font-medium">
+                              {course.convenor.name} · Stage {course.stage} · {course.credits} Credits
+                            </p>
+
+                            {/* Term Progress Bar */}
+                            <div className="mt-3 space-y-1">
+                              <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+                                <span>Course Progress</span>
+                                <span className="font-semibold text-foreground">{course.progressPercentage}%</span>
+                              </div>
+                              <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
+                                <div
+                                  className="h-full bg-[#007A6B] dark:bg-[#00C4AD] rounded-full transition-all duration-300"
+                                  style={{ width: `${course.progressPercentage}%` }}
+                                />
+                              </div>
+                            </div>
+
+                            {/* Badges: Past Papers, Sheets */}
+                            <div className="flex items-center gap-2 mt-3 flex-wrap">
+                              <span className="px-2 py-0.5 rounded-md bg-muted text-[11px] font-medium text-foreground border border-border">
+                                {course.examPapers?.length || 8} Past Papers
+                              </span>
+                              {totalSheets > 0 && (
+                                <span className="px-2 py-0.5 rounded-md bg-muted text-[11px] font-medium text-foreground border border-border">
+                                  {totalSheets} Sheets
+                                </span>
+                              )}
+                              {(course.deadlines?.length || 0) > 0 && (
+                                <span className="px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-600 dark:text-rose-400 text-[11px] font-medium border border-rose-500/20">
+                                  {course.deadlines?.length} Deadlines
+                                </span>
+                              )}
+                            </div>
                           </div>
-                          <div className="flex items-center gap-3">
-                            <span className="text-xs font-bold text-[#007A6B] dark:text-[#00C4AD]">
-                              {course.progressPercentage}%
+
+                          <div className="mt-4 pt-3 border-t border-border/70 flex items-center justify-between text-xs text-muted-foreground">
+                            <span className="font-bold text-sm text-[#007A6B] dark:text-[#00C4AD] group-hover:translate-x-0.5 transition-transform flex items-center gap-1.5">
+                              Open Module Hub <ArrowRight size={15} />
                             </span>
-                            <ArrowRight size={16} className="text-[#007A6B] shrink-0" />
+                            <button
+                              onClick={e => {
+                                e.stopPropagation();
+                                onSelectCourse(course);
+                              }}
+                              className="p-1.5 hover:text-foreground text-muted-foreground rounded-lg"
+                              title="Open module"
+                            >
+                              <MoreVertical size={16} />
+                            </button>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  )}
+                      </div>
+                    );
+                  })}
                 </div>
               ) : (
-                /* ── All 1,245 Degree Programmes Grid ──────────────────────── */
-                <div>
-                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-3 px-1">
-                    <span>
-                      Showing <strong>{filtered.length === 0 ? 0 : (safePage - 1) * pageSize + 1}–{Math.min(safePage * pageSize, filtered.length)}</strong> of <strong>{filtered.length}</strong> programmes ({pageSize} per page)
-                    </span>
-                    <span className="hidden sm:inline text-xs">Page {safePage} of {totalPages} · University of Exeter</span>
-                  </div>
-
-                  {filtered.length === 0 ? (
-                    <div className="bg-card border border-border rounded-2xl p-12 text-center text-muted-foreground shadow-xs">
-                      <Search size={40} className="mx-auto mb-3 opacity-30 text-[#007A6B]" />
-                      <p className="font-semibold text-foreground text-base">No courses found matching your criteria</p>
-                      <p className="text-sm mt-1">Try clearing filters or search by a degree keyword like "Maths", "CS", or "Law".</p>
-                      {hasActiveFilters && (
-                        <button
-                          onClick={resetAllFilters}
-                          className="mt-4 px-4 py-2 rounded-xl bg-[#007A6B] text-white text-xs font-semibold hover:bg-[#006a5d] transition-colors"
-                        >
-                          Reset All Filters
-                        </button>
-                      )}
-                    </div>
-                  ) : cardLayout === "Card" ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-                      {paginated.map(p => (
-                        <div
-                          key={p.code}
-                          onClick={() => onSelectProgramme(p.code)}
-                          className="bg-card border border-border rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-[#007A6B] active:scale-[0.99] cursor-pointer transition-all flex flex-col group"
-                        >
-                          {/* Thumbnail Geometric Header Banner with rounded-t-2xl */}
-                          <div className="h-28 sm:h-36 relative overflow-hidden rounded-t-2xl">
-                            <EleGeometricPattern seed={p.code} height="100%" />
-                          </div>
-
-                          {/* Course Information */}
-                          <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-                            <div>
-                              {/* Course Title with ELE Teal Link styling */}
-                              <h3 className="text-[16.5px] sm:text-[15px] font-bold text-[#007A6B] dark:text-[#00C4AD] group-hover:underline transition-all leading-snug line-clamp-2 mb-1.5">
-                                {p.label}
-                              </h3>
-                              {/* Course Code / Dept */}
-                              <p className="text-xs sm:text-[12px] text-muted-foreground font-mono font-medium">
-                                {p.code} · Undergraduate & Master's
-                              </p>
-                            </div>
-
-                            <div className="mt-4 pt-3 border-t border-border/70 flex items-center justify-between text-xs text-muted-foreground">
-                              <span className="font-bold text-sm text-[#007A6B] dark:text-[#00C4AD] group-hover:translate-x-0.5 transition-transform flex items-center gap-1.5">
-                                Launch Planner <ArrowRight size={15} />
-                              </span>
-                              <button
-                                onClick={e => {
-                                  e.stopPropagation();
-                                  onSelectProgramme(p.code);
-                                }}
-                                className="p-1.5 hover:text-foreground text-muted-foreground rounded-lg"
-                                title="Course options"
-                              >
-                                <MoreVertical size={18} />
-                              </button>
-                            </div>
-                          </div>
+                /* List Layout */
+                <div className="bg-card border border-border rounded-2xl divide-y divide-border shadow-xs overflow-hidden">
+                  {filteredCourses.map(course => (
+                    <div
+                      key={course.id}
+                      onClick={() => onSelectCourse(course)}
+                      className="p-4 hover:bg-muted/40 transition-colors cursor-pointer flex items-center justify-between gap-4"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2 mb-0.5">
+                          <span className="text-xs font-mono font-bold text-[#007A6B] dark:text-[#00C4AD]">
+                            {course.code}
+                          </span>
+                          <span className="text-[11px] text-muted-foreground">
+                            · {course.term} · {course.convenor.name} · {course.credits} Credits
+                          </span>
                         </div>
-                      ))}
-                    </div>
-                  ) : (
-                    /* List View option */
-                    <div className="bg-card border border-border rounded-2xl divide-y divide-border shadow-xs overflow-hidden">
-                      {paginated.map(p => (
-                        <div
-                          key={p.code}
-                          onClick={() => onSelectProgramme(p.code)}
-                          className="p-4 hover:bg-muted/40 transition-colors cursor-pointer flex items-center justify-between gap-4"
-                        >
-                          <div className="min-w-0 flex-1">
-                            <span className="text-xs font-mono font-bold text-[#007A6B] dark:text-[#00C4AD] block mb-0.5">
-                              {p.code}
-                            </span>
-                            <h3 className="text-[15px] font-semibold text-foreground hover:text-[#007A6B] transition-colors truncate">
-                              {p.label}
-                            </h3>
-                            <p className="text-xs text-muted-foreground mt-0.5">
-                              University of Exeter · 2026/27 Academic Year
-                            </p>
-                          </div>
-                          <ArrowRight size={16} className="text-[#007A6B] shrink-0" />
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* ── 12-Item Pagination Controls Bar ──────────────────────────── */}
-                  {totalPages > 1 && (
-                    <div className="mt-6 flex flex-wrap items-center justify-between gap-3 bg-card border border-border rounded-2xl px-5 py-3.5 shadow-xs">
-                      <div className="text-xs text-muted-foreground">
-                        Page <strong>{safePage}</strong> of <strong>{totalPages}</strong> ({filtered.length} total programmes)
+                        <h3 className="text-[15px] font-semibold text-foreground hover:text-[#007A6B] transition-colors truncate">
+                          {course.title}
+                        </h3>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <button
-                          onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                          disabled={safePage === 1}
-                          className="px-3.5 py-1.5 rounded-xl border border-border bg-card text-xs font-medium text-foreground hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 transition-colors"
-                        >
-                          <ChevronLeft size={14} /> Previous
-                        </button>
-
-                        {/* Quick page numbers */}
-                        <div className="hidden sm:flex items-center gap-1">
-                          {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                            let pageNum = safePage <= 3 ? i + 1 : safePage >= totalPages - 2 ? totalPages - 4 + i : safePage - 2 + i;
-                            if (pageNum < 1 || pageNum > totalPages) return null;
-                            const isCurrent = pageNum === safePage;
-                            return (
-                              <button
-                                key={pageNum}
-                                onClick={() => setCurrentPage(pageNum)}
-                                className={`w-8 h-8 rounded-xl text-xs font-semibold flex items-center justify-center transition-colors ${
-                                  isCurrent
-                                    ? "bg-[#003C3C] text-white shadow-2xs"
-                                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                                }`}
-                              >
-                                {pageNum}
-                              </button>
-                            );
-                          })}
-                        </div>
-
-                        <button
-                          onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                          disabled={safePage === totalPages}
-                          className="px-3.5 py-1.5 rounded-xl border border-border bg-card text-xs font-medium text-foreground hover:bg-muted disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1 transition-colors"
-                        >
-                          Next <ChevronRight size={14} />
-                        </button>
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs font-bold text-[#007A6B] dark:text-[#00C4AD]">
+                          {course.progressPercentage}%
+                        </span>
+                        <ArrowRight size={16} className="text-[#007A6B] shrink-0" />
                       </div>
                     </div>
-                  )}
+                  ))}
                 </div>
               )}
             </div>
 
-            {/* ── Footer Info matching ELE ────────────────────────────────────── */}
+            {/* ── Footer ──────────────────────────────────────────────── */}
             <div className="border-t border-border pt-6 pb-12 text-xs text-muted-foreground flex flex-wrap items-center justify-between gap-4">
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-xs">
                 <button
                   type="button"
                   onClick={onOpenAccessibility}
-                  className="hover:underline hover:text-foreground transition-colors text-left text-xs"
+                  className="hover:underline hover:text-foreground transition-colors text-left text-xs cursor-pointer"
                 >
                   Accessibility Settings
                 </button>
-                <button
-                  type="button"
-                  onClick={onOpenPrivacy}
-                  className="hover:underline hover:text-foreground transition-colors text-left text-xs"
+                <a
+                  href="https://library.exeter.ac.uk/exampapers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-foreground transition-colors text-xs flex items-center gap-1"
                 >
-                  Privacy Policy
-                </button>
-                <button
-                  type="button"
-                  onClick={onOpenTerms}
-                  className="hover:underline hover:text-foreground transition-colors text-left text-xs"
-                >
-                  Terms of Service
-                </button>
-                <button
-                  type="button"
-                  onClick={onOpenCookies}
-                  className="hover:underline hover:text-foreground transition-colors text-left text-xs"
-                >
-                  Cookie Preferences
-                </button>
-                <a href="https://ele.exeter.ac.uk/course/view.php?id=27644" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-foreground transition-colors text-xs">
-                  ELE Support
+                  Exeter Exam Library <ExternalLink size={11} />
                 </a>
-                <a href="https://www.exeter.ac.uk/study/" target="_blank" rel="noopener noreferrer" className="hover:underline hover:text-foreground transition-colors text-xs">
-                  Exeter Study Guide
+                <a
+                  href="https://mytimetable.exeter.ac.uk/schedule"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-foreground transition-colors text-xs flex items-center gap-1"
+                >
+                  MyTimetable <ExternalLink size={11} />
+                </a>
+                <a
+                  href="https://srs.exeter.ac.uk/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-foreground transition-colors text-xs flex items-center gap-1"
+                >
+                  Student Records (SITS) <ExternalLink size={11} />
+                </a>
+                <a
+                  href="https://outlook.office.com/mail/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline hover:text-foreground transition-colors text-xs flex items-center gap-1"
+                >
+                  University Email <ExternalLink size={11} />
                 </a>
               </div>
               <div className="text-left sm:text-right text-[11px] text-muted-foreground">
-                <span className="font-semibold text-foreground/80 block">Unofficial Student Advisory Tool</span>
-                <span>Not affiliated with, endorsed by, or operated by the University of Exeter.</span>
+                <span className="font-semibold text-foreground/80 block">ELE 2 · Samuel's Personal Learning Hub</span>
+                <span>Fast, offline-ready course companion.</span>
               </div>
             </div>
           </div>
 
-          {/* ── Right Sidebar (4 cols on lg) matching ELE screenshot ──────────── */}
+          {/* ── Right Sidebar (4 cols on lg) ──────────────────────────── */}
           <div className="hidden lg:block lg:col-span-4 space-y-6 lg:sticky lg:top-6 lg:self-start">
 
-            {/* 1. Search Courses Box */}
-            <div className="bg-card border border-border rounded-2xl p-5 shadow-xs">
-              <div className="flex items-center gap-0 overflow-hidden border border-border rounded-xl">
-                <input
-                  type="text"
-                  value={sidebarSearch}
-                  onChange={e => setSidebarSearch(e.target.value)}
-                  placeholder="Search courses"
-                  className="w-full h-10 px-3 text-[12.5px] bg-card text-foreground focus:outline-none"
-                />
-                <button
-                  onClick={() => setSearch(sidebarSearch)}
-                  className="h-10 px-4 bg-[#003C3C] hover:bg-[#004d4d] text-white flex items-center justify-center transition-colors"
-                  title="Search courses"
-                >
-                  <Search size={16} />
-                </button>
-              </div>
-              <div className="mt-2.5">
-                <a
-                  href="https://ele.exeter.ac.uk/course/index.php?categoryid=297"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium text-[#007A6B] dark:text-[#00C4AD] hover:underline inline-flex items-center gap-1"
-                >
-                  Course Index <ExternalLink size={12} />
-                </a>
-              </div>
-            </div>
-
-            {/* 2. Monthly Calendar Widget matching ELE screenshot */}
+            {/* 1. Monthly Calendar Widget */}
             <div className="bg-card border border-border rounded-2xl p-5 shadow-xs relative">
               <div className="flex items-center justify-between mb-4">
                 <button
@@ -1135,7 +610,7 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
                   </div>
                 ))}
 
-                {/* Event Hover/Click Popover matching media_1788869113630.png */}
+                {/* Event Popover */}
                 {hoveredDayEvents && (
                   <div
                     onMouseLeave={() => setHoveredDayEvents(null)}
@@ -1204,7 +679,7 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
                 )}
               </div>
 
-              {/* Links below calendar connected to full modal */}
+              {/* Links below calendar */}
               <div className="mt-4 pt-3 border-t border-border/70 text-xs text-muted-foreground flex items-center justify-center gap-2 flex-wrap">
                 <button
                   onClick={() => onOpenCalendarModal?.("calendar")}
@@ -1217,12 +692,12 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
                   onClick={() => onOpenCalendarModal?.("manage")}
                   className="hover:underline text-[#007A6B] dark:text-[#00C4AD] font-medium cursor-pointer"
                 >
-                  Import or export calendars
+                  Import or export
                 </button>
               </div>
             </div>
 
-            {/* 3. Upcoming Events Widget dynamically populated from MyTimetable feed */}
+            {/* 2. Upcoming Events Widget dynamically populated from MyTimetable */}
             <div className="bg-card border border-border rounded-2xl p-5 shadow-xs text-sm space-y-3">
               <div className="flex items-center justify-between">
                 <h3 className="font-bold text-foreground text-[15px]">Upcoming Events</h3>
@@ -1295,20 +770,20 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
               </button>
             </div>
 
-            {/* 4. Help & Support Card */}
+            {/* 3. Quick Tips Card */}
             <div className="bg-muted/40 border border-border rounded-2xl p-4 text-xs text-muted-foreground space-y-2">
               <div className="flex items-center gap-2 font-bold text-foreground text-sm">
-                <HelpCircle size={16} className="text-[#007A6B]" />
-                <span>Need timetable help?</span>
+                <Sparkles size={16} className="text-[#007A6B] dark:text-[#00C4AD]" />
+                <span>ELE 2 Quick Tip</span>
               </div>
               <p className="leading-relaxed">
-                Check module specifications and prerequisites directly in the Exeter Study Guide or launch the command palette with <kbd className="font-mono bg-card px-1.5 py-0.5 border border-border rounded-md text-[11px]">⌘K</kbd>.
+                Click any module to open its lecture notes, problem sheets, and past papers. Offline materials stored in <code className="font-mono bg-card px-1 py-0.5 rounded text-[11px]">/materials/</code> load instantly without internet.
               </p>
             </div>
           </div>
         </div>
 
-        {/* Floating Accessibility icon in bottom right (matching ELE screenshot cyan icon) */}
+        {/* Floating Accessibility icon in bottom right */}
         <div className="fixed bottom-6 right-6 z-20">
           <button
             type="button"

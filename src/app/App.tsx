@@ -20,10 +20,6 @@ import { useTimetable } from "../api/timetable";
 import { TimetableCalendarModal } from "./components/TimetableCalendarModal";
 import { IntroSplash } from "./components/IntroSplash";
 import { AccessibilityModal, applyA11ySettings, DEFAULT_A11Y_SETTINGS } from "./components/AccessibilityModal";
-import { PrivacyPolicyModal } from "./components/PrivacyPolicyModal";
-import { TermsModal } from "./components/TermsModal";
-import { CookieBanner } from "./components/CookieBanner";
-import { FreeElectiveModal } from "./components/FreeElectiveModal";
 import { MobilePlannerView } from "./components/MobilePlannerView";
 import { ModuleDiscoveryModal } from "./components/ModuleDiscoveryModal";
 import type { DiscoveryState } from "./utils/moduleDiscovery";
@@ -2656,7 +2652,7 @@ export default function App() {
                 alt="University of Exeter"
                 className="h-8 w-auto shrink-0"
               />
-              <span className="font-bold text-sm tracking-tight text-white">Programme Planner</span>
+              <span className="font-bold text-sm tracking-tight text-white">ELE 2</span>
             </div>
 
             <div className="flex items-center gap-2">
@@ -2843,7 +2839,7 @@ export default function App() {
               <div
                 onClick={() => setProgrammeCode(null)}
                 className="flex items-center gap-2 cursor-pointer hover:opacity-90 transition-opacity shrink-0 py-2"
-                title="Return to Programme Planner Dashboard"
+                title="Return to Dashboard"
               >
                 <img
                   src="https://www.exeter.ac.uk/v8media/recruitmentsites/images/homepage/uoe-logo.svg"
@@ -3418,8 +3414,8 @@ export default function App() {
                   className="flex items-center gap-1.5 p-1 rounded-md hover:bg-white/10 cursor-pointer group transition-colors"
                   title="Exeter Student Profile"
                 >
-                  <div className="w-8 h-8 rounded-full bg-white text-[#003C3C] flex items-center justify-center font-bold text-xs shadow-xs select-none">
-                    <User size={16} />
+                  <div className="w-8 h-8 rounded-full bg-white text-[#003C3C] flex items-center justify-center font-bold text-xs shadow-xs select-none tracking-tight">
+                    SO
                   </div>
                   <ChevronDown size={12} className="text-white group-hover:text-white transition-colors" />
                 </button>
@@ -3427,15 +3423,15 @@ export default function App() {
                 {openNavDropdown === "profile" && (
                   <div
                     onClick={e => e.stopPropagation()}
-                    className="absolute right-0 top-full mt-1.5 w-56 bg-card border border-border rounded-2xl shadow-xl py-2 z-50 text-foreground text-[13px]"
+                    className="absolute right-0 top-full mt-1.5 w-60 bg-card border border-border rounded-2xl shadow-xl py-2 z-50 text-foreground text-[13px]"
                   >
                     <div className="px-4 py-2 border-b border-border/60 flex items-center gap-2.5">
-                      <div className="w-8 h-8 rounded-full bg-[#003C3C] text-white flex items-center justify-center font-bold text-xs">
-                        <User size={16} />
+                      <div className="w-8 h-8 rounded-full bg-[#003C3C] text-white flex items-center justify-center font-bold text-xs select-none">
+                        SO
                       </div>
                       <div className="min-w-0">
-                        <div className="font-bold text-foreground text-[13px] truncate">Student User</div>
-                        <div className="text-[11px] text-muted-foreground truncate">University of Exeter</div>
+                        <div className="font-bold text-foreground text-[13px] truncate">Samuel</div>
+                        <div className="text-[11px] text-muted-foreground truncate">MMath Mathematics · Stage 2</div>
                       </div>
                     </div>
                     <div className="py-1">
@@ -3542,23 +3538,19 @@ export default function App() {
 
         {/* ── Body ─────────────────────────────────────────────────── */}
         <div className="flex-1 flex overflow-hidden print:hidden">
-          {/* Landing page: authentic ELE dashboard with all 1,245 programmes */}
-          {!programmeCode && !selectedCourse && (
+          {/* Landing page: Samuel's ELE 2 Dashboard */}
+          {!selectedCourse && (
             <EleDashboardHero
-              onSelectProgramme={handleSelectProgramme}
               onSelectCourse={course => setSelectedCourse(course)}
-              recentProgrammes={recentProgrammes}
+              recentCourseCodes={recentProgrammes}
               timetableEvents={timetable.events}
               onOpenCalendarModal={handleOpenCalendarModal}
               onOpenAccessibility={() => setIsA11yModalOpen(true)}
-              onOpenPrivacy={() => setIsPrivacyModalOpen(true)}
-              onOpenTerms={() => setIsTermsModalOpen(true)}
-              onOpenCookies={() => setIsCookieBannerForced(true)}
             />
           )}
 
           {/* Dedicated ELE Module Course Hub */}
-          {!programmeCode && selectedCourse && (
+          {selectedCourse && (
             <EleCourseView
               course={selectedCourse}
               onBack={() => setSelectedCourse(null)}
@@ -3837,31 +3829,6 @@ export default function App() {
           onClose={() => setIsA11yModalOpen(false)}
         />
 
-        {/* Privacy Policy Modal */}
-        <PrivacyPolicyModal
-          isOpen={isPrivacyModalOpen}
-          onClose={() => setIsPrivacyModalOpen(false)}
-        />
-
-        {/* Terms of Service Modal */}
-        <TermsModal
-          isOpen={isTermsModalOpen}
-          onClose={() => setIsTermsModalOpen(false)}
-        />
-
-        {/* Free Elective Picker Modal */}
-        <FreeElectiveModal
-          isOpen={freeElectiveModalStage !== null}
-          onClose={() => setFreeElectiveModalStage(null)}
-          stage={freeElectiveModalStage ?? 2}
-          programmeTitle={currentProgramme.title}
-          programmeDept={currentProgramme.dept}
-          coreModulePrefixes={coreModulePrefixes}
-          currentElective={freeElectiveModalStage ? freeElectives[freeElectiveModalStage] || null : null}
-          onSelectElective={handleSelectFreeElective}
-          onRemoveElective={handleRemoveFreeElective}
-        />
-
         {/* Exeter In-App PDF Reader & Presentation Engine */}
         {activePdfReader && (
           <ExeterPdfReader
@@ -3872,14 +3839,6 @@ export default function App() {
             onClose={() => setActivePdfReader(null)}
           />
         )}
-
-        {/* Cookie Consent Banner */}
-        <CookieBanner
-          onOpenPrivacy={() => setIsPrivacyModalOpen(true)}
-          onOpenTerms={() => setIsTermsModalOpen(true)}
-          forceShow={isCookieBannerForced}
-          onDismissForce={() => setIsCookieBannerForced(false)}
-        />
       </div>
     </RewindModeContext.Provider>
   );
