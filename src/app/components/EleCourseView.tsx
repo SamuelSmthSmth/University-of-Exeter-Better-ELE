@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import {
   ArrowLeft,
   BookOpen,
@@ -18,17 +18,13 @@ import {
   Video,
   X,
   AlertCircle,
-  CheckCircle2,
-  Circle,
-  Timer,
-  Trophy,
+  Check,
 } from 'lucide-react';
 import { Course, CourseResource, ExamPaper, PanoptoRecording } from '../../types';
 import { EleGeometricPattern } from './EleGeometricPattern';
 import { pairProblemSheets } from '../../services/vfs';
 import { generateCandidatePapers } from '../../api/examPapers';
 import { PanoptoNativePlayer } from './PanoptoNativePlayer';
-import { MockExamTimer } from './MockExamTimer';
 
 interface EleCourseViewProps {
   course: Course;
@@ -50,7 +46,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
   const [examSearch, setExamSearch] = useState('');
 
   // Paper Completion & Score Tracker state
-  const [paperProgress, setPaperProgress] = useState<Record<string, { status: 'not-started' | 'in-progress' | 'completed'; score?: number }>>(() => {
+  const [paperProgress, setPaperProgress] = useState<Record<string, { status: 'not-started' | 'completed'; score?: number }>>(() => {
     try {
       const saved = localStorage.getItem(`better_ele_paper_progress_${course.code}`);
       return saved ? JSON.parse(saved) : {};
@@ -59,16 +55,50 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
     }
   });
 
-  const [activeMockExam, setActiveMockExam] = useState<{ paperTitle: string; minutes: number } | null>(null);
   const [editingScorePaperId, setEditingScorePaperId] = useState<string | null>(null);
   const [scoreInputVal, setScoreInputVal] = useState<string>('');
 
+  // Initial tab & recording from URL parameters
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const tabParam = params.get('tab') as TabType;
+    if (tabParam && ['notes', 'sheets', 'exams', 'panopto'].includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+    const panoptoParam = params.get('panopto');
+    if (panoptoParam && course.recordings) {
+      const found = course.recordings.find(r => r.id === panoptoParam);
+      if (found) setActivePanopto(found);
+    }
+  }, [course]);
+
+  // Tab switch with URL sync
+  const handleTabChange = (tab: TabType) => {
+    setActiveTab(tab);
+    const url = new URL(window.location.href);
+    url.searchParams.set('tab', tab);
+    window.history.replaceState(null, '', url.toString());
+  };
+
+  // Panopto player selection with URL sync
+  const handleSelectPanopto = (rec: PanoptoRecording | null) => {
+    setActivePanopto(rec);
+    const url = new URL(window.location.href);
+    if (rec) {
+      url.searchParams.set('tab', 'panopto');
+      url.searchParams.set('panopto', rec.id);
+    } else {
+      url.searchParams.delete('panopto');
+    }
+    window.history.replaceState(null, '', url.toString());
+  };
+
+  // Toggle paper completion: dark circle <-> green checked
   const togglePaperStatus = (paperId: string, e: React.MouseEvent) => {
     e.stopPropagation();
     setPaperProgress(prev => {
       const current = prev[paperId]?.status || 'not-started';
-      const nextStatus: 'not-started' | 'in-progress' | 'completed' =
-        current === 'not-started' ? 'in-progress' : current === 'in-progress' ? 'completed' : 'not-started';
+      const nextStatus: 'not-started' | 'completed' = current === 'completed' ? 'not-started' : 'completed';
       const updated = {
         ...prev,
         [paperId]: {
@@ -84,6 +114,10 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
   };
 
   const handleSaveScore = (paperId: string, scoreNum: number) => {
+    if (isNaN(scoreNum)) {
+      setEditingScorePaperId(null);
+      return;
+    }
     setPaperProgress(prev => {
       const updated = {
         ...prev,
@@ -116,8 +150,6 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
     return pairProblemSheets(allResources);
   }, [allResources]);
 
-
-
   // Exam papers (Jan & May only - no August papers)
   const examPapers = useMemo(() => {
     const list = course.examPapers && course.examPapers.length > 0 
@@ -136,33 +168,6 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
       return matchesSession && matchesQuery;
     });
   }, [course, examSessionFilter, examSearch]);
-
-  // Revision progress & readiness stats
-  const examStats = useMemo(() => {
-    const total = examPapers.length;
-    let completedCount = 0;
-    let inProgressCount = 0;
-    let totalScore = 0;
-    let scoredCount = 0;
-
-    examPapers.forEach(p => {
-      const prog = paperProgress[p.id];
-      if (prog?.status === 'completed') {
-        completedCount++;
-        if (typeof prog.score === 'number' && !isNaN(prog.score)) {
-          totalScore += prog.score;
-          scoredCount++;
-        }
-      } else if (prog?.status === 'in-progress') {
-        inProgressCount++;
-      }
-    });
-
-    const completionPct = total > 0 ? Math.round((completedCount / total) * 100) : 0;
-    const avgScore = scoredCount > 0 ? Math.round(totalScore / scoredCount) : null;
-
-    return { total, completedCount, inProgressCount, completionPct, avgScore };
-  }, [examPapers, paperProgress]);
 
   // Mock Panopto recordings if not present
   const panoptoRecordings: PanoptoRecording[] = useMemo(() => {
@@ -280,7 +285,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
         <div className="flex items-center gap-2 border-b border-border pb-1 overflow-x-auto scrollbar-none">
           {/* 1. Lecture Notes */}
           <button
-            onClick={() => setActiveTab('notes')}
+            onClick={() => handleTabChange('notes')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
               activeTab === 'notes'
                 ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs'
@@ -298,7 +303,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
 
           {/* 2. Problem Sheets */}
           <button
-            onClick={() => setActiveTab('sheets')}
+            onClick={() => handleTabChange('sheets')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
               activeTab === 'sheets'
                 ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs'
@@ -316,7 +321,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
 
           {/* 3. Past Papers */}
           <button
-            onClick={() => setActiveTab('exams')}
+            onClick={() => handleTabChange('exams')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
               activeTab === 'exams'
                 ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs'
@@ -334,7 +339,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
 
           {/* 4. Panopto Recordings */}
           <button
-            onClick={() => setActiveTab('panopto')}
+            onClick={() => handleTabChange('panopto')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
               activeTab === 'panopto'
                 ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] shadow-xs'
@@ -487,76 +492,9 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
           </div>
         )}
 
-        {/* ── TAB 3: Past Papers (Revision Workspace & Mock Exam Mode) ──── */}
+        {/* ── TAB 3: Past Papers ────────────────────────────────────────── */}
         {activeTab === 'exams' && (
           <div className="space-y-4">
-            {/* Revision Readiness Overview Banner */}
-            <div className="bg-card border border-border rounded-2xl p-4 sm:p-5 shadow-xs">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                <div className="space-y-1">
-                  <div className="flex items-center gap-2">
-                    <Trophy size={16} className="text-[#007A6B] dark:text-[#00C4AD]" />
-                    <h3 className="text-sm font-bold tracking-tight text-foreground">
-                      Module Exam Readiness Tracker
-                    </h3>
-                  </div>
-                  <p className="text-xs text-muted-foreground">
-                    Track completed papers, record mock exam percentages, and sit timed 2-hour practice sessions.
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-3 flex-wrap">
-                  {/* Summary Metric Chips */}
-                  <div className="px-3 py-1.5 rounded-xl bg-muted border border-border/80 text-xs flex items-center gap-2">
-                    <span className="text-muted-foreground">Completed:</span>
-                    <span className="font-mono font-bold text-foreground">
-                      {examStats.completedCount} / {examStats.total}
-                    </span>
-                  </div>
-
-                  <div className="px-3 py-1.5 rounded-xl bg-muted border border-border/80 text-xs flex items-center gap-2">
-                    <span className="text-muted-foreground">Avg Score:</span>
-                    <span className={`font-mono font-bold ${
-                      examStats.avgScore !== null && examStats.avgScore >= 70
-                        ? 'text-emerald-500'
-                        : examStats.avgScore !== null
-                        ? 'text-[#00C4AD]'
-                        : 'text-muted-foreground'
-                    }`}>
-                      {examStats.avgScore !== null ? `${examStats.avgScore}%` : 'N/A'}
-                    </span>
-                  </div>
-
-                  {/* Start Mock Exam Mode Button */}
-                  <button
-                    type="button"
-                    onClick={() => setActiveMockExam({
-                      paperTitle: `${course.code} Timed Practice Exam`,
-                      minutes: 120
-                    })}
-                    className="px-3.5 py-1.5 rounded-xl bg-[#007A6B] hover:bg-[#006a5d] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-xs cursor-pointer"
-                  >
-                    <Timer size={14} />
-                    <span>Start Mock Exam (2h)</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Visual Progress Bar */}
-              <div className="mt-4 pt-3 border-t border-border/60">
-                <div className="flex items-center justify-between text-[11px] font-mono text-muted-foreground mb-1.5">
-                  <span>Revision Progress</span>
-                  <span className="font-bold text-foreground">{examStats.completionPct}%</span>
-                </div>
-                <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-[#007A6B] to-[#00C4AD] transition-all duration-300"
-                    style={{ width: `${examStats.completionPct}%` }}
-                  />
-                </div>
-              </div>
-            </div>
-
             {/* Session filter chips & Search */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-2">
@@ -598,14 +536,22 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
                 {examPapers.map(paper => {
                   const prog = paperProgress[paper.id] || { status: 'not-started' };
                   const isEditingThisScore = editingScorePaperId === paper.id;
+                  const isCompleted = prog.status === 'completed';
 
                   return (
                     <div
                       key={paper.id}
-                      className="group bg-card border border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD] rounded-xl p-4 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+                      onClick={() =>
+                        onOpenDocument({
+                          id: paper.id,
+                          title: paper.title,
+                          url: paper.pdfUrl,
+                        })
+                      }
+                      className="group bg-card border border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD] rounded-xl p-4 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between cursor-pointer"
                     >
                       <div>
-                        {/* Header: Session Badge & Completion Status Toggle */}
+                        {/* Header: Session Badge & Circular Completion Toggle */}
                         <div className="flex items-center justify-between gap-2 mb-3">
                           <span className="px-2.5 py-1 rounded bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] font-mono font-bold text-xs uppercase">
                             {paper.session} {paper.year}
@@ -614,127 +560,85 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
                           <button
                             type="button"
                             onClick={(e) => togglePaperStatus(paper.id, e)}
-                            className="transition-transform active:scale-95 cursor-pointer"
-                            title="Click to cycle status: Not Started → In Progress → Completed"
+                            className="transition-transform active:scale-90 cursor-pointer p-0.5 rounded-full"
+                            title={isCompleted ? "Mark as uncompleted" : "Mark as completed"}
                           >
-                            {prog.status === 'completed' ? (
-                              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center gap-1 border border-emerald-500/30">
-                                <CheckCircle2 size={11} /> Completed
-                              </span>
-                            ) : prog.status === 'in-progress' ? (
-                              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center gap-1 border border-amber-500/30">
-                                <Circle size={10} className="fill-amber-500/50" /> In Progress
-                              </span>
-                            ) : (
-                              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-muted text-muted-foreground border border-border">
-                                Not Started
-                              </span>
-                            )}
+                            <span
+                              className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
+                                isCompleted
+                                  ? 'bg-[#00C4AD] border-2 border-[#00C4AD] text-[#003C3C] shadow-xs'
+                                  : 'border-2 border-muted-foreground/30 hover:border-foreground/60 bg-transparent'
+                              }`}
+                            >
+                              {isCompleted && <Check size={13} strokeWidth={3} />}
+                            </span>
                           </button>
                         </div>
 
-                        <h4 className="text-sm font-semibold text-foreground line-clamp-2">
+                        <h4 className="text-sm font-semibold text-foreground line-clamp-2 group-hover:text-[#007A6B] dark:group-hover:text-[#00C4AD] transition-colors">
                           {paper.title}
                         </h4>
                         <p className="text-[11px] font-mono text-muted-foreground mt-1">
                           {paper.filename}
                         </p>
-
-                        {/* Score Section */}
-                        <div className="mt-3 pt-2.5 border-t border-border/40 flex items-center justify-between text-xs">
-                          <span className="text-muted-foreground text-[11px]">Mock Score:</span>
-                          {isEditingThisScore ? (
-                            <div className="flex items-center gap-1" onClick={e => e.stopPropagation()}>
-                              <input
-                                type="number"
-                                min={0}
-                                max={100}
-                                autoFocus
-                                placeholder="%"
-                                value={scoreInputVal}
-                                onChange={e => setScoreInputVal(e.target.value)}
-                                onKeyDown={e => {
-                                  if (e.key === 'Enter') {
-                                    const num = parseInt(scoreInputVal, 10);
-                                    if (!isNaN(num)) handleSaveScore(paper.id, num);
-                                  } else if (e.key === 'Escape') {
-                                    setEditingScorePaperId(null);
-                                  }
-                                }}
-                                className="w-14 px-1.5 py-0.5 rounded bg-muted border border-border text-xs text-foreground font-mono focus:outline-none focus:border-[#007A6B]"
-                              />
-                              <button
-                                type="button"
-                                onClick={() => {
-                                  const num = parseInt(scoreInputVal, 10);
-                                  if (!isNaN(num)) handleSaveScore(paper.id, num);
-                                }}
-                                className="px-1.5 py-0.5 rounded bg-[#007A6B] text-white text-[11px] font-semibold cursor-pointer"
-                              >
-                                Save
-                              </button>
-                            </div>
-                          ) : (
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                setEditingScorePaperId(paper.id);
-                                setScoreInputVal(typeof prog.score === 'number' ? String(prog.score) : '');
-                              }}
-                              className="text-xs font-mono font-semibold hover:underline cursor-pointer"
-                              title="Click to record or update your score"
-                            >
-                              {typeof prog.score === 'number' ? (
-                                <span className="px-2 py-0.5 rounded bg-[#00C4AD]/15 text-[#007A6B] dark:text-[#00C4AD] font-bold">
-                                  {prog.score}%
-                                </span>
-                              ) : (
-                                <span className="text-muted-foreground text-[11px] hover:text-[#007A6B] dark:hover:text-[#00C4AD]">
-                                  + Record Score
-                                </span>
-                              )}
-                            </button>
-                          )}
-                        </div>
                       </div>
 
-                      {/* Card Action Row */}
-                      <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between gap-2">
-                        <button
-                          type="button"
-                          onClick={() =>
-                            onOpenDocument({
-                              id: paper.id,
-                              title: paper.title,
-                              url: paper.pdfUrl,
-                            })
-                          }
-                          className="px-2.5 py-1.5 rounded-lg bg-[#007A6B]/15 hover:bg-[#007A6B]/25 text-[#007A6B] dark:text-[#00C4AD] text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
-                        >
-                          <span>Open Paper</span>
-                          <span>→</span>
-                        </button>
-
-                        <button
-                          type="button"
-                          onClick={() => {
-                            onOpenDocument({
-                              id: paper.id,
-                              title: paper.title,
-                              url: paper.pdfUrl,
-                            });
-                            setActiveMockExam({
-                              paperTitle: `${paper.session} ${paper.year} – ${paper.title}`,
-                              minutes: 120,
-                            });
-                          }}
-                          className="px-2.5 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer border border-neutral-700"
-                          title="Open paper and start 2-hour exam countdown"
-                        >
-                          <Timer size={12} className="text-[#00C4AD]" />
-                          <span>Sit Mock (2h)</span>
-                        </button>
+                      {/* Score Section */}
+                      <div className="mt-4 pt-3 border-t border-border/40 flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground text-[11px]">Score</span>
+                        {isEditingThisScore ? (
+                          <div className="flex items-center gap-1.5" onClick={e => e.stopPropagation()}>
+                            <input
+                              type="number"
+                              min={0}
+                              max={100}
+                              autoFocus
+                              placeholder="%"
+                              value={scoreInputVal}
+                              onChange={e => setScoreInputVal(e.target.value)}
+                              onKeyDown={e => {
+                                if (e.key === 'Enter') {
+                                  const num = parseInt(scoreInputVal, 10);
+                                  if (!isNaN(num)) handleSaveScore(paper.id, num);
+                                } else if (e.key === 'Escape') {
+                                  setEditingScorePaperId(null);
+                                }
+                              }}
+                              className="w-14 px-2 py-0.5 rounded bg-muted border border-border text-xs text-foreground font-mono focus:outline-none focus:border-[#007A6B] dark:focus:border-[#00C4AD]"
+                            />
+                            <button
+                              type="button"
+                              onClick={() => {
+                                const num = parseInt(scoreInputVal, 10);
+                                if (!isNaN(num)) handleSaveScore(paper.id, num);
+                              }}
+                              className="px-2 py-0.5 rounded bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C] text-[11px] font-bold cursor-pointer"
+                            >
+                              Save
+                            </button>
+                          </div>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setEditingScorePaperId(paper.id);
+                              setScoreInputVal(typeof prog.score === 'number' ? String(prog.score) : '');
+                            }}
+                            className="text-xs font-mono font-semibold hover:underline cursor-pointer"
+                            title="Click to record or update score"
+                          >
+                            {typeof prog.score === 'number' ? (
+                              <span className="px-2 py-0.5 rounded bg-[#00C4AD]/15 text-[#007A6B] dark:text-[#00C4AD] font-bold">
+                                {prog.score}%
+                              </span>
+                            ) : (
+                              <span className="text-muted-foreground text-[11px] hover:text-[#007A6B] dark:hover:text-[#00C4AD]">
+                                + Log score
+                              </span>
+                            )}
+                          </button>
+                        )}
                       </div>
                     </div>
                   );
@@ -751,7 +655,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             {activePanopto && (
               <PanoptoNativePlayer
                 recording={activePanopto}
-                onClose={() => setActivePanopto(null)}
+                onClose={() => handleSelectPanopto(null)}
               />
             )}
 
@@ -809,7 +713,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
                     <div className="mt-4 pt-3 border-t border-border flex items-center justify-between gap-2">
                       <button
                         type="button"
-                        onClick={() => setActivePanopto(rec)}
+                        onClick={() => handleSelectPanopto(rec)}
                         className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer ${
                           isCurrentActive
                             ? 'bg-[#003C3C] dark:bg-[#00C4AD] text-white dark:text-[#003C3C]'
@@ -838,15 +742,6 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
         )}
 
       </div>
-
-      {/* Floating Mock Exam Timer */}
-      {activeMockExam && (
-        <MockExamTimer
-          paperTitle={activeMockExam.paperTitle}
-          initialMinutes={activeMockExam.minutes}
-          onClose={() => setActiveMockExam(null)}
-        />
-      )}
     </div>
   );
 };

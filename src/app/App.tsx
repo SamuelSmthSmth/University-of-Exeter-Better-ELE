@@ -28,6 +28,7 @@ import { useIsDesktop } from "./hooks/useIsDesktop";
 import { EleCourseView } from "./components/EleCourseView";
 import { DocumentSidePanel, OpenDocument } from "./components/reader/DocumentSidePanel";
 import { Course } from "../types";
+import { MOCK_COURSES } from "../data/mockCourses";
 export { useIsDesktop };
 
 // ═══════════════════════════════════════════════════════════════════
@@ -2042,6 +2043,46 @@ export default function App() {
     setOpenDocuments([]);
   }, []);
 
+  // Handle course navigation with URL parameter sync
+  const handleSelectCourse = useCallback((course: Course) => {
+    setSelectedCourse(course);
+    const url = new URL(window.location.href);
+    url.searchParams.set("module", course.code);
+    window.history.pushState(null, "", url.toString());
+  }, []);
+
+  const handleBackToDashboard = useCallback(() => {
+    setSelectedCourse(null);
+    const url = new URL(window.location.href);
+    url.searchParams.delete("module");
+    url.searchParams.delete("tab");
+    url.searchParams.delete("panopto");
+    window.history.pushState(null, "", url.toString());
+  }, []);
+
+  // Sync active module from URL parameters on initial load & browser popstate (back/forward)
+  useEffect(() => {
+    const syncFromUrl = () => {
+      const params = new URLSearchParams(window.location.search);
+      const modQuery = params.get("module") || params.get("course");
+      if (modQuery) {
+        const clean = modQuery.trim().toLowerCase();
+        const found = MOCK_COURSES.find(
+          c => c.code.toLowerCase() === clean || c.title.toLowerCase().includes(clean)
+        );
+        if (found) {
+          setSelectedCourse(found);
+          return;
+        }
+      }
+      setSelectedCourse(null);
+    };
+
+    syncFromUrl();
+    window.addEventListener("popstate", syncFromUrl);
+    return () => window.removeEventListener("popstate", syncFromUrl);
+  }, []);
+
   // Keep mobile experience focused on Course Structure
   useEffect(() => {
     if (!isDesktop && view === "tree") {
@@ -2208,7 +2249,12 @@ export default function App() {
       if (params.has('view')) { params.delete('view'); changed = true; }
     }
 
-    if (activeCode) {
+    if (selectedCourse) {
+      if (params.get('module') !== selectedCourse.code) {
+        params.set('module', selectedCourse.code);
+        changed = true;
+      }
+    } else if (activeCode) {
       if (params.get('module') !== activeCode) { params.set('module', activeCode); changed = true; }
     } else {
       if (params.has('module')) { params.delete('module'); changed = true; }
@@ -2224,7 +2270,7 @@ export default function App() {
       const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
       window.history.pushState({}, '', newUrl);
     }
-  }, [programmeCode, view, activeCode, searchQuery]);
+  }, [programmeCode, view, activeCode, searchQuery, selectedCourse]);
 
   const handleSelectProgramme = (code: string) => {
     setProgrammeCode(code);
@@ -2860,7 +2906,7 @@ export default function App() {
               <button
                 onClick={() => {
                   setProgrammeCode(null);
-                  setSelectedCourse(null);
+                  handleBackToDashboard();
                 }}
                 className={`h-9 px-3 rounded-xl flex items-center gap-1.5 text-xs font-bold transition-all cursor-pointer ${
                   !programmeCode && !selectedCourse
@@ -3551,7 +3597,7 @@ export default function App() {
             {/* Landing page: Samuel's ELE 2 Dashboard */}
             {!selectedCourse && (
               <EleDashboardHero
-                onSelectCourse={course => setSelectedCourse(course)}
+                onSelectCourse={handleSelectCourse}
                 recentCourseCodes={recentProgrammes}
                 timetableEvents={timetable.events}
                 onOpenCalendarModal={handleOpenCalendarModal}
@@ -3563,7 +3609,7 @@ export default function App() {
             {selectedCourse && (
               <EleCourseView
                 course={selectedCourse}
-                onBack={() => setSelectedCourse(null)}
+                onBack={handleBackToDashboard}
                 onOpenDocument={handleOpenDocument}
                 onOpenCalendarModal={handleOpenCalendarModal}
               />
