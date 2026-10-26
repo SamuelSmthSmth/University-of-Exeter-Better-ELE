@@ -89,7 +89,7 @@ export function IntroSplash() {
           </span>
 
           <h1 className="mt-1 text-2xl font-black text-white tracking-tight">
-            ELE 2
+            ELE 3
           </h1>
 
           <p className="mt-1 text-xs text-emerald-100/70 font-medium">
@@ -239,7 +239,7 @@ export function IntroSplash() {
             animation: "exeterLogoFadeIn 0.18s ease-out 0.04s both",
           }}
         >
-          ELE 2
+          ELE 3
         </h1>
       </div>
     </div>

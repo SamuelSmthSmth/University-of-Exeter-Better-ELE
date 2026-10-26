@@ -10,10 +10,7 @@ import {
   FileSpreadsheet, Map as MapIcon, Check, ExternalLink, Accessibility, Sparkles, User, Menu, Calendar,
   Heart, Settings
 } from "lucide-react";
-import { PrintView } from "./PrintView";
 import { EleGeometricPattern } from "./components/EleGeometricPattern";
-import { ModuleComparisonDrawer } from "./components/ModuleComparisonDrawer";
-import { TermBalanceAdvisor } from "./components/TermBalanceAdvisor";
 import { EleDashboardHero } from "./components/EleDashboardHero";
 import { useTimetable } from "../api/timetable";
 import { TimetableCalendarModal } from "./components/TimetableCalendarModal";
@@ -21,7 +18,6 @@ import { IntroSplash } from "./components/IntroSplash";
 import { AccessibilityModal, applyA11ySettings, DEFAULT_A11Y_SETTINGS } from "./components/AccessibilityModal";
 import { PreferencesModal } from "./components/PreferencesModal";
 import { shouldRunDailySync, checkAllModules } from "../services/syncService";
-import { MobilePlannerView } from "./components/MobilePlannerView";
 import { ModuleDiscoveryModal } from "./components/ModuleDiscoveryModal";
 import type { DiscoveryState } from "./utils/moduleDiscovery";
 import { useIsDesktop } from "./hooks/useIsDesktop";
@@ -2660,17 +2656,7 @@ export default function App() {
         <IntroSplash />
 
 
-        {/* Module Comparison Drawer */}
-        {showComparisonDrawer && comparisonCodes.length > 0 && (
-          <ModuleComparisonDrawer
-            moduleCodes={comparisonCodes}
-            moduleMap={moduleMap}
-            selected={selected}
-            onToggle={toggleModule}
-            onRemove={c => setComparisonCodes(prev => prev.filter(code => code !== c))}
-            onClose={() => setShowComparisonDrawer(false)}
-          />
-        )}
+
 
         {showShareModal && (
           <ShareModal
@@ -2706,7 +2692,7 @@ export default function App() {
                 alt="University of Exeter"
                 className="h-8 w-auto shrink-0"
               />
-              <span className="font-bold text-sm tracking-tight text-white">ELE 2</span>
+              <span className="font-bold text-sm tracking-tight text-white">ELE 3</span>
             </div>
 
             <div className="flex items-center gap-2">
@@ -3646,15 +3632,7 @@ export default function App() {
             <>
               {isDesktop ? (
                 <>
-                  {/* Left Sidebar: Term Balance & Workload Advisor */}
-                  <div className="w-80 shrink-0 border-r border-border bg-sidebar overflow-y-auto">
-                    <TermBalanceAdvisor
-                      sel={selected}
-                      programme={currentProgramme}
-                      modules={modules}
-                      stageReqs={stageReqs}
-                    />
-                  </div>
+
 
                   {/* Centre Workspace */}
                   <div className="flex-1 overflow-y-auto bg-[#f4f4f4] dark:bg-background">
@@ -3718,48 +3696,7 @@ export default function App() {
                     </div>
                   </div>
                 </>
-              ) : (
-                <MobilePlannerView
-                  sel={selected}
-                  onToggle={toggleModule}
-                  onSelect={setActiveCode}
-                  activeCode={activeCode}
-                  onCloseActive={() => setActiveCode(null)}
-                  programme={currentProgramme}
-                  modules={modules}
-                  moduleMap={moduleMap}
-                  stageReqs={stageReqs}
-                  onAddToCompare={handleToggleCompare}
-                  comparisonCodes={comparisonCodes}
-                  freeElectives={freeElectives}
-                  onOpenFreeElectiveModal={stg => setFreeElectiveModalStage(stg)}
-                  onRemoveFreeElective={handleRemoveFreeElective}
-                  onBackToDashboard={() => setProgrammeCode(null)}
-                  plans={plans}
-                  activePlanId={activePlanId}
-                  onSwitchPlan={switchPlan}
-                  onCreatePlan={createNewPlan}
-                  onExportPdf={() => {
-                    setPrintMode("full");
-                    setShowPrintModal(false);
-                    setTimeout(() => window.print(), 300);
-                  }}
-                  onExportCsv={exportPlanToCsv}
-                  onShare={() => setShowShareModal(true)}
-                  onResetPlan={() => {
-                    if (confirm("Reset all selected modules for this plan?")) {
-                      if (isRewindMode) setTargetModules(new Set());
-                      else setManualSelected(new Set());
-                    }
-                  }}
-                  timetableEvents={timetable.events}
-                  onOpenTimetableModal={() => handleOpenCalendarModal("calendar")}
-                  dark={dark}
-                  onToggleDark={toggleDark}
-                  onOpenDiscoveryModal={() => setIsDiscoveryOpen(true)}
-                  discoveryLikes={new Set(discoveryState.liked)}
-                />
-              )}
+              ) : null}
             </>
           )}
           </div>
@@ -3831,15 +3768,7 @@ export default function App() {
           </div>
         )}
 
-        {programmeCode && (
-          <PrintView
-            programme={currentProgramme}
-            modules={modules}
-            stageReqs={stageReqs}
-            selected={selected}
-            printMode={printMode}
-          />
-        )}
+
 
         {/* Exeter Student MyTimetable Synchronization & Calendar Modal */}
         <TimetableCalendarModal

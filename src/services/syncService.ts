@@ -1,5 +1,5 @@
 /**
- * Better ELE 2 Automated Sync & Differential Change Tracker
+ * Better ELE 3 Automated Sync & Differential Change Tracker
  * Tracks module file hashes, downloads only new/modified materials,
  * logs all changes, and supports automated daily checks.
  */
@@ -143,7 +143,7 @@ export async function checkAllModules(
   onProgress?: (progress: number, currentModule: string, statusMsg: string) => void
 ): Promise<SyncLogEntry[]> {
   const notify = onProgress || (() => {});
-  notify(15, 'Sync Manager', 'Connecting to ELE 2 & Panopto API...');
+  notify(15, 'Sync Manager', 'Connecting to ELE 3 & Panopto API...');
 
   let returnedLogs: SyncLogEntry[] = [];
 

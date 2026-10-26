@@ -315,7 +315,7 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
                 <span>
                   Showing <strong>{filteredCourses.length}</strong> of <strong>{MOCK_COURSES.length}</strong> enrolled modules
                 </span>
-                <span className="text-xs">Exeter Learning Environment (ELE 2)</span>
+                <span className="text-xs">Exeter Learning Environment (ELE 3)</span>
               </div>
 
               {filteredCourses.length === 0 ? (
@@ -434,7 +434,7 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
                 </a>
               </div>
               <div className="text-left sm:text-right text-[11px] text-muted-foreground">
-                <span className="font-semibold text-foreground/80 block">ELE 2 · Samuel's Personal Learning Hub</span>
+                <span className="font-semibold text-foreground/80 block">ELE 3 · Samuel's Personal Learning Hub</span>
                 <span>Fast, offline-ready course companion.</span>
               </div>
             </div>
@@ -676,7 +676,7 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
             <div className="bg-muted/40 border border-border rounded-2xl p-4 text-xs text-muted-foreground space-y-2">
               <div className="flex items-center gap-2 font-bold text-foreground text-sm">
                 <Sparkles size={16} className="text-[#007A6B] dark:text-[#00C4AD]" />
-                <span>ELE 2 Quick Tip</span>
+                <span>ELE 3 Quick Tip</span>
               </div>
               <p className="leading-relaxed">
                 Click any module to open its lecture notes, problem sheets, and past papers. Offline materials stored in <code className="font-mono bg-card px-1 py-0.5 rounded text-[11px]">/materials/</code> load instantly without internet.

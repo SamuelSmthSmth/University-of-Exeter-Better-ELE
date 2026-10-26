@@ -175,7 +175,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({ isOpen, onCl
                 <div>
                   <p className="font-semibold text-foreground text-xs sm:text-sm">Automated Daily Sync</p>
                   <p className="text-xs text-muted-foreground">
-                    Automatically checks ELE 2 course tiles once every 24 hours when the app is launched.
+                    Automatically checks ELE 3 course tiles once every 24 hours when the app is launched.
                   </p>
                 </div>
                 <button

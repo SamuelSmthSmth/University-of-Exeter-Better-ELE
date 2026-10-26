@@ -23,7 +23,7 @@ class RootErrorBoundary extends Component<Props, State> {
   }
 
   public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error("Uncaught Programme Planner Runtime Error:", error, errorInfo);
+    console.error("Uncaught ELE 3 Runtime Error:", error, errorInfo);
   }
 
   public render() {
@@ -54,10 +54,10 @@ class RootErrorBoundary extends Component<Props, State> {
             }}
           >
             <h2 style={{ margin: "0 0 10px 0", fontSize: "20px", fontWeight: "bold" }}>
-              Programme Planner Notice
+              ELE 3 Notice
             </h2>
             <p style={{ margin: "0 0 18px 0", fontSize: "14px", opacity: 0.85, lineHeight: 1.5 }}>
-              A display error occurred while rendering. You can reload the page or reset the local planner cache.
+              A display error occurred while rendering. You can reload the page or reset the local cache.
             </p>
             {this.state.error && (
               <pre
