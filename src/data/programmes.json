@@ -1,0 +1,4982 @@
+[
+  {
+    "code": "UFS3GOAGOACF",
+    "label": "BA (Hons) / BSc (Hons) Geography  (Full-Time)"
+  },
+  {
+    "code": "UFS4GOAGOACD",
+    "label": "BA (Hons) / BSc (Hons) Geography with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4GOAGOACC",
+    "label": "BA (Hons) / BSc (Hons) Geography with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHCTH05",
+    "label": "BA (Hons) Ancient History  (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHGOA01",
+    "label": "BA (Hons) Ancient History and Archaeology  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHHPS02",
+    "label": "BA (Hons) Ancient History and Archaeology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHHPS03",
+    "label": "BA (Hons) Ancient History and Archaeology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHGOA01",
+    "label": "BA (Hons) Ancient History and Archaeology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH15",
+    "label": "BA (Hons) Ancient History with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH16",
+    "label": "BA (Hons) Ancient History with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH07",
+    "label": "BA (Hons) Ancient History with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS30",
+    "label": "BA (Hons) Anthropology  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS70",
+    "label": "BA (Hons) Anthropology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS69",
+    "label": "BA (Hons) Anthropology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS40",
+    "label": "BA (Hons) Anthropology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4IAIHPS01",
+    "label": "BA (Hons) Arabic and Politics  (Full-Time)"
+  },
+  {
+    "code": "UFA4IAIIAI09",
+    "label": "BA (Hons) Arabic with Islamic and Middle East Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3GOAGOA07",
+    "label": "BA (Hons) Archaeology  (Full-Time)"
+  },
+  {
+    "code": "UFA3GOAGOA08",
+    "label": "BA (Hons) Archaeology and Anthropology  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS56",
+    "label": "BA (Hons) Archaeology and Anthropology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS57",
+    "label": "BA (Hons) Archaeology and Anthropology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4GOAGOA08",
+    "label": "BA (Hons) Archaeology and Anthropology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS54",
+    "label": "BA (Hons) Archaeology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS55",
+    "label": "BA (Hons) Archaeology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4GOAGOA07",
+    "label": "BA (Hons) Archaeology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSVCU02",
+    "label": "BA (Hons) Art History and Visual Culture  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSCTH04",
+    "label": "BA (Hons) Art History and Visual Culture and Classical Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH06",
+    "label": "BA (Hons) Art History and Visual Culture and Classical Studies with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH07",
+    "label": "BA (Hons) Art History and Visual Culture and Classical Studies with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH03",
+    "label": "BA (Hons) Art History and Visual Culture and Classical Studies with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSPA01",
+    "label": "BA (Hons) Art History and Visual Culture and Drama  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSDRA01",
+    "label": "BA (Hons) Art History and Visual Culture and Drama with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSDRA02",
+    "label": "BA (Hons) Art History and Visual Culture and Drama with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSPA01",
+    "label": "BA (Hons) Art History and Visual Culture and Drama with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSEGL02",
+    "label": "BA (Hons) Art History and Visual Culture and English  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSEGL03",
+    "label": "BA (Hons) Art History and Visual Culture and English with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSEGL04",
+    "label": "BA (Hons) Art History and Visual Culture and English with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSEGL02",
+    "label": "BA (Hons) Art History and Visual Culture and English with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3SMLEGL01",
+    "label": "BA (Hons) Art History and Visual Culture and Film and Television Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLEGL01",
+    "label": "BA (Hons) Art History and Visual Culture and Film and Television Studies with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLEGL02",
+    "label": "BA (Hons) Art History and Visual Culture and Film and Television Studies with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLEGL03",
+    "label": "BA (Hons) Art History and Visual Culture and Film and Television Studies with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3AHVMLX02",
+    "label": "BA (Hons) Art History and Visual Culture and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3SMLSML20",
+    "label": "BA (Hons) Art History and Visual Culture and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4AHVMLX02",
+    "label": "BA (Hons) Art History and Visual Culture and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS37",
+    "label": "BA (Hons) Art History and Visual Culture and History  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS85",
+    "label": "BA (Hons) Art History and Visual Culture and History with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS86",
+    "label": "BA (Hons) Art History and Visual Culture and History with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS84",
+    "label": "BA (Hons) Art History and Visual Culture and History with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3AHVMLX01",
+    "label": "BA (Hons) Art History and Visual Culture and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML15",
+    "label": "BA (Hons) Art History and Visual Culture and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML37",
+    "label": "BA (Hons) Art History and Visual Culture and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4AHVMLX01",
+    "label": "BA (Hons) Art History and Visual Culture and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS58",
+    "label": "BA (Hons) Art History and Visual Culture with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS59",
+    "label": "BA (Hons) Art History and Visual Culture with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSVCU02",
+    "label": "BA (Hons) Art History and Visual Culture with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHCTH11",
+    "label": "BA (Hons) Classical Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHEGL01",
+    "label": "BA (Hons) Classical Studies and English  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHEGL02",
+    "label": "BA (Hons) Classical Studies and English with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHEGL03",
+    "label": "BA (Hons) Classical Studies and English with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHEGL01",
+    "label": "BA (Hons) Classical Studies and English with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CLAMLX02",
+    "label": "BA (Hons) Classical Studies and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHSML02",
+    "label": "BA (Hons) Classical Studies and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4CLAMLX02",
+    "label": "BA (Hons) Classical Studies and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3CLAMLX01",
+    "label": "BA (Hons) Classical Studies and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHSML01",
+    "label": "BA (Hons) Classical Studies and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHSML07",
+    "label": "BA (Hons) Classical Studies and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4CLAMLX01",
+    "label": "BA (Hons) Classical Studies and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHHPS01",
+    "label": "BA (Hons) Classical Studies and Philosophy  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHHPS04",
+    "label": "BA (Hons) Classical Studies and Philosophy with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHHPS05",
+    "label": "BA (Hons) Classical Studies and Philosophy with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHHPS01",
+    "label": "BA (Hons) Classical Studies and Philosophy with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHCTH17",
+    "label": "BA (Hons) Classical Studies and Religion  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH26",
+    "label": "BA (Hons) Classical Studies and Religion with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH27",
+    "label": "BA (Hons) Classical Studies and Religion with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH25",
+    "label": "BA (Hons) Classical Studies and Religion with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHCTH12",
+    "label": "BA (Hons) Classical Studies and Theology  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH17",
+    "label": "BA (Hons) Classical Studies and Theology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH18",
+    "label": "BA (Hons) Classical Studies and Theology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH03",
+    "label": "BA (Hons) Classical Studies and Theology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH11",
+    "label": "BA (Hons) Classical Studies with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH12",
+    "label": "BA (Hons) Classical Studies with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH02",
+    "label": "BA (Hons) Classical Studies with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHCTH02",
+    "label": "BA (Hons) Classics  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH13",
+    "label": "BA (Hons) Classics with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH14",
+    "label": "BA (Hons) Classics with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH01",
+    "label": "BA (Hons) Classics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLEGL16",
+    "label": "BA (Hons) Communications  (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLSML09",
+    "label": "BA (Hons) Communications and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLSML17",
+    "label": "BA (Hons) Communications and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLSML08",
+    "label": "BA (Hons) Communications and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLSML15",
+    "label": "BA (Hons) Communications and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL27",
+    "label": "BA (Hons) Communications with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL28",
+    "label": "BA (Hons) Communications with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL26",
+    "label": "BA (Hons) Communications with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3SMLSML21",
+    "label": "BA (Hons) Comparative Literatures and Cultures  (Full-Time)"
+  },
+  {
+    "code": "UFA3MLXMLX03",
+    "label": "BA (Hons) Comparative Literatures and Cultures and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4MLXMLX03",
+    "label": "BA (Hons) Comparative Literatures and Cultures and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLSML48",
+    "label": "BA (Hons) Comparative Literatures and Cultures with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLSML47",
+    "label": "BA (Hons) Comparative Literatures and Cultures with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLSML49",
+    "label": "BA (Hons) Comparative Literatures and Cultures with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3SPASPA01",
+    "label": "BA (Hons) Drama  (Full-Time)"
+  },
+  {
+    "code": "UFA3DRAEGL01",
+    "label": "BA (Hons) Drama and Film and Television Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4DRAEGL02",
+    "label": "BA (Hons) Drama and Film and Television Studies with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4DRAEGL03",
+    "label": "BA (Hons) Drama and Film and Television Studies with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4DRAEGL01",
+    "label": "BA (Hons) Drama and Film and Television Studies with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4DRADRA01",
+    "label": "BA (Hons) Drama with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4DRADRA02",
+    "label": "BA (Hons) Drama with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4SPASPA01",
+    "label": "BA (Hons) Drama with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLEGL11",
+    "label": "BA (Hons) English  (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLEGL17",
+    "label": "BA (Hons) English and Communications  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL30",
+    "label": "BA (Hons) English and Communications with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL31",
+    "label": "BA (Hons) English and Communications with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL29",
+    "label": "BA (Hons) English and Communications with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLEGL14",
+    "label": "BA (Hons) English and Creative Writing  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL24",
+    "label": "BA (Hons) English and Creative Writing with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL25",
+    "label": "BA (Hons) English and Creative Writing with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL23",
+    "label": "BA (Hons) English and Creative Writing with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLSPA02",
+    "label": "BA (Hons) English and Drama  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLDRA01",
+    "label": "BA (Hons) English and Drama with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLDRA02",
+    "label": "BA (Hons) English and Drama with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLSPA01",
+    "label": "BA (Hons) English and Drama with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLEGL13",
+    "label": "BA (Hons) English and Film and Television Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL20",
+    "label": "BA (Hons) English and Film and Television Studies with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL21",
+    "label": "BA (Hons) English and Film and Television Studies with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL22",
+    "label": "BA (Hons) English and Film and Television Studies with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLMLX02",
+    "label": "BA (Hons) English and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLMLX02",
+    "label": "BA (Hons) English and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLHPS01",
+    "label": "BA (Hons) English and History  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLHPS02",
+    "label": "BA (Hons) English and History with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLHPS03",
+    "label": "BA (Hons) English and History with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLHPS01",
+    "label": "BA (Hons) English and History with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLCMM01",
+    "label": "BA (Hons) English and Media and Communications  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLCMM02",
+    "label": "BA (Hons) English and Media and Communications with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLCMM03",
+    "label": "BA (Hons) English and Media and Communications with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLCMM01",
+    "label": "BA (Hons) English and Media and Communications with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLMLX01",
+    "label": "BA (Hons) English and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLSML05",
+    "label": "BA (Hons) English and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLSML09",
+    "label": "BA (Hons) English and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLMLX01",
+    "label": "BA (Hons) English and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL11",
+    "label": "BA (Hons) English with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL12",
+    "label": "BA (Hons) English with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL10",
+    "label": "BA (Hons) English with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLEGL06",
+    "label": "BA (Hons) English with Study in North America (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLEGLCC",
+    "label": "BA (Hons) Environmental Humanities  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGLCE",
+    "label": "BA (Hons) Environmental Humanities with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGLCF",
+    "label": "BA (Hons) Environmental Humanities with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGLCD",
+    "label": "BA (Hons) Environmental Humanities with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLEGL12",
+    "label": "BA (Hons) Film and Television Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLEGL18",
+    "label": "BA (Hons) Film and Television Studies and Communications  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL33",
+    "label": "BA (Hons) Film and Television Studies and Communications with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL34",
+    "label": "BA (Hons) Film and Television Studies and Communications with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL32",
+    "label": "BA (Hons) Film and Television Studies and Communications with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3FSTMLX02",
+    "label": "BA (Hons) Film and Television Studies and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4FSTMLX02",
+    "label": "BA (Hons) Film and Television Studies and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3FSTCMM01",
+    "label": "BA (Hons) Film and Television Studies and Media and Communications  (Full-Time)"
+  },
+  {
+    "code": "UFA4FSTCMM02",
+    "label": "BA (Hons) Film and Television Studies and Media and Communications with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4FSTCMM03",
+    "label": "BA (Hons) Film and Television Studies and Media and Communications with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4FSTCMM01",
+    "label": "BA (Hons) Film and Television Studies and Media and Communications with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3EGLSML06",
+    "label": "BA (Hons) Film and Television Studies and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3FSTMLX01",
+    "label": "BA (Hons) Film and Television Studies and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLSML11",
+    "label": "BA (Hons) Film and Television Studies and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4FSTMLX01",
+    "label": "BA (Hons) Film and Television Studies and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL17",
+    "label": "BA (Hons) Film and Television Studies with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL18",
+    "label": "BA (Hons) Film and Television Studies with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4EGLEGL19",
+    "label": "BA (Hons) Film and Television Studies with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3GOAGOA04",
+    "label": "BA (Hons) Geography  (Full-Time)"
+  },
+  {
+    "code": "UFA4GOAGOA10",
+    "label": "BA (Hons) Geography with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4GOAGOA06",
+    "label": "BA (Hons) Geography with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3MLXMLX02",
+    "label": "BA (Hons) Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3SMLSML19",
+    "label": "BA (Hons) Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLSML45",
+    "label": "BA (Hons) Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3MLXCLA02",
+    "label": "BA (Hons) Global Cultural Studies and Latin  (Full-Time)"
+  },
+  {
+    "code": "UFA3SMLCTH03",
+    "label": "BA (Hons) Global Cultural Studies and Latin  (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLCTH05",
+    "label": "BA (Hons) Global Cultural Studies and Latin  (Full-Time)"
+  },
+  {
+    "code": "UFA4MLXCLA02",
+    "label": "BA (Hons) Global Cultural Studies and Latin with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4MLXMLX02",
+    "label": "BA (Hons) Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPSCK",
+    "label": "BA (Hons) Global Politics  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCQ",
+    "label": "BA (Hons) Global Politics with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCO",
+    "label": "BA (Hons) Global Politics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CECCECCA",
+    "label": "BA (Hons) Global Sustainability (BA)  (Full-Time)"
+  },
+  {
+    "code": "UFA4CECCECCA",
+    "label": "BA (Hons) Global Sustainability (BA) with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4CECCECCB",
+    "label": "BA (Hons) Global Sustainability (BA) with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHCTH15",
+    "label": "BA (Hons) Greek and Roman Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH20",
+    "label": "BA (Hons) Greek and Roman Studies with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH21",
+    "label": "BA (Hons) Greek and Roman Studies with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH19",
+    "label": "BA (Hons) Greek and Roman Studies with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS35",
+    "label": "BA (Hons) History  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPSCF",
+    "label": "BA (Hons) History  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSCTH01",
+    "label": "BA (Hons) History and Ancient History  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSCTH05",
+    "label": "BA (Hons) History and Ancient History  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH09",
+    "label": "BA (Hons) History and Ancient History with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH10",
+    "label": "BA (Hons) History and Ancient History with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH08",
+    "label": "BA (Hons) History and Ancient History with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS36",
+    "label": "BA (Hons) History and Archaeology  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS50",
+    "label": "BA (Hons) History and Archaeology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS82",
+    "label": "BA (Hons) History and Archaeology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS51",
+    "label": "BA (Hons) History and Archaeology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS83",
+    "label": "BA (Hons) History and Archaeology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS81",
+    "label": "BA (Hons) History and Archaeology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSBECA",
+    "label": "BA (Hons) History and Business  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSBECB",
+    "label": "BA (Hons) History and Business with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSBECC",
+    "label": "BA (Hons) History and Business with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSBECA",
+    "label": "BA (Hons) History and Business with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSGOACB",
+    "label": "BA (Hons) History and Geography  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSGOACC",
+    "label": "BA (Hons) History and Geography with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSGOACD",
+    "label": "BA (Hons) History and Geography with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSGOACB",
+    "label": "BA (Hons) History and Geography with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HISMLX02",
+    "label": "BA (Hons) History and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML27",
+    "label": "BA (Hons) History and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML51",
+    "label": "BA (Hons) History and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4HISMLX02",
+    "label": "BA (Hons) History and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPSCJ",
+    "label": "BA (Hons) History and International Relations  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCL",
+    "label": "BA (Hons) History and International Relations with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCM",
+    "label": "BA (Hons) History and International Relations with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCF",
+    "label": "BA (Hons) History and International Relations with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HISMLX01",
+    "label": "BA (Hons) History and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML26",
+    "label": "BA (Hons) History and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML50",
+    "label": "BA (Hons) History and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4HISMLX01",
+    "label": "BA (Hons) History and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPSCD",
+    "label": "BA (Hons) History and Politics  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCJ",
+    "label": "BA (Hons) History and Politics with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCK",
+    "label": "BA (Hons) History and Politics with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCA",
+    "label": "BA (Hons) History and Politics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS46",
+    "label": "BA (Hons) History with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS79",
+    "label": "BA (Hons) History with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCG",
+    "label": "BA (Hons) History with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS47",
+    "label": "BA (Hons) History with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS80",
+    "label": "BA (Hons) History with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCH",
+    "label": "BA (Hons) History with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS31",
+    "label": "BA (Hons) History with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS78",
+    "label": "BA (Hons) History with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCB",
+    "label": "BA (Hons) History with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3SBESML02",
+    "label": "BA (Hons) International Business and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4SBESML03",
+    "label": "BA (Hons) International Business and Global Cultural Studies with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3SBESML01",
+    "label": "BA (Hons) International Business and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4SBESML04",
+    "label": "BA (Hons) International Business and Modern Languages with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS15",
+    "label": "BA (Hons) International Relations  (Full-Time)"
+  },
+  {
+    "code": "UFA3POLPOL02",
+    "label": "BA (Hons) International Relations  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML23",
+    "label": "BA (Hons) International Relations and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3POLMLX04",
+    "label": "BA (Hons) International Relations and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML47",
+    "label": "BA (Hons) International Relations and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4POLMLX04",
+    "label": "BA (Hons) International Relations and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML16",
+    "label": "BA (Hons) International Relations and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3POLMLX03",
+    "label": "BA (Hons) International Relations and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML32",
+    "label": "BA (Hons) International Relations and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4POLMLX03",
+    "label": "BA (Hons) International Relations and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS72",
+    "label": "BA (Hons) International Relations with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4POLPOL06",
+    "label": "BA (Hons) International Relations with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS63",
+    "label": "BA (Hons) International Relations with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4POLPOL05",
+    "label": "BA (Hons) International Relations with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS32",
+    "label": "BA (Hons) International Relations with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4POLPOL04",
+    "label": "BA (Hons) International Relations with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CMMCMM01",
+    "label": "BA (Hons) Media and Communications  (Full-Time)"
+  },
+  {
+    "code": "UFA3CMMMLX02",
+    "label": "BA (Hons) Media and Communications and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4CMMMLX02",
+    "label": "BA (Hons) Media and Communications and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3CMMMLX01",
+    "label": "BA (Hons) Media and Communications and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4CMMMLX01",
+    "label": "BA (Hons) Media and Communications and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4CMMCMM02",
+    "label": "BA (Hons) Media and Communications with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CMMCMM03",
+    "label": "BA (Hons) Media and Communications with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CMMCMM01",
+    "label": "BA (Hons) Media and Communications with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3IAIIAI06",
+    "label": "BA (Hons) Middle East Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3MLXMLX01",
+    "label": "BA (Hons) Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3SMLSML17",
+    "label": "BA (Hons) Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLSML41",
+    "label": "BA (Hons) Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLIAI06",
+    "label": "BA (Hons) Modern Languages and Arabic  (Full-Time)"
+  },
+  {
+    "code": "UFA3MLXCLA01",
+    "label": "BA (Hons) Modern Languages and Latin  (Full-Time)"
+  },
+  {
+    "code": "UFA3SMLCTH02",
+    "label": "BA (Hons) Modern Languages and Latin  (Full-Time)"
+  },
+  {
+    "code": "UFA4SMLCTH03",
+    "label": "BA (Hons) Modern Languages and Latin  (Full-Time)"
+  },
+  {
+    "code": "UFA4MLXCLA01",
+    "label": "BA (Hons) Modern Languages and Latin with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4MLXMLX01",
+    "label": "BA (Hons) Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS18",
+    "label": "BA (Hons) Philosophy  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML22",
+    "label": "BA (Hons) Philosophy and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3PHLMLX02",
+    "label": "BA (Hons) Philosophy and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML46",
+    "label": "BA (Hons) Philosophy and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4PHLMLX02",
+    "label": "BA (Hons) Philosophy and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS38",
+    "label": "BA (Hons) Philosophy and History  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS90",
+    "label": "BA (Hons) Philosophy and History with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS91",
+    "label": "BA (Hons) Philosophy and History with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS87",
+    "label": "BA (Hons) Philosophy and History with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML18",
+    "label": "BA (Hons) Philosophy and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3PHLMLX01",
+    "label": "BA (Hons) Philosophy and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML34",
+    "label": "BA (Hons) Philosophy and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4PHLMLX01",
+    "label": "BA (Hons) Philosophy and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS09",
+    "label": "BA (Hons) Philosophy and Politics  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS74",
+    "label": "BA (Hons) Philosophy and Politics with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS92",
+    "label": "BA (Hons) Philosophy and Politics with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS35",
+    "label": "BA (Hons) Philosophy and Politics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS07",
+    "label": "BA (Hons) Philosophy and Sociology  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS93",
+    "label": "BA (Hons) Philosophy and Sociology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS67",
+    "label": "BA (Hons) Philosophy and Sociology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS36",
+    "label": "BA (Hons) Philosophy and Sociology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSCTH02",
+    "label": "BA (Hons) Philosophy and Theology  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH11",
+    "label": "BA (Hons) Philosophy and Theology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH12",
+    "label": "BA (Hons) Philosophy and Theology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH01",
+    "label": "BA (Hons) Philosophy and Theology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS73",
+    "label": "BA (Hons) Philosophy with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS71",
+    "label": "BA (Hons) Philosophy with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS28",
+    "label": "BA (Hons) Philosophy with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSCTH06",
+    "label": "BA (Hons) Philosophy, Religion and Ethics  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH14",
+    "label": "BA (Hons) Philosophy, Religion and Ethics with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH15",
+    "label": "BA (Hons) Philosophy, Religion and Ethics with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSCTH13",
+    "label": "BA (Hons) Philosophy, Religion and Ethics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS39",
+    "label": "BA (Hons) Political and Philosophical Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS89",
+    "label": "BA (Hons) Political and Philosophical Studies with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS88",
+    "label": "BA (Hons) Political and Philosophical Studies with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS01",
+    "label": "BA (Hons) Politics  (Full-Time)"
+  },
+  {
+    "code": "UFA3POLPOL01",
+    "label": "BA (Hons) Politics  (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSGOACA",
+    "label": "BA (Hons) Politics and Geography  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSGOACE",
+    "label": "BA (Hons) Politics and Geography with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSGOACA",
+    "label": "BA (Hons) Politics and Geography with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3POLMLX02",
+    "label": "BA (Hons) Politics and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML48",
+    "label": "BA (Hons) Politics and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4POLMLX02",
+    "label": "BA (Hons) Politics and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPSCH",
+    "label": "BA (Hons) Politics and International Relations  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCP",
+    "label": "BA (Hons) Politics and International Relations with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCN",
+    "label": "BA (Hons) Politics and International Relations with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPSCD",
+    "label": "BA (Hons) Politics and International Relations with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML17",
+    "label": "BA (Hons) Politics and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3POLMLX01",
+    "label": "BA (Hons) Politics and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML35",
+    "label": "BA (Hons) Politics and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4POLMLX01",
+    "label": "BA (Hons) Politics and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS03",
+    "label": "BA (Hons) Politics and Sociology  (Full-Time)"
+  },
+  {
+    "code": "UFA4POLSOC01",
+    "label": "BA (Hons) Politics and Sociology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS37",
+    "label": "BA (Hons) Politics and Sociology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS77",
+    "label": "BA (Hons) Politics with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4POLPOL03",
+    "label": "BA (Hons) Politics with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS62",
+    "label": "BA (Hons) Politics with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4POLPOL02",
+    "label": "BA (Hons) Politics with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS38",
+    "label": "BA (Hons) Politics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4POLPOL01",
+    "label": "BA (Hons) Politics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSBE02",
+    "label": "BA (Hons) Politics, Philosophy and Economics  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSBE03",
+    "label": "BA (Hons) Politics, Philosophy and Economics with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSBE02",
+    "label": "BA (Hons) Politics, Philosophy and Economics with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSBE01",
+    "label": "BA (Hons) Politics, Philosophy and Economics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3PSYPSY03",
+    "label": "BA (Hons) Psychological Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4PSYPSY04",
+    "label": "BA (Hons) Psychological Studies with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFA4PSYPSY03",
+    "label": "BA (Hons) Psychological Studies with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHCTH16",
+    "label": "BA (Hons) Religion, Culture and Society  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH24",
+    "label": "BA (Hons) Religion, Culture and Society with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH23",
+    "label": "BA (Hons) Religion, Culture and Society with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH22",
+    "label": "BA (Hons) Religion, Culture and Society with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS06",
+    "label": "BA (Hons) Sociology (BA)  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS75",
+    "label": "BA (Hons) Sociology (BA) with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS68",
+    "label": "BA (Hons) Sociology (BA) with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS39",
+    "label": "BA (Hons) Sociology (BA) with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS29",
+    "label": "BA (Hons) Sociology and Anthropology  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS94",
+    "label": "BA (Hons) Sociology and Anthropology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS95",
+    "label": "BA (Hons) Sociology and Anthropology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS41",
+    "label": "BA (Hons) Sociology and Anthropology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSHPS34",
+    "label": "BA (Hons) Sociology and Criminology  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS76",
+    "label": "BA (Hons) Sociology and Criminology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS66",
+    "label": "BA (Hons) Sociology and Criminology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSHPS65",
+    "label": "BA (Hons) Sociology and Criminology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML21",
+    "label": "BA (Hons) Sociology and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA3SOCMLX02",
+    "label": "BA (Hons) Sociology and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML45",
+    "label": "BA (Hons) Sociology and Global Cultural Studies  (Full-Time)"
+  },
+  {
+    "code": "UFA4SOCMLX02",
+    "label": "BA (Hons) Sociology and Global Cultural Studies with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3HPSSML19",
+    "label": "BA (Hons) Sociology and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA3SOCMLX01",
+    "label": "BA (Hons) Sociology and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4HPSSML36",
+    "label": "BA (Hons) Sociology and Modern Languages  (Full-Time)"
+  },
+  {
+    "code": "UFA4SOCMLX01",
+    "label": "BA (Hons) Sociology and Modern Languages with International Placement (Full-Time)"
+  },
+  {
+    "code": "UFA3CTHCTH14",
+    "label": "BA (Hons) Theology and Religion  (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH09",
+    "label": "BA (Hons) Theology and Religion with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH10",
+    "label": "BA (Hons) Theology and Religion with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFA4CTHCTH08",
+    "label": "BA (Hons) Theology and Religion with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFE3LAWSBECA",
+    "label": "BBL (Hons) Business and Laws  (Full-Time)"
+  },
+  {
+    "code": "UFE4LAWSBECB",
+    "label": "BBL (Hons) Business and Laws with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "UFE4LAWSBECC",
+    "label": "BBL (Hons) Business and Laws with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFN3ENSENS02",
+    "label": "BEng (Hons) Biomedical Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSENS03",
+    "label": "BEng (Hons) Biomedical Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSINT03",
+    "label": "BEng (Hons) Biomedical Engineering with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ENSINT03",
+    "label": "BEng (Hons) Biomedical Engineering with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSENS06",
+    "label": "BEng (Hons) Biomedical Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN5ENSENS01",
+    "label": "BEng (Hons) Biomedical Engineering with Year in Industry with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN5ENSINT01",
+    "label": "BEng (Hons) Biomedical Engineering with Year in Industry with IFY (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSINT06",
+    "label": "BEng (Hons) Biomedical Engineering with Year in Industry with IYO (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSECS26",
+    "label": "BEng (Hons) Chemical Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSECS21",
+    "label": "BEng (Hons) Chemical Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSINT02",
+    "label": "BEng (Hons) Chemical Engineering with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ENSINT02",
+    "label": "BEng (Hons) Chemical Engineering with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSENS05",
+    "label": "BEng (Hons) Chemical Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN5ENSENS04",
+    "label": "BEng (Hons) Chemical Engineering with Year in Industry with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN5ENSINT04",
+    "label": "BEng (Hons) Chemical Engineering with Year in Industry with IFY (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSINT09",
+    "label": "BEng (Hons) Chemical Engineering with Year in Industry with IYO (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSECS08",
+    "label": "BEng (Hons) Civil Engineering  (Full-Time)"
+  },
+  {
+    "code": "UDN5ENSENS02",
+    "label": "BEng (Hons) Civil Engineering (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDN5ENSENS01",
+    "label": "BEng (Hons) Civil Engineering (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDN5ECSECS02",
+    "label": "BEng (Hons) Civil Engineering (Non-Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDN5ECSECS01",
+    "label": "BEng (Hons) Civil Engineering Site Management (Non-Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFN4ECSECS18",
+    "label": "BEng (Hons) Civil Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSINT03",
+    "label": "BEng (Hons) Civil Engineering with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSINT01",
+    "label": "BEng (Hons) Civil Engineering with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSECS15",
+    "label": "BEng (Hons) Civil Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN3ENSENS01",
+    "label": "BEng (Hons) Electrical and Electronic Engineering  (Full-Time)"
+  },
+  {
+    "code": "UDN4ENSENS06",
+    "label": "BEng (Hons) Electrical and Electronic Engineering (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDN4ENSENS05",
+    "label": "BEng (Hons) Electrical and Electronic Engineering (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFN4ENSENS02",
+    "label": "BEng (Hons) Electrical and Electronic Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSINT01",
+    "label": "BEng (Hons) Electrical and Electronic Engineering with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ENSINT01",
+    "label": "BEng (Hons) Electrical and Electronic Engineering with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSENS01",
+    "label": "BEng (Hons) Electrical and Electronic Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UDN4ENSENS02",
+    "label": "BEng (Hons) Electro-Mechanical Engineering (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDN4ENSENS01",
+    "label": "BEng (Hons) Electro-Mechanical Engineering (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFN4ECSECS11",
+    "label": "BEng (Hons) Electronic Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UEN4ENSZUT01",
+    "label": "BEng (Hons) Energy and Environmental Engineering (Dual Award)  (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSECS06",
+    "label": "BEng (Hons) Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSECS05",
+    "label": "BEng (Hons) Engineering and Entrepreneurship  (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSECS16",
+    "label": "BEng (Hons) Engineering and Entrepreneurship with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSECS01",
+    "label": "BEng (Hons) Engineering and Management  (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSENS08",
+    "label": "BEng (Hons) Engineering and Management with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSINT07",
+    "label": "BEng (Hons) Engineering and Management with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSINT05",
+    "label": "BEng (Hons) Engineering and Management with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSECS14",
+    "label": "BEng (Hons) Engineering and Management with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN5ENSENS02",
+    "label": "BEng (Hons) Engineering and Management with Year in Industry with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN5ENSINT02",
+    "label": "BEng (Hons) Engineering and Management with Year in Industry with IFY (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSINT07",
+    "label": "BEng (Hons) Engineering and Management with Year in Industry with IYO (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSECS17",
+    "label": "BEng (Hons) Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSENE01",
+    "label": "BEng (Hons) Engineering with Foundation Year at Streatham (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSINT01",
+    "label": "BEng (Hons) Engineering with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSINT04",
+    "label": "BEng (Hons) Engineering with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSENS04",
+    "label": "BEng (Hons) Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSECSCA",
+    "label": "BEng (Hons) Environmental Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFN4ENEENSCA",
+    "label": "BEng (Hons) Environmental Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ENEENECC",
+    "label": "BEng (Hons) Environmental Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN5ENEENECC",
+    "label": "BEng (Hons) Environmental Engineering with Year in Industry with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ENEENECB",
+    "label": "BEng (Hons) General Engineering  (Full-Time)"
+  },
+  {
+    "code": "UDN4ENSENS04",
+    "label": "BEng (Hons) Manufacturing Engineering (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDN4ENSENS03",
+    "label": "BEng (Hons) Manufacturing Engineering (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFN3ECSECS09",
+    "label": "BEng (Hons) Mechanical Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSECS20",
+    "label": "BEng (Hons) Mechanical Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSINT04",
+    "label": "BEng (Hons) Mechanical Engineering with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSINT07",
+    "label": "BEng (Hons) Mechanical Engineering with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSECS12",
+    "label": "BEng (Hons) Mechanical Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN3MINMINCA",
+    "label": "BEng (Hons) Mining Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFN4MINMINCA",
+    "label": "BEng (Hons) Mining Engineering (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDN4MINMINCA",
+    "label": "BEng (Hons) Mining Engineering (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFN4MINENSCA",
+    "label": "BEng (Hons) Mining Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3CSMCSMCG",
+    "label": "BEng (Hons) Renewable Energy Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFN3ENEENECA",
+    "label": "BEng (Hons) Renewable Energy Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSECSCA",
+    "label": "BEng (Hons) Renewable Energy Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ENEENSCC",
+    "label": "BEng (Hons) Renewable Energy Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ENEENECA",
+    "label": "BEng (Hons) Renewable Energy Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN5ENEENECA",
+    "label": "BEng (Hons) Renewable Energy Engineering with Year in Industry with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSECS27",
+    "label": "BEng (Hons) Robotics and Artificial Intelligence  (Full-Time)"
+  },
+  {
+    "code": "UFN4ECSECS22",
+    "label": "BEng (Hons) Robotics and Artificial Intelligence with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ENSINT04",
+    "label": "BEng (Hons) Robotics and Artificial Intelligence with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN3ENSINT04",
+    "label": "BEng (Hons) Robotics and Artificial Intelligence with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFN3ECSECSCB",
+    "label": "BEng (Hons) Systems Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFN4ENEENSCB",
+    "label": "BEng (Hons) Systems Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFN4ENEENECB",
+    "label": "BEng (Hons) Systems Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFN5ENEENECB",
+    "label": "BEng (Hons) Systems Engineering with Year in Industry with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFB5EMSEMS01",
+    "label": "BMBS Bachelor of Medicine , Bachelor of Surgery  (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE07",
+    "label": "BSc (Hons) Accounting and Business  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE22",
+    "label": "BSc (Hons) Accounting and Business with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4ACCINT04",
+    "label": "BSc (Hons) Accounting and Business with Industrial Experience with IYO (Full-Time)"
+  },
+  {
+    "code": "UFS3ACCINT02",
+    "label": "BSc (Hons) Accounting and Business with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE29",
+    "label": "BSc (Hons) Accounting and Business with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4ACCINT03",
+    "label": "BSc (Hons) Accounting and Business with Year Abroad with IYO (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE05",
+    "label": "BSc (Hons) Accounting and Finance  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE16",
+    "label": "BSc (Hons) Accounting and Finance with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4ACCINT02",
+    "label": "BSc (Hons) Accounting and Finance with Industrial Experience with IYO (Full-Time)"
+  },
+  {
+    "code": "UFS3ACCINT01",
+    "label": "BSc (Hons) Accounting and Finance with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE28",
+    "label": "BSc (Hons) Accounting and Finance with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4ACCINT01",
+    "label": "BSc (Hons) Accounting and Finance with Year Abroad with IYO (Full-Time)"
+  },
+  {
+    "code": "UFS2SBESBE01",
+    "label": "BSc (Hons) Accounting Studies  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE23",
+    "label": "BSc (Hons) Accounting Studies with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE56",
+    "label": "BSc (Hons) Accounting Studies with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSEMS07",
+    "label": "BSc (Hons) Adult Nursing  (Full-Time)"
+  },
+  {
+    "code": "UDS2NURNUR02",
+    "label": "BSc (Hons) Adult Nursing (Commercially-Funded Apprenticeship, Prog Route) (Full-Time)"
+  },
+  {
+    "code": "UDS3NURNUR02",
+    "label": "BSc (Hons) Adult Nursing (Commercially-Funded Apprenticeship) (Full-Time)"
+  },
+  {
+    "code": "UDS2NURNUR01",
+    "label": "BSc (Hons) Adult Nursing (Integrated Degree Apprenticeship, Prog Route) (Full-Time)"
+  },
+  {
+    "code": "UDS3NURNUR01",
+    "label": "BSc (Hons) Adult Nursing (Integrated Degree Apprenticeship) (Full-Time)"
+  },
+  {
+    "code": "UFS3ECCECCCA",
+    "label": "BSc (Hons) Animal Behaviour  (Full-Time)"
+  },
+  {
+    "code": "UFS3BIOBIOCE",
+    "label": "BSc (Hons) Animal Behaviour (Being Taught Out)  (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIOCG",
+    "label": "BSc (Hons) Animal Behaviour (Being Taught Out) with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIOCD",
+    "label": "BSc (Hons) Animal Behaviour (Being Taught Out) with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCB",
+    "label": "BSc (Hons) Animal Behaviour with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCA",
+    "label": "BSc (Hons) Animal Behaviour with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UDS3BDABDA07",
+    "label": "BSc (Hons) Applied Accounting (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS3BDABDA08",
+    "label": "BSc (Hons) Applied Accounting (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS3BDABDA05",
+    "label": "BSc (Hons) Applied Accounting (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS3BDABDA06",
+    "label": "BSc (Hons) Applied Accounting (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFS4SBESBE70",
+    "label": "BSc (Hons) Applied Accounting (Non-Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4BDABDA12",
+    "label": "BSc (Hons) Applied Banking (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4BDABDA11",
+    "label": "BSc (Hons) Applied Banking (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4SBESBE20",
+    "label": "BSc (Hons) Applied Finance (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4SBESBE19",
+    "label": "BSc (Hons) Applied Finance and Banking (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4BDABDA07",
+    "label": "BSc (Hons) Applied Retail and Commercial Banking (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4BDABDA10",
+    "label": "BSc (Hons) Applied Retail and Commercial Banking (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4BDABDA05",
+    "label": "BSc (Hons) Applied Retail and Commercial Banking (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4BDABDA09",
+    "label": "BSc (Hons) Applied Retail and Commercial Banking (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFS3HPSHPS06",
+    "label": "BSc (Hons) Archaeological Science  (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS11",
+    "label": "BSc (Hons) Archaeological Science with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS12",
+    "label": "BSc (Hons) Archaeological Science with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS10",
+    "label": "BSc (Hons) Archaeological Science with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3GAEGAE02",
+    "label": "BSc (Hons) Archaeology with Forensic Science  (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS06",
+    "label": "BSc (Hons) Archaeology with Forensic Science with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS07",
+    "label": "BSc (Hons) Archaeology with Forensic Science with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4GAEGAE02",
+    "label": "BSc (Hons) Archaeology with Forensic Science with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3COMCOM01",
+    "label": "BSc (Hons) Artificial Intelligence  (Full-Time)"
+  },
+  {
+    "code": "UFS3COMCOM04",
+    "label": "BSc (Hons) Artificial Intelligence (Defence)  (Full-Time)"
+  },
+  {
+    "code": "UFS4COMCOM02",
+    "label": "BSc (Hons) Artificial Intelligence with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFS4COMCOM01",
+    "label": "BSc (Hons) Artificial Intelligence with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4COMINT01",
+    "label": "BSc (Hons) Artificial Intelligence with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFS3BIOBIO03",
+    "label": "BSc (Hons) Biochemistry  (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIO02",
+    "label": "BSc (Hons) Biochemistry with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS3BIOINT01",
+    "label": "BSc (Hons) Biochemistry with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIO01",
+    "label": "BSc (Hons) Biochemistry with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3CHEBIO01",
+    "label": "BSc (Hons) Biological and Medicinal Chemistry  (Full-Time)"
+  },
+  {
+    "code": "UFS4CHEBIO01",
+    "label": "BSc (Hons) Biological and Medicinal Chemistry with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4BCSBCS04",
+    "label": "BSc (Hons) Biological and Medicinal Chemistry with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3BIOBIO01",
+    "label": "BSc (Hons) Biological Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS3BIOINT02",
+    "label": "BSc (Hons) Biological Sciences with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIO06",
+    "label": "BSc (Hons) Biological Sciences with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4BCSBCS03",
+    "label": "BSc (Hons) Biological Sciences with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSEMS08",
+    "label": "BSc (Hons) Biomedical Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSEMS04",
+    "label": "BSc (Hons) Biomedical Sciences with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSEMS05",
+    "label": "BSc (Hons) Biomedical Sciences with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBECA",
+    "label": "BSc (Hons) Business  (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE11",
+    "label": "BSc (Hons) Business Analytics  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE37",
+    "label": "BSc (Hons) Business Analytics with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE36",
+    "label": "BSc (Hons) Business Analytics with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBEGOACA",
+    "label": "BSc (Hons) Business and Environment  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBEGOACB",
+    "label": "BSc (Hons) Business and Environment with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBEGOACA",
+    "label": "BSc (Hons) Business and Environment with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE09",
+    "label": "BSc (Hons) Business and Management  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE34",
+    "label": "BSc (Hons) Business and Management with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS3HRMINT01",
+    "label": "BSc (Hons) Business and Management with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE38",
+    "label": "BSc (Hons) Business and Management with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE02",
+    "label": "BSc (Hons) Business Economics  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE12",
+    "label": "BSc (Hons) Business Economics with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS3ECOINT01",
+    "label": "BSc (Hons) Business Economics with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE31",
+    "label": "BSc (Hons) Business Economics with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE13",
+    "label": "BSc (Hons) Business Studies  (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE15",
+    "label": "BSc (Hons) Business Studies with Economics  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE58",
+    "label": "BSc (Hons) Business Studies with Economics with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE57",
+    "label": "BSc (Hons) Business Studies with Economics with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE45",
+    "label": "BSc (Hons) Business Studies with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE44",
+    "label": "BSc (Hons) Business Studies with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBECC",
+    "label": "BSc (Hons) Business with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBECD",
+    "label": "BSc (Hons) Business with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3ECSECS15",
+    "label": "BSc (Hons) Computer Science  (Full-Time)"
+  },
+  {
+    "code": "UFS3COMCOM02",
+    "label": "BSc (Hons) Computer Science (Defence)  (Full-Time)"
+  },
+  {
+    "code": "UFS3ECSMAS12",
+    "label": "BSc (Hons) Computer Science and Mathematics  (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSMAS01",
+    "label": "BSc (Hons) Computer Science and Mathematics with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSECS02",
+    "label": "BSc (Hons) Computer Science with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSECS09",
+    "label": "BSc (Hons) Computer Science with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSINT02",
+    "label": "BSc (Hons) Computer Science with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFS3COMINT01",
+    "label": "BSc (Hons) Computer Science with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS3ECSECS17",
+    "label": "BSc (Hons) Computing  (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSECS04",
+    "label": "BSc (Hons) Computing with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "UFS3ECCECCCB",
+    "label": "BSc (Hons) Conservation Biology and Ecology  (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIOCH",
+    "label": "BSc (Hons) Conservation Biology and Ecology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCD",
+    "label": "BSc (Hons) Conservation Biology and Ecology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIOCB",
+    "label": "BSc (Hons) Conservation Biology and Ecology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCC",
+    "label": "BSc (Hons) Conservation Biology and Ecology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3HPSHPS08",
+    "label": "BSc (Hons) Crime and Data Science  (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS19",
+    "label": "BSc (Hons) Crime and Data Science with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS16",
+    "label": "BSc (Hons) Crime and Data Science with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS17",
+    "label": "BSc (Hons) Crime and Data Science with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3HPSHPS05",
+    "label": "BSc (Hons) Criminology  (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS18",
+    "label": "BSc (Hons) Criminology with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS20",
+    "label": "BSc (Hons) Criminology with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS05",
+    "label": "BSc (Hons) Criminology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3ECSECS16",
+    "label": "BSc (Hons) Data Science  (Full-Time)"
+  },
+  {
+    "code": "UFS3COMCOM03",
+    "label": "BSc (Hons) Data Science (Defence)  (Full-Time)"
+  },
+  {
+    "code": "UES4COMZUT01",
+    "label": "BSc (Hons) Data Science (Dual Award)  (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSECS03",
+    "label": "BSc (Hons) Data Science with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSECS11",
+    "label": "BSc (Hons) Data Science with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSINT01",
+    "label": "BSc (Hons) Data Science with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFS3COMINT02",
+    "label": "BSc (Hons) Data Science with International Year One (Full-Time)"
+  },
+  {
+    "code": "UDS3EMSEMS02",
+    "label": "BSc (Hons) Diagnostic Radiography and Imaging (Commercially-Funded Apprenticeship) (Full-Time)"
+  },
+  {
+    "code": "UDS3EMSEMS01",
+    "label": "BSc (Hons) Diagnostic Radiography and Imaging (Integrated Degree Apprenticeship) (Full-Time)"
+  },
+  {
+    "code": "UDS4COMCOM04",
+    "label": "BSc (Hons) Digital and Technology Solutions (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4COMCOM01",
+    "label": "BSc (Hons) Digital and Technology Solutions (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4COMCOM03",
+    "label": "BSc (Hons) Digital and Technology Solutions (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS3CMMCMM03",
+    "label": "BSc (Hons) Digital Marketing (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS3CMMCMM04",
+    "label": "BSc (Hons) Digital Marketing (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS3CMMCMM01",
+    "label": "BSc (Hons) Digital Marketing (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS3CMMCMM02",
+    "label": "BSc (Hons) Digital Marketing (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UES4CMMZUT01",
+    "label": "BSc (Hons) Digital Media Technology (Dual Award)  (Full-Time)"
+  },
+  {
+    "code": "UFS3ECOECO02",
+    "label": "BSc (Hons) Economics  (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE01",
+    "label": "BSc (Hons) Economics  (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE03",
+    "label": "BSc (Hons) Economics and Finance  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE06",
+    "label": "BSc (Hons) Economics and Finance with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE33",
+    "label": "BSc (Hons) Economics and Finance with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBEHPS01",
+    "label": "BSc (Hons) Economics and Politics  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBEHPS02",
+    "label": "BSc (Hons) Economics and Politics with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBEHPS04",
+    "label": "BSc (Hons) Economics and Politics with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE04",
+    "label": "BSc (Hons) Economics with Econometrics  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE13",
+    "label": "BSc (Hons) Economics with Econometrics with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE32",
+    "label": "BSc (Hons) Economics with Econometrics with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE11",
+    "label": "BSc (Hons) Economics with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE30",
+    "label": "BSc (Hons) Economics with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3CSMCSMCC",
+    "label": "BSc (Hons) Engineering Geology and Geotechnics  (Full-Time)"
+  },
+  {
+    "code": "UFS3CSMCSMCH",
+    "label": "BSc (Hons) Environmental Geoscience  (Full-Time)"
+  },
+  {
+    "code": "UFS3GOABIOCA",
+    "label": "BSc (Hons) Environmental Science  (Full-Time)"
+  },
+  {
+    "code": "UFS4GOAGOACE",
+    "label": "BSc (Hons) Environmental Science with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4GOAGOACB",
+    "label": "BSc (Hons) Environmental Science with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3ECCECCCC",
+    "label": "BSc (Hons) Evolutionary Biology  (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCF",
+    "label": "BSc (Hons) Evolutionary Biology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCE",
+    "label": "BSc (Hons) Evolutionary Biology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SHSSHS01",
+    "label": "BSc (Hons) Exercise and Sport Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS4SHSSHS02",
+    "label": "BSc (Hons) Exercise and Sport Sciences with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4SHSSHS01",
+    "label": "BSc (Hons) Exercise and Sport Sciences with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE16",
+    "label": "BSc (Hons) Finance  (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE18",
+    "label": "BSc (Hons) Finance (Business Management)  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE61",
+    "label": "BSc (Hons) Finance (Business Management) with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS3FININT02",
+    "label": "BSc (Hons) Finance (Business Management) with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE65",
+    "label": "BSc (Hons) Finance (Business Management) with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE19",
+    "label": "BSc (Hons) Finance (Data Science)  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE62",
+    "label": "BSc (Hons) Finance (Data Science) with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE66",
+    "label": "BSc (Hons) Finance (Data Science) with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE17",
+    "label": "BSc (Hons) Finance (Investment Banking)  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE60",
+    "label": "BSc (Hons) Finance (Investment Banking) with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE64",
+    "label": "BSc (Hons) Finance (Investment Banking) with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE20",
+    "label": "BSc (Hons) Finance Studies  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE71",
+    "label": "BSc (Hons) Finance Studies with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE72",
+    "label": "BSc (Hons) Finance Studies with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE59",
+    "label": "BSc (Hons) Finance with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS3FININT01",
+    "label": "BSc (Hons) Finance with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE63",
+    "label": "BSc (Hons) Finance with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3GOAGOA06",
+    "label": "BSc (Hons) Geography  (Full-Time)"
+  },
+  {
+    "code": "UFS3GOAGOA08",
+    "label": "BSc (Hons) Geography with Applied GIS  (Full-Time)"
+  },
+  {
+    "code": "UFS4GOAGOA08",
+    "label": "BSc (Hons) Geography with Applied GIS with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4GOAGOA05",
+    "label": "BSc (Hons) Geography with Applied GIS with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4GOAGOA07",
+    "label": "BSc (Hons) Geography with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4GOAGOA02",
+    "label": "BSc (Hons) Geography with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3CSMCSMCF",
+    "label": "BSc (Hons) Geology  (Full-Time)"
+  },
+  {
+    "code": "UFS3CECCECCA",
+    "label": "BSc (Hons) Global Sustainability (BSc)  (Full-Time)"
+  },
+  {
+    "code": "UFS4CECCECCA",
+    "label": "BSc (Hons) Global Sustainability (BSc) with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4CECCECCB",
+    "label": "BSc (Hons) Global Sustainability (BSc) with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSEMS03",
+    "label": "BSc (Hons) Health Science (Medical Imaging)  (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSEMS06",
+    "label": "BSc (Hons) Health Studies  (Full-Time)"
+  },
+  {
+    "code": "UFS3NURNUR01",
+    "label": "BSc (Hons) Health Studies  (Full-Time)"
+  },
+  {
+    "code": "UFS3BIOGOACB",
+    "label": "BSc (Hons) Human Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOGOACB",
+    "label": "BSc (Hons) Human Sciences with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOGOACA",
+    "label": "BSc (Hons) Human Sciences with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS1EMSEMS03",
+    "label": "BSc (Hons) Intercalated Biomedical Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS1BIOBIO01",
+    "label": "BSc (Hons) Intercalated Biosciences  (Full-Time)"
+  },
+  {
+    "code": "UFS1SHSSHS01",
+    "label": "BSc (Hons) Intercalated Exercise and Sport Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS1BIOBIO02",
+    "label": "BSc (Hons) Intercalated Infectious Disease  (Full-Time)"
+  },
+  {
+    "code": "UFS1EMSEMS01",
+    "label": "BSc (Hons) Intercalated Medical Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS1BIOBIO03",
+    "label": "BSc (Hons) Intercalated Molecular and Cellular Science  (Full-Time)"
+  },
+  {
+    "code": "UFS1EMSEMS02",
+    "label": "BSc (Hons) Intercalated Neuroscience  (Full-Time)"
+  },
+  {
+    "code": "UFS1PSYPSY01",
+    "label": "BSc (Hons) Intercalated Psychology  (Full-Time)"
+  },
+  {
+    "code": "UFS1EMSSHS01",
+    "label": "BSc (Hons) Intercalated Sport and Exercise Medical Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS1ACCACC01",
+    "label": "BSc (Hons) International Business and Accounting (Top-Up) (Full-Time)"
+  },
+  {
+    "code": "UFS1BSMBSM01",
+    "label": "BSc (Hons) International Business Management (Top-Up) (Full-Time)"
+  },
+  {
+    "code": "UFS1ACCACC02",
+    "label": "BSc (Hons) International Finance (Top-Up) (Full-Time)"
+  },
+  {
+    "code": "UDS4BDABDA14",
+    "label": "BSc (Hons) Leadership and Project Management (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4BDABDA16",
+    "label": "BSc (Hons) Leadership and Project Management (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4BDABDA13",
+    "label": "BSc (Hons) Leadership and Project Management (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS4BDABDA15",
+    "label": "BSc (Hons) Leadership and Project Management (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFS3ECCECCCE",
+    "label": "BSc (Hons) Marine Biology  (Full-Time)"
+  },
+  {
+    "code": "UFS1CECCECCA",
+    "label": "BSc (Hons) Marine Biology (Top-Up) (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIOCF",
+    "label": "BSc (Hons) Marine Biology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCJ",
+    "label": "BSc (Hons) Marine Biology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIOCE",
+    "label": "BSc (Hons) Marine Biology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCI",
+    "label": "BSc (Hons) Marine Biology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3GOACSMCC",
+    "label": "BSc (Hons) Marine Science  (Full-Time)"
+  },
+  {
+    "code": "UFS4GOACSMCE",
+    "label": "BSc (Hons) Marine Science with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4GOACSMCD",
+    "label": "BSc (Hons) Marine Science with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3SBESBE08",
+    "label": "BSc (Hons) Marketing and Management  (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE26",
+    "label": "BSc (Hons) Marketing and Management with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4BSMINT02",
+    "label": "BSc (Hons) Marketing and Management with Industrial Experience with IYO (Full-Time)"
+  },
+  {
+    "code": "UFS3BSMINT01",
+    "label": "BSc (Hons) Marketing and Management with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4SBESBE25",
+    "label": "BSc (Hons) Marketing and Management with Year Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4BSMINT01",
+    "label": "BSc (Hons) Marketing and Management with Year Abroad with IYO (Full-Time)"
+  },
+  {
+    "code": "UFS3MASMAS09",
+    "label": "BSc (Hons) Mathematics  (Full-Time)"
+  },
+  {
+    "code": "UFS3MASMAS15",
+    "label": "BSc (Hons) Mathematics and Data Science  (Full-Time)"
+  },
+  {
+    "code": "UFS4MATMAT01",
+    "label": "BSc (Hons) Mathematics and Data Science with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFS3MASPHY02",
+    "label": "BSc (Hons) Mathematics and Physics  (Full-Time)"
+  },
+  {
+    "code": "UFS3MASSBE02",
+    "label": "BSc (Hons) Mathematics with Accounting  (Full-Time)"
+  },
+  {
+    "code": "UFS4MASSBE01",
+    "label": "BSc (Hons) Mathematics with Accounting with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFS3MASSBE03",
+    "label": "BSc (Hons) Mathematics with Economics  (Full-Time)"
+  },
+  {
+    "code": "UFS4MASSBE02",
+    "label": "BSc (Hons) Mathematics with Economics with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFS3MASSBE04",
+    "label": "BSc (Hons) Mathematics with Finance  (Full-Time)"
+  },
+  {
+    "code": "UFS4MASSBE03",
+    "label": "BSc (Hons) Mathematics with Finance with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFS4MASMAS04",
+    "label": "BSc (Hons) Mathematics with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFS3MASSBE01",
+    "label": "BSc (Hons) Mathematics with Management  (Full-Time)"
+  },
+  {
+    "code": "UFS4MASSBE04",
+    "label": "BSc (Hons) Mathematics with Management with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFS4MASMAS03",
+    "label": "BSc (Hons) Mathematics with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSEMS02",
+    "label": "BSc (Hons) Medical Imaging (Diagnostic Radiography)  (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSEMS01",
+    "label": "BSc (Hons) Medical Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSBIO02",
+    "label": "BSc (Hons) Medical Sciences (Human Genomics)  (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSBIO02",
+    "label": "BSc (Hons) Medical Sciences (Human Genomics) with Professional Training Year (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSBIO06",
+    "label": "BSc (Hons) Medical Sciences (Human Genomics) with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSBIO03",
+    "label": "BSc (Hons) Medical Sciences (Neuroscience)  (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSBIO04",
+    "label": "BSc (Hons) Medical Sciences (Neuroscience) with Professional Training Year (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSBIO07",
+    "label": "BSc (Hons) Medical Sciences (Neuroscience) with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSBIO04",
+    "label": "BSc (Hons) Medical Sciences (Pharmacology and Therapeutics)  (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSBIO05",
+    "label": "BSc (Hons) Medical Sciences (Pharmacology and Therapeutics) with Professional Training Year (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSBIO08",
+    "label": "BSc (Hons) Medical Sciences (Pharmacology and Therapeutics) with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSEMS01",
+    "label": "BSc (Hons) Medical Sciences with Professional Training Year (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSEMS03",
+    "label": "BSc (Hons) Medical Sciences with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3NSCNSC01",
+    "label": "BSc (Hons) Natural Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS4NSCNSC01",
+    "label": "BSc (Hons) Natural Sciences with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSEMS05",
+    "label": "BSc (Hons) Neuroscience  (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSEMS02",
+    "label": "BSc (Hons) Neuroscience with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS3SHSSHS02",
+    "label": "BSc (Hons) Nutrition  (Full-Time)"
+  },
+  {
+    "code": "UFS3PHYPHY06",
+    "label": "BSc (Hons) Physics  (Full-Time)"
+  },
+  {
+    "code": "UFS3PHYPHY11",
+    "label": "BSc (Hons) Physics  (Full-Time)"
+  },
+  {
+    "code": "UFS3PHYPHY08",
+    "label": "BSc (Hons) Physics with Astrophysics  (Full-Time)"
+  },
+  {
+    "code": "UFS3PHYPHY12",
+    "label": "BSc (Hons) Physics with Astrophysics  (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY17",
+    "label": "BSc (Hons) Physics with Astrophysics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY16",
+    "label": "BSc (Hons) Physics with Astrophysics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3PHYPHY14",
+    "label": "BSc (Hons) Physics with Biophysics  (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY13",
+    "label": "BSc (Hons) Physics with Biophysics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY12",
+    "label": "BSc (Hons) Physics with Biophysics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY09",
+    "label": "BSc (Hons) Physics with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY05",
+    "label": "BSc (Hons) Physics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY08",
+    "label": "BSc (Hons) Physics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS3PHYPHY15",
+    "label": "BSc (Hons) Physics with Quantum Technology  (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY15",
+    "label": "BSc (Hons) Physics with Quantum Technology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY14",
+    "label": "BSc (Hons) Physics with Quantum Technology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY04",
+    "label": "BSc (Hons) Physics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY07",
+    "label": "BSc (Hons) Physics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3POCSFUCA",
+    "label": "BSc (Hons) Politics and Business  (Full-Time)"
+  },
+  {
+    "code": "UFS4POCSFUCA",
+    "label": "BSc (Hons) Politics and Business with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4POCSFUCB",
+    "label": "BSc (Hons) Politics and Business with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3HPSHPS04",
+    "label": "BSc (Hons) Politics and International Relations  (Full-Time)"
+  },
+  {
+    "code": "UFS3POLPOL01",
+    "label": "BSc (Hons) Politics and International Relations  (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS13",
+    "label": "BSc (Hons) Politics and International Relations with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4POLPOL03",
+    "label": "BSc (Hons) Politics and International Relations with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS09",
+    "label": "BSc (Hons) Politics and International Relations with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4POLPOL02",
+    "label": "BSc (Hons) Politics and International Relations with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS04",
+    "label": "BSc (Hons) Politics and International Relations with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4POLPOL01",
+    "label": "BSc (Hons) Politics and International Relations with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3POCLSPCA",
+    "label": "BSc (Hons) Politics and Law  (Full-Time)"
+  },
+  {
+    "code": "UFS4POCLSPCA",
+    "label": "BSc (Hons) Politics and Law with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "UFS3HPSSBECA",
+    "label": "BSc (Hons) Politics and Management  (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSSBECB",
+    "label": "BSc (Hons) Politics and Management with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSSBECA",
+    "label": "BSc (Hons) Politics and Management with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UDS4SBESBE10",
+    "label": "BSc (Hons) Project Management (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFS4SBESBE68",
+    "label": "BSc (Hons) Project Management (Non-Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFS3PSYPSY01",
+    "label": "BSc (Hons) Psychology  (Full-Time)"
+  },
+  {
+    "code": "UFS4PSYPSY03",
+    "label": "BSc (Hons) Psychology with Data Science (Full-Time)"
+  },
+  {
+    "code": "UFS3PSYINT01",
+    "label": "BSc (Hons) Psychology with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFS4PSYPSY02",
+    "label": "BSc (Hons) Psychology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4PSYSHS01",
+    "label": "BSc (Hons) Psychology with Sport and Exercise Science with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4PSYPSY01",
+    "label": "BSc (Hons) Psychology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3CSMCSMCG",
+    "label": "BSc (Hons) Resource and Exploration Geology  (Full-Time)"
+  },
+  {
+    "code": "UDS3BDABDA10",
+    "label": "BSc (Hons) Responsible Business Management (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDS2SBESBE03",
+    "label": "BSc (Hons) Responsible Business Management (Mary Seacole) (Commercially-Funded Apprenticeship) (Full-Time)"
+  },
+  {
+    "code": "UDS2SBESBE01",
+    "label": "BSc (Hons) Responsible Business Management (Non-Integrated Degree Apprenticeship) (Full-Time)"
+  },
+  {
+    "code": "UDS3BDABDA09",
+    "label": "BSc (Hons) Responsible Business Management (Non-Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFS3HPSHPS07",
+    "label": "BSc (Hons) Social Data Science  (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS23",
+    "label": "BSc (Hons) Social Data Science with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS15",
+    "label": "BSc (Hons) Social Data Science with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS14",
+    "label": "BSc (Hons) Social Data Science with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3HPSHPS01",
+    "label": "BSc (Hons) Sociology (BSc)  (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS21",
+    "label": "BSc (Hons) Sociology (BSc) with Employment Experience (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS22",
+    "label": "BSc (Hons) Sociology (BSc) with Employment Experience Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4HPSHPS01",
+    "label": "BSc (Hons) Sociology (BSc) with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3EMSSHS01",
+    "label": "BSc (Hons) Sport and Exercise Medical Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFS4EMSSHS01",
+    "label": "BSc (Hons) Sport and Exercise Medical Sciences with Professional Training Year (Full-Time)"
+  },
+  {
+    "code": "UFS3SHSSHS03",
+    "label": "BSc (Hons) Sport Business Management  (Full-Time)"
+  },
+  {
+    "code": "UFS4SHSSHS05",
+    "label": "BSc (Hons) Sport Business Management with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4SHSSHS04",
+    "label": "BSc (Hons) Sport Business Management with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3ECSECSCA",
+    "label": "BSc (Hons) Sustainable Energy Futures  (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSECSCA",
+    "label": "BSc (Hons) Sustainable Energy Futures with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4ECSECSCB",
+    "label": "BSc (Hons) Sustainable Energy Futures with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3PHYPHY13",
+    "label": "BSc (Hons) Theoretical Physics  (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY11",
+    "label": "BSc (Hons) Theoretical Physics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4PHYPHY10",
+    "label": "BSc (Hons) Theoretical Physics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS3ECCECCCD",
+    "label": "BSc (Hons) Zoology  (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIOCJ",
+    "label": "BSc (Hons) Zoology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCH",
+    "label": "BSc (Hons) Zoology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFS4BIOBIOCA",
+    "label": "BSc (Hons) Zoology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFS4ECCECCCG",
+    "label": "BSc (Hons) Zoology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UDH1SBESBE02",
+    "label": "CertHE Applied Finance (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDH2BDABDA03",
+    "label": "CertHE Applied Human Resource Management (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDH2BDABDA02",
+    "label": "CertHE Applied Human Resource Management (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDH2SBESBE01",
+    "label": "CertHE Applied Human Resource Management (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDH2ENSENS02",
+    "label": "CertHE Civil Engineering Senior Technician (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDH2ENSENS01",
+    "label": "CertHE Civil Engineering Senior Technician (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "LDC1INTINT11",
+    "label": "CertHE International Year One Accounting and Finance  (Full-Time)"
+  },
+  {
+    "code": "LDC1INTINT13",
+    "label": "CertHE International Year One Accounting and Finance  (Full-Time)"
+  },
+  {
+    "code": "LDC1INTINT16",
+    "label": "CertHE International Year One Biosciences  (Full-Time)"
+  },
+  {
+    "code": "LDC1INTINT17",
+    "label": "CertHE International Year One Computer and Data Science  (Full-Time)"
+  },
+  {
+    "code": "LDC1INTINT12",
+    "label": "CertHE International Year One Engineering  (Full-Time)"
+  },
+  {
+    "code": "LDC1INTINT09",
+    "label": "CertHE International Year One Management and Business Economics  (Full-Time)"
+  },
+  {
+    "code": "LDC1INTINT14",
+    "label": "CertHE International Year One Management and Business Economics  (Full-Time)"
+  },
+  {
+    "code": "LDC1INTINT15",
+    "label": "CertHE International Year One Mathematics with Business  (Full-Time)"
+  },
+  {
+    "code": "LDC1INTINT10",
+    "label": "CertHE International Year One Psychology  (Full-Time)"
+  },
+  {
+    "code": "UDH1SBESBE01",
+    "label": "CertHE Operational Management (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDH2BDABDA01",
+    "label": "CertHE Operational Management (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "LCT2BDABDA01",
+    "label": "CertHE Operational Management (Non-Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "LCT2SBESBE01",
+    "label": "CertHE Operational Management (Non-Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "LIF1INTINT18",
+    "label": "FdCert Exeter International Extended Foundation  (Full-Time)"
+  },
+  {
+    "code": "LIF1INTINT19",
+    "label": "FdCert Exeter International Extended Foundation  (Full-Time)"
+  },
+  {
+    "code": "LIF0INTINT22",
+    "label": "FdCert Exeter International Foundation  (Full-Time)"
+  },
+  {
+    "code": "LIF0INTINT23",
+    "label": "FdCert Exeter International Foundation  (Full-Time)"
+  },
+  {
+    "code": "LIF0INTINT24",
+    "label": "FdCert Exeter International Foundation (Fast Track)  (Full-Time)"
+  },
+  {
+    "code": "UFL2LAWLAW01",
+    "label": "Grad LLB (Hons) Graduate Law  (Full-Time)"
+  },
+  {
+    "code": "LCT0PSYPSY03",
+    "label": "GradCert Psychological Therapies Practice (Children and Young People with Autism and-or Learning Disability)  (Part-Time)"
+  },
+  {
+    "code": "LCT1PSYPSY01",
+    "label": "GradCert Psychological Therapies Practice (Low Intensity Cognitive Behavioural Therapy for Children, Young People and Families)  (Part-Time)"
+  },
+  {
+    "code": "LCT1PSYPSY03",
+    "label": "GradCert Psychological Therapies Practice (Low Intensity Cognitive Behavioural Therapy)  (Part-Time)"
+  },
+  {
+    "code": "LCT1PSYPSY02",
+    "label": "GradCert Psychological Therapies Practice (Mental Health and Wellbeing in Specialist Adult Mental Health)  (Part-Time)"
+  },
+  {
+    "code": "UDC1PSYPSY01",
+    "label": "GradCert Psychological Wellbeing Practice (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "LDP1PSYPSY03",
+    "label": "GradDip Enhanced Psychological Therapies Practice (Low Intensity Cognitive Behavioural Therapy)  (Part-Time)"
+  },
+  {
+    "code": "LDP1PSYPSY02",
+    "label": "GradDip Mental Health Practice in Education Settings  (Full-Time)"
+  },
+  {
+    "code": "LDP1PSYPSY01",
+    "label": "GradDip Psychological Therapies Practice (Children, Young People and Families)  (Full-Time)"
+  },
+  {
+    "code": "LDP1PSYPSY04",
+    "label": "GradDip Psychological Therapies Practice (Low Intensity Cognitive Behavioural Therapy for Children, Young People and Families)  (Full-Time)"
+  },
+  {
+    "code": "UDP3POLPOL02",
+    "label": "GradDip Systems Thinking for Service Design (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UDP3POLPOL01",
+    "label": "GradDip Systems Thinking for Service Design (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "UFL4LAWLAW10",
+    "label": "LLB (Hons) Dual Law/Juris Doctor  (Full-Time)"
+  },
+  {
+    "code": "UFL4LAWLAW06",
+    "label": "LLB (Hons) English Law and French Law /Master 1 (Maitrise) (Full-Time)"
+  },
+  {
+    "code": "UFL3LAWLAW01",
+    "label": "LLB (Hons) Law  (Full-Time)"
+  },
+  {
+    "code": "UFL1LAWLAW01",
+    "label": "LLB (Hons) Law (Brickfields)  (Full-Time)"
+  },
+  {
+    "code": "UFL2LAWLAW03",
+    "label": "LLB (Hons) Law (Brickfields)  (Full-Time)"
+  },
+  {
+    "code": "UFL3LAWSBECA",
+    "label": "LLB (Hons) Law with Business  (Full-Time)"
+  },
+  {
+    "code": "UFL4LAWSBECB",
+    "label": "LLB (Hons) Law with Business with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "UFL4LAWSBECC",
+    "label": "LLB (Hons) Law with Business with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFL4LAWLAW01",
+    "label": "LLB (Hons) Law with European Study (Full-Time)"
+  },
+  {
+    "code": "UFL4LAWLAW03",
+    "label": "LLB (Hons) Law with International Study (Full-Time)"
+  },
+  {
+    "code": "UFL4LAWLAW04",
+    "label": "LLB (Hons) Law with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW12",
+    "label": "LLM Commercial Law  (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW18",
+    "label": "LLM Companies, Competition and Digital Markets  (Full-Time)"
+  },
+  {
+    "code": "PTL0LAWLAW01",
+    "label": "LLM Intellectual Property and Data Law with International Partner (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW19",
+    "label": "LLM Intellectual Property Law and Technology  (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW10",
+    "label": "LLM International Commercial Law  (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW20",
+    "label": "LLM International Human Rights  (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW13",
+    "label": "LLM International Law  (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW11",
+    "label": "LLM Law  (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW14",
+    "label": "LLM Law and Business  (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW15",
+    "label": "LLM Law and Business (Finance and Accounting)  (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW16",
+    "label": "LLM Law and Business (Management)  (Full-Time)"
+  },
+  {
+    "code": "PTL1LAWLAW17",
+    "label": "LLM Law and Technology  (Full-Time)"
+  },
+  {
+    "code": "PTA1HPSHPS68",
+    "label": "MA Anthrozoology  (Full-Time)"
+  },
+  {
+    "code": "PTA1HPSHPS87",
+    "label": "MA Applied Security and Strategy  (Full-Time)"
+  },
+  {
+    "code": "PTA2HPSHPS54",
+    "label": "MA Applied Security and Strategy  (Part-Time)"
+  },
+  {
+    "code": "PTA1GOAGOA02",
+    "label": "MA Archaeology  (Full-Time)"
+  },
+  {
+    "code": "PTA1CTHCTH09",
+    "label": "MA Classics and Ancient History  (Full-Time)"
+  },
+  {
+    "code": "PTA1HPSHPS66",
+    "label": "MA Conflict, Security and Development  (Full-Time)"
+  },
+  {
+    "code": "PTA1EDUEDU07",
+    "label": "MA Creative Arts in Education  (Full-Time)"
+  },
+  {
+    "code": "PTA1DRADRA03",
+    "label": "MA Creative Industries  (Full-Time)"
+  },
+  {
+    "code": "PTA1EGLEGL09",
+    "label": "MA Creative Writing  (Full-Time)"
+  },
+  {
+    "code": "PNA2EGLEGL02",
+    "label": "MA Creative Writing  (Part-Time)"
+  },
+  {
+    "code": "PTA2EGLEGL03",
+    "label": "MA Creative Writing  (Part-Time)"
+  },
+  {
+    "code": "PTA1SMLSML25",
+    "label": "MA Curation: Contemporary Art and Cultural Management  (Full-Time)"
+  },
+  {
+    "code": "PTA1POLPOL01",
+    "label": "MA Diplomacy and Foreign Policy  (Full-Time)"
+  },
+  {
+    "code": "PTA1EDUEDU11",
+    "label": "MA Education  (Full-Time)"
+  },
+  {
+    "code": "PNA2EDUEDU01",
+    "label": "MA Education  (Part-Time)"
+  },
+  {
+    "code": "PNA5EDUEDU01",
+    "label": "MA Education  (Part-Time)"
+  },
+  {
+    "code": "PTA1EDUEDU06",
+    "label": "MA Education Leadership and Management  (Full-Time)"
+  },
+  {
+    "code": "PNA2EDUEDU02",
+    "label": "MA Education: Special Educational Needs  (Part-Time)"
+  },
+  {
+    "code": "PTA1EGLEGL11",
+    "label": "MA English Literary Studies  (Full-Time)"
+  },
+  {
+    "code": "PTA1EGLEGL16",
+    "label": "MA Film and Screen Studies  (Full-Time)"
+  },
+  {
+    "code": "PTA1HPSHPS72",
+    "label": "MA Food Studies  (Full-Time)"
+  },
+  {
+    "code": "PTA1SMLSML22",
+    "label": "MA Global Literatures and Cultures  (Full-Time)"
+  },
+  {
+    "code": "PTA1HPSHPS12",
+    "label": "MA History  (Full-Time)"
+  },
+  {
+    "code": "PTA2EGLEGL13",
+    "label": "MA Interactive Storytelling Design: Video Games and Beyond  (Part-Time)"
+  },
+  {
+    "code": "PTA1SMLEDU01",
+    "label": "MA Intercultural Communication and Education  (Full-Time)"
+  },
+  {
+    "code": "PTA1SMLSBE01",
+    "label": "MA Intercultural Communication and International Business  (Full-Time)"
+  },
+  {
+    "code": "PTA1SMLSML24",
+    "label": "MA Intercultural Communication and Migration  (Full-Time)"
+  },
+  {
+    "code": "PTA1MLXPOL01",
+    "label": "MA Intercultural Communication and Public Administration  (Full-Time)"
+  },
+  {
+    "code": "PTA1HPSHPS83",
+    "label": "MA International Development  (Full-Time)"
+  },
+  {
+    "code": "PTA1EDUEDU05",
+    "label": "MA International Education  (Full-Time)"
+  },
+  {
+    "code": "PTA1EGLEGL13",
+    "label": "MA International Film Business  (Full-Time)"
+  },
+  {
+    "code": "PTA1HPSHPS01",
+    "label": "MA International Relations  (Full-Time)"
+  },
+  {
+    "code": "PTA1IAIIAI22",
+    "label": "MA Islamic Studies  (Full-Time)"
+  },
+  {
+    "code": "PTA2IAIIAI15",
+    "label": "MA Islamic Studies  (Part-Time)"
+  },
+  {
+    "code": "PTA1IAIIAI18",
+    "label": "MA Kurdish Studies  (Full-Time)"
+  },
+  {
+    "code": "PTA1IAIIAI25",
+    "label": "MA Magic and Occult Science  (Full-Time)"
+  },
+  {
+    "code": "PTA2IAIIAI18",
+    "label": "MA Magic and Occult Science  (Part-Time)"
+  },
+  {
+    "code": "PTA1EGLEGL17",
+    "label": "MA Media and Communications  (Full-Time)"
+  },
+  {
+    "code": "PTA1CMMCMM03",
+    "label": "MA Media and Public Relations  (Full-Time)"
+  },
+  {
+    "code": "PTA1IAIIAI23",
+    "label": "MA Middle East Politics  (Full-Time)"
+  },
+  {
+    "code": "PTA1IAIIAI16",
+    "label": "MA Middle East Studies  (Full-Time)"
+  },
+  {
+    "code": "PTA1IAIIAI17",
+    "label": "MA Palestine Studies  (Full-Time)"
+  },
+  {
+    "code": "PTA1HPSHPS69",
+    "label": "MA Philosophy  (Full-Time)"
+  },
+  {
+    "code": "PTA1EGLEGL15",
+    "label": "MA Publishing  (Full-Time)"
+  },
+  {
+    "code": "PTA1HPSHPS86",
+    "label": "MA Social and Political Theory  (Full-Time)"
+  },
+  {
+    "code": "PTA1CMMCMM02",
+    "label": "MA Social Media and Digital Marketing  (Full-Time)"
+  },
+  {
+    "code": "PTA1SOCSOC01",
+    "label": "MA Sociology  (Full-Time)"
+  },
+  {
+    "code": "PTA1EDUEDU09",
+    "label": "MA Special Educational Needs  (Full-Time)"
+  },
+  {
+    "code": "PTA1EDUEDU10",
+    "label": "MA Technology and Education Futures  (Full-Time)"
+  },
+  {
+    "code": "PTA1SPASPA01",
+    "label": "MA Theatre Practice  (Full-Time)"
+  },
+  {
+    "code": "PTA1CTHCTH12",
+    "label": "MA Theology and Religion  (Full-Time)"
+  },
+  {
+    "code": "PTA1SMLSML23",
+    "label": "MA Translation Studies  (Full-Time)"
+  },
+  {
+    "code": "UFX4IAIIAI01",
+    "label": "MArabic (Hons) Arabic and Islamic Studies  (Full-Time)"
+  },
+  {
+    "code": "PTB2SBESBE08",
+    "label": "MBA Exeter Executive (Non-Apprenticeship, Top-Up) (Part-Time)"
+  },
+  {
+    "code": "PTB1MBAMBA01",
+    "label": "MBA One Planet  (Full-Time)"
+  },
+  {
+    "code": "PNB2MBAMBA01",
+    "label": "MBA The Exeter MBA  (Part-Time)"
+  },
+  {
+    "code": "PTD1EDUEDU15",
+    "label": "MEd Teaching English to Speakers of Other Languages  (Full-Time)"
+  },
+  {
+    "code": "PTD2EDUEDU29",
+    "label": "MEd Teaching English to Speakers of Other Languages  (Part-Time)"
+  },
+  {
+    "code": "UFX4ENSENS03",
+    "label": "MEng (Hons) Biomedical Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSENS05",
+    "label": "MEng (Hons) Biomedical Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSINT10",
+    "label": "MEng (Hons) Biomedical Engineering with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX4ENSINT01",
+    "label": "MEng (Hons) Biomedical Engineering with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSENS03",
+    "label": "MEng (Hons) Biomedical Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSINT01",
+    "label": "MEng (Hons) Biomedical Engineering with Year in Industry with IYO (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS40",
+    "label": "MEng (Hons) Chemical Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSENS08",
+    "label": "MEng (Hons) Chemical Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSINT13",
+    "label": "MEng (Hons) Chemical Engineering with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX4ENSINT04",
+    "label": "MEng (Hons) Chemical Engineering with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSENS02",
+    "label": "MEng (Hons) Chemical Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSINT04",
+    "label": "MEng (Hons) Chemical Engineering with Year in Industry with IYO (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS06",
+    "label": "MEng (Hons) Civil Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX5ECSECS07",
+    "label": "MEng (Hons) Civil Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4ENSENS01",
+    "label": "MEng (Hons) Electrical and Electronic Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSENS01",
+    "label": "MEng (Hons) Electrical and Electronic Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS03",
+    "label": "MEng (Hons) Electronic Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX5ECSECS05",
+    "label": "MEng (Hons) Electronic Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS16",
+    "label": "MEng (Hons) Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS38",
+    "label": "MEng (Hons) Engineering and Entrepreneurship  (Full-Time)"
+  },
+  {
+    "code": "UFX5ECSECS01",
+    "label": "MEng (Hons) Engineering and Entrepreneurship with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS10",
+    "label": "MEng (Hons) Engineering and Management  (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSENS06",
+    "label": "MEng (Hons) Engineering and Management with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSINT11",
+    "label": "MEng (Hons) Engineering and Management with International Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX4ENSINT02",
+    "label": "MEng (Hons) Engineering and Management with International Year One (Full-Time)"
+  },
+  {
+    "code": "UFX5ECSECS06",
+    "label": "MEng (Hons) Engineering and Management with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX5ENSINT02",
+    "label": "MEng (Hons) Engineering and Management with Year in Industry with IYO (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECSCA",
+    "label": "MEng (Hons) Environmental Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX5ENEENGCC",
+    "label": "MEng (Hons) Environmental Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX5ENEENECC",
+    "label": "MEng (Hons) Environmental Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4ENEENECC",
+    "label": "MEng (Hons) General Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS02",
+    "label": "MEng (Hons) Mechanical Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX5ECSECS03",
+    "label": "MEng (Hons) Mechanical Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4MINMINCA",
+    "label": "MEng (Hons) Mining Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX4CSMCSMCM",
+    "label": "MEng (Hons) Renewable Energy Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX4ENEENECA",
+    "label": "MEng (Hons) Renewable Energy Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX5ENEENGCA",
+    "label": "MEng (Hons) Renewable Energy Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX4CSMCSMCN",
+    "label": "MEng (Hons) Renewable Energy Engineering with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFX4ENEENECB",
+    "label": "MEng (Hons) Renewable Energy Engineering with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "UFX5ENEENECA",
+    "label": "MEng (Hons) Renewable Energy Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS41",
+    "label": "MEng (Hons) Robotics and Artificial Intelligence  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECSCB",
+    "label": "MEng (Hons) Systems Engineering  (Full-Time)"
+  },
+  {
+    "code": "UFX5ENEENGCB",
+    "label": "MEng (Hons) Systems Engineering with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX5ENEENECB",
+    "label": "MEng (Hons) Systems Engineering with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "PTF2DRADRA01",
+    "label": "MFA Theatre Practice  (Full-Time)"
+  },
+  {
+    "code": "UFX4MASMAS04",
+    "label": "MMath (Hons) Mathematics  (Full-Time)"
+  },
+  {
+    "code": "UFX4MASMAS10",
+    "label": "MMath (Hons) Mathematics with International Study (Full-Time)"
+  },
+  {
+    "code": "UFX4MASMAS09",
+    "label": "MMath (Hons) Mathematics with Professional Experience (Full-Time)"
+  },
+  {
+    "code": "UFX5MASMAS01",
+    "label": "MMath (Hons) Mathematics with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "PTP1HPSHPS01",
+    "label": "MPA Public Administration  (Full-Time)"
+  },
+  {
+    "code": "PTP9HPSHPS01",
+    "label": "MPA Public Administration with Applied Studies (Full-Time)"
+  },
+  {
+    "code": "PTH1EMSEMS01",
+    "label": "MPH Public Health  (Full-Time)"
+  },
+  {
+    "code": "PNH2EMSEMS01",
+    "label": "MPH Public Health  (Part-Time)"
+  },
+  {
+    "code": "PNH3EMSEMS01",
+    "label": "MPH Public Health  (Part-Time)"
+  },
+  {
+    "code": "PTH2EMSEMS01",
+    "label": "MPH Public Health  (Part-Time)"
+  },
+  {
+    "code": "PTH3EMSEMS01",
+    "label": "MPH Public Health  (Part-Time)"
+  },
+  {
+    "code": "UFX4PHYPHY04",
+    "label": "MPhys (Hons) Physics  (Full-Time)"
+  },
+  {
+    "code": "UFX4PHYPHY19",
+    "label": "MPhys (Hons) Physics  (Full-Time)"
+  },
+  {
+    "code": "UFX4PHYPHY14",
+    "label": "MPhys (Hons) Physics with Astrophysics  (Full-Time)"
+  },
+  {
+    "code": "UFX4PHYPHY20",
+    "label": "MPhys (Hons) Physics with Astrophysics  (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY12",
+    "label": "MPhys (Hons) Physics with Astrophysics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY11",
+    "label": "MPhys (Hons) Physics with Astrophysics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFX4PHYPHY22",
+    "label": "MPhys (Hons) Physics with Biophysics  (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY08",
+    "label": "MPhys (Hons) Physics with Biophysics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY07",
+    "label": "MPhys (Hons) Physics with Biophysics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY02",
+    "label": "MPhys (Hons) Physics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY04",
+    "label": "MPhys (Hons) Physics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFX4PHYPHY23",
+    "label": "MPhys (Hons) Physics with Quantum Technology  (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY10",
+    "label": "MPhys (Hons) Physics with Quantum Technology with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY09",
+    "label": "MPhys (Hons) Physics with Quantum Technology with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY01",
+    "label": "MPhys (Hons) Physics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY03",
+    "label": "MPhys (Hons) Physics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "UFX4PHYPHY21",
+    "label": "MPhys (Hons) Theoretical Physics  (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY06",
+    "label": "MPhys (Hons) Theoretical Physics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "UFX5PHYPHY05",
+    "label": "MPhys (Hons) Theoretical Physics with Study Abroad (Full-Time)"
+  },
+  {
+    "code": "PTR2BIOBIO02",
+    "label": "MRes Advanced Biological Sciences  (Full-Time)"
+  },
+  {
+    "code": "PTR2SBESBE02",
+    "label": "MRes Economics (PhD Pathway)  (Full-Time)"
+  },
+  {
+    "code": "PTR2SBESBE03",
+    "label": "MRes Finance (PhD Pathway)  (Full-Time)"
+  },
+  {
+    "code": "PTR1SBESBE04",
+    "label": "MRes Management  (Full-Time)"
+  },
+  {
+    "code": "PTR1IAIIAI01",
+    "label": "MRes Middle East Studies (Social Studies)  (Full-Time)"
+  },
+  {
+    "code": "PTR2IAIIAI01",
+    "label": "MRes Middle East Studies (Social Studies)  (Part-Time)"
+  },
+  {
+    "code": "PTR1HPSHPS15",
+    "label": "MRes Social Science Research  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE19",
+    "label": "MSc Accounting and Finance  (Full-Time)"
+  },
+  {
+    "code": "PTS1BIOBIO12",
+    "label": "MSc Advanced Biological Sciences  (Full-Time)"
+  },
+  {
+    "code": "PTS1BIOSBE01",
+    "label": "MSc Advanced Biological Sciences and Business  (Full-Time)"
+  },
+  {
+    "code": "PTS2EMSEMS15",
+    "label": "MSc Advanced Clinical Practice  (Part-Time)"
+  },
+  {
+    "code": "PTS3EMSEMS16",
+    "label": "MSc Advanced Clinical Practice  (Part-Time)"
+  },
+  {
+    "code": "PAS3EMSEMS02",
+    "label": "MSc Advanced Clinical Practice (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PAS3EMSEMS01",
+    "label": "MSc Advanced Clinical Practice (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PTS1ECSECS32",
+    "label": "MSc Advanced Computer Science  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECSSBE11",
+    "label": "MSc Advanced Computer Science with Business  (Full-Time)"
+  },
+  {
+    "code": "PTS1COMCOM03",
+    "label": "MSc Advanced Data Science  (Full-Time)"
+  },
+  {
+    "code": "PTS1COMCOM08",
+    "label": "MSc Advanced Data Science  (Full-Time)"
+  },
+  {
+    "code": "PTS1COMCOM09",
+    "label": "MSc Advanced Machine Learning  (Full-Time)"
+  },
+  {
+    "code": "PTS2ACPACP01",
+    "label": "MSc Advanced Practice  (Part-Time)"
+  },
+  {
+    "code": "PTS3ACPACP01",
+    "label": "MSc Advanced Practice  (Part-Time)"
+  },
+  {
+    "code": "PAS2BDABDA07",
+    "label": "MSc Applied Accounting (ACCA) (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PAS2BDABDA06",
+    "label": "MSc Applied Accounting (ACCA) (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PAS2BDABDA05",
+    "label": "MSc Applied Accounting (CIMA) (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PAS2BDABDA04",
+    "label": "MSc Applied Accounting (CIMA) (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PTS1ECSMAS01",
+    "label": "MSc Applied Data Science and Statistics  (Full-Time)"
+  },
+  {
+    "code": "PTS2MASMAS04",
+    "label": "MSc Applied Data Science and Statistics with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "PAS2SBESBE01",
+    "label": "MSc Applied Human Resource Management (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PAS2SBESBE02",
+    "label": "MSc Applied Strategic Leadership and Management (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PTS1COMCOM07",
+    "label": "MSc Artificial Intelligence  (Full-Time)"
+  },
+  {
+    "code": "PTS1COMCOM04",
+    "label": "MSc Artificial Intelligence for the Environment  (Full-Time)"
+  },
+  {
+    "code": "PTS1GAEGAE16",
+    "label": "MSc Bioarchaeology (Forensic Anthropology)  (Full-Time)"
+  },
+  {
+    "code": "PTS1GAEGAE12",
+    "label": "MSc Bioarchaeology (Human Osteology)  (Full-Time)"
+  },
+  {
+    "code": "PTS1GAEGAE11",
+    "label": "MSc Bioarchaeology (Zooarchaeology)  (Full-Time)"
+  },
+  {
+    "code": "PTS1MASMAS16",
+    "label": "MSc Biomedical Data and Artificial Intelligence  (Full-Time)"
+  },
+  {
+    "code": "PTS1ENSENS01",
+    "label": "MSc Biomedical Engineering  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE41",
+    "label": "MSc Business Analytics  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE51",
+    "label": "MSc Business and Management  (Full-Time)"
+  },
+  {
+    "code": "PTS1ENSENS02",
+    "label": "MSc Civil Engineering (Digital Construction)  (Full-Time)"
+  },
+  {
+    "code": "PTS2ENSENS06",
+    "label": "MSc Civil Engineering (Digital Construction) with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "PTS1ENSENS03",
+    "label": "MSc Civil Engineering (Structural Design)  (Full-Time)"
+  },
+  {
+    "code": "PTS2ENSENS07",
+    "label": "MSc Civil Engineering (Structural Design) with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "PTS1ENSENS04",
+    "label": "MSc Civil Engineering (Water Management)  (Full-Time)"
+  },
+  {
+    "code": "PTS2ENSENS08",
+    "label": "MSc Civil Engineering (Water Management) with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "PTS1EMSEMS06",
+    "label": "MSc Clinical Education  (Full-Time)"
+  },
+  {
+    "code": "PTS2EMSEMS09",
+    "label": "MSc Clinical Education  (Part-Time)"
+  },
+  {
+    "code": "PTS3EMSEMS04",
+    "label": "MSc Clinical Education  (Part-Time)"
+  },
+  {
+    "code": "PTS1ACPACP01",
+    "label": "MSc Clinical Practice  (Full-Time)"
+  },
+  {
+    "code": "PTS1PSYPSY15",
+    "label": "MSc Clinical Psychology  (Full-Time)"
+  },
+  {
+    "code": "PTS1COMCOM05",
+    "label": "MSc Computer Science  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECSECS43",
+    "label": "MSc Computer Science  (Full-Time)"
+  },
+  {
+    "code": "PNS2COMCOM01",
+    "label": "MSc Computer Science  (Part-Time)"
+  },
+  {
+    "code": "PNS2COMCOM02",
+    "label": "MSc Computer Science  (Part-Time)"
+  },
+  {
+    "code": "PTS1BIOBIOCI",
+    "label": "MSc Conservation and Biodiversity with International Field Course (Full-Time)"
+  },
+  {
+    "code": "PTS1BIOBIOCF",
+    "label": "MSc Conservation and Biodiversity with UK Field Course (Full-Time)"
+  },
+  {
+    "code": "PTS1ECSECS33",
+    "label": "MSc Cyber Security Analytics  (Full-Time)"
+  },
+  {
+    "code": "PTS1COMCOM06",
+    "label": "MSc Data Science  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECSECS30",
+    "label": "MSc Data Science  (Full-Time)"
+  },
+  {
+    "code": "PAS2ECSECS03",
+    "label": "MSc Digital and Technology Solutions (Integrated Degree Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PTS0SBESBE18",
+    "label": "MSc Digital Marketing  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE44",
+    "label": "MSc Digital Marketing  (Full-Time)"
+  },
+  {
+    "code": "PTS2SBESBE17",
+    "label": "MSc Digital Marketing with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE05",
+    "label": "MSc Economics  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECOECO01",
+    "label": "MSc Economics (Behavioural Insights)  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECOECO03",
+    "label": "MSc Economics (Environmental Policy)  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECOECO02",
+    "label": "MSc Economics (International Development)  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECSECS39",
+    "label": "MSc Electrical Power and Smart Grids  (Full-Time)"
+  },
+  {
+    "code": "PES2ENSZUT01",
+    "label": "MSc Electronic Information  (Full-Time)"
+  },
+  {
+    "code": "PES3ENSZUT01",
+    "label": "MSc Electronic Information (Dual Award)  (Full-Time)"
+  },
+  {
+    "code": "PES2ENSZUT02",
+    "label": "MSc Energy and Power Engineering  (Full-Time)"
+  },
+  {
+    "code": "PES3ENSZUT02",
+    "label": "MSc Energy and Power Engineering (Dual Award)  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECSSBE05",
+    "label": "MSc Engineering Business Management  (Full-Time)"
+  },
+  {
+    "code": "PTS2ECSECS15",
+    "label": "MSc Engineering Business Management with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "PTS2EMSEMSCA",
+    "label": "MSc Environment and Human Health  (Part-Time)"
+  },
+  {
+    "code": "PTS1ECCECCCB",
+    "label": "MSc Evolution, Behaviour and Ecology with International Field Course (Full-Time)"
+  },
+  {
+    "code": "PTS1ECCECCCC",
+    "label": "MSc Evolution, Behaviour and Ecology with UK Field Course (Full-Time)"
+  },
+  {
+    "code": "PTS1CSMCSMCO",
+    "label": "MSc Exploration and Mining Geology  (Full-Time)"
+  },
+  {
+    "code": "PTS1HCSHCS02",
+    "label": "MSc Extreme Medicine  (Full-Time)"
+  },
+  {
+    "code": "PTS2HCSHCS02",
+    "label": "MSc Extreme Medicine  (Part-Time)"
+  },
+  {
+    "code": "PTS3EMSEMS10",
+    "label": "MSc Extreme Medicine  (Part-Time)"
+  },
+  {
+    "code": "PTS3HCSHCS02",
+    "label": "MSc Extreme Medicine  (Part-Time)"
+  },
+  {
+    "code": "PTS2SBESBE20",
+    "label": "MSc Finance  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBEMAS02",
+    "label": "MSc Finance and Data Science  (Full-Time)"
+  },
+  {
+    "code": "PTS0SBESBE08",
+    "label": "MSc Finance and Investment  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE27",
+    "label": "MSc Finance and Investment  (Full-Time)"
+  },
+  {
+    "code": "PTS0SBESBE02",
+    "label": "MSc Finance and Management  (Full-Time)"
+  },
+  {
+    "code": "PTS1FINHRM01",
+    "label": "MSc Finance and Management  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE28",
+    "label": "MSc Finance and Management  (Full-Time)"
+  },
+  {
+    "code": "PTS3SBESBE04",
+    "label": "MSc Finance with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE08",
+    "label": "MSc Financial Economics  (Full-Time)"
+  },
+  {
+    "code": "PTS2SBESBEDJ",
+    "label": "MSc Financial Economics (Double Degree) (Full-Time)"
+  },
+  {
+    "code": "PTS2SBESBE09",
+    "label": "MSc Financial Economics (QTEM) (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE40",
+    "label": "MSc Financial Technology (FinTech)  (Full-Time)"
+  },
+  {
+    "code": "PTS2SBESBE18",
+    "label": "MSc Financial Technology (FinTech) with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "PTS1ARCARC01",
+    "label": "MSc Forensic Investigations  (Full-Time)"
+  },
+  {
+    "code": "PTS1COMCOM01",
+    "label": "MSc Generative Artificial Intelligence  (Full-Time)"
+  },
+  {
+    "code": "PTS1EMSEMS05",
+    "label": "MSc Genomic Medicine  (Full-Time)"
+  },
+  {
+    "code": "PTS1EMSEMS16",
+    "label": "MSc Genomic Medicine (Data Science)  (Full-Time)"
+  },
+  {
+    "code": "PTS1EMSEMS14",
+    "label": "MSc Genomic Medicine (Online Programme)  (Full-Time)"
+  },
+  {
+    "code": "PTS1GOAGOA03",
+    "label": "MSc Geographical Information Science  (Full-Time)"
+  },
+  {
+    "code": "PTS1CSMCSMCJ",
+    "label": "MSc Geotechnical Engineering  (Full-Time)"
+  },
+  {
+    "code": "PTS1HCSBSM01",
+    "label": "MSc Global Healthcare Management  (Full-Time)"
+  },
+  {
+    "code": "PTS1GOAGOA02",
+    "label": "MSc Global Sustainability Solutions  (Full-Time)"
+  },
+  {
+    "code": "PTS2GOAGOA01",
+    "label": "MSc Global Sustainability Solutions  (Part-Time)"
+  },
+  {
+    "code": "PTS1EMSEMS10",
+    "label": "MSc Health Data Science  (Full-Time)"
+  },
+  {
+    "code": "PNS2MDCMDC01",
+    "label": "MSc Health Data Science  (Part-Time)"
+  },
+  {
+    "code": "PTS1HCSHCS03",
+    "label": "MSc Health Research Methods  (Full-Time)"
+  },
+  {
+    "code": "PTS2EMSEMS05",
+    "label": "MSc Health Research Methods  (Part-Time)"
+  },
+  {
+    "code": "PTS2HCSHCS03",
+    "label": "MSc Health Research Methods  (Part-Time)"
+  },
+  {
+    "code": "PTS0EMSEMS01",
+    "label": "MSc Healthcare Leadership (Non-Apprenticeship, Top-Up) (Part-Time)"
+  },
+  {
+    "code": "PNS2HCSHCS01",
+    "label": "MSc Healthcare Leadership and Management  (Part-Time)"
+  },
+  {
+    "code": "PTS0EMSEMS02",
+    "label": "MSc Healthcare Leadership and Management (Top-Up) (Part-Time)"
+  },
+  {
+    "code": "PTS1SBESBE26",
+    "label": "MSc Human Resource Management  (Full-Time)"
+  },
+  {
+    "code": "PNS2HRMHRM01",
+    "label": "MSc Human Resource Management  (Part-Time)"
+  },
+  {
+    "code": "PTS1COMCOM02",
+    "label": "MSc Human-Centred Artificial Intelligence  (Full-Time)"
+  },
+  {
+    "code": "PTS1BIOBIO13",
+    "label": "MSc Immunology  (Full-Time)"
+  },
+  {
+    "code": "PTS1ITEITE01",
+    "label": "MSc Innovation and Entrepreneurship  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE38",
+    "label": "MSc International Business  (Full-Time)"
+  },
+  {
+    "code": "PNS2SBESBE02",
+    "label": "MSc International Business  (Part-Time)"
+  },
+  {
+    "code": "PTS1SBESBE50",
+    "label": "MSc International Business and Strategy  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECSSBE01",
+    "label": "MSc International Supply Chain Management  (Full-Time)"
+  },
+  {
+    "code": "PTS2ECSSBE11",
+    "label": "MSc International Supply Chain Management with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "PTS1JBIJBI01",
+    "label": "MSc Island Biodiversity and Conservation  (Full-Time)"
+  },
+  {
+    "code": "PTS2EMSEMS13",
+    "label": "MSc Leading Clinical Research Delivery  (Part-Time)"
+  },
+  {
+    "code": "PTS3EMSEMS14",
+    "label": "MSc Leading Clinical Research Delivery  (Part-Time)"
+  },
+  {
+    "code": "PTS0SBESBE17",
+    "label": "MSc Management  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE39",
+    "label": "MSc Management  (Full-Time)"
+  },
+  {
+    "code": "PTS2SBESBE15",
+    "label": "MSc Management with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "PTS1BIOBIOCK",
+    "label": "MSc Marine Environmental Management with International Field Course (Full-Time)"
+  },
+  {
+    "code": "PTS1BIOBIOCH",
+    "label": "MSc Marine Environmental Management with UK Field Course (Full-Time)"
+  },
+  {
+    "code": "PTS1BIOBIOCD",
+    "label": "MSc Marine Vertebrate Ecology and Conservation  (Full-Time)"
+  },
+  {
+    "code": "PTS0SBESBE16",
+    "label": "MSc Marketing  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE21",
+    "label": "MSc Marketing  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBESBE55",
+    "label": "MSc Marketing and Business Analytics  (Full-Time)"
+  },
+  {
+    "code": "PTS1BSMBSM01",
+    "label": "MSc Marketing Management  (Full-Time)"
+  },
+  {
+    "code": "PTS2SBESBE16",
+    "label": "MSc Marketing with Industrial Experience (Full-Time)"
+  },
+  {
+    "code": "PTS1MASMAS18",
+    "label": "MSc Mathematical Finance  (Full-Time)"
+  },
+  {
+    "code": "PTS2MASMAS07",
+    "label": "MSc Mathematical Finance with Professional Placement (Full-Time)"
+  },
+  {
+    "code": "PTS1MASMAS13",
+    "label": "MSc Mathematics  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECSECS28",
+    "label": "MSc Mechanical Engineering  (Full-Time)"
+  },
+  {
+    "code": "PTS2ENSENS01",
+    "label": "MSc Mechanical Engineering with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "PTS1RADHCS01",
+    "label": "MSc Medical Imaging  (Full-Time)"
+  },
+  {
+    "code": "PTS3RADHCS01",
+    "label": "MSc Medical Imaging  (Part-Time)"
+  },
+  {
+    "code": "PNS3BIOBIO01",
+    "label": "MSc Medical Mycology  (Part-Time)"
+  },
+  {
+    "code": "PTS1PHYPHY03",
+    "label": "MSc Metamaterials  (Full-Time)"
+  },
+  {
+    "code": "PTS1CSMCSMCM",
+    "label": "MSc Minerals Processing  (Full-Time)"
+  },
+  {
+    "code": "PTS1CSMCSMCD",
+    "label": "MSc Mining Engineering  (Full-Time)"
+  },
+  {
+    "code": "PTS1CSMCSMCN",
+    "label": "MSc Mining Environmental Management  (Full-Time)"
+  },
+  {
+    "code": "PTS1EMSEMS15",
+    "label": "MSc Neuroscience  (Full-Time)"
+  },
+  {
+    "code": "PTS1NEUNEU01",
+    "label": "MSc Neuroscience (Data Science)  (Full-Time)"
+  },
+  {
+    "code": "PTS1PHYPHY02",
+    "label": "MSc Physics  (Full-Time)"
+  },
+  {
+    "code": "PTS3HCSHCS01",
+    "label": "MSc Primary Care  (Part-Time)"
+  },
+  {
+    "code": "PTS1PSYPSY16",
+    "label": "MSc Psychedelics: Mind, Medicine and Culture  (Full-Time)"
+  },
+  {
+    "code": "PNS2PSYHPS01",
+    "label": "MSc Psychedelics: Mind, Medicine and Culture  (Part-Time)"
+  },
+  {
+    "code": "PTS2PSYPSY10",
+    "label": "MSc Psychological Therapies Practice and Research (Systemic Therapy)  (Part-Time)"
+  },
+  {
+    "code": "PTS2PSYPSY16",
+    "label": "MSc Psychological Therapies Practice and Research (Top-Up) (Part-Time)"
+  },
+  {
+    "code": "PTS1PSYEDU01",
+    "label": "MSc Psychology (Conversion)  (Full-Time)"
+  },
+  {
+    "code": "PTS1SHSPSY01",
+    "label": "MSc Psychology (Conversion) (Sport)  (Full-Time)"
+  },
+  {
+    "code": "PTS1HPSHPS07",
+    "label": "MSc Public Policy  (Full-Time)"
+  },
+  {
+    "code": "PTS1ECSECSCA",
+    "label": "MSc Renewable Energy Engineering  (Full-Time)"
+  },
+  {
+    "code": "PTS2ENEENECA",
+    "label": "MSc Renewable Energy Engineering with Industrial Placement (Full-Time)"
+  },
+  {
+    "code": "PTS1HPSHPS10",
+    "label": "MSc Security and Data Science  (Full-Time)"
+  },
+  {
+    "code": "PTS1HPSHPS08",
+    "label": "MSc Social Data Science  (Full-Time)"
+  },
+  {
+    "code": "PTS1SHSEMS01",
+    "label": "MSc Sport and Exercise Medicine  (Full-Time)"
+  },
+  {
+    "code": "PTS1SHSSBE01",
+    "label": "MSc Sports Management  (Full-Time)"
+  },
+  {
+    "code": "PTS1MASMAS11",
+    "label": "MSc Statistics  (Full-Time)"
+  },
+  {
+    "code": "PTS1SBEMAS01",
+    "label": "MSc Sustainable Finance and Climate Change  (Full-Time)"
+  },
+  {
+    "code": "PAS3POLPOL02",
+    "label": "MSc Systems Thinking for Service Design (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PAS3POLPOL01",
+    "label": "MSc Systems Thinking for Service Design (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PAS2HPSHPS03",
+    "label": "MSc Systems Thinking in the Public Sector (Commercially-Funded Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PAS2HPSHPS02",
+    "label": "MSc Systems Thinking in the Public Sector (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PTS1MASMAS12",
+    "label": "MSc Weather and Climate Science  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECCECCCA",
+    "label": "MSci (Hons) Animal Behaviour  (Full-Time)"
+  },
+  {
+    "code": "UFX4BIOBIOCA",
+    "label": "MSci (Hons) Animal Behaviour (Being Taught Out)  (Full-Time)"
+  },
+  {
+    "code": "UFX4PSYPSY01",
+    "label": "MSci (Hons) Applied Psychology (Clinical)  (Full-Time)"
+  },
+  {
+    "code": "UFX4COMCOM01",
+    "label": "MSci (Hons) Artificial Intelligence  (Full-Time)"
+  },
+  {
+    "code": "UFX4BIOBIO02",
+    "label": "MSci (Hons) Biochemistry  (Full-Time)"
+  },
+  {
+    "code": "UFX4BIOBIO03",
+    "label": "MSci (Hons) Biological and Medicinal Chemistry  (Full-Time)"
+  },
+  {
+    "code": "UFX4BIOBIO01",
+    "label": "MSci (Hons) Biological Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS36",
+    "label": "MSci (Hons) Computer Science  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSMAS01",
+    "label": "MSci (Hons) Computer Science and Mathematics  (Full-Time)"
+  },
+  {
+    "code": "UFX4BIOBIOCB",
+    "label": "MSci (Hons) Conservation Biology and Ecology  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECCECCCB",
+    "label": "MSci (Hons) Conservation Biology and Ecology  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECSECS39",
+    "label": "MSci (Hons) Data Science  (Full-Time)"
+  },
+  {
+    "code": "UFX4CSMCSMCO",
+    "label": "MSci (Hons) Engineering Geology and Geotechnics  (Full-Time)"
+  },
+  {
+    "code": "UFX4CSMCSMCR",
+    "label": "MSci (Hons) Environmental Geoscience  (Full-Time)"
+  },
+  {
+    "code": "UFX4GAEGAECB",
+    "label": "MSci (Hons) Environmental Science  (Full-Time)"
+  },
+  {
+    "code": "UFX4BIOBIOCD",
+    "label": "MSci (Hons) Evolutionary Biology  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECCECCCC",
+    "label": "MSci (Hons) Evolutionary Biology  (Full-Time)"
+  },
+  {
+    "code": "UFX4SHSSHS01",
+    "label": "MSci (Hons) Exercise and Sport Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFX4CSMCSMCQ",
+    "label": "MSci (Hons) Geology  (Full-Time)"
+  },
+  {
+    "code": "UFX4BIOBIOCF",
+    "label": "MSci (Hons) Human Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFX4BIOBIOCE",
+    "label": "MSci (Hons) Marine Biology  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECCECCCE",
+    "label": "MSci (Hons) Marine Biology  (Full-Time)"
+  },
+  {
+    "code": "UFX4MASMAS08",
+    "label": "MSci (Hons) Mathematics (Climate Science)  (Full-Time)"
+  },
+  {
+    "code": "UFX4MASMAS11",
+    "label": "MSci (Hons) Mathematics (Geophysical and Astrophysical Fluid Dynamics)  (Full-Time)"
+  },
+  {
+    "code": "UFX4MASMAS07",
+    "label": "MSci (Hons) Mathematics (Mathematical Biology)  (Full-Time)"
+  },
+  {
+    "code": "UFX4MASMAS13",
+    "label": "MSci (Hons) Mathematics and Data Science  (Full-Time)"
+  },
+  {
+    "code": "UFX4MASSBE05",
+    "label": "MSci (Hons) Mathematics with Accounting  (Full-Time)"
+  },
+  {
+    "code": "UFX5MASMAS02",
+    "label": "MSci (Hons) Mathematics with Accounting with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4MASSBE04",
+    "label": "MSci (Hons) Mathematics with Economics  (Full-Time)"
+  },
+  {
+    "code": "UFX5MASMAS03",
+    "label": "MSci (Hons) Mathematics with Economics with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4MASSBE03",
+    "label": "MSci (Hons) Mathematics with Finance  (Full-Time)"
+  },
+  {
+    "code": "UFX5MASMAS04",
+    "label": "MSci (Hons) Mathematics with Finance with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4MASSBE02",
+    "label": "MSci (Hons) Mathematics with Management  (Full-Time)"
+  },
+  {
+    "code": "UFX5MASMAS05",
+    "label": "MSci (Hons) Mathematics with Management with Year in Industry (Full-Time)"
+  },
+  {
+    "code": "UFX4EMSEMS05",
+    "label": "MSci (Hons) Medical Imaging (Diagnostic Radiography)  (Full-Time)"
+  },
+  {
+    "code": "UFX4NSCNSC01",
+    "label": "MSci (Hons) Natural Sciences  (Full-Time)"
+  },
+  {
+    "code": "UFX5NSCNSC01",
+    "label": "MSci (Hons) Natural Sciences with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX4NSCNSC02",
+    "label": "MSci (Hons) Natural Sciences with International Study (Full-Time)"
+  },
+  {
+    "code": "UFX5NSCNSC02",
+    "label": "MSci (Hons) Natural Sciences with International Study with Foundation Year (Full-Time)"
+  },
+  {
+    "code": "UFX4NURNUR01",
+    "label": "MSci (Hons) Nursing  (Full-Time)"
+  },
+  {
+    "code": "UFX4EMSEMS03",
+    "label": "MSci (Hons) Nursing (Adult and Mental Health)  (Full-Time)"
+  },
+  {
+    "code": "UFX4NURNUR02",
+    "label": "MSci (Hons) Nursing (Adult and Mental Health)  (Full-Time)"
+  },
+  {
+    "code": "UFX4EMSEMS04",
+    "label": "MSci (Hons) Nursing (Adult)  (Full-Time)"
+  },
+  {
+    "code": "UFX4NURNUR03",
+    "label": "MSci (Hons) Nursing (Adult)  (Full-Time)"
+  },
+  {
+    "code": "UFX4CSMCSMCP",
+    "label": "MSci (Hons) Resource and Exploration Geology  (Full-Time)"
+  },
+  {
+    "code": "UFX4BIOBIOCC",
+    "label": "MSci (Hons) Zoology  (Full-Time)"
+  },
+  {
+    "code": "UFX4ECCECCCD",
+    "label": "MSci (Hons) Zoology  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC01",
+    "label": "PGCE Biology Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC47",
+    "label": "PGCE Biology with Physical Education Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC44",
+    "label": "PGCE Biology with Psychology Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC03",
+    "label": "PGCE Chemistry Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC46",
+    "label": "PGCE English Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC12",
+    "label": "PGCE French Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC07",
+    "label": "PGCE Geography Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC24",
+    "label": "PGCE German Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC26",
+    "label": "PGCE History Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC04",
+    "label": "PGCE Mathematics Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC25",
+    "label": "PGCE Physical Education Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC02",
+    "label": "PGCE Physics Secondary  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUPRI21",
+    "label": "PGCE Primary (3-7)  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUPRI20",
+    "label": "PGCE Primary (5-11)  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUPRI22",
+    "label": "PGCE Primary (South West Teacher Training)  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUPRI23",
+    "label": "PGCE Primary (Ted Wragg Teacher Training Partnership)  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC48",
+    "label": "PGCE Secondary (South West Teacher Training)  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC49",
+    "label": "PGCE Secondary (Ted Wragg Teacher Training Partnership)  (Full-Time)"
+  },
+  {
+    "code": "PGC1EDUSEC37",
+    "label": "PGCE Spanish Secondary  (Full-Time)"
+  },
+  {
+    "code": "PCT2EDUEDU07",
+    "label": "PGCert Academic Practice  (Part-Time)"
+  },
+  {
+    "code": "PAC2EDUEDU01",
+    "label": "PGCert Academic Practice (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PCT1EMSEMS17",
+    "label": "PGCert Clinical Education  (Part-Time)"
+  },
+  {
+    "code": "PCT1ACPACP01",
+    "label": "PGCert Clinical Practice  (Part-Time)"
+  },
+  {
+    "code": "PCT0PSYPSY09",
+    "label": "PGCert Clinical Supervision of Low Intensity Interventions for Children and Young People  (Part-Time)"
+  },
+  {
+    "code": "PCT0PSYPSY04",
+    "label": "PGCert Clinical Supervision of Psychological Therapies Practice  (Part-Time)"
+  },
+  {
+    "code": "PCT1PSYPSY10",
+    "label": "PGCert Enhanced Practice for Children and Young People (Low Intensity Cognitive Behavioural Therapy)  (Part-Time)"
+  },
+  {
+    "code": "PCT1HCSHCS01",
+    "label": "PGCert Extreme Medicine  (Part-Time)"
+  },
+  {
+    "code": "PCT1EMSEMS18",
+    "label": "PGCert Health Data Science  (Part-Time)"
+  },
+  {
+    "code": "PCT0HCSHCS01",
+    "label": "PGCert Health Research Methods  (Part-Time)"
+  },
+  {
+    "code": "PCT1EMSEMS19",
+    "label": "PGCert Leading Clinical Research Delivery  (Part-Time)"
+  },
+  {
+    "code": "PCT1RADHCS01",
+    "label": "PGCert Medical Imaging  (Part-Time)"
+  },
+  {
+    "code": "PCT1PYCLAW01",
+    "label": "PGCert Professional Practice in Mental Health Law (Trainee MPAC)  (Part-Time)"
+  },
+  {
+    "code": "PNC1PSYHPS01",
+    "label": "PGCert Psychedelics: Mind, Medicine and Culture  (Part-Time)"
+  },
+  {
+    "code": "PCT0PSYPSY08",
+    "label": "PGCert Psychological Therapies Practice (Children and Young People with Autism and-or Learning Disability)  (Part-Time)"
+  },
+  {
+    "code": "PCT1PSYPSY05",
+    "label": "PGCert Psychological Therapies Practice (Low Intensity Cognitive Behavioural Therapy for Children, Young People and Families)  (Part-Time)"
+  },
+  {
+    "code": "PCT1PSYPSY11",
+    "label": "PGCert Psychological Therapies Practice (Low Intensity Cognitive Behavioural Therapy)  (Part-Time)"
+  },
+  {
+    "code": "PCT2PSYPSY01",
+    "label": "PGCert Psychological Therapies Practice (Low Intensity Cognitive Behavioural Therapy)  (Part-Time)"
+  },
+  {
+    "code": "PCT1PSYPSY08",
+    "label": "PGCert Psychological Therapies Practice (Mental Health and Wellbeing in Specialist Adult Mental Health)  (Part-Time)"
+  },
+  {
+    "code": "PCT1PSYPSY07",
+    "label": "PGCert Psychological Therapies Practice (Severe Mental Health Problems: Cognitive Behavioural Therapy for Personality Disorder)  (Part-Time)"
+  },
+  {
+    "code": "PCT1PSYPSY06",
+    "label": "PGCert Psychological Therapies Practice (Severe Mental Health Problems: Cognitive Behavioural Therapy for Psychosis and Bipolar Disorder)  (Part-Time)"
+  },
+  {
+    "code": "PCT1EMSEMS14",
+    "label": "PGCert Public Health  (Part-Time)"
+  },
+  {
+    "code": "PDP2EMSEMS03",
+    "label": "PGDip Clinical Education  (Part-Time)"
+  },
+  {
+    "code": "PDP2ACPACP01",
+    "label": "PGDip Clinical Practice  (Part-Time)"
+  },
+  {
+    "code": "PDP1PSYPSY08",
+    "label": "PGDip Enhanced Psychological Therapies Practice (Low Intensity Cognitive Behavioural Therapy)  (Part-Time)"
+  },
+  {
+    "code": "PDP2HCSHCS02",
+    "label": "PGDip Extreme Medicine  (Part-Time)"
+  },
+  {
+    "code": "PDP2HCSHCS03",
+    "label": "PGDip Health Research Methods  (Part-Time)"
+  },
+  {
+    "code": "PAD2EMSEMS02",
+    "label": "PGDip Healthcare Leadership (Higher Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PDP2EMSEMS16",
+    "label": "PGDip Healthcare Leadership (Non-Apprenticeship) (Part-Time)"
+  },
+  {
+    "code": "PDP0SBESBE02",
+    "label": "PGDip Human Resource Management  (Full-Time)"
+  },
+  {
+    "code": "PDP2EMSEMS13",
+    "label": "PGDip Leading Clinical Research Delivery  (Part-Time)"
+  },
+  {
+    "code": "PDP2RADHCS01",
+    "label": "PGDip Medical Imaging  (Part-Time)"
+  },
+  {
+    "code": "PDP1PSYPSY07",
+    "label": "PGDip Mental Health Practice in Education Settings  (Full-Time)"
+  },
+  {
+    "code": "PDP1PSYPSY06",
+    "label": "PGDip Psychological Therapies Practice (Children, Young People and Families)  (Full-Time)"
+  },
+  {
+    "code": "PDP1PSYPSY05",
+    "label": "PGDip Psychological Therapies Practice (High Intensity Cognitive Behavioural Therapy)  (Full-Time)"
+  },
+  {
+    "code": "PDP1PSYPSY09",
+    "label": "PGDip Psychological Therapies Practice (Low Intensity Cognitive Behavioural Therapy for Children, Young People and Families)  (Full-Time)"
+  },
+  {
+    "code": "PDP2PSYPSY06",
+    "label": "PGDip Psychological Therapies Practice (Severe Mental Health Problems: Cognitive Behavioural Therapy for Personality Disorder)  (Part-Time)"
+  },
+  {
+    "code": "PDP2PSYPSY05",
+    "label": "PGDip Psychological Therapies Practice (Severe Mental Health Problems: Cognitive Behavioural Therapy for Psychosis and Bipolar Disorder)  (Part-Time)"
+  },
+  {
+    "code": "PDP2EMSEMS08",
+    "label": "PGDip Public Health  (Part-Time)"
+  },
+  {
+    "code": "PDP2PSYPSY08",
+    "label": "PGDip Senior Wellbeing Practitioner for Children and Young People (Low Intensity Cognitive Behavioural Therapy)  (Part-Time)"
+  },
+  {
+    "code": "PDP1PYCPYC01",
+    "label": "PGDip Senior Wellbeing Practitioner for Children and Young People (Low Intensity Cognitive Behavioural Therapy) (Top-Up) (Part-Time)"
+  },
+  {
+    "code": "PDP1EDUEDU07",
+    "label": "PGDip Teaching English to Speakers of Other Languages  (Full-Time)"
+  },
+  {
+    "code": "PDP2EDUEDU06",
+    "label": "PGDip Teaching English to Speakers of Other Languages  (Part-Time)"
+  },
+  {
+    "code": "PPC0EMSEMS02",
+    "label": "PracCert Independent and Supplementary Prescribing  (Part-Time)"
+  }
+]

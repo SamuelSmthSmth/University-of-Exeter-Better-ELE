@@ -144,3 +144,16 @@ export async function combinePdfSlides(
 
   return await mergedPdf.save();
 }
+
+/**
+ * Convenience helper to merge CourseResource slide items into a downloadable/viewable Blob URL.
+ */
+export async function combineSlidePdfs(
+  slides: CourseResource[],
+  onProgress?: (current: number, total: number) => void
+): Promise<string> {
+  const urls = slides.map(s => s.fileUrl).filter(Boolean);
+  const pdfBytes = await combinePdfSlides(urls, onProgress);
+  const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+  return URL.createObjectURL(blob);
+}

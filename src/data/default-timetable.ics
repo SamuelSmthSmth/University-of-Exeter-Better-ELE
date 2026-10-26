@@ -1,0 +1,3831 @@
+BEGIN:VCALENDAR
+PRODID:-//Eveoh//Eveoh iCalExporter 1.3//EN
+VERSION:2.0
+METHOD:PUBLISH
+CALSCALE:GREGORIAN
+X-WR-TIMEZONE:Europe/London
+X-WR-CALNAME:University of Exeter - Personal timetable: so474
+X-WR-CALDESC:University of Exeter - Personal timetable: so474
+BEGIN:VTIMEZONE
+TZID:Europe/London
+LAST-MODIFIED:20230911T053111Z
+TZURL:https://www.tzurl.org/zoneinfo-outlook/Europe/London
+X-LIC-LOCATION:Europe/London
+BEGIN:DAYLIGHT
+TZNAME:BST
+TZOFFSETFROM:+0000
+TZOFFSETTO:+0100
+DTSTART:19700329T000000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:GMT
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0000
+DTSTART:19701025T010000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260921T103500
+DTEND;TZID=Europe/London:20260921T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260921T113500
+DTEND;TZID=Europe/London:20260921T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260921T133500
+DTEND;TZID=Europe/London:20260921T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260921T143500
+DTEND;TZID=Europe/London:20260921T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260921T163500
+DTEND;TZID=Europe/London:20260921T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260922T083500
+DTEND;TZID=Europe/London:20260922T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260922T123500
+DTEND;TZID=Europe/London:20260922T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260922T153500
+DTEND;TZID=Europe/London:20260922T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260922T163500
+DTEND;TZID=Europe/London:20260922T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260924T083500
+DTEND;TZID=Europe/London:20260924T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260924T123500
+DTEND;TZID=Europe/London:20260924T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260924T133500
+DTEND;TZID=Europe/London:20260924T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260924T163500
+DTEND;TZID=Europe/London:20260924T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260925T103500
+DTEND;TZID=Europe/London:20260925T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260925T113500
+DTEND;TZID=Europe/London:20260925T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260925T153500
+DTEND;TZID=Europe/London:20260925T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260925T163500
+DTEND;TZID=Europe/London:20260925T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-5@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260928T103500
+DTEND;TZID=Europe/London:20260928T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260928T113500
+DTEND;TZID=Europe/London:20260928T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260928T133500
+DTEND;TZID=Europe/London:20260928T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260928T143500
+DTEND;TZID=Europe/London:20260928T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260928T163500
+DTEND;TZID=Europe/London:20260928T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260929T083500
+DTEND;TZID=Europe/London:20260929T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260929T123500
+DTEND;TZID=Europe/London:20260929T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260929T153500
+DTEND;TZID=Europe/London:20260929T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260929T163500
+DTEND;TZID=Europe/London:20260929T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260930T083500
+DTEND;TZID=Europe/London:20260930T092500
+SUMMARY:MTH2008_T1/ 5 - Real Analysis
+LOCATION:107 /Harrison
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74875-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2008\n\nLocation(s):\n107 /Harrison: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=HAR/107&y
+ yprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is man
+ aged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20260930T093500
+DTEND;TZID=Europe/London:20260930T102500
+SUMMARY:MTH2010_T1/ 4 - Groups\, Rings and Fields
+LOCATION:1.5 /Peter Chalk
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74886-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2010\n\nLocation(s):\n1.5 /Peter Chalk: https://app.exeter.ac.u
+ k/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=PCC/1.
+ 5&yyprefix=26_\n\nStaff member(s): Bueno De Andrade\, Julio Andrade\n\nT
+ his appointment is managed by MyTimetable.\n\nLast synchronised on 2026-
+ 09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261001T083500
+DTEND;TZID=Europe/London:20261001T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261001T123500
+DTEND;TZID=Europe/London:20261001T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261001T133500
+DTEND;TZID=Europe/London:20261001T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261001T163500
+DTEND;TZID=Europe/London:20261001T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261002T103500
+DTEND;TZID=Europe/London:20261002T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261002T113500
+DTEND;TZID=Europe/London:20261002T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261002T153500
+DTEND;TZID=Europe/London:20261002T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261002T163500
+DTEND;TZID=Europe/London:20261002T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-6@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261005T103500
+DTEND;TZID=Europe/London:20261005T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261005T113500
+DTEND;TZID=Europe/London:20261005T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261005T133500
+DTEND;TZID=Europe/London:20261005T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261005T143500
+DTEND;TZID=Europe/London:20261005T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261005T163500
+DTEND;TZID=Europe/London:20261005T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261006T083500
+DTEND;TZID=Europe/London:20261006T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261006T123500
+DTEND;TZID=Europe/London:20261006T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261006T153500
+DTEND;TZID=Europe/London:20261006T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261006T163500
+DTEND;TZID=Europe/London:20261006T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261007T103500
+DTEND;TZID=Europe/London:20261007T112500
+SUMMARY:MTH2003_T1/ 11 - Differential Equations
+LOCATION:LT6.1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74865-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2003\n\nLocation(s):\nLT6.1 /Queens: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT6.1
+ &yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261007T133500
+DTEND;TZID=Europe/London:20261007T142500
+SUMMARY:MAT2905_L1/01 - CYF 2
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!104212-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MAT2905\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nThis appointment is managed by MyTimetable.\n\nLast 
+ synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261008T083500
+DTEND;TZID=Europe/London:20261008T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261008T123500
+DTEND;TZID=Europe/London:20261008T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261008T133500
+DTEND;TZID=Europe/London:20261008T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261008T163500
+DTEND;TZID=Europe/London:20261008T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261009T103500
+DTEND;TZID=Europe/London:20261009T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261009T113500
+DTEND;TZID=Europe/London:20261009T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261009T153500
+DTEND;TZID=Europe/London:20261009T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261009T163500
+DTEND;TZID=Europe/London:20261009T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-7@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261012T103500
+DTEND;TZID=Europe/London:20261012T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261012T113500
+DTEND;TZID=Europe/London:20261012T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261012T133500
+DTEND;TZID=Europe/London:20261012T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261012T143500
+DTEND;TZID=Europe/London:20261012T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261012T163500
+DTEND;TZID=Europe/London:20261012T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261013T083500
+DTEND;TZID=Europe/London:20261013T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261013T123500
+DTEND;TZID=Europe/London:20261013T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261013T153500
+DTEND;TZID=Europe/London:20261013T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261013T163500
+DTEND;TZID=Europe/London:20261013T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261014T083500
+DTEND;TZID=Europe/London:20261014T092500
+SUMMARY:MTH2008_T1/ 5 - Real Analysis
+LOCATION:107 /Harrison
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74875-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2008\n\nLocation(s):\n107 /Harrison: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=HAR/107&y
+ yprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is man
+ aged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261014T093500
+DTEND;TZID=Europe/London:20261014T102500
+SUMMARY:MTH2010_T1/ 4 - Groups\, Rings and Fields
+LOCATION:1.5 /Peter Chalk
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74886-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2010\n\nLocation(s):\n1.5 /Peter Chalk: https://app.exeter.ac.u
+ k/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=PCC/1.
+ 5&yyprefix=26_\n\nStaff member(s): Bueno De Andrade\, Julio Andrade\n\nT
+ his appointment is managed by MyTimetable.\n\nLast synchronised on 2026-
+ 09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261015T083500
+DTEND;TZID=Europe/London:20261015T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261015T123500
+DTEND;TZID=Europe/London:20261015T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261015T133500
+DTEND;TZID=Europe/London:20261015T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261015T163500
+DTEND;TZID=Europe/London:20261015T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261016T103500
+DTEND;TZID=Europe/London:20261016T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261016T113500
+DTEND;TZID=Europe/London:20261016T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261016T153500
+DTEND;TZID=Europe/London:20261016T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261016T163500
+DTEND;TZID=Europe/London:20261016T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-8@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261019T103500
+DTEND;TZID=Europe/London:20261019T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261019T113500
+DTEND;TZID=Europe/London:20261019T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261019T133500
+DTEND;TZID=Europe/London:20261019T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261019T143500
+DTEND;TZID=Europe/London:20261019T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261019T163500
+DTEND;TZID=Europe/London:20261019T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261020T083500
+DTEND;TZID=Europe/London:20261020T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261020T123500
+DTEND;TZID=Europe/London:20261020T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261020T153500
+DTEND;TZID=Europe/London:20261020T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261020T163500
+DTEND;TZID=Europe/London:20261020T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261021T103500
+DTEND;TZID=Europe/London:20261021T112500
+SUMMARY:MTH2003_T1/ 11 - Differential Equations
+LOCATION:LT6.1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74865-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2003\n\nLocation(s):\nLT6.1 /Queens: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT6.1
+ &yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261022T083500
+DTEND;TZID=Europe/London:20261022T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261022T123500
+DTEND;TZID=Europe/London:20261022T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261022T133500
+DTEND;TZID=Europe/London:20261022T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261022T163500
+DTEND;TZID=Europe/London:20261022T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261023T103500
+DTEND;TZID=Europe/London:20261023T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261023T113500
+DTEND;TZID=Europe/London:20261023T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261023T153500
+DTEND;TZID=Europe/London:20261023T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261023T163500
+DTEND;TZID=Europe/London:20261023T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-9@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261102T103500
+DTEND;TZID=Europe/London:20261102T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261102T113500
+DTEND;TZID=Europe/London:20261102T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261102T133500
+DTEND;TZID=Europe/London:20261102T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261102T143500
+DTEND;TZID=Europe/London:20261102T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261102T163500
+DTEND;TZID=Europe/London:20261102T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261103T083500
+DTEND;TZID=Europe/London:20261103T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261103T123500
+DTEND;TZID=Europe/London:20261103T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261103T153500
+DTEND;TZID=Europe/London:20261103T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261103T163500
+DTEND;TZID=Europe/London:20261103T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261104T083500
+DTEND;TZID=Europe/London:20261104T092500
+SUMMARY:MTH2008_T1/ 5 - Real Analysis
+LOCATION:107 /Harrison
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74875-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2008\n\nLocation(s):\n107 /Harrison: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=HAR/107&y
+ yprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is man
+ aged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261104T093500
+DTEND;TZID=Europe/London:20261104T102500
+SUMMARY:MTH2010_T1/ 4 - Groups\, Rings and Fields
+LOCATION:1.5 /Peter Chalk
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74886-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2010\n\nLocation(s):\n1.5 /Peter Chalk: https://app.exeter.ac.u
+ k/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=PCC/1.
+ 5&yyprefix=26_\n\nStaff member(s): Bueno De Andrade\, Julio Andrade\n\nT
+ his appointment is managed by MyTimetable.\n\nLast synchronised on 2026-
+ 09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261105T083500
+DTEND;TZID=Europe/London:20261105T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261105T123500
+DTEND;TZID=Europe/London:20261105T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261105T133500
+DTEND;TZID=Europe/London:20261105T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261105T163500
+DTEND;TZID=Europe/London:20261105T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261106T103500
+DTEND;TZID=Europe/London:20261106T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261106T113500
+DTEND;TZID=Europe/London:20261106T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261106T153500
+DTEND;TZID=Europe/London:20261106T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261106T163500
+DTEND;TZID=Europe/London:20261106T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-11@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261109T103500
+DTEND;TZID=Europe/London:20261109T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261109T113500
+DTEND;TZID=Europe/London:20261109T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261109T133500
+DTEND;TZID=Europe/London:20261109T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261109T143500
+DTEND;TZID=Europe/London:20261109T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261109T163500
+DTEND;TZID=Europe/London:20261109T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261110T083500
+DTEND;TZID=Europe/London:20261110T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261110T123500
+DTEND;TZID=Europe/London:20261110T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261110T153500
+DTEND;TZID=Europe/London:20261110T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261110T163500
+DTEND;TZID=Europe/London:20261110T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261111T103500
+DTEND;TZID=Europe/London:20261111T112500
+SUMMARY:MTH2003_T1/ 11 - Differential Equations
+LOCATION:LT6.1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74865-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2003\n\nLocation(s):\nLT6.1 /Queens: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT6.1
+ &yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261112T083500
+DTEND;TZID=Europe/London:20261112T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261112T123500
+DTEND;TZID=Europe/London:20261112T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261112T133500
+DTEND;TZID=Europe/London:20261112T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261112T163500
+DTEND;TZID=Europe/London:20261112T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261113T103500
+DTEND;TZID=Europe/London:20261113T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261113T113500
+DTEND;TZID=Europe/London:20261113T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261113T153500
+DTEND;TZID=Europe/London:20261113T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261113T163500
+DTEND;TZID=Europe/London:20261113T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-12@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261116T103500
+DTEND;TZID=Europe/London:20261116T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261116T113500
+DTEND;TZID=Europe/London:20261116T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261116T133500
+DTEND;TZID=Europe/London:20261116T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261116T143500
+DTEND;TZID=Europe/London:20261116T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261116T163500
+DTEND;TZID=Europe/London:20261116T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261117T083500
+DTEND;TZID=Europe/London:20261117T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261117T123500
+DTEND;TZID=Europe/London:20261117T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261117T153500
+DTEND;TZID=Europe/London:20261117T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261117T163500
+DTEND;TZID=Europe/London:20261117T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261118T083500
+DTEND;TZID=Europe/London:20261118T092500
+SUMMARY:MTH2008_T1/ 5 - Real Analysis
+LOCATION:107 /Harrison
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74875-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2008\n\nLocation(s):\n107 /Harrison: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=HAR/107&y
+ yprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is man
+ aged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261118T093500
+DTEND;TZID=Europe/London:20261118T102500
+SUMMARY:MTH2010_T1/ 4 - Groups\, Rings and Fields
+LOCATION:1.5 /Peter Chalk
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74886-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2010\n\nLocation(s):\n1.5 /Peter Chalk: https://app.exeter.ac.u
+ k/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=PCC/1.
+ 5&yyprefix=26_\n\nStaff member(s): Bueno De Andrade\, Julio Andrade\n\nT
+ his appointment is managed by MyTimetable.\n\nLast synchronised on 2026-
+ 09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261119T083500
+DTEND;TZID=Europe/London:20261119T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261119T123500
+DTEND;TZID=Europe/London:20261119T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261119T133500
+DTEND;TZID=Europe/London:20261119T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261119T163500
+DTEND;TZID=Europe/London:20261119T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261120T103500
+DTEND;TZID=Europe/London:20261120T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261120T113500
+DTEND;TZID=Europe/London:20261120T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261120T153500
+DTEND;TZID=Europe/London:20261120T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261120T163500
+DTEND;TZID=Europe/London:20261120T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-13@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261123T103500
+DTEND;TZID=Europe/London:20261123T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261123T113500
+DTEND;TZID=Europe/London:20261123T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261123T133500
+DTEND;TZID=Europe/London:20261123T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261123T143500
+DTEND;TZID=Europe/London:20261123T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261123T163500
+DTEND;TZID=Europe/London:20261123T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261124T083500
+DTEND;TZID=Europe/London:20261124T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261124T123500
+DTEND;TZID=Europe/London:20261124T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261124T153500
+DTEND;TZID=Europe/London:20261124T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261124T163500
+DTEND;TZID=Europe/London:20261124T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261125T103500
+DTEND;TZID=Europe/London:20261125T112500
+SUMMARY:MTH2003_T1/ 11 - Differential Equations
+LOCATION:LT6.1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74865-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2003\n\nLocation(s):\nLT6.1 /Queens: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT6.1
+ &yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261126T083500
+DTEND;TZID=Europe/London:20261126T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261126T123500
+DTEND;TZID=Europe/London:20261126T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261126T133500
+DTEND;TZID=Europe/London:20261126T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261126T163500
+DTEND;TZID=Europe/London:20261126T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261127T103500
+DTEND;TZID=Europe/London:20261127T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261127T113500
+DTEND;TZID=Europe/London:20261127T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261127T153500
+DTEND;TZID=Europe/London:20261127T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261127T163500
+DTEND;TZID=Europe/London:20261127T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-14@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261130T103500
+DTEND;TZID=Europe/London:20261130T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261130T113500
+DTEND;TZID=Europe/London:20261130T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261130T133500
+DTEND;TZID=Europe/London:20261130T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261130T143500
+DTEND;TZID=Europe/London:20261130T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261130T163500
+DTEND;TZID=Europe/London:20261130T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261201T083500
+DTEND;TZID=Europe/London:20261201T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261201T123500
+DTEND;TZID=Europe/London:20261201T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261201T153500
+DTEND;TZID=Europe/London:20261201T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261201T163500
+DTEND;TZID=Europe/London:20261201T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261202T083500
+DTEND;TZID=Europe/London:20261202T092500
+SUMMARY:MTH2008_T1/ 5 - Real Analysis
+LOCATION:107 /Harrison
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74875-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2008\n\nLocation(s):\n107 /Harrison: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=HAR/107&y
+ yprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is man
+ aged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261202T093500
+DTEND;TZID=Europe/London:20261202T102500
+SUMMARY:MTH2010_T1/ 4 - Groups\, Rings and Fields
+LOCATION:1.5 /Peter Chalk
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74886-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2010\n\nLocation(s):\n1.5 /Peter Chalk: https://app.exeter.ac.u
+ k/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=PCC/1.
+ 5&yyprefix=26_\n\nStaff member(s): Bueno De Andrade\, Julio Andrade\n\nT
+ his appointment is managed by MyTimetable.\n\nLast synchronised on 2026-
+ 09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261203T083500
+DTEND;TZID=Europe/London:20261203T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261203T123500
+DTEND;TZID=Europe/London:20261203T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261203T133500
+DTEND;TZID=Europe/London:20261203T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261203T163500
+DTEND;TZID=Europe/London:20261203T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261204T103500
+DTEND;TZID=Europe/London:20261204T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261204T113500
+DTEND;TZID=Europe/London:20261204T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261204T153500
+DTEND;TZID=Europe/London:20261204T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261204T163500
+DTEND;TZID=Europe/London:20261204T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-15@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261207T103500
+DTEND;TZID=Europe/London:20261207T112500
+SUMMARY:MTH2010_L3/01 - Groups\, Rings and Fields
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74879-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointm
+ ent is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:
+ 13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261207T113500
+DTEND;TZID=Europe/London:20261207T122500
+SUMMARY:MTH2008_L2/01 - Real Analysis
+LOCATION:Parker Moot Room LT /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74869-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nParker Moot Room LT /Amory: https://app.ex
+ eter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRo
+ om=AMO/Moot&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appoi
+ ntment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 
+ 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261207T133500
+DTEND;TZID=Europe/London:20261207T142500
+SUMMARY:MTH2003_L1/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74852-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261207T143500
+DTEND;TZID=Europe/London:20261207T152500
+SUMMARY:MTH2014_L2/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74667-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261207T163500
+DTEND;TZID=Europe/London:20261207T172500
+SUMMARY:MTH2003_D1/01 - Differential Equations
+LOCATION:Seminar Room B /LSI
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74867-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nSeminar Room B /LSI: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=LSI/
+ SR-B&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment
+  is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 
+ BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261208T083500
+DTEND;TZID=Europe/London:20261208T092500
+SUMMARY:MTH2008_L1/01 - Real Analysis
+LOCATION:LT A /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74868-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT A /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/A&yyprefix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment i
+ s managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BS
+ T
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261208T123500
+DTEND;TZID=Europe/London:20261208T132500
+SUMMARY:MTH2014_P1/ 2 - Numerical Modelling
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74670-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Computer Lab Practic
+ al\n\nName or code: MTH2014\n\nLocation(s):\nBabbage /Innovation Centre 
+ 1: https://app.exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_
+ display.php?lstRoom=INN/BAB&yyprefix=26_\n\nStaff member(s): Thomson\, S
+ tephen\n\nThis appointment is managed by MyTimetable.\n\nLast synchronis
+ ed on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261208T153500
+DTEND;TZID=Europe/London:20261208T162500
+SUMMARY:MTH2003_L3/01 - Differential Equations
+LOCATION:Blue LT (A) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74854-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nBlue LT (A) /Newman: https://app.exeter.ac
+ .uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NEW/
+ BLU&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment 
+ is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 B
+ ST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261208T163500
+DTEND;TZID=Europe/London:20261208T172500
+SUMMARY:MTH2010_D1/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74880-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261209T103500
+DTEND;TZID=Europe/London:20261209T112500
+SUMMARY:MTH2003_T1/ 11 - Differential Equations
+LOCATION:LT6.1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74865-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Tutorial\n\nName or 
+ code: MTH2003\n\nLocation(s):\nLT6.1 /Queens: https://app.exeter.ac.uk/t
+ imetable/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT6.1
+ &yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261210T083500
+DTEND;TZID=Europe/London:20261210T092500
+SUMMARY:MTH2010_D2/01 - Groups\, Rings and Fields
+LOCATION:B316 /Amory
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74881-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nB316 /Amory: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=AMO/B316&yyp
+ refix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is 
+ managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261210T123500
+DTEND;TZID=Europe/London:20261210T132500
+SUMMARY:MTH2014_L1/01 - Numerical Modelling
+LOCATION:LT D /Streatham Court
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74666-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nLT D /Streatham Court: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=ST
+ C/D&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appointme
+ nt is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:1
+ 3 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261210T133500
+DTEND;TZID=Europe/London:20261210T142500
+SUMMARY:MTH2010_L1/01 - Groups\, Rings and Fields
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74877-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appointment is m
+ anaged by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261210T163500
+DTEND;TZID=Europe/London:20261210T172500
+SUMMARY:MTH2008_L3/ 2 - Real Analysis
+LOCATION:LT1 /Queens
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!96519-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2008\n\nLocation(s):\nLT1 /Queens: https://app.exeter.ac.uk/time
+ table/roombooking/roominfo/desktop_room_display.php?lstRoom=QUB/LT1&yypr
+ efix=26_\n\nStaff member(s): Samuel\, Tony\n\nThis appointment is manage
+ d by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261211T103500
+DTEND;TZID=Europe/London:20261211T112500
+SUMMARY:MTH2014_L3/01 - Numerical Modelling
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74668-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2014\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Thomson\, Stephen\n\nThis appoint
+ ment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 13
+ :13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261211T113500
+DTEND;TZID=Europe/London:20261211T122500
+SUMMARY:MTH2003_L2/01 - Differential Equations
+LOCATION:Alumni Auditorium LT /Forum
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74853-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2003\n\nLocation(s):\nAlumni Auditorium LT /Forum: https://app.e
+ xeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstR
+ oom=FOR/AUD-LT&yyprefix=26_\n\nStaff member(s): Mason\, Joanne\n\nThis a
+ ppointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08
+  at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261211T153500
+DTEND;TZID=Europe/London:20261211T162500
+SUMMARY:MTH2010_L2/01 - Groups\, Rings and Fields
+LOCATION:Purple LT (B) /Newman
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74878-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Lecture\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nPurple LT (B) /Newman: https://app.exeter.
+ ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lstRoom=NE
+ W/PUR&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis appoin
+ tment is managed by MyTimetable.\n\nLast synchronised on 2026-09-08 at 1
+ 3:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20260908T121315Z
+DTSTART;TZID=Europe/London:20261211T163500
+DTEND;TZID=Europe/London:20261211T172500
+SUMMARY:MTH2010_D3/01 - Groups\, Rings and Fields
+LOCATION:Babbage /Innovation Centre 1
+STATUS:CONFIRMED
+SEQUENCE:0
+CREATED:20260908T121315Z
+LAST-MODIFIED:20260908T121315Z
+UID:26!74882-16@timetables.exeter.ac.uk
+DESCRIPTION:Enrolled for this activity: Yes\n\nType: Drop in\n\nName or c
+ ode: MTH2010\n\nLocation(s):\nBabbage /Innovation Centre 1: https://app.
+ exeter.ac.uk/timetable/roombooking/roominfo/desktop_room_display.php?lst
+ Room=INN/BAB&yyprefix=26_\n\nStaff member(s): Marasingha\, Gihan\n\nThis
+  appointment is managed by MyTimetable.\n\nLast synchronised on 2026-09-
+ 08 at 13:13 BST
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR
