@@ -18,11 +18,17 @@ import {
   Video,
   X,
   AlertCircle,
+  CheckCircle2,
+  Circle,
+  Timer,
+  Trophy,
 } from 'lucide-react';
 import { Course, CourseResource, ExamPaper, PanoptoRecording } from '../../types';
 import { EleGeometricPattern } from './EleGeometricPattern';
 import { pairProblemSheets } from '../../services/vfs';
 import { generateCandidatePapers } from '../../api/examPapers';
+import { PanoptoNativePlayer } from './PanoptoNativePlayer';
+import { MockExamTimer } from './MockExamTimer';
 
 interface EleCourseViewProps {
   course: Course;
@@ -42,6 +48,58 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
   const [activePanopto, setActivePanopto] = useState<PanoptoRecording | null>(null);
   const [examSessionFilter, setExamSessionFilter] = useState<'all' | 'Jan' | 'May'>('all');
   const [examSearch, setExamSearch] = useState('');
+
+  // Paper Completion & Score Tracker state
+  const [paperProgress, setPaperProgress] = useState<Record<string, { status: 'not-started' | 'in-progress' | 'completed'; score?: number }>>(() => {
+    try {
+      const saved = localStorage.getItem(`better_ele_paper_progress_${course.code}`);
+      return saved ? JSON.parse(saved) : {};
+    } catch {
+      return {};
+    }
+  });
+
+  const [activeMockExam, setActiveMockExam] = useState<{ paperTitle: string; minutes: number } | null>(null);
+  const [editingScorePaperId, setEditingScorePaperId] = useState<string | null>(null);
+  const [scoreInputVal, setScoreInputVal] = useState<string>('');
+
+  const togglePaperStatus = (paperId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setPaperProgress(prev => {
+      const current = prev[paperId]?.status || 'not-started';
+      const nextStatus: 'not-started' | 'in-progress' | 'completed' =
+        current === 'not-started' ? 'in-progress' : current === 'in-progress' ? 'completed' : 'not-started';
+      const updated = {
+        ...prev,
+        [paperId]: {
+          ...prev[paperId],
+          status: nextStatus,
+        },
+      };
+      try {
+        localStorage.setItem(`better_ele_paper_progress_${course.code}`, JSON.stringify(updated));
+      } catch {}
+      return updated;
+    });
+  };
+
+  const handleSaveScore = (paperId: string, scoreNum: number) => {
+    setPaperProgress(prev => {
+      const updated = {
+        ...prev,
+        [paperId]: {
+          ...(prev[paperId] || { status: 'completed' }),
+          status: 'completed' as const,
+          score: Math.min(100, Math.max(0, scoreNum)),
+        },
+      };
+      try {
+        localStorage.setItem(`better_ele_paper_progress_${course.code}`, JSON.stringify(updated));
+      } catch {}
+      return updated;
+    });
+    setEditingScorePaperId(null);
+  };
 
   // Flatten all course resources
   const allResources = useMemo(() => {
@@ -78,6 +136,33 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
       return matchesSession && matchesQuery;
     });
   }, [course, examSessionFilter, examSearch]);
+
+  // Revision progress & readiness stats
+  const examStats = useMemo(() => {
+    const total = examPapers.length;
+    let completedCount = 0;
+    let inProgressCount = 0;
+    let totalScore = 0;
+    let scoredCount = 0;
+
+    examPapers.forEach(p => {
+      const prog = paperProgress[p.id];
+      if (prog?.status === 'completed') {
+        completedCount++;
+        if (typeof prog.score === 'number' && !isNaN(prog.score)) {
+          totalScore += prog.score;
+          scoredCount++;
+        }
+      } else if (prog?.status === 'in-progress') {
+        inProgressCount++;
+      }
+    });
+
+    const completionPct = total > 0 ? Math.round((completedCount / total) * 100) : 0;
+    const avgScore = scoredCount > 0 ? Math.round(totalScore / scoredCount) : null;
+
+    return { total, completedCount, inProgressCount, completionPct, avgScore };
+  }, [examPapers, paperProgress]);
 
   // Mock Panopto recordings if not present
   const panoptoRecordings: PanoptoRecording[] = useMemo(() => {
@@ -402,9 +487,76 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
           </div>
         )}
 
-        {/* ── TAB 3: Past Papers (Grid, No Aug, No Solutions) ─────────────── */}
+        {/* ── TAB 3: Past Papers (Revision Workspace & Mock Exam Mode) ──── */}
         {activeTab === 'exams' && (
           <div className="space-y-4">
+            {/* Revision Readiness Overview Banner */}
+            <div className="bg-card border border-border rounded-2xl p-4 sm:p-5 shadow-xs">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div className="space-y-1">
+                  <div className="flex items-center gap-2">
+                    <Trophy size={16} className="text-[#007A6B] dark:text-[#00C4AD]" />
+                    <h3 className="text-sm font-bold tracking-tight text-foreground">
+                      Module Exam Readiness Tracker
+                    </h3>
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Track completed papers, record mock exam percentages, and sit timed 2-hour practice sessions.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-3 flex-wrap">
+                  {/* Summary Metric Chips */}
+                  <div className="px-3 py-1.5 rounded-xl bg-muted border border-border/80 text-xs flex items-center gap-2">
+                    <span className="text-muted-foreground">Completed:</span>
+                    <span className="font-mono font-bold text-foreground">
+                      {examStats.completedCount} / {examStats.total}
+                    </span>
+                  </div>
+
+                  <div className="px-3 py-1.5 rounded-xl bg-muted border border-border/80 text-xs flex items-center gap-2">
+                    <span className="text-muted-foreground">Avg Score:</span>
+                    <span className={`font-mono font-bold ${
+                      examStats.avgScore !== null && examStats.avgScore >= 70
+                        ? 'text-emerald-500'
+                        : examStats.avgScore !== null
+                        ? 'text-[#00C4AD]'
+                        : 'text-muted-foreground'
+                    }`}>
+                      {examStats.avgScore !== null ? `${examStats.avgScore}%` : 'N/A'}
+                    </span>
+                  </div>
+
+                  {/* Start Mock Exam Mode Button */}
+                  <button
+                    type="button"
+                    onClick={() => setActiveMockExam({
+                      paperTitle: `${course.code} Timed Practice Exam`,
+                      minutes: 120
+                    })}
+                    className="px-3.5 py-1.5 rounded-xl bg-[#007A6B] hover:bg-[#006a5d] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-xs cursor-pointer"
+                  >
+                    <Timer size={14} />
+                    <span>Start Mock Exam (2h)</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Visual Progress Bar */}
+              <div className="mt-4 pt-3 border-t border-border/60">
+                <div className="flex items-center justify-between text-[11px] font-mono text-muted-foreground mb-1.5">
+                  <span>Revision Progress</span>
+                  <span className="font-bold text-foreground">{examStats.completionPct}%</span>
+                </div>
+                <div className="w-full bg-muted h-2 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-gradient-to-r from-[#007A6B] to-[#00C4AD] transition-all duration-300"
+                    style={{ width: `${examStats.completionPct}%` }}
+                  />
+                </div>
+              </div>
+            </div>
+
             {/* Session filter chips & Search */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div className="flex items-center gap-2">
@@ -442,94 +594,165 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
                 No past exam papers found for this session.
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
-                {examPapers.map(paper => (
-                  <div
-                    key={paper.id}
-                    onClick={() =>
-                      onOpenDocument({
-                        id: paper.id,
-                        title: paper.title,
-                        url: paper.pdfUrl,
-                      })
-                    }
-                    className="group bg-card border border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD] rounded-xl p-4 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="flex items-center justify-between gap-2 mb-3">
-                        <span className="px-2.5 py-1 rounded bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] font-mono font-bold text-xs uppercase">
-                          {paper.session} {paper.year}
-                        </span>
-                        <GraduationCap size={16} className="text-muted-foreground group-hover:text-[#007A6B] dark:group-hover:text-[#00C4AD] transition-colors" />
-                      </div>
-                      <h4 className="text-sm font-semibold text-foreground group-hover:text-[#007A6B] dark:group-hover:text-[#00C4AD] transition-colors line-clamp-2">
-                        {paper.title}
-                      </h4>
-                      <p className="text-[11px] font-mono text-muted-foreground mt-1">
-                        {paper.filename}
-                      </p>
-                    </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+                {examPapers.map(paper => {
+                  const prog = paperProgress[paper.id] || { status: 'not-started' };
+                  const isEditingThisScore = editingScorePaperId === paper.id;
 
-                    <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between text-xs font-semibold text-[#007A6B] dark:text-[#00C4AD]">
-                      <span>Open Paper</span>
-                      <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                  return (
+                    <div
+                      key={paper.id}
+                      className="group bg-card border border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD] rounded-xl p-4 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+                    >
+                      <div>
+                        {/* Header: Session Badge & Completion Status Toggle */}
+                        <div className="flex items-center justify-between gap-2 mb-3">
+                          <span className="px-2.5 py-1 rounded bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] font-mono font-bold text-xs uppercase">
+                            {paper.session} {paper.year}
+                          </span>
+
+                          <button
+                            type="button"
+                            onClick={(e) => togglePaperStatus(paper.id, e)}
+                            className="transition-transform active:scale-95 cursor-pointer"
+                            title="Click to cycle status: Not Started → In Progress → Completed"
+                          >
+                            {prog.status === 'completed' ? (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center gap-1 border border-emerald-500/30">
+                                <CheckCircle2 size={11} /> Completed
+                              </span>
+                            ) : prog.status === 'in-progress' ? (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center gap-1 border border-amber-500/30">
+                                <Circle size={10} className="fill-amber-500/50" /> In Progress
+                              </span>
+                            ) : (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-muted text-muted-foreground border border-border">
+                                Not Started
+                              </span>
+                            )}
+                          </button>
+                        </div>
+
+                        <h4 className="text-sm font-semibold text-foreground line-clamp-2">
+                          {paper.title}
+                        </h4>
+                        <p className="text-[11px] font-mono text-muted-foreground mt-1">
+                          {paper.filename}
+                        </p>
+
+                        {/* Score Section */}
+                        <div className="mt-3 pt-2.5 border-t border-border/40 flex items-center justify-between text-xs">
+                          <span className="text-muted-foreground text-[11px]">Mock Score:</span>
+                          {isEditingThisScore ? (
+                            <div className="flex items-center gap-1" onClick={e => e.stopPropagation()}>
+                              <input
+                                type="number"
+                                min={0}
+                                max={100}
+                                autoFocus
+                                placeholder="%"
+                                value={scoreInputVal}
+                                onChange={e => setScoreInputVal(e.target.value)}
+                                onKeyDown={e => {
+                                  if (e.key === 'Enter') {
+                                    const num = parseInt(scoreInputVal, 10);
+                                    if (!isNaN(num)) handleSaveScore(paper.id, num);
+                                  } else if (e.key === 'Escape') {
+                                    setEditingScorePaperId(null);
+                                  }
+                                }}
+                                className="w-14 px-1.5 py-0.5 rounded bg-muted border border-border text-xs text-foreground font-mono focus:outline-none focus:border-[#007A6B]"
+                              />
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  const num = parseInt(scoreInputVal, 10);
+                                  if (!isNaN(num)) handleSaveScore(paper.id, num);
+                                }}
+                                className="px-1.5 py-0.5 rounded bg-[#007A6B] text-white text-[11px] font-semibold cursor-pointer"
+                              >
+                                Save
+                              </button>
+                            </div>
+                          ) : (
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setEditingScorePaperId(paper.id);
+                                setScoreInputVal(typeof prog.score === 'number' ? String(prog.score) : '');
+                              }}
+                              className="text-xs font-mono font-semibold hover:underline cursor-pointer"
+                              title="Click to record or update your score"
+                            >
+                              {typeof prog.score === 'number' ? (
+                                <span className="px-2 py-0.5 rounded bg-[#00C4AD]/15 text-[#007A6B] dark:text-[#00C4AD] font-bold">
+                                  {prog.score}%
+                                </span>
+                              ) : (
+                                <span className="text-muted-foreground text-[11px] hover:text-[#007A6B] dark:hover:text-[#00C4AD]">
+                                  + Record Score
+                                </span>
+                              )}
+                            </button>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Card Action Row */}
+                      <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between gap-2">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            onOpenDocument({
+                              id: paper.id,
+                              title: paper.title,
+                              url: paper.pdfUrl,
+                            })
+                          }
+                          className="px-2.5 py-1.5 rounded-lg bg-[#007A6B]/15 hover:bg-[#007A6B]/25 text-[#007A6B] dark:text-[#00C4AD] text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <span>Open Paper</span>
+                          <span>→</span>
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => {
+                            onOpenDocument({
+                              id: paper.id,
+                              title: paper.title,
+                              url: paper.pdfUrl,
+                            });
+                            setActiveMockExam({
+                              paperTitle: `${paper.session} ${paper.year} – ${paper.title}`,
+                              minutes: 120,
+                            });
+                          }}
+                          className="px-2.5 py-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer border border-neutral-700"
+                          title="Open paper and start 2-hour exam countdown"
+                        >
+                          <Timer size={12} className="text-[#00C4AD]" />
+                          <span>Sit Mock (2h)</span>
+                        </button>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
           </div>
         )}
 
-        {/* ── TAB 4: Panopto Recordings (Grid & Player) ───────────────────── */}
+        {/* ── TAB 4: Panopto Recordings (Grid & Native Player) ─────────────── */}
         {activeTab === 'panopto' && (
           <div className="space-y-4">
-            {/* Active Panopto In-App Player */}
+            {/* Active Panopto Native Multi-Stream Player */}
             {activePanopto && (
-              <div className="bg-[#0A0A0A] border border-border rounded-2xl overflow-hidden shadow-2xl transition-all">
-                <div className="p-3.5 bg-neutral-900/90 backdrop-blur-sm border-b border-neutral-800 flex items-center justify-between flex-wrap gap-2">
-                  <div className="flex items-center gap-2.5 text-white min-w-0">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#00C4AD] animate-pulse shrink-0" />
-                    <span className="text-xs sm:text-sm font-semibold truncate">{activePanopto.title}</span>
-                    <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#00C4AD]/20 text-[#00C4AD]">
-                      Multi-Source Interactive
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    <a
-                      href={activePanopto.panoptoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="px-2.5 py-1 rounded-lg bg-[#007A6B] hover:bg-[#006a5d] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-xs"
-                      title="Open full interactive multi-source viewer in new tab"
-                    >
-                      <span>Full Multi-Source Portal</span>
-                      <ExternalLink size={12} />
-                    </a>
-                    <button
-                      type="button"
-                      onClick={() => setActivePanopto(null)}
-                      className="p-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white transition-colors cursor-pointer"
-                      title="Close Player"
-                    >
-                      <X size={15} />
-                    </button>
-                  </div>
-                </div>
-                <div className="relative w-full aspect-video bg-black">
-                  <iframe
-                    src={
-                      activePanopto.embedUrl?.includes('interactivity=all')
-                        ? activePanopto.embedUrl
-                        : `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=${activePanopto.id}&instance=MoodleELE2&autoplay=true&offerviewer=true&interactivity=all&showtitle=true`
-                    }
-                    title={activePanopto.title}
-                    className="w-full h-full border-0"
-                    allowFullScreen
-                    allow="autoplay; fullscreen; picture-in-picture"
-                  />
-                </div>
-              </div>
+              <PanoptoNativePlayer
+                recording={activePanopto}
+                onClose={() => setActivePanopto(null)}
+              />
             )}
 
             <div className="flex items-center justify-between gap-4 bg-card border border-border rounded-xl p-4 text-xs sm:text-sm">
@@ -615,6 +838,15 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
         )}
 
       </div>
+
+      {/* Floating Mock Exam Timer */}
+      {activeMockExam && (
+        <MockExamTimer
+          paperTitle={activeMockExam.paperTitle}
+          initialMinutes={activeMockExam.minutes}
+          onClose={() => setActiveMockExam(null)}
+        />
+      )}
     </div>
   );
 };

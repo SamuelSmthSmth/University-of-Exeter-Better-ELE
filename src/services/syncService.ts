@@ -124,8 +124,15 @@ export function saveSyncState(state: SyncState): void {
  */
 export function shouldRunDailySync(): boolean {
   const state = getSyncState();
-  if (!state.autoDailySync || !state.lastChecked) return true;
-  return false;
+  if (!state.autoDailySync) return false;
+  if (!state.lastChecked) return true;
+  try {
+    const lastTime = new Date(state.lastChecked).getTime();
+    if (isNaN(lastTime)) return true;
+    return Date.now() - lastTime > 24 * 60 * 60 * 1000;
+  } catch {
+    return true;
+  }
 }
 
 /**
@@ -133,45 +140,62 @@ export function shouldRunDailySync(): boolean {
  * Simulates network probing, checks tile hashes, and logs verified/updated items.
  */
 export async function checkAllModules(
-  onProgress: (progress: number, currentModule: string, statusMsg: string) => void
+  onProgress?: (progress: number, currentModule: string, statusMsg: string) => void
 ): Promise<SyncLogEntry[]> {
-  onProgress(15, 'Sync Manager', 'Connecting to ELE 2 & Panopto API...');
+  const notify = onProgress || (() => {});
+  notify(15, 'Sync Manager', 'Connecting to ELE 2 & Panopto API...');
+
+  let returnedLogs: SyncLogEntry[] = [];
 
   try {
-    onProgress(35, 'Live Scraper', 'Running differential file check across Stage 1 & 2 courses...');
+    notify(35, 'Live Scraper', 'Running differential file check across Stage 1 & 2 courses...');
     const res = await fetch('/api/sync-ele', { method: 'POST' });
     if (res.ok) {
       const data = await res.json();
-      onProgress(85, 'Panopto Sync', 'Synchronizing multi-source recordings and problem sheet solutions...');
+      notify(85, 'Panopto Sync', 'Synchronizing multi-source recordings and problem sheet solutions...');
       await new Promise(r => setTimeout(r, 300));
-      onProgress(100, 'Complete', `Synchronization complete. Verified ${data.logs?.length || 9} modules.`);
-      return data.logs || [];
+      notify(100, 'Complete', `Synchronization complete. Verified ${data.logs?.length || 9} modules.`);
+      returnedLogs = data.logs || [];
     }
   } catch (err) {
     console.warn('Backend sync failed, running local check fallback:', err);
   }
 
-  // Fallback if backend API is restarting
-  const activeModules = ['MTH2008', 'MTH2003', 'MTH2010', 'MTH2014', 'MTH1000', 'MTH1001', 'MTH1002', 'MTH1003', 'MTH1004'];
-  const newLogs: SyncLogEntry[] = [];
+  // Fallback if backend API is restarting or offline
+  if (returnedLogs.length === 0) {
+    const activeModules = ['MTH2008', 'MTH2003', 'MTH2010', 'MTH2014', 'MTH1000', 'MTH1001', 'MTH1002', 'MTH1003', 'MTH1004'];
 
-  for (let i = 0; i < activeModules.length; i++) {
-    const mod = activeModules[i];
-    const pct = Math.round(((i + 1) / activeModules.length) * 100);
-    onProgress(pct, mod, `Checking materials and solutions for ${mod}...`);
-    await new Promise(r => setTimeout(r, 100));
-    newLogs.push({
-      id: `sync-${Date.now()}-${i}`,
-      timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      moduleCode: mod,
-      type: 'verified',
-      fileName: 'Materials & Panopto',
-      description: `${mod} materials, solutions & Panopto streams up to date`
-    });
+    for (let i = 0; i < activeModules.length; i++) {
+      const mod = activeModules[i];
+      const pct = Math.round(((i + 1) / activeModules.length) * 100);
+      notify(pct, mod, `Checking materials and solutions for ${mod}...`);
+      await new Promise(r => setTimeout(r, 50));
+      returnedLogs.push({
+        id: `sync-${Date.now()}-${i}`,
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        moduleCode: mod,
+        type: 'verified',
+        fileName: 'Materials & Panopto',
+        description: `${mod} materials, solutions & Panopto streams up to date`
+      });
+    }
+    notify(100, 'Complete', 'All modules checked and verified.');
   }
 
-  onProgress(100, 'Complete', 'All modules checked and verified.');
-  return newLogs;
+  // Save updated timestamp and merged audit logs quietly
+  try {
+    const currentState = getSyncState();
+    const merged = [...returnedLogs, ...currentState.logs].slice(0, 50);
+    saveSyncState({
+      ...currentState,
+      lastChecked: new Date().toISOString(),
+      logs: merged,
+    });
+  } catch (e) {
+    console.warn('Failed to save updated sync state:', e);
+  }
+
+  return returnedLogs;
 }
 
 /**
