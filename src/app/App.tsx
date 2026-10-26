@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { PrintView } from "./PrintView";
 import { EleGeometricPattern } from "./components/EleGeometricPattern";
-import { CommandPalette } from "./components/CommandPalette";
 import { ModuleComparisonDrawer } from "./components/ModuleComparisonDrawer";
 import { TermBalanceAdvisor } from "./components/TermBalanceAdvisor";
 import { EleDashboardHero } from "./components/EleDashboardHero";
@@ -25,7 +24,7 @@ import { ModuleDiscoveryModal } from "./components/ModuleDiscoveryModal";
 import type { DiscoveryState } from "./utils/moduleDiscovery";
 import { useIsDesktop } from "./hooks/useIsDesktop";
 import { EleCourseView } from "./components/EleCourseView";
-import { ExeterPdfReader } from "./components/reader/ExeterPdfReader";
+import { DocumentSidePanel, OpenDocument } from "./components/reader/DocumentSidePanel";
 import { Course } from "../types";
 export { useIsDesktop };
 
@@ -2019,12 +2018,27 @@ export default function App() {
   const [dark, toggleDark] = useDarkMode();
   const [view, setView] = useState<ViewType>("programme");
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  const [activePdfReader, setActivePdfReader] = useState<{
-    url: string;
-    title: string;
-    secondaryUrl?: string;
-    secondaryTitle?: string;
-  } | null>(null);
+  const [openDocuments, setOpenDocuments] = useState<OpenDocument[]>([]);
+
+  const handleOpenDocument = useCallback((doc: OpenDocument) => {
+    setOpenDocuments(prev => {
+      if (prev.some(d => d.id === doc.id)) return prev;
+      if (prev.length >= 2) return [prev[1], doc];
+      return [...prev, doc];
+    });
+  }, []);
+
+  const handleOpenDualDocuments = useCallback((doc1: OpenDocument, doc2: OpenDocument) => {
+    setOpenDocuments([doc1, doc2]);
+  }, []);
+
+  const handleCloseDocument = useCallback((id: string) => {
+    setOpenDocuments(prev => prev.filter(d => d.id !== id));
+  }, []);
+
+  const handleCloseAllDocuments = useCallback(() => {
+    setOpenDocuments([]);
+  }, []);
 
   // Keep mobile experience focused on Course Structure
   useEffect(() => {
@@ -2087,7 +2101,6 @@ export default function App() {
   const [showSwitcher, setShowSwitcher] = useState(false);
   const [showPlansMenu, setShowPlansMenu] = useState(false);
   const [showExportMenu, setShowExportMenu] = useState(false);
-  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
 
   // Comparison Tray
   const [comparisonCodes, setComparisonCodes] = useState<string[]>([]);
@@ -2292,13 +2305,10 @@ export default function App() {
     setShowPlansMenu(false);
   };
 
-  // Global keyboard shortcuts (Cmd+K for palette, / for module search)
+  // Global keyboard shortcuts (/ for module search)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
-        e.preventDefault();
-        setIsCommandPaletteOpen(v => !v);
-      } else if (
+      if (
         e.key === "/" &&
         !["INPUT", "TEXTAREA", "SELECT"].includes((e.target as HTMLElement)?.tagName) &&
         !(e.target as HTMLElement)?.isContentEditable
@@ -2593,18 +2603,6 @@ export default function App() {
       <div className="flex flex-col h-screen overflow-hidden bg-background text-foreground print:h-auto print:overflow-visible">
         <IntroSplash />
 
-        {/* Global Command Palette */}
-        <CommandPalette
-          isOpen={isCommandPaletteOpen}
-          onClose={() => setIsCommandPaletteOpen(false)}
-          onSelectProgramme={handleSelectProgramme}
-          onSelectModule={c => {
-            setActiveCode(c);
-            setDisplayCode(c);
-          }}
-          currentModules={modules}
-          currentProgrammeCode={programmeCode}
-        />
 
         {/* Module Comparison Drawer */}
         {showComparisonDrawer && comparisonCodes.length > 0 && (
@@ -3538,28 +3536,28 @@ export default function App() {
 
         {/* ── Body ─────────────────────────────────────────────────── */}
         <div className="flex-1 flex overflow-hidden print:hidden">
-          {/* Landing page: Samuel's ELE 2 Dashboard */}
-          {!selectedCourse && (
-            <EleDashboardHero
-              onSelectCourse={course => setSelectedCourse(course)}
-              recentCourseCodes={recentProgrammes}
-              timetableEvents={timetable.events}
-              onOpenCalendarModal={handleOpenCalendarModal}
-              onOpenAccessibility={() => setIsA11yModalOpen(true)}
-            />
-          )}
+          <div className="flex-1 flex overflow-hidden min-w-0">
+            {/* Landing page: Samuel's ELE 2 Dashboard */}
+            {!selectedCourse && (
+              <EleDashboardHero
+                onSelectCourse={course => setSelectedCourse(course)}
+                recentCourseCodes={recentProgrammes}
+                timetableEvents={timetable.events}
+                onOpenCalendarModal={handleOpenCalendarModal}
+                onOpenAccessibility={() => setIsA11yModalOpen(true)}
+              />
+            )}
 
-          {/* Dedicated ELE Module Course Hub */}
-          {selectedCourse && (
-            <EleCourseView
-              course={selectedCourse}
-              onBack={() => setSelectedCourse(null)}
-              onOpenPdf={(url, title, secondaryUrl, secondaryTitle) => {
-                setActivePdfReader({ url, title, secondaryUrl, secondaryTitle });
-              }}
-              onOpenCalendarModal={handleOpenCalendarModal}
-            />
-          )}
+            {/* Dedicated ELE Module Course Hub */}
+            {selectedCourse && (
+              <EleCourseView
+                course={selectedCourse}
+                onBack={() => setSelectedCourse(null)}
+                onOpenDocument={handleOpenDocument}
+                onOpenDualDocuments={handleOpenDualDocuments}
+                onOpenCalendarModal={handleOpenCalendarModal}
+              />
+            )}
 
           {/* Loading state */}
           {programmeCode && loading && (
@@ -3708,6 +3706,14 @@ export default function App() {
               )}
             </>
           )}
+          </div>
+
+          {/* Docked Document Side Panel (Scribble-inspired OLED dark mode, max 2 split-screen) */}
+          <DocumentSidePanel
+            documents={openDocuments}
+            onCloseDocument={handleCloseDocument}
+            onCloseAll={handleCloseAllDocuments}
+          />
         </div>
 
         {/* Print Options Modal */}
@@ -3828,17 +3834,6 @@ export default function App() {
           isOpen={isA11yModalOpen}
           onClose={() => setIsA11yModalOpen(false)}
         />
-
-        {/* Exeter In-App PDF Reader & Presentation Engine */}
-        {activePdfReader && (
-          <ExeterPdfReader
-            url={activePdfReader.url}
-            title={activePdfReader.title}
-            secondaryUrl={activePdfReader.secondaryUrl}
-            secondaryTitle={activePdfReader.secondaryTitle}
-            onClose={() => setActivePdfReader(null)}
-          />
-        )}
       </div>
     </RewindModeContext.Provider>
   );

@@ -27,11 +27,54 @@ export const MOCK_COURSES: Course[] = [
       email: "s.b.townley@exeter.ac.uk",
       officeHours: "Wednesdays 11:00 - 12:00 (Harrison 312)"
     },
+    panoptoFolderUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331003-mth2003%22",
+    recordings: [
+      {
+        id: "rec-de-1",
+        title: "Lecture 1: First-order Linear ODEs & Integrating Factors",
+        date: "02/10/2026",
+        duration: "50m",
+        lecturer: "Prof. Stuart Townley",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de-lec-1"
+      },
+      {
+        id: "rec-de-2",
+        title: "Lecture 2: Second-order Linear ODEs, Characteristic Eq & Wronskians",
+        date: "05/10/2026",
+        duration: "52m",
+        lecturer: "Prof. Stuart Townley",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de-lec-2"
+      },
+      {
+        id: "rec-de-3",
+        title: "Lecture 3: Power Series Solutions around Ordinary Points",
+        date: "09/10/2026",
+        duration: "49m",
+        lecturer: "Dr. Peter Ashwin",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de-lec-3"
+      },
+      {
+        id: "rec-de-4",
+        title: "Lecture 4: Method of Frobenius & Indicial Equations",
+        date: "12/10/2026",
+        duration: "51m",
+        lecturer: "Dr. Peter Ashwin",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de-lec-4"
+      },
+      {
+        id: "rec-de-5",
+        title: "Lecture 5: Systems of Linear ODEs & 2D Phase Plane Portraits",
+        date: "16/10/2026",
+        duration: "53m",
+        lecturer: "Prof. Stuart Townley",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=de-lec-5"
+      }
+    ],
     examPapers: generateCandidatePapers("MTH2003").slice(0, 8),
     sections: [
       {
         id: "sec-de-notes",
-        title: "Lecture Notes & Core Materials",
+        title: "Lecture Notes & Core Handouts",
         resources: [
           {
             id: "res-de-1",
@@ -41,6 +84,33 @@ export const MOCK_COURSES: Course[] = [
             fileSize: "1.3 MB",
             timeModified: "Oct 22, 2026",
             originalSection: "Lecture Notes"
+          },
+          {
+            id: "res-de-2",
+            name: "Topic 1: First Order Differential Equations & Integrating Factors",
+            category: "slide",
+            fileUrl: "/materials/MTH2003/ODE_1st.pdf",
+            fileSize: "157 KB",
+            timeModified: "Sep 15, 2026",
+            originalSection: "Handouts"
+          },
+          {
+            id: "res-de-3",
+            name: "Review: Matrices, Determinants & Eigenvalues",
+            category: "slide",
+            fileUrl: "/materials/MTH2003/Review_Matrices.pdf",
+            fileSize: "61 KB",
+            timeModified: "Sep 15, 2026",
+            originalSection: "Handouts"
+          },
+          {
+            id: "res-de-4",
+            name: "Review: Linear Systems of Equations & Diagonalisation",
+            category: "slide",
+            fileUrl: "/materials/MTH2003/Review_Linear_Systems.pdf",
+            fileSize: "69 KB",
+            timeModified: "Sep 15, 2026",
+            originalSection: "Handouts"
           }
         ]
       },
@@ -53,20 +123,40 @@ export const MOCK_COURSES: Course[] = [
             name: "Problem Sheet 1: First & Second Order Linear ODEs",
             category: "problem_sheet",
             sheetNumber: 1,
-            fileUrl: "/materials/MTH2003/MTH2003.pdf",
-            fileSize: "1.3 MB",
+            fileUrl: "/materials/MTH2003/MTH2003-24Jan.pdf",
+            fileSize: "295 KB",
             timeModified: "Oct 12, 2026",
             originalSection: "Problem Sheets"
+          },
+          {
+            id: "res-de-s1-sol",
+            name: "Problem Sheet 1: Solutions & Worked Examples",
+            category: "solution",
+            sheetNumber: 1,
+            fileUrl: "/materials/MTH2003/MTH2003-25Jan.pdf",
+            fileSize: "210 KB",
+            timeModified: "Oct 15, 2026",
+            originalSection: "Solutions"
           },
           {
             id: "res-de-s2",
             name: "Problem Sheet 2: Power Series & Frobenius Method",
             category: "problem_sheet",
             sheetNumber: 2,
-            fileUrl: "/materials/MTH2003/MTH2003.pdf",
-            fileSize: "1.3 MB",
+            fileUrl: "/materials/MTH2003/MTH2003-22Jan.pdf",
+            fileSize: "129 KB",
             timeModified: "Oct 19, 2026",
             originalSection: "Problem Sheets"
+          },
+          {
+            id: "res-de-s2-sol",
+            name: "Problem Sheet 2: Solutions & Indicial Roots",
+            category: "solution",
+            sheetNumber: 2,
+            fileUrl: "/materials/MTH2003/MTH2003-23Jan.pdf",
+            fileSize: "126 KB",
+            timeModified: "Oct 22, 2026",
+            originalSection: "Solutions"
           }
         ]
       }
@@ -101,6 +191,57 @@ export const MOCK_COURSES: Course[] = [
       email: "a.r.neves@exeter.ac.uk",
       officeHours: "Mondays 14:00 - 16:00 (Harrison 208)"
     },
+    panoptoFolderUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331008-mth2008%22",
+    recordings: [
+      {
+        id: "rec-ra-1",
+        title: "Lecture 1: Metric Spaces, Euclidean Norms & Open/Closed Balls",
+        date: "01/10/2026",
+        duration: "51m",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ra-lec-1"
+      },
+      {
+        id: "rec-ra-2",
+        title: "Lecture 2: Sequences in Metric Spaces, Limits & Subsequences",
+        date: "04/10/2026",
+        duration: "48m",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ra-lec-2"
+      },
+      {
+        id: "rec-ra-3",
+        title: "Lecture 3: Cauchy Sequences, Completeness of R^n & Banach Spaces",
+        date: "08/10/2026",
+        duration: "50m",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ra-lec-3"
+      },
+      {
+        id: "rec-ra-4",
+        title: "Lecture 4: Continuous Functions between Metric Spaces & Epsilon-Delta",
+        date: "11/10/2026",
+        duration: "52m",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ra-lec-4"
+      },
+      {
+        id: "rec-ra-5",
+        title: "Lecture 5: Compactness, Open Covers & The Heine-Borel Theorem",
+        date: "15/10/2026",
+        duration: "49m",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ra-lec-5"
+      },
+      {
+        id: "rec-ra-6",
+        title: "Lecture 6: Connectedness & Topological Invariance",
+        date: "18/10/2026",
+        duration: "50m",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ra-lec-6"
+      }
+    ],
     examPapers: generateCandidatePapers("MTH2008").slice(0, 8),
     sections: [
       {
@@ -120,27 +261,67 @@ export const MOCK_COURSES: Course[] = [
       },
       {
         id: "sec-ra-sheets",
-        title: "Weekly Problem Sheets",
+        title: "Weekly Problem Sheets & Solutions",
         resources: [
           {
             id: "res-ra-s1",
             name: "Problem Sheet 1: Metric Spaces & Open/Closed Sets",
             category: "problem_sheet",
             sheetNumber: 1,
-            fileUrl: "/materials/MTH2008/MTH2008.pdf",
-            fileSize: "1.1 MB",
+            fileUrl: "/materials/MTH2008/January2026_Questions.pdf",
+            fileSize: "174 KB",
             timeModified: "Oct 10, 2026",
             originalSection: "Problem Sheets"
+          },
+          {
+            id: "res-ra-s1-sol",
+            name: "Problem Sheet 1: Worked Solutions & Proofs",
+            category: "solution",
+            sheetNumber: 1,
+            fileUrl: "/materials/MTH2008/January2026Solutions.pdf",
+            fileSize: "182 KB",
+            timeModified: "Oct 14, 2026",
+            originalSection: "Solutions"
           },
           {
             id: "res-ra-s2",
             name: "Problem Sheet 2: Cauchy Criterion & Completeness",
             category: "problem_sheet",
             sheetNumber: 2,
-            fileUrl: "/materials/MTH2008/MTH2008.pdf",
-            fileSize: "1.1 MB",
+            fileUrl: "/materials/MTH2008/January2025_Questions.pdf",
+            fileSize: "187 KB",
             timeModified: "Oct 17, 2026",
             originalSection: "Problem Sheets"
+          },
+          {
+            id: "res-ra-s2-sol",
+            name: "Problem Sheet 2: Worked Solutions",
+            category: "solution",
+            sheetNumber: 2,
+            fileUrl: "/materials/MTH2008/January2025_Solutions.pdf",
+            fileSize: "142 KB",
+            timeModified: "Oct 21, 2026",
+            originalSection: "Solutions"
+          },
+          {
+            id: "res-ra-s3",
+            name: "Problem Sheet 3: Continuous Mappings & Equivalences",
+            category: "problem_sheet",
+            sheetNumber: 3,
+            fileUrl: "/materials/MTH2008/January2024_Questions.pdf",
+            fileSize: "141 KB",
+            timeModified: "Oct 24, 2026",
+            originalSection: "Problem Sheets"
+          },
+          {
+            id: "res-ra-s3-sol",
+            name: "Problem Sheet 3: Worked Solutions",
+            category: "solution",
+            sheetNumber: 3,
+            fileUrl: "/materials/MTH2008/January2024_Solutions.pdf",
+            fileSize: "162 KB",
+            timeModified: "Oct 28, 2026",
+            originalSection: "Solutions"
           }
         ]
       }
@@ -175,6 +356,49 @@ export const MOCK_COURSES: Course[] = [
       email: "n.p.byott@exeter.ac.uk",
       officeHours: "Tuesdays 14:00 - 16:00 (Harrison 102)"
     },
+    panoptoFolderUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331010-mth2010%22",
+    recordings: [
+      {
+        id: "rec-grf-1",
+        title: "Lecture 1: Group Axioms, Subgroups & Cosets",
+        date: "03/10/2026",
+        duration: "51m",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=grf-lec-1"
+      },
+      {
+        id: "rec-grf-2",
+        title: "Lecture 2: Lagrange's Theorem & Normal Subgroups",
+        date: "06/10/2026",
+        duration: "50m",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=grf-lec-2"
+      },
+      {
+        id: "rec-grf-3",
+        title: "Lecture 3: First Isomorphism Theorem for Groups",
+        date: "10/10/2026",
+        duration: "52m",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=grf-lec-3"
+      },
+      {
+        id: "rec-grf-4",
+        title: "Lecture 4: Rings, Ideals & Quotient Rings",
+        date: "13/10/2026",
+        duration: "49m",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=grf-lec-4"
+      },
+      {
+        id: "rec-grf-5",
+        title: "Lecture 5: Prime & Maximal Ideals, Field Extensions",
+        date: "17/10/2026",
+        duration: "50m",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=grf-lec-5"
+      }
+    ],
     examPapers: generateCandidatePapers("MTH2010").slice(0, 8),
     sections: [
       {
@@ -186,7 +410,7 @@ export const MOCK_COURSES: Course[] = [
             name: "MTH2010 Groups, Rings and Fields - Course Notes",
             category: "slide",
             fileUrl: "/materials/MTH2010/MTH2010.pdf",
-            fileSize: "2.9 MB",
+            fileSize: "1.2 MB",
             timeModified: "Oct 22, 2026",
             originalSection: "Lecture Notes"
           }
@@ -194,17 +418,37 @@ export const MOCK_COURSES: Course[] = [
       },
       {
         id: "sec-grf-sheets",
-        title: "Tutorial Sheets",
+        title: "Tutorial Sheets & Solutions",
         resources: [
           {
             id: "res-grf-s1",
             name: "Problem Sheet 1: Group Actions & Sylow Theorems",
             category: "problem_sheet",
             sheetNumber: 1,
-            fileUrl: "/materials/MTH2010/MTH2010.pdf",
-            fileSize: "2.9 MB",
+            fileUrl: "/materials/MTH2010/MTH2010-24Jan.pdf",
+            fileSize: "280 KB",
             timeModified: "Oct 15, 2026",
             originalSection: "Problem Sheets"
+          },
+          {
+            id: "res-grf-s1-sol",
+            name: "Problem Sheet 1: Solutions & Worked Proofs",
+            category: "solution",
+            sheetNumber: 1,
+            fileUrl: "/materials/MTH2010/MTH2010-25Jan.pdf",
+            fileSize: "195 KB",
+            timeModified: "Oct 18, 2026",
+            originalSection: "Solutions"
+          },
+          {
+            id: "res-grf-s4",
+            name: "Tutorial Sheet 4: Ring Homomorphisms & Ideals",
+            category: "problem_sheet",
+            sheetNumber: 4,
+            fileUrl: "/materials/MTH2010/Algebra25-Sheet4.pdf",
+            fileSize: "245 KB",
+            timeModified: "Nov 02, 2026",
+            originalSection: "Tutorials"
           }
         ]
       }
@@ -239,6 +483,49 @@ export const MOCK_COURSES: Course[] = [
       email: "m.mueller@exeter.ac.uk",
       officeHours: "Thursdays 15:00 - 16:00 (Harrison 214)"
     },
+    panoptoFolderUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331014-mth2014%22",
+    recordings: [
+      {
+        id: "rec-nm-1",
+        title: "Lecture 1: Introduction to Numerical Errors & Floating Point",
+        date: "02/10/2026",
+        duration: "50m",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=nm-lec-1"
+      },
+      {
+        id: "rec-nm-2",
+        title: "Lecture 2: Root Finding Algorithms & Convergence Rates",
+        date: "05/10/2026",
+        duration: "51m",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=nm-lec-2"
+      },
+      {
+        id: "rec-nm-3",
+        title: "Lecture 3: Numerical Linear Algebra & LU Factorisation",
+        date: "09/10/2026",
+        duration: "48m",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=nm-lec-3"
+      },
+      {
+        id: "rec-nm-4",
+        title: "Lecture 4: Numerical Quadrature & Simpson's Rule",
+        date: "12/10/2026",
+        duration: "52m",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=nm-lec-4"
+      },
+      {
+        id: "rec-nm-5",
+        title: "Lecture 5: Runge-Kutta Methods for Initial Value Problems",
+        date: "16/10/2026",
+        duration: "50m",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://exeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=nm-lec-5"
+      }
+    ],
     examPapers: generateCandidatePapers("MTH2014").slice(0, 8),
     sections: [
       {

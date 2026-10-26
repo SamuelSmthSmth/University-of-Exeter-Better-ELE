@@ -40,6 +40,8 @@ export interface ExamPaper {
   pdfUrl: string;
   hasSolution: boolean;
   solutionUrl?: string;
+  isLocal?: boolean;
+  fileSize?: string;
 }
 
 export interface CourseDeadline {
@@ -62,6 +64,15 @@ export interface CourseSection {
   resources: CourseResource[];
 }
 
+export interface PanoptoRecording {
+  id: string;
+  title: string;
+  date: string;
+  duration: string;
+  lecturer?: string;
+  panoptoUrl: string;
+}
+
 export interface Course {
   id: string;
   code: string;           // e.g. "MTH1001"
@@ -81,6 +92,8 @@ export interface Course {
   sections: CourseSection[];
   examPapers?: ExamPaper[];
   deadlines?: CourseDeadline[];
+  panoptoFolderUrl?: string;
+  recordings?: PanoptoRecording[];
 }
 
 export interface UserProfile {

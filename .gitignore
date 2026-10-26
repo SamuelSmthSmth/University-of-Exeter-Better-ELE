@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Raw backup dumps from previous stages (run scripts/ingest_ele_backup.py locally to restore)
+public/materials/MTH1000/
+public/materials/MTH1001/
+public/materials/MTH1003/
+public/materials/MTH1002/MTH1002*.pdf
+public/materials/MTH1002/W*.pdf
+public/materials/MTH1002/week*.pdf
+public/materials/MTH1002/Formative*.pdf
+public/materials/MTH1002/Mid_term*.pdf
+public/materials/MTH1002/Revision*.pdf
+public/materials/MTH1002/Sheet*.pdf
+public/materials/MTH1002/Solutions*.pdf
+public/materials/MTH1002/rubric*.pdf
+public/materials/MTH1002/Chapter*.pdf

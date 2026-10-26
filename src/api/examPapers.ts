@@ -31,17 +31,38 @@ export function buildDirectExamPaperUrl(filename: string): string {
   return `https://library.exeter.ac.uk/exampapers/viewpdf.php?filename=${encodeURIComponent(filename)}`;
 }
 
+const KNOWN_LOCAL_PAPERS: Record<string, string[]> = {
+  MTH2008: ['MTH2008-22Jan.pdf', 'MTH2008-23Jan.pdf', 'MTH2008-24Jan.pdf', 'MTH2008-25Jan.pdf'],
+  MTH2003: ['MTH2003-20Jan.pdf', 'MTH2003-21Jan.pdf', 'MTH2003-22Jan.pdf', 'MTH2003-23Jan.pdf', 'MTH2003-24Jan.pdf', 'MTH2003-25Jan.pdf'],
+  MTH2010: ['MTH2010-21Jan.pdf', 'MTH2010-22Jan.pdf', 'MTH2010-23Jan.pdf', 'MTH2010-24Jan.pdf', 'MTH2010-25Jan.pdf'],
+  MTH1001: ['MTH1001-18May.pdf', 'MTH1001-19May.pdf', 'MTH1001-20Jan.pdf', 'MTH1001-20May.pdf', 'MTH1001-21Jan.pdf', 'MTH1001-21May.pdf', 'MTH1001-22Jan.pdf', 'MTH1001-22May.pdf', 'MTH1001-23Jan.pdf', 'MTH1001-23May.pdf', 'MTH1001-24Jan.pdf', 'MTH1001-24May.pdf', 'MTH1001-25Jan.pdf', 'MTH1001-25May.pdf'],
+  MTH1002: ['MTH1002-18Jan.pdf', 'MTH1002-18May.pdf', 'MTH1002-19May.pdf', 'MTH1002-20Jan.pdf', 'MTH1002-20May.pdf', 'MTH1002-21Jan.pdf', 'MTH1002-21May.pdf', 'MTH1002-22Jan.pdf', 'MTH1002-22May.pdf', 'MTH1002-23Jan.pdf', 'MTH1002-23May.pdf', 'MTH1002-24Jan.pdf', 'MTH1002-24May.pdf', 'MTH1002-25Jan.pdf', 'MTH1002-25May.pdf'],
+  MTH1003: ['MTH1003-18May.pdf', 'MTH1003-19May.pdf', 'MTH1003-20May.pdf', 'MTH1003-21May.pdf', 'MTH1003-22May.pdf', 'MTH1003-23May.pdf', 'MTH1003-24May.pdf', 'MTH1003-25May.pdf'],
+  MTH1004: ['MTH1004-18May.pdf', 'MTH1004-19May.pdf', 'MTH1004-20May.pdf', 'MTH1004-21May.pdf', 'MTH1004-22May.pdf', 'MTH1004-23May.pdf', 'MTH1004-24May.pdf', 'MTH1004-25May.pdf']
+};
+
 /**
  * Generates all candidate exam paper queries for a given module code.
  */
 export function generateCandidatePapers(moduleCode: string): ExamPaper[] {
   const cleanCode = moduleCode.trim().toUpperCase();
   const candidates: ExamPaper[] = [];
+  const localList = KNOWN_LOCAL_PAPERS[cleanCode] || [];
 
   for (const year of YEARS_TO_PROBE) {
     for (const session of SESSIONS) {
       const filename = `${cleanCode}-${year.short}${session}.pdf`;
+      const isLocal = localList.includes(filename);
       const sessionLabel = session === 'Jan' ? 'January Exam' : session === 'May' ? 'May/June Exam' : 'August Deferral/Referral';
+      
+      // Check for local solution pair (e.g. MTH2008 January questions & solutions)
+      let solutionUrl: string | undefined = undefined;
+      let hasSolution = false;
+      if (cleanCode === 'MTH2008' && session === 'Jan') {
+        solutionUrl = `/materials/MTH2008/January${year.full}_Solutions.pdf`;
+        hasSolution = true;
+      }
+
       candidates.push({
         id: `${cleanCode}-${year.full}-${session}`,
         moduleCode: cleanCode,
@@ -49,8 +70,10 @@ export function generateCandidatePapers(moduleCode: string): ExamPaper[] {
         session: session,
         title: `${year.full} ${sessionLabel}`,
         filename,
-        pdfUrl: buildExamPaperUrl(filename),
-        hasSolution: false, // Library archive papers don't bundle solutions; our VFS pairs solutions if found on ELE
+        pdfUrl: isLocal ? `/materials/${cleanCode}/${filename}` : buildExamPaperUrl(filename),
+        hasSolution,
+        solutionUrl,
+        isLocal,
       });
     }
   }

@@ -6,20 +6,13 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  MoreVertical,
-  Calendar as CalendarIcon,
-  HelpCircle,
   Accessibility,
   ArrowRight,
   ExternalLink,
-  Filter,
   RotateCcw,
   FileText,
   MapPin,
-  GraduationCap,
-  FileCheck,
   Sparkles,
-  BookOpen,
 } from "lucide-react";
 import { EleGeometricPattern } from "./EleGeometricPattern";
 import { TimetableEvent, getEventTheme } from "../../api/timetable";
@@ -188,31 +181,14 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
     <div className="flex-1 overflow-y-auto bg-[#F9F9F9] dark:bg-background text-foreground relative">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6">
 
-        {/* ── Dashboard Heading & Student Status ──────────────────────────── */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 border-b border-border/60 pb-5">
-          <div>
-            <h1 className="text-[28px] font-bold tracking-tight text-[#1D2125] dark:text-foreground">
-              Dashboard
-            </h1>
-            <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
-              MMath Mathematics (Honours) · Stage 2 · 2026/27 Academic Year
-            </p>
-          </div>
-
-          <div className="flex items-center gap-2 flex-wrap">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-card border border-border text-xs font-semibold shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>Stage 2 Active</span>
-            </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-card border border-border text-xs font-semibold shadow-2xs">
-              <GraduationCap size={14} className="text-[#007A6B] dark:text-[#00C4AD]" />
-              <span>14 Modules</span>
-            </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-card border border-border text-xs font-semibold shadow-2xs">
-              <FileCheck size={14} className="text-[#007A6B] dark:text-[#00C4AD]" />
-              <span>Offline Ready</span>
-            </div>
-          </div>
+        {/* ── Dashboard Heading ─────────────────────────────────────────── */}
+        <div className="border-b border-border/60 pb-5">
+          <h1 className="text-[28px] font-bold tracking-tight text-[#1D2125] dark:text-foreground">
+            Dashboard
+          </h1>
+          <p className="text-xs sm:text-sm text-muted-foreground mt-0.5">
+            MMath Mathematics · 2026/27
+          </p>
         </div>
 
         {/* ── Main 2-Column Layout (Courses + Sidebar) ───────────────────── */}
@@ -357,102 +333,35 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
               ) : cardLayout === "Card" ? (
                 /* Card Layout */
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6">
-                  {filteredCourses.map(course => {
-                    const hasLocalNotes = course.sections.some(s =>
-                      s.resources.some(r => r.fileUrl?.startsWith("/materials/"))
-                    );
-                    const totalSheets = course.sections
-                      .flatMap(s => s.resources)
-                      .filter(r => r.category === "problem_sheet").length;
-
-                    return (
-                      <div
-                        key={course.id}
-                        onClick={() => onSelectCourse(course)}
-                        className="bg-card border border-border rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-[#007A6B] active:scale-[0.99] cursor-pointer transition-all flex flex-col group"
-                      >
-                        {/* Thumbnail Geometric Header Banner */}
-                        <div className="h-28 sm:h-36 relative overflow-hidden rounded-t-2xl">
-                          <EleGeometricPattern seed={course.code} height="100%" />
-                          <div className="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap">
-                            <span className="px-2 py-0.5 rounded-md bg-[#00C4AD] text-[#003C3C] text-xs font-mono font-bold shadow-xs">
-                              {course.code}
-                            </span>
-                            <span className="px-2 py-0.5 rounded-md bg-black/40 backdrop-blur-xs text-white text-[11px] font-medium">
-                              {course.term}
-                            </span>
-                          </div>
-
-                          {hasLocalNotes && (
-                            <div className="absolute top-3 right-3">
-                              <span className="px-2 py-0.5 rounded-md bg-emerald-500/90 text-white text-[10px] font-bold shadow-xs flex items-center gap-1">
-                                <FileCheck size={10} /> Local PDF
-                              </span>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Course Information */}
-                        <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-                          <div>
-                            <h3 className="text-[16px] sm:text-[15px] font-bold text-[#007A6B] dark:text-[#00C4AD] group-hover:underline transition-all leading-snug line-clamp-2 mb-1.5">
-                              {course.title}
-                            </h3>
-                            <p className="text-xs text-muted-foreground font-medium">
-                              {course.convenor.name} · Stage {course.stage} · {course.credits} Credits
-                            </p>
-
-                            {/* Term Progress Bar */}
-                            <div className="mt-3 space-y-1">
-                              <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-                                <span>Course Progress</span>
-                                <span className="font-semibold text-foreground">{course.progressPercentage}%</span>
-                              </div>
-                              <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
-                                <div
-                                  className="h-full bg-[#007A6B] dark:bg-[#00C4AD] rounded-full transition-all duration-300"
-                                  style={{ width: `${course.progressPercentage}%` }}
-                                />
-                              </div>
-                            </div>
-
-                            {/* Badges: Past Papers, Sheets */}
-                            <div className="flex items-center gap-2 mt-3 flex-wrap">
-                              <span className="px-2 py-0.5 rounded-md bg-muted text-[11px] font-medium text-foreground border border-border">
-                                {course.examPapers?.length || 8} Past Papers
-                              </span>
-                              {totalSheets > 0 && (
-                                <span className="px-2 py-0.5 rounded-md bg-muted text-[11px] font-medium text-foreground border border-border">
-                                  {totalSheets} Sheets
-                                </span>
-                              )}
-                              {(course.deadlines?.length || 0) > 0 && (
-                                <span className="px-2 py-0.5 rounded-md bg-rose-500/10 text-rose-600 dark:text-rose-400 text-[11px] font-medium border border-rose-500/20">
-                                  {course.deadlines?.length} Deadlines
-                                </span>
-                              )}
-                            </div>
-                          </div>
-
-                          <div className="mt-4 pt-3 border-t border-border/70 flex items-center justify-between text-xs text-muted-foreground">
-                            <span className="font-bold text-sm text-[#007A6B] dark:text-[#00C4AD] group-hover:translate-x-0.5 transition-transform flex items-center gap-1.5">
-                              Open Module Hub <ArrowRight size={15} />
-                            </span>
-                            <button
-                              onClick={e => {
-                                e.stopPropagation();
-                                onSelectCourse(course);
-                              }}
-                              className="p-1.5 hover:text-foreground text-muted-foreground rounded-lg"
-                              title="Open module"
-                            >
-                              <MoreVertical size={16} />
-                            </button>
-                          </div>
+                  {filteredCourses.map(course => (
+                    <div
+                      key={course.id}
+                      onClick={() => onSelectCourse(course)}
+                      className="bg-card border border-border rounded-2xl overflow-hidden shadow-xs hover:shadow-md hover:border-[#007A6B] dark:hover:border-[#00C4AD] active:scale-[0.99] cursor-pointer transition-all flex flex-col group"
+                    >
+                      {/* Thumbnail Geometric Header Banner */}
+                      <div className="h-28 sm:h-32 relative overflow-hidden rounded-t-2xl">
+                        <EleGeometricPattern seed={course.code} height="100%" />
+                        <div className="absolute top-3 left-3">
+                          <span className="px-2.5 py-1 rounded-md bg-[#00C4AD] text-[#003C3C] text-xs font-mono font-bold shadow-xs">
+                            {course.code}
+                          </span>
                         </div>
                       </div>
-                    );
-                  })}
+
+                      {/* Course Information */}
+                      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                          <h3 className="text-[16px] font-bold text-[#007A6B] dark:text-[#00C4AD] group-hover:underline transition-all leading-snug line-clamp-2 mb-1">
+                            {course.title}
+                          </h3>
+                          <p className="text-xs text-muted-foreground font-medium">
+                            {course.convenor.name}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               ) : (
                 /* List Layout */
@@ -464,24 +373,17 @@ export const EleDashboardHero: React.FC<EleDashboardHeroProps> = ({
                       className="p-4 hover:bg-muted/40 transition-colors cursor-pointer flex items-center justify-between gap-4"
                     >
                       <div className="min-w-0 flex-1">
-                        <div className="flex items-center gap-2 mb-0.5">
-                          <span className="text-xs font-mono font-bold text-[#007A6B] dark:text-[#00C4AD]">
-                            {course.code}
-                          </span>
-                          <span className="text-[11px] text-muted-foreground">
-                            · {course.term} · {course.convenor.name} · {course.credits} Credits
-                          </span>
-                        </div>
-                        <h3 className="text-[15px] font-semibold text-foreground hover:text-[#007A6B] transition-colors truncate">
+                        <span className="text-xs font-mono font-bold text-[#007A6B] dark:text-[#00C4AD] block mb-0.5">
+                          {course.code}
+                        </span>
+                        <h3 className="text-[15px] font-semibold text-foreground hover:text-[#007A6B] dark:hover:text-[#00C4AD] transition-colors truncate">
                           {course.title}
                         </h3>
+                        <p className="text-xs text-muted-foreground mt-0.5">
+                          {course.convenor.name}
+                        </p>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-xs font-bold text-[#007A6B] dark:text-[#00C4AD]">
-                          {course.progressPercentage}%
-                        </span>
-                        <ArrowRight size={16} className="text-[#007A6B] shrink-0" />
-                      </div>
+                      <ArrowRight size={16} className="text-[#007A6B] dark:text-[#00C4AD] shrink-0" />
                     </div>
                   ))}
                 </div>
