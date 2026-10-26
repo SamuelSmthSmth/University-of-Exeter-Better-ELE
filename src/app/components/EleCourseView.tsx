@@ -338,32 +338,62 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
                   {pairedSheets.map(sheet => (
                     <div
                       key={sheet.sheetNumber}
-                      onClick={() =>
-                        onOpenDocument({
-                          id: sheet.questionPaper.id,
-                          title: sheet.title,
-                          url: sheet.questionPaper.fileUrl,
-                        })
-                      }
-                      className="group bg-card border border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD] rounded-xl p-4 shadow-xs hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between"
+                      className="group bg-card border border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD] rounded-xl p-4 shadow-xs hover:shadow-md transition-all duration-200 flex flex-col justify-between"
                     >
                       <div>
                         <div className="flex items-center justify-between gap-2 mb-3">
                           <span className="w-8 h-8 rounded-lg bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] font-mono font-bold text-xs flex items-center justify-center shrink-0">
                             #{String(sheet.sheetNumber).padStart(2, '0')}
                           </span>
-                          <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-muted text-muted-foreground uppercase">
-                            Formative
-                          </span>
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            {sheet.solutionPaper && (
+                              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400">
+                                Solutions Available
+                              </span>
+                            )}
+                            <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-muted text-muted-foreground uppercase">
+                              Formative
+                            </span>
+                          </div>
                         </div>
-                        <h4 className="text-sm font-semibold text-foreground group-hover:text-[#007A6B] dark:group-hover:text-[#00C4AD] transition-colors line-clamp-2">
+                        <h4 className="text-sm font-semibold text-foreground line-clamp-2">
                           {sheet.title}
                         </h4>
                       </div>
 
-                      <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between text-xs font-semibold text-[#007A6B] dark:text-[#00C4AD]">
-                        <span>Open Sheet</span>
-                        <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                      <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between gap-2 flex-wrap">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            onOpenDocument({
+                              id: sheet.questionPaper.id,
+                              title: sheet.title,
+                              url: sheet.questionPaper.fileUrl,
+                            })
+                          }
+                          className="px-2.5 py-1.5 rounded-lg bg-[#007A6B]/15 hover:bg-[#007A6B]/25 text-[#007A6B] dark:text-[#00C4AD] text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                        >
+                          <span>Open Sheet</span>
+                          <span>→</span>
+                        </button>
+
+                        {sheet.solutionPaper && (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              onOpenDocument({
+                                id: sheet.solutionPaper!.id,
+                                title: `${sheet.title} – Solutions`,
+                                url: sheet.solutionPaper!.fileUrl,
+                              })
+                            }
+                            className="px-2.5 py-1.5 rounded-lg bg-emerald-500/15 hover:bg-emerald-500/25 text-emerald-700 dark:text-emerald-400 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                            title="Open solutions PDF"
+                          >
+                            <FileCheck2 size={12} />
+                            <span>Solutions</span>
+                          </button>
+                        )}
                       </div>
                     </div>
                   ))}
@@ -462,7 +492,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
                     <div className="w-2.5 h-2.5 rounded-full bg-[#00C4AD] animate-pulse shrink-0" />
                     <span className="text-xs sm:text-sm font-semibold truncate">{activePanopto.title}</span>
                     <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#00C4AD]/20 text-[#00C4AD]">
-                      Multi-Stream Synced
+                      Multi-Source Interactive
                     </span>
                   </div>
                   <div className="flex items-center gap-2 shrink-0">
@@ -470,9 +500,10 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
                       href={activePanopto.panoptoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="px-2.5 py-1 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-medium flex items-center gap-1.5 transition-colors"
+                      className="px-2.5 py-1 rounded-lg bg-[#007A6B] hover:bg-[#006a5d] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-xs"
+                      title="Open full interactive multi-source viewer in new tab"
                     >
-                      <span>Open in Panopto Portal</span>
+                      <span>Full Multi-Source Portal</span>
                       <ExternalLink size={12} />
                     </a>
                     <button
@@ -488,8 +519,9 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
                 <div className="relative w-full aspect-video bg-black">
                   <iframe
                     src={
-                      activePanopto.embedUrl ||
-                      `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=${activePanopto.id}&instance=MoodleELE2&autoplay=true&offerviewer=true`
+                      activePanopto.embedUrl?.includes('interactivity=all')
+                        ? activePanopto.embedUrl
+                        : `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=${activePanopto.id}&instance=MoodleELE2&autoplay=true&offerviewer=true&interactivity=all&showtitle=true`
                     }
                     title={activePanopto.title}
                     className="w-full h-full border-0"

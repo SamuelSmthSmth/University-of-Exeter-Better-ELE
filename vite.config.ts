@@ -3,6 +3,8 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 
+import { exec } from 'child_process'
+
 function figmaAssetResolver() {
   return {
     name: 'figma-asset-resolver',
@@ -15,9 +17,37 @@ function figmaAssetResolver() {
   }
 }
 
+function betterEleSyncPlugin() {
+  return {
+    name: 'better-ele-sync-plugin',
+    configureServer(server: any) {
+      server.middlewares.use('/api/sync-ele', async (_req: any, res: any) => {
+        exec('python3 scripts/sync_ele.py', { cwd: __dirname }, (error: any, stdout: string, stderr: string) => {
+          res.setHeader('Content-Type', 'application/json');
+          if (error) {
+            res.statusCode = 500;
+            res.end(JSON.stringify({ success: false, error: stderr || error.message }));
+            return;
+          }
+          try {
+            const jsonStart = stdout.lastIndexOf('{');
+            const jsonStr = stdout.slice(jsonStart);
+            res.statusCode = 200;
+            res.end(jsonStr);
+          } catch (e) {
+            res.statusCode = 200;
+            res.end(JSON.stringify({ success: true, message: 'Sync complete', logs: [] }));
+          }
+        });
+      });
+    }
+  }
+}
+
 export default defineConfig({
   plugins: [
     figmaAssetResolver(),
+    betterEleSyncPlugin(),
     react(),
     tailwindcss(),
   ],
