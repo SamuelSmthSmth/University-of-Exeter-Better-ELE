@@ -30,201 +30,256 @@ export const MOCK_COURSES: Course[] = [
     panoptoFolderUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331003-mth2003%22",
     recordings: [
       {
-        id: "d50d6915-a05c-406e-8875-b4c900d2b536",
-        title: "21/09/2026 @ 13:32 - MTH2003_L1/01 - Differential Equations",
-        date: "21/09/2026",
+        id: "69cd4583-0192-4a08-b1db-b4e9015799f8",
+        title: "23/10/2026 @ 11:32 - MTH2003_L2/01 - Differential Equations",
+        date: "Oct 2026",
         duration: "50 mins",
-        lecturer: "Prof. Stuart Townley",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d50d6915-a05c-406e-8875-b4c900d2b536&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d50d6915-a05c-406e-8875-b4c900d2b536&instance=MoodleELE2&autoplay=true&offerviewer=true"
-      },
-      {
-        id: "a58692a7-95f4-474a-ba21-b4d800fcd8fc",
-        title: "06/10/2026 @ 15:32 - MTH2003_L3/01 - Differential Equations",
-        date: "06/10/2026",
-        duration: "50 mins",
-        lecturer: "Prof. Stuart Townley",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a58692a7-95f4-474a-ba21-b4d800fcd8fc&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a58692a7-95f4-474a-ba21-b4d800fcd8fc&instance=MoodleELE2&autoplay=true&offerviewer=true"
-      },
-      {
-        id: "36f4b74b-89e4-4e38-a628-b4de00da16c6",
-        title: "12/10/2026 @ 13:32 - MTH2003_L1/01 - Differential Equations",
-        date: "12/10/2026",
-        duration: "52 mins",
-        lecturer: "Dr. Peter Ashwin",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=36f4b74b-89e4-4e38-a628-b4de00da16c6&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=36f4b74b-89e4-4e38-a628-b4de00da16c6&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=69cd4583-0192-4a08-b1db-b4e9015799f8&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=69cd4583-0192-4a08-b1db-b4e9015799f8&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
         id: "3e6b90ed-ebd1-4ca8-a741-b4e600fa9f2b",
         title: "20/10/2026 @ 15:32 - MTH2003_L3/01 - Differential Equations",
-        date: "20/10/2026",
-        duration: "51 mins",
-        lecturer: "Dr. Peter Ashwin",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
         panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3e6b90ed-ebd1-4ca8-a741-b4e600fa9f2b&instance=MoodleELE2",
         embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3e6b90ed-ebd1-4ca8-a741-b4e600fa9f2b&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
-        id: "69cd4583-0192-4a08-b1db-b4e9015799f8",
-        title: "23/10/2026 @ 11:32 - MTH2003_L2/01 - Differential Equations",
-        date: "23/10/2026",
-        duration: "53 mins",
-        lecturer: "Prof. Stuart Townley",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=69cd4583-0192-4a08-b1db-b4e9015799f8&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=69cd4583-0192-4a08-b1db-b4e9015799f8&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        id: "40ae704d-b461-43ea-b498-b4e500da4b61",
+        title: "19/10/2026 @ 13:32 - MTH2003_L1/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=40ae704d-b461-43ea-b498-b4e500da4b61&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=40ae704d-b461-43ea-b498-b4e500da4b61&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "419587c9-8978-454c-b2dd-b4e200b9555d",
+        title: "16/10/2026 @ 11:32 - MTH2003_L2/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=419587c9-8978-454c-b2dd-b4e200b9555d&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=419587c9-8978-454c-b2dd-b4e200b9555d&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "81905292-e873-4cc3-be0a-b4df00fa9b11",
+        title: "13/10/2026 @ 15:32 - MTH2003_L3/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=81905292-e873-4cc3-be0a-b4df00fa9b11&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=81905292-e873-4cc3-be0a-b4df00fa9b11&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "36f4b74b-89e4-4e38-a628-b4de00da16c6",
+        title: "12/10/2026 @ 13:32 - MTH2003_L1/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=36f4b74b-89e4-4e38-a628-b4de00da16c6&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=36f4b74b-89e4-4e38-a628-b4de00da16c6&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "9dc7202a-e735-499d-99d1-b4db0108a63b",
+        title: "09/10/2026 @ 11:32 - MTH2003_L2/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9dc7202a-e735-499d-99d1-b4db0108a63b&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9dc7202a-e735-499d-99d1-b4db0108a63b&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "a58692a7-95f4-474a-ba21-b4d800fcd8fc",
+        title: "06/10/2026 @ 15:32 - MTH2003_L3/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a58692a7-95f4-474a-ba21-b4d800fcd8fc&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a58692a7-95f4-474a-ba21-b4d800fcd8fc&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "adddf58a-b353-4625-b379-b4d700dc39b8",
+        title: "05/10/2026 @ 13:32 - MTH2003_L1/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=adddf58a-b353-4625-b379-b4d700dc39b8&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=adddf58a-b353-4625-b379-b4d700dc39b8&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "1b18ef53-0fc6-4917-a190-b4d400baf365",
+        title: "02/10/2026 @ 11:32 - MTH2003_L2/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1b18ef53-0fc6-4917-a190-b4d400baf365&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1b18ef53-0fc6-4917-a190-b4d400baf365&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "dc375ff3-28ee-4b9d-a482-b4d100fd2c93",
+        title: "29/09/2026 @ 15:32 - MTH2003_L3/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=dc375ff3-28ee-4b9d-a482-b4d100fd2c93&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=dc375ff3-28ee-4b9d-a482-b4d100fd2c93&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "3b847089-c864-46db-8d92-b4d000dbbf4b",
+        title: "28/09/2026 @ 13:32 - MTH2003_L1/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3b847089-c864-46db-8d92-b4d000dbbf4b&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3b847089-c864-46db-8d92-b4d000dbbf4b&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "0f5115b1-35f4-4227-90ef-b4cd00bb5443",
+        title: "25/09/2026 @ 11:32 - MTH2003_L2/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=0f5115b1-35f4-4227-90ef-b4cd00bb5443&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=0f5115b1-35f4-4227-90ef-b4cd00bb5443&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "67ac3c43-b63e-4497-821b-b4ca00f3da30",
+        title: "22/09/2026 @ 15:32 - MTH2003_L3/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=67ac3c43-b63e-4497-821b-b4ca00f3da30&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=67ac3c43-b63e-4497-821b-b4ca00f3da30&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "d50d6915-a05c-406e-8875-b4c900d2b536",
+        title: "21/09/2026 @ 13:32 - MTH2003_L1/01 - Differential Equations",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Stuart Townley & Dr. Peter Ashwin",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d50d6915-a05c-406e-8875-b4c900d2b536&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=d50d6915-a05c-406e-8875-b4c900d2b536&instance=MoodleELE2&autoplay=true&offerviewer=true"
       }
     ],
     examPapers: generateCandidatePapers("MTH2003"),
     sections: [
       {
         id: "sec-de-notes",
-        title: "Lecture Notes & Core Handouts",
+        title: "Lecture Notes & Handouts",
         resources: [
           {
-            id: "res-de-1",
-            name: "MTH2003 Differential Equations - Full Course Notes",
+            id: "res-de-ode1",
+            name: "First Order ODEs Notes",
             category: "slide",
-            fileUrl: "/materials/MTH2003/MTH2003.pdf",
-            fileSize: "1.3 MB",
-            timeModified: "Oct 22, 2026",
-            originalSection: "Lecture Notes"
+            fileUrl: "/materials/MTH2003/First order ODEs notes.pdf",
+            fileSize: "156 KB",
+            originalSection: "Topic 1: First Order ODEs"
           },
           {
-            id: "res-de-2",
-            name: "Topic 1: First Order Differential Equations & Integrating Factors",
+            id: "res-de-ode2",
+            name: "Second Order ODEs Notes",
             category: "slide",
-            fileUrl: "/materials/MTH2003/ODE_1st.pdf",
-            fileSize: "157 KB",
-            timeModified: "Sep 15, 2026",
-            originalSection: "Lecture Notes"
-          },
-          {
-            id: "res-de-3",
-            name: "Topic 2: Second Order Linear Differential Equations",
-            category: "slide",
-            fileUrl: "/materials/MTH2003/ODEs_2nd.pdf",
+            fileUrl: "/materials/MTH2003/Second order ODEs notes.pdf",
             fileSize: "371 KB",
-            timeModified: "Oct 23, 2026",
-            originalSection: "Lecture Notes"
+            originalSection: "Topic 2: Second Order ODEs"
           },
           {
-            id: "res-de-4",
-            name: "Topic 3: Systems of Differential Equations & Phase Planes",
+            id: "res-de-odesys",
+            name: "Linear Systems of ODEs Notes",
             category: "slide",
-            fileUrl: "/materials/MTH2003/ODE_systems.pdf",
+            fileUrl: "/materials/MTH2003/Linear systems of ODEs notes.pdf",
             fileSize: "792 KB",
-            timeModified: "Oct 23, 2026",
-            originalSection: "Lecture Notes"
+            originalSection: "Topic 3: Systems of ODEs"
           },
           {
-            id: "res-de-5",
-            name: "Review: Matrices, Determinants & Eigenvalues",
-            category: "slide",
-            fileUrl: "/materials/MTH2003/Review_Matrices.pdf",
-            fileSize: "61 KB",
-            timeModified: "Sep 15, 2026",
+            id: "res-de-gloss",
+            name: "Glossary of Terms & Classification",
+            category: "general",
+            fileUrl: "/materials/MTH2003/Glossary.pdf",
+            fileSize: "172 KB",
             originalSection: "Handouts"
           },
           {
-            id: "res-de-6",
-            name: "Review: Linear Systems of Equations & Diagonalisation",
-            category: "slide",
-            fileUrl: "/materials/MTH2003/Review_Linear_Systems.pdf",
-            fileSize: "69 KB",
-            timeModified: "Sep 15, 2026",
+            id: "res-de-mat",
+            name: "Review of Matrices for ODEs",
+            category: "general",
+            fileUrl: "/materials/MTH2003/Review of Matrices.pdf",
+            fileSize: "60 KB",
+            originalSection: "Handouts"
+          },
+          {
+            id: "res-de-sys",
+            name: "Review of Linear Algebraic Systems",
+            category: "general",
+            fileUrl: "/materials/MTH2003/Review of Linear Algebraic Systems.pdf",
+            fileSize: "68 KB",
             originalSection: "Handouts"
           }
         ]
       },
       {
         id: "sec-de-sheets",
-        title: "Examples Sheets & Tutorials",
+        title: "Examples & Tutorial Sheets",
         resources: [
           {
-            id: "res-de-ex1-sol",
-            name: "Examples Sheet 1: Solutions",
-            category: "solution",
+            id: "res-de-ex1",
+            name: "Examples Sheet 1: First Order ODEs",
+            category: "problem_sheet",
             sheetNumber: 1,
-            fileUrl: "/materials/MTH2003/Examples_Sheet_1_Solutions.pdf",
-            fileSize: "230 KB",
-            timeModified: "Oct 23, 2026",
-            originalSection: "Examples Sheets"
+            fileUrl: "/materials/MTH2003/Examples Sheet 1.pdf",
+            fileSize: "70 KB",
+            originalSection: "Topic 1: First Order ODEs"
+          },
+          {
+            id: "res-de-tut1",
+            name: "Tutorial Sheet 1 for Week 3",
+            category: "problem_sheet",
+            sheetNumber: 2,
+            fileUrl: "/materials/MTH2003/Tutorial Sheet 1 for Week 3.pdf",
+            fileSize: "73 KB",
+            originalSection: "Topic 1: First Order ODEs"
+          },
+          {
+            id: "res-de-fb1",
+            name: "Feedback Sheet 1: Separable & Exact ODEs",
+            category: "problem_sheet",
+            sheetNumber: 3,
+            fileUrl: "/materials/MTH2003/Feedback Sheet 1.pdf",
+            fileSize: "62 KB",
+            originalSection: "Topic 1: First Order ODEs"
           },
           {
             id: "res-de-ex2",
             name: "Examples Sheet 2: Second Order ODEs",
             category: "problem_sheet",
-            sheetNumber: 2,
-            fileUrl: "/materials/MTH2003/Examples_Sheet_2.pdf",
-            fileSize: "90 KB",
-            timeModified: "Oct 20, 2026",
-            originalSection: "Examples Sheets"
+            sheetNumber: 4,
+            fileUrl: "/materials/MTH2003/Examples Sheet 2.pdf",
+            fileSize: "89 KB",
+            originalSection: "Topic 2: Second Order ODEs"
           },
           {
-            id: "res-de-ex2-sol",
-            name: "Examples Sheet 2: Solutions",
-            category: "solution",
-            sheetNumber: 2,
-            fileUrl: "/materials/MTH2003/Examples_Sheet_2_Solutions.pdf",
-            fileSize: "150 KB",
-            timeModified: "Oct 23, 2026",
-            originalSection: "Examples Sheets"
+            id: "res-de-tut2",
+            name: "Tutorial Sheet 2 for Week 5",
+            category: "problem_sheet",
+            sheetNumber: 5,
+            fileUrl: "/materials/MTH2003/Tutorial Sheet 2 for week 5.pdf",
+            fileSize: "83 KB",
+            originalSection: "Topic 2: Second Order ODEs"
           },
           {
-            id: "res-de-tut1-sol",
-            name: "Tutorial Sheet 1: Solutions",
-            category: "solution",
-            sheetNumber: 1,
-            fileUrl: "/materials/MTH2003/Tutorial_Sheet_1_Solutions.pdf",
-            fileSize: "161 KB",
-            timeModified: "Oct 23, 2026",
-            originalSection: "Tutorial Sheets"
-          },
-          {
-            id: "res-de-tut2-sol",
-            name: "Tutorial Sheet 2: Solutions",
-            category: "solution",
-            sheetNumber: 2,
-            fileUrl: "/materials/MTH2003/Tutorial_Sheet_2_Solutions.pdf",
-            fileSize: "146 KB",
-            timeModified: "Oct 23, 2026",
-            originalSection: "Tutorial Sheets"
-          },
-          {
-            id: "res-de-fb1-sol",
-            name: "Feedback Sheet 1: Solutions",
-            category: "solution",
-            sheetNumber: 1,
-            fileUrl: "/materials/MTH2003/Feedback_Sheet_1_Solutions.pdf",
-            fileSize: "135 KB",
-            timeModified: "Oct 23, 2026",
-            originalSection: "Feedback Sheets"
-          },
-          {
-            id: "res-de-fb2-sol",
-            name: "Feedback Sheet 2: Solutions",
-            category: "solution",
-            sheetNumber: 2,
-            fileUrl: "/materials/MTH2003/Feedback_Sheet_2_Solutions.pdf",
-            fileSize: "123 KB",
-            timeModified: "Oct 23, 2026",
-            originalSection: "Feedback Sheets"
+            id: "res-de-fb2",
+            name: "Feedback Sheet 2: Series & Resonance",
+            category: "problem_sheet",
+            sheetNumber: 6,
+            fileUrl: "/materials/MTH2003/Feedback Sheet 2.pdf",
+            fileSize: "65 KB",
+            originalSection: "Topic 2: Second Order ODEs"
           }
         ]
-      }
-    ],
-    deadlines: [
-      {
-        id: "d-de-1",
-        courseId: "mth2003",
-        courseCode: "MTH2003",
-        courseName: "Differential Equations",
-        title: "Midterm Test: Linear ODEs & Series Solutions",
-        dueDate: new Date(Date.now() + 18 * 24 * 60 * 60 * 1000).toISOString(),
-        weighting: 15,
-        submissionStatus: "not_submitted",
-        officialSubmissionUrl: "https://ele.exeter.ac.uk/course/view.php?name=MTH2003"
       }
     ]
   },
@@ -247,59 +302,185 @@ export const MOCK_COURSES: Course[] = [
     panoptoFolderUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331008-mth2008%22",
     recordings: [
       {
-        id: "13a44381-0697-4e82-a8ce-b4c900b268bc",
-        title: "MTH2008 – Real Analysis – Lecture 1",
-        date: "23/09/2026",
-        duration: "51 mins",
+        id: "88f71bf4-c41a-4fc5-ab35-b4d100a1362a",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 01",
+        date: "Oct 2026",
+        duration: "50 mins",
         lecturer: "Dr. Ana Rute Neves",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=13a44381-0697-4e82-a8ce-b4c900b268bc&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=13a44381-0697-4e82-a8ce-b4c900b268bc&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=88f71bf4-c41a-4fc5-ab35-b4d100a1362a&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=88f71bf4-c41a-4fc5-ab35-b4d100a1362a&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
-        id: "9e8abe6e-27a4-4904-8814-b4ca008087cc",
-        title: "MTH2008 – Real Analysis – Lecture 2",
-        date: "26/09/2026",
-        duration: "48 mins",
+        id: "4b9c40bb-cea8-4b78-8442-b4d100a5e9e8",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 02",
+        date: "Oct 2026",
+        duration: "50 mins",
         lecturer: "Dr. Ana Rute Neves",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9e8abe6e-27a4-4904-8814-b4ca008087cc&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9e8abe6e-27a4-4904-8814-b4ca008087cc&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4b9c40bb-cea8-4b78-8442-b4d100a5e9e8&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4b9c40bb-cea8-4b78-8442-b4d100a5e9e8&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "7f4397a6-01c8-47e3-a3d4-b4d100a5ea14",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 03",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7f4397a6-01c8-47e3-a3d4-b4d100a5ea14&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7f4397a6-01c8-47e3-a3d4-b4d100a5ea14&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "849a98b2-a779-4551-8213-b4d000bae351",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 04",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=849a98b2-a779-4551-8213-b4d000bae351&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=849a98b2-a779-4551-8213-b4d000bae351&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "95d6889c-4419-48ef-88ef-b4d901837e6a",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 06",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=95d6889c-4419-48ef-88ef-b4d901837e6a&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=95d6889c-4419-48ef-88ef-b4d901837e6a&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "e83e9df9-bb1f-4c51-943b-b4d700bb19a9",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 07",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e83e9df9-bb1f-4c51-943b-b4d700bb19a9&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e83e9df9-bb1f-4c51-943b-b4d700bb19a9&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
         id: "bae6cc5a-b74a-4c1b-8fa0-b4d8008a3366",
-        title: "MTH2008 – Real Analysis – Lecture 8",
-        date: "14/10/2026",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 08",
+        date: "Oct 2026",
         duration: "50 mins",
         lecturer: "Dr. Ana Rute Neves",
         panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bae6cc5a-b74a-4c1b-8fa0-b4d8008a3366&instance=MoodleELE2",
         embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bae6cc5a-b74a-4c1b-8fa0-b4d8008a3366&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
+        id: "4b5587e6-248d-4163-96f9-b4de00b9681a",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 10",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4b5587e6-248d-4163-96f9-b4de00b9681a&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4b5587e6-248d-4163-96f9-b4de00b9681a&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "bc0921a4-b4d0-472c-a9dd-b4df0087d5db",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 11",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bc0921a4-b4d0-472c-a9dd-b4df0087d5db&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bc0921a4-b4d0-472c-a9dd-b4df0087d5db&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
         id: "bd087c27-9507-40f2-bd57-b4e1011411af",
-        title: "MTH2008 – Real Analysis – Lecture 12",
-        date: "23/10/2026",
-        duration: "52 mins",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 12",
+        date: "Oct 2026",
+        duration: "50 mins",
         lecturer: "Dr. Ana Rute Neves",
         panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bd087c27-9507-40f2-bd57-b4e1011411af&instance=MoodleELE2",
         embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bd087c27-9507-40f2-bd57-b4e1011411af&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "1d3a9b2f-1fa3-4b72-9ef6-b4e500b9bb51",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 13",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1d3a9b2f-1fa3-4b72-9ef6-b4e500b9bb51&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1d3a9b2f-1fa3-4b72-9ef6-b4e500b9bb51&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "4f16ee72-58db-4102-addf-b4e90157a770",
+        title: "MTH2008 \u2013 Real Analysis \u2013 Lecture 14",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Ana Rute Neves",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=4f16ee72-58db-4102-addf-b4e90157a770&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=4f16ee72-58db-4102-addf-b4e90157a770&instance=MoodleELE2&autoplay=true&offerviewer=true"
       }
     ],
     examPapers: generateCandidatePapers("MTH2008"),
     sections: [
       {
         id: "sec-ra-notes",
-        title: "Course Notes & Core References",
+        title: "Course Notes & Slide Decks",
         resources: [
           {
-            id: "res-ra-1",
-            name: "MTH2008 Real Analysis - Complete Course Notes",
+            id: "res-ra-core",
+            name: "Leture notes: Real Analysis",
             category: "slide",
-            fileUrl: "/materials/MTH2008/MTH2008.pdf",
-            fileSize: "1.1 MB",
-            timeModified: "Oct 22, 2026",
-            originalSection: "Course Notes"
+            fileUrl: "/materials/MTH2008/Leture notes_ Real Analysis.pdf",
+            fileSize: "1.0 MB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Lecture Notes"
           },
           {
-            id: "res-ra-ref",
+            id: "res-ra-w12-ann",
+            name: "Annotated Slides: Weeks 1 & 2 (Metric Spaces)",
+            category: "slide",
+            fileUrl: "/materials/MTH2008/Annotated Slides for Weeks 1 & 2.pdf",
+            fileSize: "8.9 MB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Weeks 1 & 2"
+          },
+          {
+            id: "res-ra-w12-blank",
+            name: "Blank Slides: Weeks 1 & 2",
+            category: "slide",
+            fileUrl: "/materials/MTH2008/Blank Slides for Weeks 1 & 2.pdf",
+            fileSize: "238 KB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Weeks 1 & 2"
+          },
+          {
+            id: "res-ra-w34-ann",
+            name: "Annotated Slides: Weeks 3 & 4 (Topological Spaces)",
+            category: "slide",
+            fileUrl: "/materials/MTH2008/Annotated Slides for Weeks 3 & 4.pdf",
+            fileSize: "7.2 MB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Weeks 3 & 4"
+          },
+          {
+            id: "res-ra-w34-blank",
+            name: "Blank Slides: Weeks 3 & 4",
+            category: "slide",
+            fileUrl: "/materials/MTH2008/Blank slides for Weeks 3 & 4.pdf",
+            fileSize: "327 KB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Weeks 3 & 4"
+          },
+          {
+            id: "res-ra-w57-ann",
+            name: "Annotated Slides: Weeks 5 & 7 (Sequences & Completeness)",
+            category: "slide",
+            fileUrl: "/materials/MTH2008/Annotated Slides for Weeks 5 & 7.pdf",
+            fileSize: "8.7 MB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Weeks 5 & 7"
+          },
+          {
+            id: "res-ra-w57-blank",
+            name: "Blank Slides: Weeks 5 & 7",
+            category: "slide",
+            fileUrl: "/materials/MTH2008/Blank slides for Weeks 5 & 7.pdf",
+            fileSize: "231 KB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Weeks 5 & 7"
+          },
+          {
+            id: "res-ra-counter",
             name: "Counterexamples in Analysis (Gelbaum & Olmsted)",
             category: "general",
             fileUrl: "/materials/MTH2008/Counterexamples_in_Analysis.pdf",
@@ -311,32 +492,59 @@ export const MOCK_COURSES: Course[] = [
       },
       {
         id: "sec-ra-sheets",
-        title: "Weekly Problem Sheets",
+        title: "Exercise & Problem Sheets",
         resources: [
           {
             id: "res-ra-s1",
             name: "Exercise Sheet 1: Metric Spaces & Open/Closed Balls",
             category: "problem_sheet",
             sheetNumber: 1,
-            fileUrl: "/materials/MTH2008/Exercise_Sheet_1.pdf",
-            fileSize: "168 KB",
-            timeModified: "Oct 19, 2026",
-            originalSection: "Exercise Sheets"
+            fileUrl: "/materials/MTH2008/Exercise Sheet 1.pdf",
+            fileSize: "121 KB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Assessments"
+          },
+          {
+            id: "res-ra-s2",
+            name: "Exercise Sheet 2: Topology of Metric Spaces",
+            category: "problem_sheet",
+            sheetNumber: 2,
+            fileUrl: "/materials/MTH2008/Exercise Sheet 2.pdf",
+            fileSize: "136 KB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Assessments"
+          },
+          {
+            id: "res-ra-s3",
+            name: "Exercise Sheet 3: Convergence & Completeness",
+            category: "problem_sheet",
+            sheetNumber: 3,
+            fileUrl: "/materials/MTH2008/Exercise Sheet 3.pdf",
+            fileSize: "149 KB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Assessments"
+          },
+          {
+            id: "res-ra-fa1",
+            name: "Graded Formative Assessment 1",
+            category: "problem_sheet",
+            sheetNumber: 4,
+            fileUrl: "/materials/MTH2008/Graded Formative Assessment 1.pdf",
+            fileSize: "121 KB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Assessments"
+          },
+          {
+            id: "res-ra-fa2",
+            name: "Graded Formative Assessment 2",
+            category: "problem_sheet",
+            sheetNumber: 5,
+            fileUrl: "/materials/MTH2008/Graded Formative Assessment 2.pdf",
+            fileSize: "120 KB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Assessments"
           }
         ]
-      }
-    ],
-    deadlines: [
-      {
-        id: "d-ra-1",
-        courseId: "mth2008",
-        courseCode: "MTH2008",
-        courseName: "Real Analysis",
-        title: "Homework Assignment 1: Metric Spaces Proofs",
-        dueDate: new Date(Date.now() + 8 * 24 * 60 * 60 * 1000).toISOString(),
-        weighting: 10,
-        submissionStatus: "not_submitted",
-        officialSubmissionUrl: "https://ele.exeter.ac.uk/course/view.php?name=MTH2008"
       }
     ]
   },
@@ -359,134 +567,261 @@ export const MOCK_COURSES: Course[] = [
     panoptoFolderUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331010-mth2010%22",
     recordings: [
       {
-        id: "7c895f52-3e68-474f-9ad9-b4cc00d307a4",
-        title: "24/09/2026 @ 13:32 - MTH2010_L1/01 - Groups, Rings and Fields",
-        date: "24/09/2026",
+        id: "e8c2f2ed-df2e-4d4e-a806-b4e90157aade",
+        title: "23/10/2026 @ 15:32 - MTH2010_L2/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
         duration: "50 mins",
         lecturer: "Prof. Nigel Byott",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7c895f52-3e68-474f-9ad9-b4cc00d307a4&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7c895f52-3e68-474f-9ad9-b4cc00d307a4&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e8c2f2ed-df2e-4d4e-a806-b4e90157aade&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e8c2f2ed-df2e-4d4e-a806-b4e90157aade&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
-        id: "e9e5d175-6a35-4f1b-a968-b4cd00fde2f8",
-        title: "25/09/2026 @ 15:32 - MTH2010_L2/01 - Groups, Rings and Fields",
-        date: "25/09/2026",
+        id: "91c68d24-0f62-4243-87ab-b4e90157ae9c",
+        title: "22/10/2026 @ 13:32 - MTH2010_L1/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
         duration: "50 mins",
         lecturer: "Prof. Nigel Byott",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e9e5d175-6a35-4f1b-a968-b4cd00fde2f8&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e9e5d175-6a35-4f1b-a968-b4cd00fde2f8&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=91c68d24-0f62-4243-87ab-b4e90157ae9c&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=91c68d24-0f62-4243-87ab-b4e90157ae9c&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
-        id: "18ba48bd-80ef-4612-96bd-b4d000aae224",
-        title: "28/09/2026 @ 10:32 - MTH2010_L3/01 - Groups, Rings and Fields",
-        date: "28/09/2026",
-        duration: "52 mins",
+        id: "5bee6561-5bd2-4713-b874-b4e500a9521b",
+        title: "19/10/2026 @ 10:32 - MTH2010_L3/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
         lecturer: "Prof. Nigel Byott",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=18ba48bd-80ef-4612-96bd-b4d000aae224&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=18ba48bd-80ef-4612-96bd-b4d000aae224&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5bee6561-5bd2-4713-b874-b4e500a9521b&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5bee6561-5bd2-4713-b874-b4e500a9521b&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
-        id: "166c8b2e-45b6-4093-a8f7-b4d700aaea6a",
-        title: "05/10/2026 @ 10:32 - MTH2010_L3/01 - Groups, Rings and Fields",
-        date: "05/10/2026",
-        duration: "51 mins",
+        id: "8ed03f4f-7308-4e37-9d37-b4e100e26ac7",
+        title: "15/10/2026 @ 13:32 - MTH2010_L1/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
         lecturer: "Prof. Nigel Byott",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=166c8b2e-45b6-4093-a8f7-b4d700aaea6a&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=166c8b2e-45b6-4093-a8f7-b4d700aaea6a&instance=MoodleELE2&autoplay=true&offerviewer=true"
-      },
-      {
-        id: "41c93aa6-82c2-4355-af7b-b4db0108addc",
-        title: "09/10/2026 @ 15:32 - MTH2010_L2/01 - Groups, Rings and Fields",
-        date: "09/10/2026",
-        duration: "49 mins",
-        lecturer: "Prof. Nigel Byott",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=41c93aa6-82c2-4355-af7b-b4db0108addc&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=41c93aa6-82c2-4355-af7b-b4db0108addc&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8ed03f4f-7308-4e37-9d37-b4e100e26ac7&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8ed03f4f-7308-4e37-9d37-b4e100e26ac7&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
         id: "a002e01a-0dd4-4d94-9463-b4de00aa1fd9",
         title: "12/10/2026 @ 10:32 - MTH2010_L3/01 - Groups, Rings and Fields",
-        date: "12/10/2026",
+        date: "Oct 2026",
         duration: "50 mins",
         lecturer: "Prof. Nigel Byott",
         panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a002e01a-0dd4-4d94-9463-b4de00aa1fd9&instance=MoodleELE2",
         embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a002e01a-0dd4-4d94-9463-b4de00aa1fd9&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
-        id: "8ed03f4f-7308-4e37-9d37-b4e100e26ac7",
-        title: "15/10/2026 @ 13:32 - MTH2010_L1/01 - Groups, Rings and Fields",
-        date: "15/10/2026",
-        duration: "52 mins",
+        id: "f6fad070-77f2-48e1-be4f-b4de0088e546",
+        title: "12/10/2026 @ 08:32 - MTH2010_L4/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
         lecturer: "Prof. Nigel Byott",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8ed03f4f-7308-4e37-9d37-b4e100e26ac7&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8ed03f4f-7308-4e37-9d37-b4e100e26ac7&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f6fad070-77f2-48e1-be4f-b4de0088e546&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f6fad070-77f2-48e1-be4f-b4de0088e546&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "41c93aa6-82c2-4355-af7b-b4db0108addc",
+        title: "09/10/2026 @ 15:32 - MTH2010_L2/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=41c93aa6-82c2-4355-af7b-b4db0108addc&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=41c93aa6-82c2-4355-af7b-b4db0108addc&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "7fc38ebf-fcc8-4213-9934-b4da00dc3511",
+        title: "08/10/2026 @ 13:32 - MTH2010_L1/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7fc38ebf-fcc8-4213-9934-b4da00dc3511&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7fc38ebf-fcc8-4213-9934-b4da00dc3511&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "166c8b2e-45b6-4093-a8f7-b4d700aaea6a",
+        title: "05/10/2026 @ 10:32 - MTH2010_L3/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=166c8b2e-45b6-4093-a8f7-b4d700aaea6a&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=166c8b2e-45b6-4093-a8f7-b4d700aaea6a&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "9f2e81ff-68a4-407b-bda7-b4d400fc7c79",
+        title: "02/10/2026 @ 15:32 - MTH2010_L2/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9f2e81ff-68a4-407b-bda7-b4d400fc7c79&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9f2e81ff-68a4-407b-bda7-b4d400fc7c79&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "df0a17da-932b-4fde-93c9-b4d300e9637e",
+        title: "01/10/2026 @ 13:32 - MTH2010_L1/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=df0a17da-932b-4fde-93c9-b4d300e9637e&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=df0a17da-932b-4fde-93c9-b4d300e9637e&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "18ba48bd-80ef-4612-96bd-b4d000aae224",
+        title: "28/09/2026 @ 10:32 - MTH2010_L3/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=18ba48bd-80ef-4612-96bd-b4d000aae224&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=18ba48bd-80ef-4612-96bd-b4d000aae224&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "e9e5d175-6a35-4f1b-a968-b4cd00fde2f8",
+        title: "25/09/2026 @ 15:32 - MTH2010_L2/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=e9e5d175-6a35-4f1b-a968-b4cd00fde2f8&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=e9e5d175-6a35-4f1b-a968-b4cd00fde2f8&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "7c895f52-3e68-474f-9ad9-b4cc00d307a4",
+        title: "24/09/2026 @ 13:32 - MTH2010_L1/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7c895f52-3e68-474f-9ad9-b4cc00d307a4&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7c895f52-3e68-474f-9ad9-b4cc00d307a4&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "54b91bc4-f98d-4def-a992-b4c900a1aa78",
+        title: "21/09/2026 @ 10:32 - MTH2010_L3/01 - Groups, Rings and Fields",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Prof. Nigel Byott",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=54b91bc4-f98d-4def-a992-b4c900a1aa78&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=54b91bc4-f98d-4def-a992-b4c900a1aa78&instance=MoodleELE2&autoplay=true&offerviewer=true"
       }
     ],
     examPapers: generateCandidatePapers("MTH2010"),
     sections: [
       {
         id: "sec-grf-notes",
-        title: "Lecture Notes",
+        title: "Lecture Notes: Chapters 1 to 10",
         resources: [
           {
-            id: "res-grf-1",
-            name: "MTH2010 Groups, Rings and Fields - Course Notes",
+            id: "res-grf-ch1",
+            name: "Chapter 1: Groups",
             category: "slide",
-            fileUrl: "/materials/MTH2010/MTH2010.pdf",
-            fileSize: "1.2 MB",
-            timeModified: "Oct 22, 2026",
-            originalSection: "Lecture Notes"
+            fileUrl: "/materials/MTH2010/Chapter 1_ Groups.pdf",
+            fileSize: "311 KB",
+            originalSection: "Week 1"
+          },
+          {
+            id: "res-grf-ch2",
+            name: "Chapter 2: Left Cosets and Quotient Groups",
+            category: "slide",
+            fileUrl: "/materials/MTH2010/Chapter 2_ Left Cosets and Quotient Groups.pdf",
+            fileSize: "312 KB",
+            originalSection: "Week 2"
+          },
+          {
+            id: "res-grf-ch3",
+            name: "Chapter 3: Group Actions",
+            category: "slide",
+            fileUrl: "/materials/MTH2010/Chapter 3_ Group Actions.pdf",
+            fileSize: "284 KB",
+            originalSection: "Week 3"
+          },
+          {
+            id: "res-grf-ch4",
+            name: "Chapter 4: The Class Equation",
+            category: "slide",
+            fileUrl: "/materials/MTH2010/Chapter 4_ The Class Equation.pdf",
+            fileSize: "286 KB",
+            originalSection: "Week 4"
+          },
+          {
+            id: "res-grf-ch5",
+            name: "Chapter 5: Sylow's Theorems",
+            category: "slide",
+            fileUrl: "/materials/MTH2010/Chapter 5_ Sylow's Theorems.pdf",
+            fileSize: "291 KB",
+            originalSection: "Week 5"
+          },
+          {
+            id: "res-grf-ch6",
+            name: "Chapter 6: Polynomials",
+            category: "slide",
+            fileUrl: "/materials/MTH2010/Chapter 6_ Polynomials.pdf",
+            fileSize: "223 KB",
+            originalSection: "Week 7"
+          },
+          {
+            id: "res-grf-ch7",
+            name: "Chapter 7: Rings",
+            category: "slide",
+            fileUrl: "/materials/MTH2010/Chapter 7_ Rings.pdf",
+            fileSize: "254 KB",
+            originalSection: "Week 8"
+          },
+          {
+            id: "res-grf-ch8",
+            name: "Chapter 8: Ring Homomorphisms and Ideals",
+            category: "slide",
+            fileUrl: "/materials/MTH2010/Chapter 8_ Ring Homomorphisms and Ideals.pdf",
+            fileSize: "239 KB",
+            originalSection: "Week 9"
+          },
+          {
+            id: "res-grf-ch9",
+            name: "Chapter 9: Prime and Maximal Ideals",
+            category: "slide",
+            fileUrl: "/materials/MTH2010/Chapter 9_ Prime and Maximal Ideals.pdf",
+            fileSize: "287 KB",
+            originalSection: "Week 10"
+          },
+          {
+            id: "res-grf-ch10",
+            name: "Chapter 10: Divisibility and Factorisation in Rings",
+            category: "slide",
+            fileUrl: "/materials/MTH2010/Chapter 10_ Divisibility and Factorisation in Rings.pdf",
+            fileSize: "265 KB",
+            originalSection: "Week 11"
           }
         ]
       },
       {
         id: "sec-grf-sheets",
-        title: "Tutorial Sheets & Solutions",
+        title: "Problem Sheets & Formative Work",
         resources: [
           {
-            id: "res-grf-s1",
-            name: "Problem Sheet 1: Group Actions & Sylow Theorems",
+            id: "res-grf-ps1",
+            name: "Problem Sheet 1: Groups & Subgroups",
             category: "problem_sheet",
             sheetNumber: 1,
-            fileUrl: "/materials/MTH2010/MTH2010-24Jan.pdf",
-            fileSize: "280 KB",
-            timeModified: "Oct 15, 2026",
-            originalSection: "Problem Sheets"
+            fileUrl: "/materials/MTH2010/Problem Sheet 1.pdf",
+            fileSize: "154 KB",
+            originalSection: "Assessments"
           },
           {
-            id: "res-grf-s1-sol",
-            name: "Problem Sheet 1: Solutions & Worked Proofs",
-            category: "solution",
-            sheetNumber: 1,
-            fileUrl: "/materials/MTH2010/MTH2010-25Jan.pdf",
-            fileSize: "195 KB",
-            timeModified: "Oct 18, 2026",
-            originalSection: "Solutions"
-          },
-          {
-            id: "res-grf-s4",
-            name: "Tutorial Sheet 4: Ring Homomorphisms & Ideals",
+            id: "res-grf-ps2",
+            name: "Problem Sheet 2: Cosets & Lagrange's Theorem",
             category: "problem_sheet",
-            sheetNumber: 4,
-            fileUrl: "/materials/MTH2010/Algebra25-Sheet4.pdf",
-            fileSize: "245 KB",
-            timeModified: "Nov 02, 2026",
-            originalSection: "Tutorials"
+            sheetNumber: 2,
+            fileUrl: "/materials/MTH2010/Problem Sheet 2.pdf",
+            fileSize: "154 KB",
+            originalSection: "Assessments"
+          },
+          {
+            id: "res-grf-gfs1",
+            name: "Graded Formative Sheet 1: Group Homomorphisms",
+            category: "problem_sheet",
+            sheetNumber: 3,
+            fileUrl: "/materials/MTH2010/Graded Formative Sheet 1.pdf",
+            fileSize: "155 KB",
+            originalSection: "Assessments"
           }
         ]
-      }
-    ],
-    deadlines: [
-      {
-        id: "d-grf-1",
-        courseId: "mth2010",
-        courseCode: "MTH2010",
-        courseName: "Groups, Rings and Fields",
-        title: "Midterm Assessment: Group Theory Portfolio",
-        dueDate: new Date(Date.now() + 21 * 24 * 60 * 60 * 1000).toISOString(),
-        weighting: 20,
-        submissionStatus: "not_submitted",
-        officialSubmissionUrl: "https://ele.exeter.ac.uk/course/view.php?name=MTH2010"
       }
     ]
   },
@@ -509,40 +844,157 @@ export const MOCK_COURSES: Course[] = [
     panoptoFolderUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#folderID=%22f0331014-mth2014%22",
     recordings: [
       {
-        id: "2d8d07ce-9627-4e06-9674-b4e1011414de",
-        title: "15/10/2026 @ 14:32 - MTH2014_L4/01 - Numerical Modelling",
-        date: "15/10/2026",
-        duration: "52 mins",
+        id: "a2feff42-d4c3-4155-8587-b4e90157b56f",
+        title: "23/10/2026 @ 10:32 - MTH2014_L3/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
         lecturer: "Dr. Markus Mueller",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2d8d07ce-9627-4e06-9674-b4e1011414de&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2d8d07ce-9627-4e06-9674-b4e1011414de&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a2feff42-d4c3-4155-8587-b4e90157b56f&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a2feff42-d4c3-4155-8587-b4e90157b56f&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "5dad51d7-0f63-4bfa-9052-b4e90157b1d6",
+        title: "22/10/2026 @ 14:32 - MTH2014_L5/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5dad51d7-0f63-4bfa-9052-b4e90157b1d6&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5dad51d7-0f63-4bfa-9052-b4e90157b1d6&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
         id: "87f44b4c-f5f9-42dd-b383-b4e90157b8d0",
         title: "22/10/2026 @ 12:32 - MTH2014_L1/01 - Numerical Modelling",
-        date: "22/10/2026",
+        date: "Oct 2026",
         duration: "50 mins",
         lecturer: "Dr. Markus Mueller",
         panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=87f44b4c-f5f9-42dd-b383-b4e90157b8d0&instance=MoodleELE2",
         embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=87f44b4c-f5f9-42dd-b383-b4e90157b8d0&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
-        id: "5dad51d7-0f63-4bfa-9052-b4e90157b1d6",
-        title: "22/10/2026 @ 14:32 - MTH2014_L5/01 - Numerical Modelling",
-        date: "22/10/2026",
-        duration: "51 mins",
+        id: "7fd89580-efc2-47d1-a468-b4e500eb3e8c",
+        title: "19/10/2026 @ 14:32 - MTH2014_L2/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
         lecturer: "Dr. Markus Mueller",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5dad51d7-0f63-4bfa-9052-b4e90157b1d6&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5dad51d7-0f63-4bfa-9052-b4e90157b1d6&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7fd89580-efc2-47d1-a468-b4e500eb3e8c&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7fd89580-efc2-47d1-a468-b4e500eb3e8c&instance=MoodleELE2&autoplay=true&offerviewer=true"
       },
       {
-        id: "a2feff42-d4c3-4155-8587-b4e90157b56f",
-        title: "23/10/2026 @ 10:32 - MTH2014_L3/01 - Numerical Modelling",
-        date: "23/10/2026",
-        duration: "49 mins",
+        id: "daebef7f-a9d8-4d7d-9f93-b4e200a98aac",
+        title: "16/10/2026 @ 10:32 - MTH2014_L3/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
         lecturer: "Dr. Markus Mueller",
-        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a2feff42-d4c3-4155-8587-b4e90157b56f&instance=MoodleELE2",
-        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a2feff42-d4c3-4155-8587-b4e90157b56f&instance=MoodleELE2&autoplay=true&offerviewer=true"
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=daebef7f-a9d8-4d7d-9f93-b4e200a98aac&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=daebef7f-a9d8-4d7d-9f93-b4e200a98aac&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "2d8d07ce-9627-4e06-9674-b4e1011414de",
+        title: "15/10/2026 @ 14:32 - MTH2014_L4/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2d8d07ce-9627-4e06-9674-b4e1011414de&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2d8d07ce-9627-4e06-9674-b4e1011414de&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "bb21a93f-5703-418d-b092-b4e100d27a6e",
+        title: "15/10/2026 @ 12:32 - MTH2014_L1/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=bb21a93f-5703-418d-b092-b4e100d27a6e&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=bb21a93f-5703-418d-b092-b4e100d27a6e&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "9925a5bb-c707-4b23-81c1-b4de00eb5688",
+        title: "12/10/2026 @ 14:32 - MTH2014_L2/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9925a5bb-c707-4b23-81c1-b4de00eb5688&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9925a5bb-c707-4b23-81c1-b4de00eb5688&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "a84f09bd-afec-4cd0-a8ef-b4db0108b188",
+        title: "09/10/2026 @ 10:32 - MTH2014_L3/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a84f09bd-afec-4cd0-a8ef-b4db0108b188&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a84f09bd-afec-4cd0-a8ef-b4db0108b188&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "f4a61a8d-79f7-4b47-b3e7-b4da00cb67ff",
+        title: "08/10/2026 @ 12:32 - MTH2014_L1/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=f4a61a8d-79f7-4b47-b3e7-b4da00cb67ff&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=f4a61a8d-79f7-4b47-b3e7-b4da00cb67ff&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "27fd9241-e1b3-40db-be2b-b4d700ec9474",
+        title: "05/10/2026 @ 14:32 - MTH2014_L2/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=27fd9241-e1b3-40db-be2b-b4d700ec9474&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=27fd9241-e1b3-40db-be2b-b4d700ec9474&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "2c71b589-05d2-4dd8-accc-b4d400aa84a2",
+        title: "02/10/2026 @ 10:32 - MTH2014_L3/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=2c71b589-05d2-4dd8-accc-b4d400aa84a2&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=2c71b589-05d2-4dd8-accc-b4d400aa84a2&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "9f187d2d-d8fd-46c8-9ed2-b4d300e967d6",
+        title: "01/10/2026 @ 12:32 - MTH2014_L1/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9f187d2d-d8fd-46c8-9ed2-b4d300e967d6&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9f187d2d-d8fd-46c8-9ed2-b4d300e967d6&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "5ff610fb-8c39-4964-b2ae-b4d000ecd8fd",
+        title: "28/09/2026 @ 14:32 - MTH2014_L2/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5ff610fb-8c39-4964-b2ae-b4d000ecd8fd&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5ff610fb-8c39-4964-b2ae-b4d000ecd8fd&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "18c13bdc-59ce-40dc-9c45-b4cd00ab68b5",
+        title: "25/09/2026 @ 10:32 - MTH2014_L3/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=18c13bdc-59ce-40dc-9c45-b4cd00ab68b5&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=18c13bdc-59ce-40dc-9c45-b4cd00ab68b5&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "3144feeb-5adc-463f-b700-b4cc00c29825",
+        title: "24/09/2026 @ 12:32 - MTH2014_L1/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3144feeb-5adc-463f-b700-b4cc00c29825&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=3144feeb-5adc-463f-b700-b4cc00c29825&instance=MoodleELE2&autoplay=true&offerviewer=true"
+      },
+      {
+        id: "7aa546ae-73de-490a-920b-b4c900e58726",
+        title: "21/09/2026 @ 14:32 - MTH2014_L2/01 - Numerical Modelling",
+        date: "Oct 2026",
+        duration: "50 mins",
+        lecturer: "Dr. Markus Mueller",
+        panoptoUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7aa546ae-73de-490a-920b-b4c900e58726&instance=MoodleELE2",
+        embedUrl: "https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=7aa546ae-73de-490a-920b-b4c900e58726&instance=MoodleELE2&autoplay=true&offerviewer=true"
       }
     ],
     examPapers: generateCandidatePapers("MTH2014"),
@@ -551,6 +1003,15 @@ export const MOCK_COURSES: Course[] = [
         id: "sec-nm-notes",
         title: "Textbooks & Lecture Notes",
         resources: [
+          {
+            id: "res-nm-oct",
+            name: "MTH2014 Numerical Modelling - Lecture Notes (v2 Oct 2026)",
+            category: "slide",
+            fileUrl: "/materials/MTH2014/MTH2014_lecture_notes_v2_October_2026.pdf",
+            fileSize: "812 KB",
+            timeModified: "Oct 26, 2026",
+            originalSection: "Lecture Notes"
+          },
           {
             id: "res-nm-1",
             name: "MTH2014 Numerical Modelling - Official Textbook Notes",
@@ -586,19 +1047,6 @@ export const MOCK_COURSES: Course[] = [
             originalSection: "Tutorials"
           }
         ]
-      }
-    ],
-    deadlines: [
-      {
-        id: "d-nm-1",
-        courseId: "mth2014",
-        courseCode: "MTH2014",
-        courseName: "Numerical Modelling",
-        title: "Computational Project 1: Condition Numbers & Solvers",
-        dueDate: new Date(Date.now() + 12 * 24 * 60 * 60 * 1000).toISOString(),
-        weighting: 25,
-        submissionStatus: "not_submitted",
-        officialSubmissionUrl: "https://ele.exeter.ac.uk/course/view.php?name=MTH2014"
       }
     ]
   },

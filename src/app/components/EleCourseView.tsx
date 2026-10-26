@@ -58,10 +58,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
     return pairProblemSheets(allResources);
   }, [allResources]);
 
-  // Summative deadlines & midterms for this course
-  const summativeMidterms = useMemo(() => {
-    return course.deadlines || [];
-  }, [course.deadlines]);
+
 
   // Exam papers (Jan & May only - no August papers)
   const examPapers = useMemo(() => {
@@ -214,7 +211,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             </span>
           </button>
 
-          {/* 2. Problem Sheets (Formative & Midterms) */}
+          {/* 2. Problem Sheets */}
           <button
             onClick={() => setActiveTab('sheets')}
             className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold flex items-center gap-2 transition-all cursor-pointer shrink-0 ${
@@ -224,11 +221,11 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             }`}
           >
             <FileText size={16} />
-            <span>Problem Sheets & Midterms</span>
+            <span>Problem Sheets</span>
             <span className={`px-1.5 py-0.2 rounded-full text-[10.5px] font-mono ${
               activeTab === 'sheets' ? 'bg-white/20 text-white dark:text-[#003C3C]' : 'bg-muted text-muted-foreground'
             }`}>
-              {pairedSheets.length + summativeMidterms.length}
+              {pairedSheets.length}
             </span>
           </button>
 
@@ -320,88 +317,17 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
           </div>
         )}
 
-        {/* ── TAB 2: Problem Sheets & Summative Midterms ───────────────────── */}
+        {/* ── TAB 2: Problem Sheets ─────────────────────────────────────── */}
         {activeTab === 'sheets' && (
-          <div className="space-y-6">
-            {/* Summative Midterms & Continuous Assessments */}
-            {summativeMidterms.length > 0 && (
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <AlertCircle size={16} className="text-amber-500" />
-                    <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-                      Summative Midterm Tests & Coursework
-                    </h3>
-                  </div>
-                  <span className="text-xs text-muted-foreground font-mono">
-                    Official Exeter Submissions
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-                  {summativeMidterms.map(midterm => (
-                    <div
-                      key={midterm.id}
-                      className="bg-card border border-amber-500/25 dark:border-amber-500/30 rounded-xl p-4 shadow-xs flex flex-col justify-between"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between gap-2 mb-2">
-                          <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold uppercase bg-amber-500/15 text-amber-600 dark:text-amber-400">
-                            Summative {midterm.weighting ? `· ${midterm.weighting}%` : ''}
-                          </span>
-                          <span className="text-[11px] text-muted-foreground flex items-center gap-1">
-                            <Calendar size={11} />
-                            {new Date(midterm.dueDate).toLocaleDateString('en-GB', {
-                              day: 'numeric',
-                              month: 'short',
-                              year: 'numeric',
-                            })}
-                          </span>
-                        </div>
-                        <h4 className="text-sm font-bold text-foreground">
-                          {midterm.title}
-                        </h4>
-                        {midterm.description && (
-                          <p className="text-xs text-muted-foreground mt-1 line-clamp-2">
-                            {midterm.description}
-                          </p>
-                        )}
-                      </div>
-
-                      <div className="mt-4 pt-3 border-t border-border flex items-center justify-between">
-                        <span className={`text-[11px] font-semibold ${
-                          midterm.submissionStatus === 'submitted'
-                            ? 'text-emerald-600 dark:text-emerald-400'
-                            : 'text-amber-600 dark:text-amber-400'
-                        }`}>
-                          {midterm.submissionStatus === 'submitted' ? 'Submitted' : 'Pending Submission'}
-                        </span>
-                        <a
-                          href={midterm.officialSubmissionUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="px-3 py-1.5 rounded-lg bg-[#007A6B] hover:bg-[#006a5d] text-white text-xs font-semibold flex items-center gap-1.5 transition-colors"
-                        >
-                          <span>Submit on ELE</span>
-                          <ExternalLink size={12} />
-                        </a>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Formative Problem Sheets */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-                  Weekly Problem Sheets
-                </h3>
-                <span className="text-xs text-muted-foreground font-mono">
-                  {pairedSheets.length} sheets
-                </span>
-              </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+                Exercise & Problem Sheets
+              </h3>
+              <span className="text-xs text-muted-foreground font-mono">
+                {pairedSheets.length} available
+              </span>
+            </div>
 
               {pairedSheets.length === 0 ? (
                 <div className="p-8 text-center text-muted-foreground bg-card border border-border rounded-2xl">
@@ -443,7 +369,6 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
                   ))}
                 </div>
               )}
-            </div>
           </div>
         )}
 
