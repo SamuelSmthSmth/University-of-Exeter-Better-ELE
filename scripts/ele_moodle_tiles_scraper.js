@@ -120,6 +120,51 @@
     }
   }
 
+  // Direct Moodle Panopto Block Scraper using sesskey & courseid
+  async function fetchLivePanoptoRecordings() {
+    try {
+      const sesskey = window.M?.cfg?.sesskey || document.querySelector('input[name="sesskey"]')?.value;
+      if (!sesskey) {
+        console.warn("[Better ELE 2 Exporter] Moodle sesskey not detected on window.M.cfg.");
+        return [];
+      }
+      console.log(`[Better ELE 2 Exporter] Querying /blocks/panopto/panopto_content.php with courseid=${courseId}...`);
+      const formData = new URLSearchParams();
+      formData.append('sesskey', sesskey);
+      formData.append('courseid', courseId);
+
+      const resp = await fetch('/blocks/panopto/panopto_content.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' },
+        body: formData.toString()
+      });
+
+      if (!resp.ok) return [];
+      const html = await resp.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const items = Array.from(doc.querySelectorAll('.panopto_completed_item a'));
+      return items.map(a => {
+        const rawTitle = a.innerText.trim();
+        const panoptoUrl = a.href;
+        let uuid = '';
+        try {
+          uuid = new URL(panoptoUrl).searchParams.get('id') || '';
+        } catch (e) {}
+        return {
+          id: uuid || Math.random().toString(36).substring(7),
+          title: rawTitle,
+          panoptoUrl: panoptoUrl,
+          embedUrl: uuid ? `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=${uuid}&instance=MoodleELE2&autoplay=true&offerviewer=true` : undefined,
+          duration: "50 mins",
+          date: rawTitle.split('@')[0]?.trim() || new Date().toLocaleDateString('en-GB')
+        };
+      });
+    } catch (err) {
+      console.error("[Better ELE 2 Exporter] Failed to fetch Panopto block recordings:", err);
+      return [];
+    }
+  }
+
   // Main Scraper Pipeline
   async function runScrape(onProgress) {
     const tiles = getTileSections();
@@ -136,6 +181,13 @@
       sections: [],
       panoptoRecordings: []
     };
+
+    if (onProgress) onProgress(0, tiles.length, "Fetching Panopto Recordings...");
+    const livePanopto = await fetchLivePanoptoRecordings();
+    if (livePanopto.length > 0) {
+      console.log(`[Better ELE 2 Exporter] Successfully pulled ${livePanopto.length} Panopto recordings!`);
+      courseData.panoptoRecordings.push(...livePanopto);
+    }
 
     let completed = 0;
     for (const tile of tiles) {

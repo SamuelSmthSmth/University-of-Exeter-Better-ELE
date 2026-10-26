@@ -71,6 +71,7 @@ export interface PanoptoRecording {
   duration: string;
   lecturer?: string;
   panoptoUrl: string;
+  embedUrl?: string;
 }
 
 export interface Course {

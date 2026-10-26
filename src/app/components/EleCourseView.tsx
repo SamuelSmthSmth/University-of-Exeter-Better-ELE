@@ -13,6 +13,7 @@ import {
   Clock,
   Columns,
   Play,
+  X,
 } from 'lucide-react';
 import { Course, CourseResource, ExamPaper, PanoptoRecording } from '../../types';
 import { EleGeometricPattern } from './EleGeometricPattern';
@@ -39,6 +40,7 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
   onOpenDualDocuments,
 }) => {
   const [activeTab, setActiveTab] = useState<TabType>('notes');
+  const [activePanopto, setActivePanopto] = useState<PanoptoRecording | null>(null);
   const [examSessionFilter, setExamSessionFilter] = useState<'all' | 'Jan' | 'May' | 'Aug'>('all');
   const [examSearch, setExamSearch] = useState('');
 
@@ -467,13 +469,59 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
         {/* ── TAB 4: Panopto Recordings ───────────────────────────────────── */}
         {activeTab === 'panopto' && (
           <div className="space-y-4">
+            {/* Active Panopto In-App Player */}
+            {activePanopto && (
+              <div className="bg-[#0A0A0A] border border-border rounded-2xl overflow-hidden shadow-2xl transition-all">
+                <div className="p-3.5 bg-neutral-900/90 backdrop-blur-sm border-b border-neutral-800 flex items-center justify-between flex-wrap gap-2">
+                  <div className="flex items-center gap-2.5 text-white min-w-0">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#00C4AD] animate-pulse shrink-0" />
+                    <span className="text-xs sm:text-sm font-semibold truncate">{activePanopto.title}</span>
+                    <span className="hidden sm:inline-block px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#00C4AD]/20 text-[#00C4AD]">
+                      Multi-Stream Synced
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    <a
+                      href={activePanopto.panoptoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-2.5 py-1 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-xs font-medium flex items-center gap-1.5 transition-colors"
+                    >
+                      <span>Open in Panopto Portal</span>
+                      <ExternalLink size={12} />
+                    </a>
+                    <button
+                      type="button"
+                      onClick={() => setActivePanopto(null)}
+                      className="p-1.5 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-300 hover:text-white transition-colors cursor-pointer"
+                      title="Close Player"
+                    >
+                      <X size={15} />
+                    </button>
+                  </div>
+                </div>
+                <div className="relative w-full aspect-video bg-black">
+                  <iframe
+                    src={
+                      activePanopto.embedUrl ||
+                      `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=${activePanopto.id}&instance=MoodleELE2&autoplay=true&offerviewer=true`
+                    }
+                    title={activePanopto.title}
+                    className="w-full h-full border-0"
+                    allowFullScreen
+                    allow="autoplay; fullscreen; picture-in-picture"
+                  />
+                </div>
+              </div>
+            )}
+
             <div className="flex items-center justify-between gap-4 bg-card border border-border rounded-xl p-4 text-xs sm:text-sm">
               <div className="flex items-center gap-2 text-foreground font-medium">
                 <Video size={16} className="text-[#007A6B] dark:text-[#00C4AD]" />
                 <span>Exeter Panopto Video Portal ({panoptoRecordings.length} recordings available)</span>
               </div>
               <a
-                href={course.panoptoFolderUrl || `https://exeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#query=${course.code}`}
+                href={course.panoptoFolderUrl || `https://recapexeter.cloud.panopto.eu/Panopto/Pages/Sessions/List.aspx#query=${course.code}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-3 py-1.5 rounded-lg bg-[#007A6B] text-white text-xs font-semibold flex items-center gap-1 hover:bg-[#006a5d] transition-colors"
@@ -484,39 +532,61 @@ export const EleCourseView: React.FC<EleCourseViewProps> = ({
             </div>
 
             <div className="space-y-3">
-              {panoptoRecordings.map(rec => (
-                <div
-                  key={rec.id}
-                  className="bg-card border border-border rounded-xl p-4 shadow-xs hover:border-[#007A6B] dark:hover:border-[#00C4AD] transition-all flex items-center justify-between gap-4"
-                >
-                  <div className="min-w-0 flex items-center gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] flex items-center justify-center shrink-0">
-                      <Play size={16} />
+              {panoptoRecordings.map(rec => {
+                const isCurrentActive = activePanopto?.id === rec.id;
+                return (
+                  <div
+                    key={rec.id}
+                    className={`bg-card border rounded-xl p-4 shadow-xs transition-all flex items-center justify-between gap-4 ${
+                      isCurrentActive
+                        ? 'border-[#007A6B] dark:border-[#00C4AD] ring-1 ring-[#007A6B] dark:ring-[#00C4AD]'
+                        : 'border-border hover:border-[#007A6B] dark:hover:border-[#00C4AD]'
+                    }`}
+                  >
+                    <div className="min-w-0 flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-lg bg-[#007A6B]/10 dark:bg-[#00C4AD]/10 text-[#007A6B] dark:text-[#00C4AD] flex items-center justify-center shrink-0">
+                        <Play size={16} />
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="text-sm font-semibold text-foreground truncate">
+                          {rec.title}
+                        </h4>
+                        <p className="text-xs text-muted-foreground flex items-center gap-2 mt-0.5">
+                          <span className="flex items-center gap-1"><Clock size={11} /> {rec.duration}</span>
+                          <span>•</span>
+                          <span>{rec.date}</span>
+                          {rec.lecturer && <span>• {rec.lecturer}</span>}
+                        </p>
+                      </div>
                     </div>
-                    <div className="min-w-0">
-                      <h4 className="text-sm font-semibold text-foreground truncate">
-                        {rec.title}
-                      </h4>
-                      <p className="text-xs text-muted-foreground flex items-center gap-2 mt-0.5">
-                        <span className="flex items-center gap-1"><Clock size={11} /> {rec.duration}</span>
-                        <span>•</span>
-                        <span>{rec.date}</span>
-                        {rec.lecturer && <span>• {rec.lecturer}</span>}
-                      </p>
+
+                    <div className="flex items-center gap-2 shrink-0">
+                      <button
+                        type="button"
+                        onClick={() => setActivePanopto(rec)}
+                        className={`px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer ${
+                          isCurrentActive
+                            ? 'bg-[#007A6B] dark:bg-[#00C4AD] text-white dark:text-[#003C3C]'
+                            : 'bg-[#007A6B]/15 hover:bg-[#007A6B]/25 text-[#007A6B] dark:text-[#00C4AD]'
+                        }`}
+                      >
+                        <Play size={12} fill="currentColor" />
+                        <span>Watch in App</span>
+                      </button>
+
+                      <a
+                        href={rec.panoptoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-1.5 rounded-lg bg-muted hover:bg-muted/80 text-muted-foreground hover:text-foreground text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
+                        title="Open in Panopto Web Portal"
+                      >
+                        <ExternalLink size={14} />
+                      </a>
                     </div>
                   </div>
-
-                  <a
-                    href={rec.panoptoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-3.5 py-1.5 rounded-lg bg-muted hover:bg-muted/80 text-foreground text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer shrink-0"
-                  >
-                    <span>Watch</span>
-                    <ExternalLink size={12} />
-                  </a>
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         )}

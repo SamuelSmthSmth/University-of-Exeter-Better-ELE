@@ -10,8 +10,9 @@ import { ExamPaper } from '../types';
 export const SESSIONS = ['May', 'Jan', 'Aug'] as const;
 export type ExamSession = typeof SESSIONS[number];
 
-// Candidate years (e.g. 2018 to 2025)
+// Candidate years (e.g. 2018 to 2026)
 export const YEARS_TO_PROBE = [
+  { full: '2026', short: '26' },
   { full: '2025', short: '25' },
   { full: '2024', short: '24' },
   { full: '2023', short: '23' },
@@ -31,6 +32,22 @@ export function buildDirectExamPaperUrl(filename: string): string {
   return `https://library.exeter.ac.uk/exampapers/viewpdf.php?filename=${encodeURIComponent(filename)}`;
 }
 
+// Module term sessions: Prevents 404s for sessions that never exist for a module
+export const MODULE_ALLOWED_SESSIONS: Record<string, readonly ExamSession[]> = {
+  // Autumn (Term 1) modules only have January exams
+  MTH2003: ['Jan'],
+  MTH2008: ['Jan'],
+  MTH2010: ['Jan'],
+  MTH2014: ['Jan'],
+  MTH1000: ['Jan'],
+  // Spring (Term 2) modules only have May exams
+  MTH1003: ['May'],
+  MTH1004: ['May'],
+  // Full-year modules have both January and May exams
+  MTH1001: ['Jan', 'May'],
+  MTH1002: ['Jan', 'May'],
+};
+
 const KNOWN_LOCAL_PAPERS: Record<string, string[]> = {
   MTH2008: ['MTH2008-22Jan.pdf', 'MTH2008-23Jan.pdf', 'MTH2008-24Jan.pdf', 'MTH2008-25Jan.pdf'],
   MTH2003: ['MTH2003-20Jan.pdf', 'MTH2003-21Jan.pdf', 'MTH2003-22Jan.pdf', 'MTH2003-23Jan.pdf', 'MTH2003-24Jan.pdf', 'MTH2003-25Jan.pdf'],
@@ -42,25 +59,36 @@ const KNOWN_LOCAL_PAPERS: Record<string, string[]> = {
 };
 
 /**
- * Generates all candidate exam paper queries for a given module code.
+ * Generates valid candidate exam paper queries for a given module code.
+ * Strictly respects term exam sessions so non-existent exams (e.g. May for Autumn modules) are omitted.
  */
 export function generateCandidatePapers(moduleCode: string): ExamPaper[] {
   const cleanCode = moduleCode.trim().toUpperCase();
   const candidates: ExamPaper[] = [];
   const localList = KNOWN_LOCAL_PAPERS[cleanCode] || [];
+  const validSessions = MODULE_ALLOWED_SESSIONS[cleanCode] || SESSIONS;
 
   for (const year of YEARS_TO_PROBE) {
-    for (const session of SESSIONS) {
+    for (const session of validSessions) {
       const filename = `${cleanCode}-${year.short}${session}.pdf`;
-      const isLocal = localList.includes(filename);
-      const sessionLabel = session === 'Jan' ? 'January Exam' : session === 'May' ? 'May/June Exam' : 'August Deferral/Referral';
+      const sessionLabel = session === 'Jan' ? 'January Exam' : session === 'May' ? 'May/June Exam' : 'August Exam';
       
-      // Check for local solution pair (e.g. MTH2008 January questions & solutions)
+      let isLocal = localList.includes(filename);
+      let pdfUrl = isLocal ? `/materials/past_papers/${cleanCode}/${filename}` : buildExamPaperUrl(filename);
       let solutionUrl: string | undefined = undefined;
       let hasSolution = false;
+
+      // Special handling for MTH2008 where we have full local questions & solutions (2019 - 2026)
       if (cleanCode === 'MTH2008' && session === 'Jan') {
-        solutionUrl = `/materials/MTH2008/January${year.full}_Solutions.pdf`;
-        hasSolution = true;
+        const yearInt = parseInt(year.full, 10);
+        if (yearInt >= 2019 && yearInt <= 2026) {
+          isLocal = true;
+          pdfUrl = `/materials/MTH2008/past_papers/January${year.full}_Questions.pdf`;
+          solutionUrl = year.full === '2026'
+            ? `/materials/MTH2008/past_papers/January2026Solutions.pdf`
+            : `/materials/MTH2008/past_papers/January${year.full}_Solutions.pdf`;
+          hasSolution = true;
+        }
       }
 
       candidates.push({
@@ -70,7 +98,7 @@ export function generateCandidatePapers(moduleCode: string): ExamPaper[] {
         session: session,
         title: `${year.full} ${sessionLabel}`,
         filename,
-        pdfUrl: isLocal ? `/materials/${cleanCode}/${filename}` : buildExamPaperUrl(filename),
+        pdfUrl,
         hasSolution,
         solutionUrl,
         isLocal,
