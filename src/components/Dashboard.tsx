@@ -50,7 +50,7 @@ export const Dashboard: React.FC<DashboardProps> = ({ courses, onSelectCourse, o
     <div className="flex-1 flex flex-col overflow-y-auto bg-[#051414] text-slate-100">
       {/* Hero Banner with Exeter Geometric Pattern */}
       <div className="relative border-b border-[#0f2e2e] bg-gradient-to-r from-[#002626] via-[#003C3C] to-[#071e1e] p-6 md:p-10 overflow-hidden shadow-xl">
-        <EleGeometricPattern className="absolute inset-0 opacity-15 pointer-events-none mix-blend-screen" />
+        <EleGeometricPattern seed="dashboard-hero" className="absolute inset-0 opacity-15 pointer-events-none mix-blend-screen" />
 
         <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
           <div>

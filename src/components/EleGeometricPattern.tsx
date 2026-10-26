@@ -1,17 +1,18 @@
 import React from "react";
 
 interface EleGeometricPatternProps {
-  seed: string;
+  seed?: string;
   className?: string;
   height?: number | string;
 }
 
 // Procedurally renders subtle dark-teal geometric motifs matching ELE's course thumbnails
-export const EleGeometricPattern: React.FC<EleGeometricPatternProps> = ({ seed, className = "", height = "100%" }) => {
+export const EleGeometricPattern: React.FC<EleGeometricPatternProps> = ({ seed = "exeter-ele", className = "", height = "100%" }) => {
   // Simple deterministic hash of seed string to choose pattern variant and colors
   let hash = 0;
-  for (let i = 0; i < seed.length; i++) {
-    hash = (hash << 5) - hash + seed.charCodeAt(i);
+  const safeSeed = seed || "exeter-ele";
+  for (let i = 0; i < safeSeed.length; i++) {
+    hash = (hash << 5) - hash + safeSeed.charCodeAt(i);
     hash |= 0;
   }
   const variant = Math.abs(hash) % 4;
