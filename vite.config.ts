@@ -93,6 +93,35 @@ function betterElePanoptoPlugin() {
     return out.join('\n');
   }
 
+  function postPanopto(endpoint: string, postData: string, cookieHeader: string): Promise<string> {
+    return new Promise((resolve, reject) => {
+      const opt = {
+        hostname: 'recapexeter.cloud.panopto.eu',
+        port: 443,
+        path: endpoint,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Length': Buffer.byteLength(postData),
+          'Cookie': cookieHeader,
+          'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)',
+        },
+      };
+      const req = https.request(opt, (panoptoRes: any) => {
+        let body = '';
+        panoptoRes.on('data', (d: any) => (body += d));
+        panoptoRes.on('end', () => resolve(body));
+      });
+      req.on('error', reject);
+      req.setTimeout(8000, () => {
+        req.destroy();
+        reject(new Error('Timeout'));
+      });
+      req.write(postData);
+      req.end();
+    });
+  }
+
   return {
     name: 'better-ele-panopto-plugin',
     configureServer(server: any) {
@@ -117,65 +146,60 @@ function betterElePanoptoPlugin() {
           return;
         }
 
-        const postData = `deliveryId=${encodeURIComponent(deliveryId)}&responseType=json`;
+        const deliveryPostData = `deliveryId=${encodeURIComponent(deliveryId)}&responseType=json`;
+        const captionPostData = `deliveryId=${encodeURIComponent(deliveryId)}&getCaptions=true&language=1&responseType=json`;
         const cookieHeader = getPanoptoCookies();
 
-        const opt = {
-          hostname: 'recapexeter.cloud.panopto.eu',
-          port: 443,
-          path: '/Panopto/Pages/Viewer/DeliveryInfo.aspx',
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Content-Length': Buffer.byteLength(postData),
-            'Cookie': cookieHeader,
-            'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64)',
-          },
-        };
+        try {
+          const [deliveryBody, captionBody] = await Promise.all([
+            postPanopto('/Panopto/Pages/Viewer/DeliveryInfo.aspx', deliveryPostData, cookieHeader),
+            postPanopto('/Panopto/Pages/Viewer/DeliveryInfo.aspx', captionPostData, cookieHeader).catch(() => '[]'),
+          ]);
 
-        const proxyReq = https.request(opt, (panoptoRes: any) => {
-          let body = '';
-          panoptoRes.on('data', (d: any) => (body += d));
-          panoptoRes.on('end', () => {
-            try {
-              const json = JSON.parse(body);
-              const delivery = json.Delivery || {};
-              const rawStreams = delivery.Streams || [];
-              const streams = rawStreams
-                .filter((s: any) => s.StreamUrl)
-                .map((s: any) => ({
-                  id: s.PublicId || s.StreamId || String(Math.random()),
-                  tag: s.Tag || (s.StreamType === 1 ? 'dv' : 'object'),
-                  name: s.Name || (s.StreamType === 1 ? 'Camera & Audio' : 'Lecture Screen/Visualiser'),
-                  streamType: s.StreamType || (s.Tag === 'dv' ? 1 : 2),
-                  rawUrl: s.StreamUrl,
-                  m3u8: `/api/panopto-proxy?url=${encodeURIComponent(s.StreamUrl)}`,
-                }));
+          const json = JSON.parse(deliveryBody);
+          const delivery = json.Delivery || {};
+          const rawStreams = delivery.Streams || [];
+          const streams = rawStreams
+            .filter((s: any) => s.StreamUrl)
+            .map((s: any) => ({
+              id: s.PublicId || s.StreamId || String(Math.random()),
+              tag: s.Tag || (s.StreamType === 1 ? 'dv' : 'object'),
+              name: s.Name || (s.StreamType === 1 ? 'Camera & Audio' : 'Lecture Screen/Visualiser'),
+              streamType: s.StreamType || (s.Tag === 'dv' ? 1 : 2),
+              rawUrl: s.StreamUrl,
+              m3u8: `/api/panopto-proxy?url=${encodeURIComponent(s.StreamUrl)}`,
+            }));
 
-              const result = {
-                success: true,
-                sessionName: delivery.SessionName || 'Panopto Recording',
-                duration: delivery.Duration || 0,
-                streams,
-              };
-
-              deliveryCache.set(deliveryId, result);
-              res.statusCode = 200;
-              res.end(JSON.stringify(result));
-            } catch (err: any) {
-              res.statusCode = 502;
-              res.end(JSON.stringify({ success: false, error: 'Failed to parse Panopto DeliveryInfo' }));
+          let captions: any[] = [];
+          try {
+            const rawCaptions = JSON.parse(captionBody);
+            if (Array.isArray(rawCaptions)) {
+              captions = rawCaptions.map((c: any) => ({
+                time: typeof c.Time === 'number' ? c.Time : 0,
+                duration: typeof c.CaptionDuration === 'number' ? c.CaptionDuration : 3.0,
+                text: (c.Caption || '').trim(),
+              })).filter((c: any) => c.text.length > 0);
             }
-          });
-        });
+          } catch {
+            captions = [];
+          }
 
-        proxyReq.on('error', (err: any) => {
-          res.statusCode = 500;
-          res.end(JSON.stringify({ success: false, error: err.message }));
-        });
+          const result = {
+            success: true,
+            sessionName: delivery.SessionName || 'Panopto Recording',
+            duration: delivery.Duration || 0,
+            hasCaptions: captions.length > 0,
+            captions,
+            streams,
+          };
 
-        proxyReq.write(postData);
-        proxyReq.end();
+          deliveryCache.set(deliveryId, result);
+          res.statusCode = 200;
+          res.end(JSON.stringify(result));
+        } catch (err: any) {
+          res.statusCode = 502;
+          res.end(JSON.stringify({ success: false, error: err.message || 'Failed to fetch Panopto DeliveryInfo' }));
+        }
       });
 
       // 2. Stream & Chunk Proxy: /api/panopto-proxy?url=...

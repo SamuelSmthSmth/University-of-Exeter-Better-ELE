@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import Hls from 'hls.js';
 import {
   Play, Pause, Volume2, VolumeX, Maximize, Minimize,
   ArrowLeftRight, Grid2X2, Square, Layers,
   ExternalLink, X, RotateCcw, RotateCw
 } from 'lucide-react';
-import { PanoptoRecording } from '../../types';
+import { PanoptoRecording, PanoptoCaption } from '../../types';
 
 interface StreamInfo {
   id: string;
@@ -20,6 +20,8 @@ interface DeliveryResponse {
   success: boolean;
   sessionName: string;
   duration: number;
+  hasCaptions?: boolean;
+  captions?: PanoptoCaption[];
   streams: StreamInfo[];
   error?: string;
 }
@@ -65,6 +67,34 @@ export const PanoptoNativePlayer: React.FC<PanoptoNativePlayerProps> = ({
   const [playbackSpeed, setPlaybackSpeed] = useState<number>(1.0);
   const [isMuted, setIsMuted] = useState<boolean>(false);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  const [showCaptions, setShowCaptions] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('ele3_cc_enabled') !== 'false';
+    } catch {
+      return true;
+    }
+  });
+
+  // Persist CC toggle
+  const toggleCaptions = useCallback(() => {
+    setShowCaptions(prev => {
+      const next = !prev;
+      try { localStorage.setItem('ele3_cc_enabled', String(next)); } catch {}
+      return next;
+    });
+  }, []);
+
+  // Compute active caption for current playback time
+  const activeCaptionText = useMemo(() => {
+    if (!showCaptions || !delivery?.captions || delivery.captions.length === 0) return null;
+    const current = currentTime;
+    const found = delivery.captions.find(c => {
+      const start = c.time;
+      const end = c.time + Math.max(c.duration, 2.0);
+      return current >= start && current <= end;
+    });
+    return found ? found.text : null;
+  }, [showCaptions, delivery?.captions, currentTime]);
 
   // Layout & swap states
   const [layout, setLayout] = useState<'side-by-side' | 'pip' | 'focus'>('side-by-side');
@@ -348,6 +378,11 @@ export const PanoptoNativePlayer: React.FC<PanoptoNativePlayerProps> = ({
           e.preventDefault();
           toggleSwap();
           break;
+        case 'c':
+        case 'C':
+          e.preventDefault();
+          toggleCaptions();
+          break;
         case 'm':
         case 'M':
           e.preventDefault();
@@ -585,6 +620,15 @@ export const PanoptoNativePlayer: React.FC<PanoptoNativePlayerProps> = ({
             </div>
           </div>
         )}
+
+        {/* Floating Translucent Subtitle Overlay */}
+        {!useFallbackEmbed && showCaptions && activeCaptionText && (
+          <div className="absolute bottom-6 left-0 right-0 flex justify-center items-center pointer-events-none z-30 px-6 animate-in fade-in duration-150">
+            <div className="max-w-[85%] sm:max-w-[75%] px-4 py-2 rounded-xl bg-black/85 backdrop-blur-md border border-white/10 text-white text-center text-sm sm:text-base font-medium shadow-2xl leading-relaxed tracking-wide select-none drop-shadow-md">
+              {activeCaptionText}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* ── Native Control Bar ─────────────────────────────────────────────── */}
@@ -663,8 +707,24 @@ export const PanoptoNativePlayer: React.FC<PanoptoNativePlayerProps> = ({
               </button>
             </div>
 
-            {/* RIGHT: Speed Preferences & Fullscreen */}
+            {/* RIGHT: CC Toggle, Speed Preferences & Fullscreen */}
             <div className="flex items-center gap-2">
+              {/* Closed Captions Button */}
+              {delivery?.hasCaptions && (
+                <button
+                  type="button"
+                  onClick={toggleCaptions}
+                  className={`h-7 px-2.5 rounded-lg text-xs font-bold font-mono transition-all cursor-pointer border ${
+                    showCaptions
+                      ? 'bg-[#00C4AD] text-[#003C3C] border-[#00C4AD] shadow-xs'
+                      : 'bg-neutral-800 text-neutral-400 border-neutral-700/80 hover:text-white hover:bg-neutral-700'
+                  }`}
+                  title={showCaptions ? 'Disable Closed Captions (C)' : 'Enable Closed Captions (C)'}
+                >
+                  CC
+                </button>
+              )}
+
               <div className="flex items-center gap-0.5 bg-neutral-800/90 p-0.5 rounded-lg border border-neutral-700/80">
                 {SPEED_PRESETS.map(s => (
                   <button

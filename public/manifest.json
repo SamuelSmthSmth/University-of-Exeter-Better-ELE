@@ -1,0 +1,17 @@
+{
+  "name": "ELE 3",
+  "short_name": "ELE 3",
+  "start_url": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "borderless", "standalone"],
+  "background_color": "#020909",
+  "theme_color": "#020909",
+  "icons": [
+    {
+      "src": "/ele3-emblem.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

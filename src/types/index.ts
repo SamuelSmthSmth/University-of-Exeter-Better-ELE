@@ -62,6 +62,12 @@ export interface CourseSection {
   resources: CourseResource[];
 }
 
+export interface PanoptoCaption {
+  time: number;
+  duration: number;
+  text: string;
+}
+
 export interface PanoptoRecording {
   id: string;
   title: string;

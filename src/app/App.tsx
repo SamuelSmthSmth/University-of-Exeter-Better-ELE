@@ -2655,6 +2655,30 @@ export default function App() {
       <div className="flex flex-col h-screen overflow-hidden bg-background text-foreground print:h-auto print:overflow-visible">
         <IntroSplash />
 
+        {/* ── Ultra-thin Custom In-App Drag Bar (Window Drag Region & Native Frame Replacement) ── */}
+        <div
+          className="h-7 w-full shrink-0 flex items-center justify-between px-3 select-none bg-[#020808] border-b border-white/[0.06] text-white/40 text-[11px] z-50 print:hidden"
+          style={{ WebkitAppRegion: 'drag' } as any}
+        >
+          <div className="flex items-center gap-2" style={{ WebkitAppRegion: 'no-drag' } as any}>
+            <img src="/ele3-emblem.png" alt="ELE 3" className="w-3.5 h-3.5 rounded-full object-cover" />
+            <span className="font-semibold text-white/60 tracking-wider text-[10px] uppercase font-mono">ELE 3</span>
+            {selectedCourse && (
+              <>
+                <span className="text-white/20">/</span>
+                <span className="text-[#00C4AD] font-mono text-[10px] font-semibold">{selectedCourse.code}</span>
+              </>
+            )}
+          </div>
+
+          <div className="flex items-center gap-3" style={{ WebkitAppRegion: 'no-drag' } as any}>
+            <span className="text-[10px] text-white/30 hidden sm:inline font-mono">Exeter Learning Environment</span>
+            <div className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00C4AD]/70" title="Connected" />
+            </div>
+          </div>
+        </div>
+
 
 
 
