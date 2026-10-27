@@ -175,9 +175,8 @@ fun ModuleDetailScreen(
                 }
 
                 Card(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .clickable { onPlayRecording(recording) },
+                    onClick = { onPlayRecording(recording) },
+                    modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(14.dp),
                     colors = CardDefaults.cardColors(containerColor = DarkSurface),
                     border = CardDefaults.outlinedCardBorder().copy(brush = androidx.compose.ui.graphics.SolidColor(DarkBorder))
@@ -242,8 +241,7 @@ fun ModuleDetailScreen(
                                             moduleCode = course.code,
                                             title = recording.title,
                                             date = recording.date,
-                                            duration = recording.duration,
-                                            streamUrl = recording.panoptoUrl
+                                            duration = recording.duration
                                         )
                                         Toast.makeText(context, "Download started...", Toast.LENGTH_SHORT).show()
                                     }
@@ -263,7 +261,8 @@ fun ModuleDetailScreen(
                                 modifier = Modifier
                                     .size(38.dp)
                                     .clip(RoundedCornerShape(10.dp))
-                                    .background(ExeterTeal),
+                                    .background(ExeterTeal)
+                                    .clickable { onPlayRecording(recording) },
                                 contentAlignment = Alignment.Center
                             ) {
                                 Icon(

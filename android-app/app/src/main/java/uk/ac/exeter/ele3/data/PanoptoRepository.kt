@@ -5,7 +5,9 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Environment
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -21,7 +23,11 @@ import uk.ac.exeter.ele3.data.model.DownloadItem
 import uk.ac.exeter.ele3.data.model.StreamInfo
 import uk.ac.exeter.ele3.data.model.WatchProgress
 import java.io.File
+import java.io.IOException
+import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.TimeUnit
+import kotlinx.coroutines.CancellationException
+import kotlinx.coroutines.Job
 
 class PanoptoRepository(private val context: Context) {
     private val authManager = AuthManager.getInstance(context)
@@ -35,6 +41,7 @@ class PanoptoRepository(private val context: Context) {
 
     private val _downloads = MutableStateFlow<List<DownloadItem>>(loadDownloads())
     val downloads: StateFlow<List<DownloadItem>> = _downloads.asStateFlow()
+    private val downloadJobs = ConcurrentHashMap<String, Job>()
 
     // ── DeliveryInfo API ────────────────────────────────────────────────────────
 
@@ -172,23 +179,20 @@ class PanoptoRepository(private val context: Context) {
 
     // ── Offline Downloads ───────────────────────────────────────────────────────
 
-    fun startDownload(recordingId: String, moduleCode: String, title: String, date: String, duration: String, streamUrl: String) {
-        val downloadManager = context.getSystemService(Context.DOWNLOAD_SERVICE) as DownloadManager
+    fun isDownloaded(recordingId: String): Boolean {
+        return _downloads.value.any { it.recordingId == recordingId && it.isCompleted && File(it.localFilePath).let { f -> f.exists() && f.length() > 50_000 } }
+    }
+
+    fun getLocalFile(recordingId: String): File? {
+        val item = _downloads.value.find { it.recordingId == recordingId && it.isCompleted } ?: return null
+        val file = File(item.localFilePath)
+        return if (file.exists() && file.length() > 50_000) file else null
+    }
+
+    fun startDownload(recordingId: String, moduleCode: String, title: String, date: String, duration: String) {
         val fileName = "ELE3_${moduleCode}_${recordingId.take(8)}.mp4"
-
-        val cookies = authManager.cookieString.value ?: ""
-        val uri = Uri.parse(streamUrl)
-
-        val request = DownloadManager.Request(uri)
-            .setTitle("$moduleCode — $title")
-            .setDescription("Downloading lecture recording for offline viewing")
-            .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
-            .setDestinationInExternalFilesDir(context, Environment.DIRECTORY_MOVIES, fileName)
-            .addRequestHeader("Cookie", cookies)
-            .addRequestHeader("User-Agent", "Mozilla/5.0 (Linux; Android 14; Tablet)")
-
-        val downloadId = downloadManager.enqueue(request)
-        val destinationFile = File(context.getExternalFilesDir(Environment.DIRECTORY_MOVIES), fileName)
+        val moviesDir = context.getExternalFilesDir(Environment.DIRECTORY_MOVIES) ?: context.filesDir
+        val destinationFile = File(moviesDir, fileName)
 
         val item = DownloadItem(
             recordingId = recordingId,
@@ -197,13 +201,263 @@ class PanoptoRepository(private val context: Context) {
             date = date,
             duration = duration,
             localFilePath = destinationFile.absolutePath,
-            progress = 1.0f,
-            isCompleted = true
+            progress = 0.02f,
+            isCompleted = false
         )
 
         val updated = _downloads.value.filter { it.recordingId != recordingId } + item
-        saveDownloads(updated)
         _downloads.value = updated
+
+        downloadJobs[recordingId]?.cancel()
+        val job = CoroutineScope(Dispatchers.IO).launch {
+            try {
+                val cookies = authManager.cookieString.value ?: ""
+
+                // 1. Preferred: Panopto DeliveryInfo stream (fMP4 direct CDN stream, ~300-600MB)
+                val delivery = fetchDeliveryInfo(recordingId)
+                val stream = delivery.streams.find { it.streamType == 1 || it.tag.contains("dv", ignoreCase = true) }
+                    ?: delivery.streams.firstOrNull()
+
+                if (stream != null && stream.m3u8Url.isNotBlank()) {
+                    downloadVideoStream(
+                        masterPlaylistUrl = stream.m3u8Url,
+                        cookies = cookies,
+                        destinationFile = destinationFile,
+                        recordingId = recordingId,
+                        onProgress = { fraction ->
+                            updateProgress(recordingId, fraction, false)
+                        }
+                    )
+                } else {
+                    // 2. Fallback to podcast direct MP4 export
+                    val podcastUrl = "https://recapexeter.cloud.panopto.eu/Panopto/Podcast/Download/$recordingId.mp4"
+                    downloadDirectFile(podcastUrl, cookies, destinationFile) { fraction ->
+                        updateProgress(recordingId, fraction, false)
+                    }
+                }
+
+                if (destinationFile.exists() && destinationFile.length() > 50_000) {
+                    updateProgress(recordingId, 1.0f, true)
+                } else {
+                    removeDownload(recordingId)
+                }
+            } catch (e: Exception) {
+                if (e !is CancellationException) {
+                    android.util.Log.e("PanoptoRepo", "Download failed for $recordingId", e)
+                }
+                File(destinationFile.parentFile, "${destinationFile.name}.part").delete()
+                removeDownload(recordingId)
+            } finally {
+                downloadJobs.remove(recordingId)
+            }
+        }
+        downloadJobs[recordingId] = job
+    }
+
+    private fun downloadVideoStream(
+        masterPlaylistUrl: String,
+        cookies: String,
+        destinationFile: File,
+        recordingId: String,
+        onProgress: (Float) -> Unit
+    ) {
+        val req = Request.Builder()
+            .url(masterPlaylistUrl)
+            .addHeader("Cookie", cookies)
+            .addHeader("User-Agent", "Mozilla/5.0 (Linux; Android 14; Tablet) AppleWebKit/537.36")
+            .build()
+
+        val resp = client.newCall(req).execute()
+        val playlistText = resp.body?.string() ?: return
+        resp.close()
+
+        val baseUri = java.net.URI(masterPlaylistUrl)
+
+        var streamPlaylistUrl = masterPlaylistUrl
+        var streamBody = playlistText
+
+        // Master playlist handling: find optimal sub-playlist (prefer 720p or ~1.5 - 2 Mbps)
+        if (playlistText.contains("#EXT-X-STREAM-INF")) {
+            val lines = playlistText.lines()
+            var selectedChildPath: String? = null
+            var bestBandwidth = 0L
+
+            for (i in lines.indices) {
+                val line = lines[i].trim()
+                if (line.startsWith("#EXT-X-STREAM-INF") && i + 1 < lines.size) {
+                    val nextLine = lines[i + 1].trim()
+                    if (nextLine.isNotEmpty() && !nextLine.startsWith("#")) {
+                        val is720p = line.contains("1280x720")
+                        val bw = Regex("""BANDWIDTH=(\d+)""").find(line)?.groupValues?.get(1)?.toLongOrNull() ?: 0L
+
+                        if (is720p || selectedChildPath == null || (bw in (bestBandwidth + 1)..2_500_000L)) {
+                            selectedChildPath = nextLine
+                            bestBandwidth = bw
+                            if (is720p) break
+                        }
+                    }
+                }
+            }
+
+            if (selectedChildPath != null) {
+                val resolved = baseUri.resolve(selectedChildPath)
+                streamPlaylistUrl = if (resolved.query == null && baseUri.query != null) {
+                    if (resolved.toString().contains("?")) resolved.toString() else "${resolved}?${baseUri.query}"
+                } else {
+                    resolved.toString()
+                }
+
+                val childReq = Request.Builder()
+                    .url(streamPlaylistUrl)
+                    .addHeader("Cookie", cookies)
+                    .addHeader("User-Agent", "Mozilla/5.0 (Linux; Android 14; Tablet) AppleWebKit/537.36")
+                    .build()
+                val childResp = client.newCall(childReq).execute()
+                streamBody = childResp.body?.string() ?: ""
+                childResp.close()
+            }
+        }
+
+        val childUri = java.net.URI(streamPlaylistUrl)
+
+        // Case 1: Fragmented MP4 with #EXT-X-MAP (Panopto's default for fast CDN video)
+        val mapRegex = Regex("""#EXT-X-MAP:URI="([^"]+)"""")
+        val mapMatch = mapRegex.find(streamBody)
+        if (mapMatch != null) {
+            val mp4FileName = mapMatch.groupValues[1]
+            val resolved = childUri.resolve(mp4FileName)
+            val directMp4Url = if (resolved.query == null && childUri.query != null) {
+                if (resolved.toString().contains("?")) resolved.toString() else "${resolved}?${childUri.query}"
+            } else {
+                resolved.toString()
+            }
+            downloadDirectFile(directMp4Url, cookies, destinationFile, onProgress)
+            return
+        }
+
+        // Case 2: Traditional HLS .ts chunks
+        val segments = mutableListOf<String>()
+        for (line in streamBody.lines()) {
+            val trimmed = line.trim()
+            if (trimmed.isNotEmpty() && !trimmed.startsWith("#")) {
+                val resolved = childUri.resolve(trimmed)
+                val finalUrl = if (resolved.query == null && childUri.query != null) {
+                    if (resolved.toString().contains("?")) resolved.toString() else "${resolved}?${childUri.query}"
+                } else {
+                    resolved.toString()
+                }
+                segments.add(finalUrl)
+            }
+        }
+
+        if (segments.isNotEmpty()) {
+            destinationFile.parentFile?.mkdirs()
+            val tempFile = File(destinationFile.parentFile, "${destinationFile.name}.part")
+            if (tempFile.exists()) tempFile.delete()
+            val total = segments.size
+
+            tempFile.outputStream().use { out ->
+                for ((idx, segUrl) in segments.withIndex()) {
+                    val segReq = Request.Builder()
+                        .url(segUrl)
+                        .addHeader("Cookie", cookies)
+                        .addHeader("User-Agent", "Mozilla/5.0 (Linux; Android 14; Tablet) AppleWebKit/537.36")
+                        .build()
+
+                    try {
+                        val segResp = client.newCall(segReq).execute()
+                        segResp.body?.byteStream()?.use { input -> input.copyTo(out) }
+                        segResp.close()
+                    } catch (e: Exception) {
+                        // ignore dropped segment and continue
+                    }
+                    val progress = ((idx + 1).toFloat() / total.toFloat()).coerceIn(0.02f, 0.99f)
+                    onProgress(progress)
+                }
+            }
+
+            if (tempFile.exists() && tempFile.length() > 50_000) {
+                if (destinationFile.exists()) destinationFile.delete()
+                tempFile.renameTo(destinationFile)
+            } else {
+                tempFile.delete()
+                throw IOException("Download incomplete")
+            }
+        }
+    }
+
+    private fun downloadDirectFile(
+        fileUrl: String,
+        cookies: String,
+        destinationFile: File,
+        onProgress: (Float) -> Unit
+    ) {
+        val downloadClient = client.newBuilder()
+            .readTimeout(180, TimeUnit.SECONDS)
+            .connectTimeout(30, TimeUnit.SECONDS)
+            .build()
+
+        val req = Request.Builder()
+            .url(fileUrl)
+            .addHeader("Cookie", cookies)
+            .addHeader("User-Agent", "Mozilla/5.0 (Linux; Android 14; Tablet) AppleWebKit/537.36")
+            .build()
+
+        val response = downloadClient.newCall(req).execute()
+        if (!response.isSuccessful || response.body == null) {
+            response.close()
+            throw IOException("Download failed with HTTP ${response.code}")
+        }
+
+        val body = response.body!!
+        val contentLength = body.contentLength()
+        destinationFile.parentFile?.mkdirs()
+
+        val tempFile = File(destinationFile.parentFile, "${destinationFile.name}.part")
+        if (tempFile.exists()) tempFile.delete()
+
+        body.byteStream().use { input ->
+            tempFile.outputStream().use { output ->
+                val buffer = ByteArray(65536)
+                var bytesRead: Int
+                var totalRead = 0L
+                var lastEmit = 0L
+
+                while (input.read(buffer).also { bytesRead = it } != -1) {
+                    output.write(buffer, 0, bytesRead)
+                    totalRead += bytesRead
+                    val now = System.currentTimeMillis()
+                    if (now - lastEmit > 200) {
+                        lastEmit = now
+                        val frac = if (contentLength > 0) {
+                            (totalRead.toFloat() / contentLength.toFloat()).coerceIn(0.02f, 0.99f)
+                        } else {
+                            (totalRead.toFloat() / (400f * 1024f * 1024f)).coerceIn(0.02f, 0.99f)
+                        }
+                        onProgress(frac)
+                    }
+                }
+            }
+        }
+        response.close()
+
+        if (tempFile.exists() && tempFile.length() > 50_000) {
+            if (destinationFile.exists()) destinationFile.delete()
+            tempFile.renameTo(destinationFile)
+        } else {
+            tempFile.delete()
+            throw IOException("Download file incomplete or empty")
+        }
+    }
+
+    private fun updateProgress(recordingId: String, progress: Float, isCompleted: Boolean) {
+        val current = _downloads.value.map {
+            if (it.recordingId == recordingId) it.copy(progress = progress, isCompleted = isCompleted) else it
+        }
+        _downloads.value = current
+        if (isCompleted) {
+            saveDownloads(current)
+        }
     }
 
     private fun loadDownloads(): List<DownloadItem> {
@@ -214,7 +468,8 @@ class PanoptoRepository(private val context: Context) {
             for (i in 0 until array.length()) {
                 val obj = array.getJSONObject(i)
                 val path = obj.getString("localFilePath")
-                if (File(path).exists()) {
+                val f = File(path)
+                if (f.exists() && f.length() > 50_000) {
                     list.add(
                         DownloadItem(
                             recordingId = obj.getString("recordingId"),
@@ -235,7 +490,7 @@ class PanoptoRepository(private val context: Context) {
 
     private fun saveDownloads(items: List<DownloadItem>) {
         val array = JSONArray()
-        items.forEach { item ->
+        items.filter { it.isCompleted }.forEach { item ->
             val obj = JSONObject()
             obj.put("recordingId", item.recordingId)
             obj.put("moduleCode", item.moduleCode)
@@ -249,14 +504,20 @@ class PanoptoRepository(private val context: Context) {
     }
 
     fun removeDownload(recordingId: String) {
+        downloadJobs[recordingId]?.cancel()
+        downloadJobs.remove(recordingId)
         val existing = _downloads.value.find { it.recordingId == recordingId }
         existing?.let {
-            File(it.localFilePath).delete()
+            try {
+                File(it.localFilePath).delete()
+                File("${it.localFilePath}.part").delete()
+            } catch (ignored: Exception) {}
         }
         val updated = _downloads.value.filter { it.recordingId != recordingId }
         saveDownloads(updated)
         _downloads.value = updated
     }
+
 
     companion object {
         @Volatile

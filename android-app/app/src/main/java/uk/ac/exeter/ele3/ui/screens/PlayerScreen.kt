@@ -2,14 +2,19 @@ package uk.ac.exeter.ele3.ui.screens
 
 import android.app.Activity
 import android.app.PictureInPictureParams
+import android.net.Uri
 import android.os.Build
 import android.util.Rational
 import android.webkit.WebSettings
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import androidx.annotation.OptIn
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -21,6 +26,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
@@ -31,7 +37,6 @@ import androidx.media3.common.MediaItem
 import androidx.media3.common.PlaybackParameters
 import androidx.media3.common.Player
 import androidx.media3.common.util.UnstableApi
-import androidx.media3.datasource.DefaultHttpDataSource
 import androidx.media3.datasource.okhttp.OkHttpDataSource
 import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
@@ -44,6 +49,7 @@ import uk.ac.exeter.ele3.data.model.DeliveryResponse
 import uk.ac.exeter.ele3.data.model.Recording
 import uk.ac.exeter.ele3.data.model.StreamInfo
 import uk.ac.exeter.ele3.ui.theme.*
+import java.io.File
 import java.util.concurrent.TimeUnit
 import kotlin.math.abs
 
@@ -74,6 +80,9 @@ fun PlayerScreen(
     var playbackSpeed by remember { mutableStateOf(1.0f) }
     var showCaptions by remember { mutableStateOf(true) }
 
+    var controlsVisible by remember { mutableStateOf(true) }
+    var lastInteractionTime by remember { mutableStateOf(System.currentTimeMillis()) }
+
     var layoutMode by remember { mutableStateOf(PlayerLayoutMode.SIDE_BY_SIDE) }
     var isSwapped by remember { mutableStateOf(false) }
 
@@ -81,8 +90,49 @@ fun PlayerScreen(
     var primaryPlayer by remember { mutableStateOf<ExoPlayer?>(null) }
     var secondaryPlayer by remember { mutableStateOf<ExoPlayer?>(null) }
 
-    // Fetch delivery info
+    DisposableEffect(Unit) {
+        onDispose {
+            primaryPlayer?.release()
+            secondaryPlayer?.release()
+        }
+    }
+
+    fun refreshInteraction() {
+        lastInteractionTime = System.currentTimeMillis()
+    }
+
+    // Auto-hide controls after 3.5s of inactivity while playing
+    LaunchedEffect(controlsVisible, isPlaying, lastInteractionTime) {
+        if (controlsVisible && isPlaying) {
+            delay(3500)
+            controlsVisible = false
+        }
+    }
+
+    // Load media: Offline check first, then online DeliveryInfo
     LaunchedEffect(recording.id) {
+        // 1. Check offline file first
+        val localFile = repository.getLocalFile(recording.id)
+            ?: (if (recording.panoptoUrl.startsWith("/") && File(recording.panoptoUrl).exists()) File(recording.panoptoUrl) else null)
+
+        if (localFile != null && localFile.exists() && localFile.length() > 50_000) {
+            val pPlayer = ExoPlayer.Builder(context).build().apply {
+                setMediaItem(MediaItem.fromUri(Uri.fromFile(localFile)))
+                prepare()
+                playWhenReady = true
+                addListener(object : Player.Listener {
+                    override fun onIsPlayingChanged(playing: Boolean) {
+                        isPlaying = playing
+                    }
+                })
+            }
+            primaryPlayer = pPlayer
+            isLoading = false
+            useWebFallback = false
+            return@LaunchedEffect
+        }
+
+        // 2. Online streaming
         isLoading = true
         val response = repository.fetchDeliveryInfo(recording.id)
         deliveryResponse = response
@@ -93,10 +143,10 @@ fun PlayerScreen(
         }
     }
 
-    // Initialize ExoPlayers once streams are ready
+    // Initialize online ExoPlayers once streams are ready
     DisposableEffect(deliveryResponse) {
         val delivery = deliveryResponse
-        if (delivery == null || !delivery.success || delivery.streams.isEmpty()) {
+        if (delivery == null || !delivery.success || delivery.streams.isEmpty() || primaryPlayer != null) {
             return@DisposableEffect onDispose {}
         }
 
@@ -129,7 +179,7 @@ fun PlayerScreen(
                 .setMediaSourceFactory(mediaSourceFactory)
                 .build().apply {
                     setMediaItem(MediaItem.fromUri(secondaryStream.m3u8Url))
-                    volume = 0f // Secondary stream is visual only
+                    volume = 0f
                     prepare()
                     playWhenReady = true
                 }
@@ -211,7 +261,14 @@ fun PlayerScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(DarkBackground)
+            .background(Color.Black)
+            .clickable(
+                interactionSource = remember { MutableInteractionSource() },
+                indication = null
+            ) {
+                controlsVisible = !controlsVisible
+                refreshInteraction()
+            }
     ) {
         if (isLoading) {
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
@@ -235,86 +292,49 @@ fun PlayerScreen(
                 modifier = Modifier.fillMaxSize()
             )
         } else {
-            // Native Multi-Stream Layout
+            // Fullscreen Native Multi-Stream Layout
             val stream1 = if (!isSwapped) primaryPlayer else secondaryPlayer
             val stream2 = if (!isSwapped) secondaryPlayer else primaryPlayer
 
-            Column(modifier = Modifier.fillMaxSize()) {
-                // Video Viewport Area
-                Box(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .weight(1f)
-                        .background(Color.Black)
-                ) {
-                    when (layoutMode) {
-                        PlayerLayoutMode.SIDE_BY_SIDE -> {
-                            Row(modifier = Modifier.fillMaxSize()) {
+            Box(modifier = Modifier.fillMaxSize()) {
+                when (layoutMode) {
+                    PlayerLayoutMode.SIDE_BY_SIDE -> {
+                        Row(modifier = Modifier.fillMaxSize()) {
+                            Box(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .fillMaxHeight()
+                            ) {
+                                stream1?.let { player ->
+                                    AndroidView(
+                                        factory = { ctx ->
+                                            PlayerView(ctx).apply {
+                                                this.player = player
+                                                useController = false
+                                                isClickable = false
+                                                isFocusable = false
+                                            }
+                                        },
+                                        modifier = Modifier.fillMaxSize()
+                                    )
+                                }
+                            }
+
+                            if (stream2 != null) {
                                 Box(
                                     modifier = Modifier
                                         .weight(1f)
                                         .fillMaxHeight()
-                                        .clickable { isSwapped = !isSwapped }
                                 ) {
-                                    stream1?.let { player ->
-                                        AndroidView(
-                                            factory = { ctx -> PlayerView(ctx).apply { this.player = player; useController = false } },
-                                            modifier = Modifier.fillMaxSize()
-                                        )
-                                    }
-                                }
-
-                                if (stream2 != null) {
-                                    Box(
-                                        modifier = Modifier
-                                            .weight(1f)
-                                            .fillMaxHeight()
-                                            .clickable { isSwapped = !isSwapped }
-                                    ) {
-                                        AndroidView(
-                                            factory = { ctx -> PlayerView(ctx).apply { this.player = stream2; useController = false } },
-                                            modifier = Modifier.fillMaxSize()
-                                        )
-                                    }
-                                }
-                            }
-                        }
-
-                        PlayerLayoutMode.PICTURE_IN_PICTURE -> {
-                            Box(modifier = Modifier.fillMaxSize()) {
-                                // Fullscreen Primary stream
-                                stream1?.let { player ->
                                     AndroidView(
-                                        factory = { ctx -> PlayerView(ctx).apply { this.player = player; useController = false } },
-                                        modifier = Modifier.fillMaxSize()
-                                    )
-                                }
-
-                                // Secondary Floating Corner PiP Bubble
-                                if (stream2 != null) {
-                                    Box(
-                                        modifier = Modifier
-                                            .align(Alignment.BottomEnd)
-                                            .padding(16.dp)
-                                            .width(260.dp)
-                                            .aspectRatio(16f / 9f)
-                                            .clip(RoundedCornerShape(12.dp))
-                                            .clickable { isSwapped = !isSwapped }
-                                    ) {
-                                        AndroidView(
-                                            factory = { ctx -> PlayerView(ctx).apply { this.player = stream2; useController = false } },
-                                            modifier = Modifier.fillMaxSize()
-                                        )
-                                    }
-                                }
-                            }
-                        }
-
-                        PlayerLayoutMode.FOCUS -> {
-                            Box(modifier = Modifier.fillMaxSize()) {
-                                stream1?.let { player ->
-                                    AndroidView(
-                                        factory = { ctx -> PlayerView(ctx).apply { this.player = player; useController = false } },
+                                        factory = { ctx ->
+                                            PlayerView(ctx).apply {
+                                                this.player = stream2
+                                                useController = false
+                                                isClickable = false
+                                                isFocusable = false
+                                            }
+                                        },
                                         modifier = Modifier.fillMaxSize()
                                     )
                                 }
@@ -322,172 +342,305 @@ fun PlayerScreen(
                         }
                     }
 
-                    // Floating Closed Caption Overlay
-                    if (!activeCaption.isNullOrBlank()) {
-                        Box(
-                            modifier = Modifier
-                                .align(Alignment.BottomCenter)
-                                .padding(bottom = 24.dp)
-                                .clip(RoundedCornerShape(8.dp))
-                                .background(Color.Black.copy(alpha = 0.82f))
-                                .padding(horizontal = 16.dp, vertical = 6.dp)
-                        ) {
-                            Text(
-                                text = activeCaption,
-                                style = MaterialTheme.typography.bodyLarge,
-                                fontWeight = FontWeight.SemiBold,
-                                color = Color.White
-                            )
+                    PlayerLayoutMode.PICTURE_IN_PICTURE -> {
+                        Box(modifier = Modifier.fillMaxSize()) {
+                            // Fullscreen Primary stream
+                            stream1?.let { player ->
+                                AndroidView(
+                                    factory = { ctx ->
+                                        PlayerView(ctx).apply {
+                                            this.player = player
+                                            useController = false
+                                            isClickable = false
+                                            isFocusable = false
+                                        }
+                                    },
+                                    modifier = Modifier.fillMaxSize()
+                                )
+                            }
+
+                            // Secondary Floating Corner PiP Bubble
+                            if (stream2 != null) {
+                                Box(
+                                    modifier = Modifier
+                                        .align(Alignment.BottomEnd)
+                                        .padding(bottom = if (controlsVisible) 90.dp else 24.dp, end = 24.dp)
+                                        .width(260.dp)
+                                        .aspectRatio(16f / 9f)
+                                        .clip(RoundedCornerShape(12.dp))
+                                        .clickable { isSwapped = !isSwapped; refreshInteraction() }
+                                ) {
+                                    AndroidView(
+                                        factory = { ctx ->
+                                            PlayerView(ctx).apply {
+                                                this.player = stream2
+                                                useController = false
+                                                isClickable = false
+                                                isFocusable = false
+                                            }
+                                        },
+                                        modifier = Modifier.fillMaxSize()
+                                    )
+                                }
+                            }
+                        }
+                    }
+
+                    PlayerLayoutMode.FOCUS -> {
+                        Box(modifier = Modifier.fillMaxSize()) {
+                            stream1?.let { player ->
+                                AndroidView(
+                                    factory = { ctx ->
+                                        PlayerView(ctx).apply {
+                                            this.player = player
+                                            useController = false
+                                            isClickable = false
+                                            isFocusable = false
+                                        }
+                                    },
+                                    modifier = Modifier.fillMaxSize()
+                                )
+                            }
                         }
                     }
                 }
 
-                // ── Controls Panel ──────────────────────────────────────────────
-                Column(
+                // Transparent Gesture & Tap Interceptor over video to toggle controls
+                Box(
                     modifier = Modifier
-                        .fillMaxWidth()
-                        .background(DarkSurface)
-                        .padding(horizontal = 24.dp, vertical = 12.dp)
-                ) {
-                    // Timeline Scrubber
-                    Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        verticalAlignment = Alignment.CenterVertically
+                        .fillMaxSize()
+                        .clickable(
+                            interactionSource = remember { MutableInteractionSource() },
+                            indication = null
+                        ) {
+                            controlsVisible = !controlsVisible
+                            refreshInteraction()
+                        }
+                )
+
+                // Closed Caption Overlay (remains visible even when controls hide)
+                if (!activeCaption.isNullOrBlank()) {
+                    Box(
+                        modifier = Modifier
+                            .align(Alignment.BottomCenter)
+                            .padding(bottom = if (controlsVisible) 100.dp else 30.dp)
+                            .clip(RoundedCornerShape(8.dp))
+                            .background(Color.Black.copy(alpha = 0.82f))
+                            .padding(horizontal = 16.dp, vertical = 6.dp)
                     ) {
                         Text(
-                            text = formatTime(currentPositionMs),
-                            style = MaterialTheme.typography.labelSmall,
-                            color = ExeterMint
-                        )
-                        Slider(
-                            value = (currentPositionMs.toFloat() / durationMs.toFloat()).coerceIn(0f, 1f),
-                            onValueChange = { fraction ->
-                                val seekTarget = (fraction * durationMs).toLong()
-                                primaryPlayer?.seekTo(seekTarget)
-                                secondaryPlayer?.seekTo(seekTarget)
-                            },
-                            modifier = Modifier
-                                .weight(1f)
-                                .padding(horizontal = 12.dp),
-                            colors = SliderDefaults.colors(
-                                thumbColor = ExeterMint,
-                                activeTrackColor = ExeterTeal,
-                                inactiveTrackColor = DarkSurfaceVariant
-                            )
-                        )
-                        Text(
-                            text = formatTime(durationMs),
-                            style = MaterialTheme.typography.labelSmall,
-                            color = TextMuted
+                            text = activeCaption,
+                            style = MaterialTheme.typography.bodyLarge,
+                            fontWeight = FontWeight.SemiBold,
+                            color = Color.White
                         )
                     }
+                }
 
-                    // Bottom Buttons Row
+                // ── Top Bar Overlay (Fades out with controls) ─────────────────────
+                AnimatedVisibility(
+                    visible = controlsVisible,
+                    enter = fadeIn(),
+                    exit = fadeOut(),
+                    modifier = Modifier.align(Alignment.TopCenter)
+                ) {
                     Row(
-                        modifier = Modifier.fillMaxWidth(),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                Brush.verticalGradient(
+                                    colors = listOf(Color.Black.copy(alpha = 0.85f), Color.Transparent)
+                                )
+                            )
+                            .padding(horizontal = 20.dp, vertical = 16.dp),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        // Left: Back & Title
                         Row(verticalAlignment = Alignment.CenterVertically) {
-                            IconButton(onClick = onBack) {
+                            IconButton(
+                                onClick = onBack,
+                                modifier = Modifier
+                                    .clip(RoundedCornerShape(10.dp))
+                                    .background(DarkSurface.copy(alpha = 0.8f))
+                            ) {
                                 Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back", tint = TextPrimary)
                             }
-                            Spacer(modifier = Modifier.width(6.dp))
+                            Spacer(modifier = Modifier.width(12.dp))
                             Text(
                                 text = recording.title,
-                                style = MaterialTheme.typography.titleSmall,
-                                fontWeight = FontWeight.SemiBold,
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.Bold,
                                 color = TextPrimary,
                                 maxLines = 1
                             )
                         }
 
-                        // Center: Jump, Play/Pause
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            IconButton(onClick = {
-                                val target = (currentPositionMs - 10000).coerceAtLeast(0)
-                                primaryPlayer?.seekTo(target)
-                                secondaryPlayer?.seekTo(target)
-                            }) {
-                                Icon(Icons.Default.Replay10, contentDescription = "-10s", tint = TextPrimary)
-                            }
-
-                            Box(
+                        // Swap Feeds button in top right
+                        if (stream2 != null) {
+                            IconButton(
+                                onClick = { isSwapped = !isSwapped; refreshInteraction() },
                                 modifier = Modifier
-                                    .size(46.dp)
-                                    .clip(CircleShape)
-                                    .background(ExeterMint)
-                                    .clickable {
-                                        if (isPlaying) primaryPlayer?.pause() else primaryPlayer?.play()
-                                    },
-                                contentAlignment = Alignment.Center
+                                    .clip(RoundedCornerShape(10.dp))
+                                    .background(DarkSurface.copy(alpha = 0.8f))
                             ) {
-                                Icon(
-                                    imageVector = if (isPlaying) Icons.Default.Pause else Icons.Default.PlayArrow,
-                                    contentDescription = "Play/Pause",
-                                    tint = DarkBackground,
-                                    modifier = Modifier.size(28.dp)
-                                )
-                            }
-
-                            IconButton(onClick = {
-                                val target = (currentPositionMs + 10000).coerceAtMost(durationMs)
-                                primaryPlayer?.seekTo(target)
-                                secondaryPlayer?.seekTo(target)
-                            }) {
-                                Icon(Icons.Default.Forward10, contentDescription = "+10s", tint = TextPrimary)
+                                Icon(Icons.Default.SwapHoriz, contentDescription = "Swap Feeds", tint = ExeterMint)
                             }
                         }
+                    }
+                }
 
-                        // Right: Layout switchers, Speed, CC, PiP
-                        Row(verticalAlignment = Alignment.CenterVertically) {
-                            // Layout mode toggle
-                            IconButton(onClick = {
-                                layoutMode = when (layoutMode) {
-                                    PlayerLayoutMode.SIDE_BY_SIDE -> PlayerLayoutMode.PICTURE_IN_PICTURE
-                                    PlayerLayoutMode.PICTURE_IN_PICTURE -> PlayerLayoutMode.FOCUS
-                                    PlayerLayoutMode.FOCUS -> PlayerLayoutMode.SIDE_BY_SIDE
+                // ── Bottom Controls Overlay (Fades out with controls) ─────────────
+                AnimatedVisibility(
+                    visible = controlsVisible,
+                    enter = fadeIn(),
+                    exit = fadeOut(),
+                    modifier = Modifier.align(Alignment.BottomCenter)
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .background(
+                                Brush.verticalGradient(
+                                    colors = listOf(Color.Transparent, Color.Black.copy(alpha = 0.92f))
+                                )
+                            )
+                            .padding(horizontal = 24.dp, vertical = 12.dp)
+                    ) {
+                        // Timeline Scrubber
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = formatTime(currentPositionMs),
+                                style = MaterialTheme.typography.labelSmall,
+                                color = ExeterMint
+                            )
+                            Slider(
+                                value = (currentPositionMs.toFloat() / durationMs.toFloat()).coerceIn(0f, 1f),
+                                onValueChange = { fraction ->
+                                    refreshInteraction()
+                                    val seekTarget = (fraction * durationMs).toLong()
+                                    primaryPlayer?.seekTo(seekTarget)
+                                    secondaryPlayer?.seekTo(seekTarget)
+                                },
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .padding(horizontal = 12.dp),
+                                colors = SliderDefaults.colors(
+                                    thumbColor = ExeterMint,
+                                    activeTrackColor = ExeterTeal,
+                                    inactiveTrackColor = DarkSurfaceVariant
+                                )
+                            )
+                            Text(
+                                text = formatTime(durationMs),
+                                style = MaterialTheme.typography.labelSmall,
+                                color = TextMuted
+                            )
+                        }
+
+                        // Bottom Control Buttons Row
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            // Left spacer
+                            Spacer(modifier = Modifier.width(48.dp))
+
+                            // Center: Jump, Play/Pause
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                IconButton(onClick = {
+                                    refreshInteraction()
+                                    val target = (currentPositionMs - 10000).coerceAtLeast(0)
+                                    primaryPlayer?.seekTo(target)
+                                    secondaryPlayer?.seekTo(target)
+                                }) {
+                                    Icon(Icons.Default.Replay10, contentDescription = "-10s", tint = TextPrimary)
                                 }
-                            }) {
-                                Icon(
-                                    imageVector = when (layoutMode) {
-                                        PlayerLayoutMode.SIDE_BY_SIDE -> Icons.Default.GridView
-                                        PlayerLayoutMode.PICTURE_IN_PICTURE -> Icons.Default.PictureInPicture
-                                        PlayerLayoutMode.FOCUS -> Icons.Default.Fullscreen
-                                    },
-                                    contentDescription = "Layout",
-                                    tint = ExeterMint
-                                )
+
+                                Box(
+                                    modifier = Modifier
+                                        .size(46.dp)
+                                        .clip(CircleShape)
+                                        .background(ExeterMint)
+                                        .clickable {
+                                            refreshInteraction()
+                                            if (isPlaying) primaryPlayer?.pause() else primaryPlayer?.play()
+                                        },
+                                    contentAlignment = Alignment.Center
+                                ) {
+                                    Icon(
+                                        imageVector = if (isPlaying) Icons.Default.Pause else Icons.Default.PlayArrow,
+                                        contentDescription = "Play/Pause",
+                                        tint = DarkBackground,
+                                        modifier = Modifier.size(28.dp)
+                                    )
+                                }
+
+                                IconButton(onClick = {
+                                    refreshInteraction()
+                                    val target = (currentPositionMs + 10000).coerceAtMost(durationMs)
+                                    primaryPlayer?.seekTo(target)
+                                    secondaryPlayer?.seekTo(target)
+                                }) {
+                                    Icon(Icons.Default.Forward10, contentDescription = "+10s", tint = TextPrimary)
+                                }
                             }
 
-                            // Swap feeds
-                            IconButton(onClick = { isSwapped = !isSwapped }) {
-                                Icon(Icons.Default.SwapHoriz, contentDescription = "Swap Streams", tint = TextSecondary)
-                            }
+                            // Right: Layout switchers, Speed, CC, PiP
+                            Row(verticalAlignment = Alignment.CenterVertically) {
+                                // Layout mode toggle
+                                IconButton(onClick = {
+                                    refreshInteraction()
+                                    layoutMode = when (layoutMode) {
+                                        PlayerLayoutMode.SIDE_BY_SIDE -> PlayerLayoutMode.PICTURE_IN_PICTURE
+                                        PlayerLayoutMode.PICTURE_IN_PICTURE -> PlayerLayoutMode.FOCUS
+                                        PlayerLayoutMode.FOCUS -> PlayerLayoutMode.SIDE_BY_SIDE
+                                    }
+                                }) {
+                                    Icon(
+                                        imageVector = when (layoutMode) {
+                                            PlayerLayoutMode.SIDE_BY_SIDE -> Icons.Default.GridView
+                                            PlayerLayoutMode.PICTURE_IN_PICTURE -> Icons.Default.PictureInPicture
+                                            PlayerLayoutMode.FOCUS -> Icons.Default.Fullscreen
+                                        },
+                                        contentDescription = "Layout",
+                                        tint = ExeterMint
+                                    )
+                                }
 
-                            // Speed button
-                            TextButton(onClick = {
-                                val speeds = listOf(0.75f, 1.0f, 1.25f, 1.5f, 2.0f)
-                                val nextIdx = (speeds.indexOf(playbackSpeed) + 1) % speeds.size
-                                playbackSpeed = speeds[nextIdx]
-                                primaryPlayer?.playbackParameters = PlaybackParameters(playbackSpeed)
-                            }) {
-                                Text("${playbackSpeed}x", color = ExeterMint, fontWeight = FontWeight.Bold, fontSize = 13.sp)
-                            }
+                                // Speed button
+                                TextButton(onClick = {
+                                    refreshInteraction()
+                                    val speeds = listOf(0.75f, 1.0f, 1.25f, 1.5f, 2.0f)
+                                    val nextIdx = (speeds.indexOf(playbackSpeed) + 1) % speeds.size
+                                    playbackSpeed = speeds[nextIdx]
+                                    primaryPlayer?.playbackParameters = PlaybackParameters(playbackSpeed)
+                                }) {
+                                    Text("${playbackSpeed}x", color = ExeterMint, fontWeight = FontWeight.Bold, fontSize = 13.sp)
+                                }
 
-                            // CC toggle
-                            IconButton(onClick = { showCaptions = !showCaptions }) {
-                                Icon(
-                                    imageVector = if (showCaptions) Icons.Default.ClosedCaption else Icons.Default.ClosedCaptionDisabled,
-                                    contentDescription = "Captions",
-                                    tint = if (showCaptions) ExeterMint else TextMuted
-                                )
-                            }
+                                // CC toggle
+                                IconButton(onClick = {
+                                    refreshInteraction()
+                                    showCaptions = !showCaptions
+                                }) {
+                                    Icon(
+                                        imageVector = if (showCaptions) Icons.Default.ClosedCaption else Icons.Default.ClosedCaptionDisabled,
+                                        contentDescription = "Captions",
+                                        tint = if (showCaptions) ExeterMint else TextMuted
+                                    )
+                                }
 
-                            // System PiP
-                            IconButton(onClick = { enterSystemPiP() }) {
-                                Icon(Icons.Default.PictureInPictureAlt, contentDescription = "System PiP", tint = TextPrimary)
+                                // System PiP
+                                IconButton(onClick = {
+                                    refreshInteraction()
+                                    enterSystemPiP()
+                                }) {
+                                    Icon(Icons.Default.PictureInPictureAlt, contentDescription = "System PiP", tint = TextPrimary)
+                                }
                             }
                         }
                     }

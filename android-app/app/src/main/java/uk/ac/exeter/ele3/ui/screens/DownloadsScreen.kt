@@ -85,14 +85,16 @@ fun DownloadsScreen(
             ) {
                 items(downloads) { item ->
                     val file = remember(item.localFilePath) { File(item.localFilePath) }
-                    val sizeMb = remember(file) {
-                        if (file.exists()) String.format("%.1f MB", file.length() / (1024.0 * 1024.0)) else "0 MB"
+                    val partFile = remember(item.localFilePath) { File("${item.localFilePath}.part") }
+                    val sizeMb = remember(item.progress, item.isCompleted) {
+                        val active = if (item.isCompleted) file else (if (partFile.exists()) partFile else file)
+                        if (active.exists()) String.format(java.util.Locale.UK, "%.1f MB", active.length() / (1024.0 * 1024.0)) else "0 MB"
                     }
 
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .clickable {
+                            .clickable(enabled = item.isCompleted) {
                                 onPlayOffline(
                                     Recording(
                                         id = item.recordingId,
@@ -138,9 +140,22 @@ fun DownloadsScreen(
                                     )
                                     Spacer(modifier = Modifier.width(10.dp))
                                     Text(
-                                        text = "·  $sizeMb",
+                                        text = if (item.isCompleted) "·  $sizeMb" else "·  Downloading ${(item.progress * 100).toInt()}% ($sizeMb)",
                                         style = MaterialTheme.typography.bodySmall,
-                                        color = SuccessGreen
+                                        color = if (item.isCompleted) SuccessGreen else ExeterMint
+                                    )
+                                }
+
+                                if (!item.isCompleted) {
+                                    Spacer(modifier = Modifier.height(8.dp))
+                                    LinearProgressIndicator(
+                                        progress = { item.progress },
+                                        modifier = Modifier
+                                            .fillMaxWidth(0.6f)
+                                            .height(4.dp)
+                                            .clip(RoundedCornerShape(2.dp)),
+                                        color = ExeterMint,
+                                        trackColor = DarkSurfaceVariant
                                     )
                                 }
                             }
@@ -156,18 +171,26 @@ fun DownloadsScreen(
 
                                 Spacer(modifier = Modifier.width(6.dp))
 
-                                Box(
-                                    modifier = Modifier
-                                        .size(38.dp)
-                                        .clip(RoundedCornerShape(10.dp))
-                                        .background(ExeterTeal),
-                                    contentAlignment = Alignment.Center
-                                ) {
-                                    Icon(
-                                        imageVector = Icons.Default.PlayArrow,
-                                        contentDescription = "Play Offline",
-                                        tint = TextPrimary,
-                                        modifier = Modifier.size(22.dp)
+                                if (item.isCompleted) {
+                                    Box(
+                                        modifier = Modifier
+                                            .size(38.dp)
+                                            .clip(RoundedCornerShape(10.dp))
+                                            .background(ExeterTeal),
+                                        contentAlignment = Alignment.Center
+                                    ) {
+                                        Icon(
+                                            imageVector = Icons.Default.PlayArrow,
+                                            contentDescription = "Play Offline",
+                                            tint = TextPrimary,
+                                            modifier = Modifier.size(22.dp)
+                                        )
+                                    }
+                                } else {
+                                    CircularProgressIndicator(
+                                        modifier = Modifier.size(28.dp),
+                                        strokeWidth = 2.5.dp,
+                                        color = ExeterMint
                                     )
                                 }
                             }

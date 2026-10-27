@@ -9,6 +9,9 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import uk.ac.exeter.ele3.data.AuthManager
 import uk.ac.exeter.ele3.data.PanoptoRepository
 import uk.ac.exeter.ele3.data.model.Course
@@ -19,6 +22,7 @@ import uk.ac.exeter.ele3.ui.components.TabletNavRail
 import uk.ac.exeter.ele3.ui.screens.DashboardScreen
 import uk.ac.exeter.ele3.ui.screens.DownloadsScreen
 import uk.ac.exeter.ele3.ui.screens.ModuleDetailScreen
+import uk.ac.exeter.ele3.ui.screens.ModulesScreen
 import uk.ac.exeter.ele3.ui.screens.PlayerScreen
 import uk.ac.exeter.ele3.ui.theme.DarkBackground
 import uk.ac.exeter.ele3.ui.theme.ELE3Theme
@@ -27,6 +31,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        hideSystemBars()
 
         val defaultHandler = Thread.getDefaultUncaughtExceptionHandler()
         Thread.setDefaultUncaughtExceptionHandler { thread, throwable ->
@@ -94,13 +99,20 @@ class MainActivity : ComponentActivity() {
                                     )
                                 } else {
                                     when (currentRoute) {
-                                        NavDestination.Dashboard.route, NavDestination.Modules.route -> {
+                                        NavDestination.Dashboard.route -> {
                                             DashboardScreen(
                                                 onSelectCourse = { course -> selectedCourse = course },
                                                 onPlayRecording = { recording -> activeRecording = recording },
                                                 repository = repository,
                                                 isLoggedIn = isLoggedIn,
                                                 onOpenAuth = { isAuthDialogOpen = true }
+                                            )
+                                        }
+
+                                        NavDestination.Modules.route -> {
+                                            ModulesScreen(
+                                                onSelectCourse = { course -> selectedCourse = course },
+                                                repository = repository
                                             )
                                         }
 
@@ -125,5 +137,24 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        hideSystemBars()
+    }
+
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if (hasFocus) {
+            hideSystemBars()
+        }
+    }
+
+    private fun hideSystemBars() {
+        WindowCompat.setDecorFitsSystemWindows(window, false)
+        val insetsController = WindowCompat.getInsetsController(window, window.decorView)
+        insetsController.hide(WindowInsetsCompat.Type.systemBars())
+        insetsController.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
     }
 }

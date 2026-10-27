@@ -5,16 +5,10 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Videocam
+import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -39,20 +33,8 @@ fun DashboardScreen(
     isLoggedIn: Boolean = false,
     onOpenAuth: () -> Unit = {}
 ) {
-    var searchQuery by remember { mutableStateOf("") }
-
     val allCourses = remember { CoursesData.courses }
-    val filteredCourses = remember(searchQuery) {
-        if (searchQuery.isBlank()) allCourses
-        else {
-            val q = searchQuery.trim().lowercase()
-            allCourses.filter {
-                it.code.lowercase().contains(q) ||
-                it.title.lowercase().contains(q) ||
-                it.convenor.name.lowercase().contains(q)
-            }
-        }
-    }
+    val downloads by repository.downloads.collectAsState()
 
     // Recent recordings for quick resume
     val recentRecordings = remember {
@@ -61,13 +43,15 @@ fun DashboardScreen(
         }.take(8)
     }
 
+    val totalLectures = remember { allCourses.sumOf { it.recordings.size } }
+
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(DarkBackground)
             .padding(horizontal = 24.dp, vertical = 20.dp)
     ) {
-        // Header Row
+        // Hero Greeting Header
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween,
@@ -75,40 +59,46 @@ fun DashboardScreen(
         ) {
             Column {
                 Text(
-                    text = "ELE 3 Tablet",
+                    text = "Welcome to ELE 3",
                     style = MaterialTheme.typography.headlineMedium,
                     fontWeight = FontWeight.Bold,
                     color = TextPrimary
                 )
                 Text(
-                    text = "MMath Mathematics · Stage 2 (2026/27)",
+                    text = "Samuel's Personal Hub · MMath Mathematics Stage 2",
                     style = MaterialTheme.typography.bodyMedium,
                     color = TextMuted
                 )
             }
 
-            // Search Bar
-            OutlinedTextField(
-                value = searchQuery,
-                onValueChange = { searchQuery = it },
-                placeholder = { Text("Search modules or recordings...", color = TextMuted) },
-                leadingIcon = { Icon(Icons.Default.Search, contentDescription = null, tint = ExeterMint) },
-                singleLine = true,
-                modifier = Modifier
-                    .width(360.dp)
-                    .height(52.dp),
-                shape = RoundedCornerShape(14.dp),
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = ExeterMint,
-                    unfocusedBorderColor = DarkBorder,
-                    focusedContainerColor = DarkSurface,
-                    unfocusedContainerColor = DarkSurface,
-                    focusedTextColor = TextPrimary,
-                    unfocusedTextColor = TextPrimary
-                )
-            )
+            // Quick Status Pill
+            Surface(
+                shape = RoundedCornerShape(20.dp),
+                color = if (isLoggedIn) ExeterDeepGreen else DarkSurface,
+                border = CardDefaults.outlinedCardBorder().copy(brush = androidx.compose.ui.graphics.SolidColor(if (isLoggedIn) ExeterMint else DarkBorder))
+            ) {
+                Row(
+                    modifier = Modifier.padding(horizontal = 14.dp, vertical = 8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .size(8.dp)
+                            .clip(androidx.compose.foundation.shape.CircleShape)
+                            .background(if (isLoggedIn) SuccessGreen else TextMuted)
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                    Text(
+                        text = if (isLoggedIn) "Exeter SSO Connected" else "SSO Offline",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = if (isLoggedIn) ExeterMint else TextMuted,
+                        fontWeight = FontWeight.Bold
+                    )
+                }
+            }
         }
 
+        // SSO Connect Banner if not logged in
         if (!isLoggedIn) {
             Spacer(modifier = Modifier.height(14.dp))
             Card(
@@ -163,30 +153,69 @@ fun DashboardScreen(
             }
         }
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(18.dp))
 
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.spacedBy(24.dp)
         ) {
-            // ── Recent Recordings Row ─────────────────────────────────────────
+            // ── Quick Overview Stats Cards ────────────────────────────────────
+            item {
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
+                    StatCard(
+                        title = "Enrolled Modules",
+                        value = "${allCourses.size}",
+                        icon = Icons.Default.School,
+                        accentColor = ExeterMint,
+                        modifier = Modifier.weight(1f)
+                    )
+                    StatCard(
+                        title = "Total Recordings",
+                        value = "$totalLectures",
+                        icon = Icons.Default.Videocam,
+                        accentColor = ExeterTeal,
+                        modifier = Modifier.weight(1f)
+                    )
+                    StatCard(
+                        title = "Offline Lectures",
+                        value = "${downloads.size}",
+                        icon = Icons.Default.DownloadDone,
+                        accentColor = SuccessGreen,
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+            }
+
+            // ── Recent Recordings / Continue Watching Row ─────────────────────
             item {
                 Column {
-                    Text(
-                        text = "Recent Lectures",
-                        style = MaterialTheme.typography.titleMedium,
-                        fontWeight = FontWeight.SemiBold,
-                        color = ExeterMint
-                    )
-                    Spacer(modifier = Modifier.height(10.dp))
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = "Continue Watching & Recent Lectures",
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.SemiBold,
+                            color = ExeterMint
+                        )
+                    }
+
+                    Spacer(modifier = Modifier.height(12.dp))
 
                     LazyRow(
                         horizontalArrangement = Arrangement.spacedBy(14.dp)
                     ) {
                         items(recentRecordings) { (recording, courseCode) ->
+                            val progress = remember(recording.id) { repository.getProgress(recording.id) }
                             RecentRecordingCard(
                                 recording = recording,
                                 courseCode = courseCode,
+                                progressFraction = progress?.progressFraction ?: 0f,
                                 onClick = { onPlayRecording(recording) }
                             )
                         }
@@ -194,45 +223,29 @@ fun DashboardScreen(
                 }
             }
 
-            // ── Enrolled Modules Header ───────────────────────────────────────
+            // ── Active Stage 2 Modules Row ────────────────────────────────────
             item {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
+                Column {
                     Text(
-                        text = "Enrolled Modules (${filteredCourses.size})",
+                        text = "Current Term Modules",
                         style = MaterialTheme.typography.titleMedium,
                         fontWeight = FontWeight.SemiBold,
                         color = TextPrimary
                     )
-                }
-            }
 
-            // ── Modules Grid ──────────────────────────────────────────────────
-            item {
-                // Responsive grid: 3 columns on tablet landscape
-                val rows = (filteredCourses.size + 2) / 3
-                Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-                    for (rowIndex in 0 until rows) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.spacedBy(16.dp)
-                        ) {
-                            for (colIndex in 0..2) {
-                                val itemIndex = rowIndex * 3 + colIndex
-                                if (itemIndex < filteredCourses.size) {
-                                    val course = filteredCourses[itemIndex]
-                                    Box(modifier = Modifier.weight(1f)) {
-                                        ModuleCard(
-                                            course = course,
-                                            onClick = { onSelectCourse(course) }
-                                        )
-                                    }
-                                } else {
-                                    Spacer(modifier = Modifier.weight(1f))
-                                }
+                    Spacer(modifier = Modifier.height(14.dp))
+
+                    val autumnModules = allCourses.filter { it.stage == 2 }.take(3)
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp)
+                    ) {
+                        autumnModules.forEach { course ->
+                            Box(modifier = Modifier.weight(1f)) {
+                                ModuleCard(
+                                    course = course,
+                                    onClick = { onSelectCourse(course) }
+                                )
                             }
                         }
                     }
@@ -243,14 +256,65 @@ fun DashboardScreen(
 }
 
 @Composable
+fun StatCard(
+    title: String,
+    value: String,
+    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    accentColor: androidx.compose.ui.graphics.Color,
+    modifier: Modifier = Modifier
+) {
+    Card(
+        modifier = modifier,
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = CardDefaults.outlinedCardBorder().copy(brush = androidx.compose.ui.graphics.SolidColor(DarkBorder))
+    ) {
+        Row(
+            modifier = Modifier.padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(42.dp)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(accentColor.copy(alpha = 0.15f)),
+                contentAlignment = Alignment.Center
+            ) {
+                Icon(
+                    imageVector = icon,
+                    contentDescription = null,
+                    tint = accentColor,
+                    modifier = Modifier.size(22.dp)
+                )
+            }
+            Spacer(modifier = Modifier.width(14.dp))
+            Column {
+                Text(
+                    text = value,
+                    style = MaterialTheme.typography.titleLarge,
+                    fontWeight = FontWeight.Bold,
+                    color = TextPrimary
+                )
+                Text(
+                    text = title,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = TextMuted
+                )
+            }
+        }
+    }
+}
+
+@Composable
 fun RecentRecordingCard(
     recording: Recording,
     courseCode: String,
+    progressFraction: Float,
     onClick: () -> Unit
 ) {
     Card(
         modifier = Modifier
-            .width(260.dp)
+            .width(280.dp)
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = DarkSurface),
@@ -285,6 +349,19 @@ fun RecentRecordingCard(
                 maxLines = 2,
                 overflow = TextOverflow.Ellipsis
             )
+
+            if (progressFraction > 0.03f) {
+                Spacer(modifier = Modifier.height(8.dp))
+                LinearProgressIndicator(
+                    progress = { progressFraction },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(3.dp)
+                        .clip(RoundedCornerShape(2.dp)),
+                    color = ExeterMint,
+                    trackColor = DarkSurfaceVariant
+                )
+            }
 
             Spacer(modifier = Modifier.height(10.dp))
 
@@ -332,11 +409,11 @@ fun ModuleCard(
         border = CardDefaults.outlinedCardBorder().copy(brush = androidx.compose.ui.graphics.SolidColor(DarkBorder))
     ) {
         Column {
-            // Thumbnail Banner
+            // Thumbnail Banner with dynamic subject artwork
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(96.dp)
+                    .height(100.dp)
             ) {
                 GeometricBanner(seedText = course.code)
 
@@ -373,20 +450,32 @@ fun ModuleCard(
                     text = course.title,
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    color = ExeterMint,
+                    color = TextPrimary,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
 
                 Spacer(modifier = Modifier.height(4.dp))
 
-                Text(
-                    text = course.convenor.name,
-                    style = MaterialTheme.typography.bodySmall,
-                    color = TextSecondary,
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis
-                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Text(
+                        text = course.convenor.name,
+                        style = MaterialTheme.typography.bodySmall,
+                        color = TextSecondary,
+                        maxLines = 1,
+                        overflow = TextOverflow.Ellipsis,
+                        modifier = Modifier.weight(1f)
+                    )
+                    Text(
+                        text = "${course.credits} credits",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = ExeterMint
+                    )
+                }
             }
         }
     }
