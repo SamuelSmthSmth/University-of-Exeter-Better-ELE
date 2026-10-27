@@ -209,6 +209,9 @@ fun PlayerScreen(
         secondaryPlayer = sPlayer
 
         onDispose {
+            if (pPlayer.currentPosition > 3000) {
+                repository.saveProgress(recording.id, pPlayer.currentPosition / 1000, pPlayer.duration.coerceAtLeast(1L) / 1000)
+            }
             pPlayer.release()
             sPlayer?.release()
         }

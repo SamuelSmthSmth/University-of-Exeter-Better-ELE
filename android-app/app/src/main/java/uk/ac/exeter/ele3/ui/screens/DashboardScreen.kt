@@ -35,12 +35,34 @@ fun DashboardScreen(
 ) {
     val allCourses = remember { CoursesData.courses }
     val downloads by repository.downloads.collectAsState()
+    val watchProgressVersion by repository.watchProgressVersion.collectAsState()
 
-    // Recent recordings for quick resume
+    // Continue Watching: lectures with recorded watch progress
+    val continueWatchingList = remember(watchProgressVersion) {
+        val progressList = repository.getAllProgress()
+        progressList.mapNotNull { wp ->
+            var foundCourse: Course? = null
+            var foundRecording: Recording? = null
+            for (course in allCourses) {
+                val r = course.recordings.find { it.id == wp.recordingId }
+                if (r != null) {
+                    foundCourse = course
+                    foundRecording = r
+                    break
+                }
+            }
+            if (foundRecording != null && foundCourse != null) {
+                Triple(foundRecording, foundCourse.code, wp)
+            } else null
+        }
+    }
+
+    // Recent lectures from current Stage 2 Term 1 modules
     val recentRecordings = remember {
-        allCourses.flatMap { course ->
+        val stage2Courses = allCourses.filter { it.stage == 2 }
+        stage2Courses.flatMap { course ->
             course.recordings.take(2).map { it to course.code }
-        }.take(8)
+        }
     }
 
     val totalLectures = remember { allCourses.sumOf { it.recordings.size } }
@@ -117,8 +139,11 @@ fun DashboardScreen(
         Spacer(modifier = Modifier.height(18.dp))
 
         LazyColumn(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.spacedBy(24.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f),
+            verticalArrangement = Arrangement.spacedBy(24.dp),
+            contentPadding = PaddingValues(bottom = 32.dp)
         ) {
             // ── Quick Overview Stats Cards ────────────────────────────────────
             item {
@@ -150,7 +175,49 @@ fun DashboardScreen(
                 }
             }
 
-            // ── Recent Recordings / Continue Watching Row ─────────────────────
+            // ── Continue Watching Section ─────────────────────────────────────
+            if (continueWatchingList.isNotEmpty()) {
+                item {
+                    Column {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Text(
+                                text = "Continue Watching",
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.SemiBold,
+                                color = ExeterMint
+                            )
+                            Text(
+                                text = "${continueWatchingList.size} in progress",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = TextMuted
+                            )
+                        }
+
+                        Spacer(modifier = Modifier.height(12.dp))
+
+                        LazyRow(
+                            horizontalArrangement = Arrangement.spacedBy(14.dp)
+                        ) {
+                            items(continueWatchingList) { (recording, courseCode, wp) ->
+                                ContinueWatchingCard(
+                                    recording = recording,
+                                    courseCode = courseCode,
+                                    progressFraction = wp.progressFraction,
+                                    positionSeconds = wp.positionSeconds,
+                                    durationSeconds = wp.durationSeconds,
+                                    onClick = { onPlayRecording(recording) }
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ── Recent Lectures Section ───────────────────────────────────────
             item {
                 Column {
                     Row(
@@ -159,10 +226,10 @@ fun DashboardScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Text(
-                            text = "Continue Watching & Recent Lectures",
+                            text = "Recent Lectures",
                             style = MaterialTheme.typography.titleMedium,
                             fontWeight = FontWeight.SemiBold,
-                            color = ExeterMint
+                            color = TextPrimary
                         )
                     }
 
@@ -172,11 +239,9 @@ fun DashboardScreen(
                         horizontalArrangement = Arrangement.spacedBy(14.dp)
                     ) {
                         items(recentRecordings) { (recording, courseCode) ->
-                            val progress = remember(recording.id) { repository.getProgress(recording.id) }
                             RecentRecordingCard(
                                 recording = recording,
                                 courseCode = courseCode,
-                                progressFraction = progress?.progressFraction ?: 0f,
                                 onClick = { onPlayRecording(recording) }
                             )
                         }
@@ -267,10 +332,137 @@ fun StatCard(
 }
 
 @Composable
-fun RecentRecordingCard(
+fun ContinueWatchingCard(
     recording: Recording,
     courseCode: String,
     progressFraction: Float,
+    positionSeconds: Long,
+    durationSeconds: Long,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = Modifier
+            .width(300.dp)
+            .clickable(onClick = onClick),
+        shape = RoundedCornerShape(16.dp),
+        colors = CardDefaults.cardColors(containerColor = DarkSurface),
+        border = CardDefaults.outlinedCardBorder().copy(brush = androidx.compose.ui.graphics.SolidColor(DarkBorder))
+    ) {
+        Column(modifier = Modifier.padding(14.dp)) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = courseCode,
+                    style = MaterialTheme.typography.labelSmall,
+                    fontWeight = FontWeight.Bold,
+                    color = ExeterMint
+                )
+                val remainingMins = if (durationSeconds > positionSeconds) {
+                    (durationSeconds - positionSeconds) / 60
+                } else 0L
+                Text(
+                    text = if (remainingMins > 0) "${remainingMins}m left" else recording.duration,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = ExeterTeal,
+                    fontWeight = FontWeight.Medium
+                )
+            }
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = recording.title,
+                style = MaterialTheme.typography.bodyMedium,
+                fontWeight = FontWeight.SemiBold,
+                color = TextPrimary,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            // Active Progress Bar with percentages and timestamps
+            Column {
+                LinearProgressIndicator(
+                    progress = { progressFraction.coerceIn(0.01f, 1f) },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(4.dp)
+                        .clip(RoundedCornerShape(2.dp)),
+                    color = ExeterMint,
+                    trackColor = DarkSurfaceVariant
+                )
+                Spacer(modifier = Modifier.height(4.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    val posMin = positionSeconds / 60
+                    val durMin = durationSeconds / 60
+                    Text(
+                        text = "${posMin}m of ${durMin}m",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = TextMuted,
+                        fontSize = 11.sp
+                    )
+                    Text(
+                        text = "${(progressFraction * 100).toInt()}%",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = ExeterMint,
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 11.sp
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Text(
+                    text = recording.date,
+                    style = MaterialTheme.typography.bodySmall,
+                    color = TextMuted
+                )
+
+                Surface(
+                    shape = RoundedCornerShape(8.dp),
+                    color = ExeterTeal
+                ) {
+                    Row(
+                        modifier = Modifier.padding(horizontal = 10.dp, vertical = 5.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.PlayArrow,
+                            contentDescription = "Resume",
+                            tint = TextPrimary,
+                            modifier = Modifier.size(16.dp)
+                        )
+                        Spacer(modifier = Modifier.width(4.dp))
+                        Text(
+                            text = "Resume",
+                            style = MaterialTheme.typography.labelSmall,
+                            fontWeight = FontWeight.Bold,
+                            color = TextPrimary
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun RecentRecordingCard(
+    recording: Recording,
+    courseCode: String,
     onClick: () -> Unit
 ) {
     Card(
@@ -311,20 +503,7 @@ fun RecentRecordingCard(
                 overflow = TextOverflow.Ellipsis
             )
 
-            if (progressFraction > 0.03f) {
-                Spacer(modifier = Modifier.height(8.dp))
-                LinearProgressIndicator(
-                    progress = { progressFraction },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(3.dp)
-                        .clip(RoundedCornerShape(2.dp)),
-                    color = ExeterMint,
-                    trackColor = DarkSurfaceVariant
-                )
-            }
-
-            Spacer(modifier = Modifier.height(10.dp))
+            Spacer(modifier = Modifier.height(14.dp))
 
             Row(
                 modifier = Modifier.fillMaxWidth(),

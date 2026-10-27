@@ -41,6 +41,8 @@ class PanoptoRepository(private val context: Context) {
 
     private val _downloads = MutableStateFlow<List<DownloadItem>>(loadDownloads())
     val downloads: StateFlow<List<DownloadItem>> = _downloads.asStateFlow()
+    private val _watchProgressVersion = MutableStateFlow(System.currentTimeMillis())
+    val watchProgressVersion: StateFlow<Long> = _watchProgressVersion.asStateFlow()
     private val downloadJobs = ConcurrentHashMap<String, Job>()
 
     // ── DeliveryInfo API ────────────────────────────────────────────────────────
@@ -166,6 +168,7 @@ class PanoptoRepository(private val context: Context) {
             .putLong("${recordingId}_dur", durationSec)
             .putLong("${recordingId}_time", System.currentTimeMillis())
             .apply()
+        _watchProgressVersion.value = System.currentTimeMillis()
     }
 
     fun getProgress(recordingId: String): WatchProgress? {
@@ -175,6 +178,16 @@ class PanoptoRepository(private val context: Context) {
         return if (pos >= 0) {
             WatchProgress(recordingId, pos, dur, time)
         } else null
+    }
+
+    fun getAllProgress(): List<WatchProgress> {
+        val allKeys = prefs.all.keys
+        val idSet = allKeys.mapNotNull {
+            if (it.endsWith("_pos")) it.removeSuffix("_pos") else null
+        }
+        return idSet.mapNotNull { id -> getProgress(id) }
+            .filter { it.positionSeconds > 0 && it.progressFraction < 0.98f }
+            .sortedByDescending { it.lastWatchedTimestamp }
     }
 
     // ── Offline Downloads ───────────────────────────────────────────────────────
