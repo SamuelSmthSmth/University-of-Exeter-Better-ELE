@@ -12,10 +12,14 @@ import androidx.annotation.OptIn
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -85,6 +89,24 @@ fun PlayerScreen(
 
     var layoutMode by remember { mutableStateOf(PlayerLayoutMode.SIDE_BY_SIDE) }
     var isSwapped by remember { mutableStateOf(false) }
+
+    // Double-tap seeking badges state
+    var showLeftSeekBadge by remember { mutableStateOf(false) }
+    var showRightSeekBadge by remember { mutableStateOf(false) }
+
+    LaunchedEffect(showLeftSeekBadge) {
+        if (showLeftSeekBadge) {
+            delay(650)
+            showLeftSeekBadge = false
+        }
+    }
+
+    LaunchedEffect(showRightSeekBadge) {
+        if (showRightSeekBadge) {
+            delay(650)
+            showRightSeekBadge = false
+        }
+    }
 
     // ExoPlayer instances
     var primaryPlayer by remember { mutableStateOf<ExoPlayer?>(null) }
@@ -408,18 +430,108 @@ fun PlayerScreen(
                     }
                 }
 
-                // Transparent Gesture & Tap Interceptor over video to toggle controls
+                // Transparent Gesture & Tap Interceptor over video
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
-                        .clickable(
-                            interactionSource = remember { MutableInteractionSource() },
-                            indication = null
-                        ) {
-                            controlsVisible = !controlsVisible
-                            refreshInteraction()
+                        .pointerInput(Unit) {
+                            detectTapGestures(
+                                onTap = {
+                                    controlsVisible = !controlsVisible
+                                    refreshInteraction()
+                                },
+                                onDoubleTap = { offset ->
+                                    refreshInteraction()
+                                    if (offset.x < size.width / 2) {
+                                        // Left half: seek -10s
+                                        val target = (currentPositionMs - 10000).coerceAtLeast(0)
+                                        primaryPlayer?.seekTo(target)
+                                        secondaryPlayer?.seekTo(target)
+                                        showLeftSeekBadge = true
+                                    } else {
+                                        // Right half: seek +10s
+                                        val target = (currentPositionMs + 10000).coerceAtMost(durationMs)
+                                        primaryPlayer?.seekTo(target)
+                                        secondaryPlayer?.seekTo(target)
+                                        showRightSeekBadge = true
+                                    }
+                                }
+                            )
                         }
                 )
+
+                // Double-Tap Seek Badges with ripple scale animation
+                AnimatedVisibility(
+                    visible = showLeftSeekBadge,
+                    enter = fadeIn() + scaleIn(initialScale = 0.75f),
+                    exit = fadeOut() + scaleOut(targetScale = 1.15f),
+                    modifier = Modifier
+                        .align(Alignment.CenterStart)
+                        .padding(start = 100.dp)
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = Color.Black.copy(alpha = 0.75f),
+                        border = CardDefaults.outlinedCardBorder().copy(brush = androidx.compose.ui.graphics.SolidColor(ExeterMint)),
+                        modifier = Modifier.size(96.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier.fillMaxSize(),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Replay10,
+                                contentDescription = "-10s",
+                                tint = ExeterMint,
+                                modifier = Modifier.size(40.dp)
+                            )
+                            Spacer(modifier = Modifier.height(2.dp))
+                            Text(
+                                text = "10s",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = TextPrimary,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                }
+
+                AnimatedVisibility(
+                    visible = showRightSeekBadge,
+                    enter = fadeIn() + scaleIn(initialScale = 0.75f),
+                    exit = fadeOut() + scaleOut(targetScale = 1.15f),
+                    modifier = Modifier
+                        .align(Alignment.CenterEnd)
+                        .padding(end = 100.dp)
+                ) {
+                    Surface(
+                        shape = CircleShape,
+                        color = Color.Black.copy(alpha = 0.75f),
+                        border = CardDefaults.outlinedCardBorder().copy(brush = androidx.compose.ui.graphics.SolidColor(ExeterMint)),
+                        modifier = Modifier.size(96.dp)
+                    ) {
+                        Column(
+                            modifier = Modifier.fillMaxSize(),
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            verticalArrangement = Arrangement.Center
+                        ) {
+                            Icon(
+                                imageVector = Icons.Default.Forward10,
+                                contentDescription = "+10s",
+                                tint = ExeterMint,
+                                modifier = Modifier.size(40.dp)
+                            )
+                            Spacer(modifier = Modifier.height(2.dp))
+                            Text(
+                                text = "10s",
+                                style = MaterialTheme.typography.labelSmall,
+                                color = TextPrimary,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                }
 
                 // Closed Caption Overlay (remains visible even when controls hide)
                 if (!activeCaption.isNullOrBlank()) {
