@@ -52,51 +52,12 @@ fun DashboardScreen(
             .padding(horizontal = 24.dp, vertical = 20.dp)
     ) {
         // Hero Greeting Header
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-            Column {
-                Text(
-                    text = "Welcome to ELE 3",
-                    style = MaterialTheme.typography.headlineMedium,
-                    fontWeight = FontWeight.Bold,
-                    color = TextPrimary
-                )
-                Text(
-                    text = "Samuel's Personal Hub · MMath Mathematics Stage 2",
-                    style = MaterialTheme.typography.bodyMedium,
-                    color = TextMuted
-                )
-            }
-
-            // Quick Status Pill
-            Surface(
-                shape = RoundedCornerShape(20.dp),
-                color = if (isLoggedIn) ExeterDeepGreen else DarkSurface,
-                border = CardDefaults.outlinedCardBorder().copy(brush = androidx.compose.ui.graphics.SolidColor(if (isLoggedIn) ExeterMint else DarkBorder))
-            ) {
-                Row(
-                    modifier = Modifier.padding(horizontal = 14.dp, vertical = 8.dp),
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Box(
-                        modifier = Modifier
-                            .size(8.dp)
-                            .clip(androidx.compose.foundation.shape.CircleShape)
-                            .background(if (isLoggedIn) SuccessGreen else TextMuted)
-                    )
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text(
-                        text = if (isLoggedIn) "Exeter SSO Connected" else "SSO Offline",
-                        style = MaterialTheme.typography.labelSmall,
-                        color = if (isLoggedIn) ExeterMint else TextMuted,
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-            }
-        }
+        Text(
+            text = "Welcome to ELE 3",
+            style = MaterialTheme.typography.headlineMedium,
+            fontWeight = FontWeight.Bold,
+            color = TextPrimary
+        )
 
         // SSO Connect Banner if not logged in
         if (!isLoggedIn) {
@@ -235,12 +196,12 @@ fun DashboardScreen(
 
                     Spacer(modifier = Modifier.height(14.dp))
 
-                    val autumnModules = allCourses.filter { it.stage == 2 }.take(3)
+                    val termOneModules = allCourses.filter { it.stage == 2 }
                     Row(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(16.dp)
                     ) {
-                        autumnModules.forEach { course ->
+                        termOneModules.forEach { course ->
                             Box(modifier = Modifier.weight(1f)) {
                                 ModuleCard(
                                     course = course,

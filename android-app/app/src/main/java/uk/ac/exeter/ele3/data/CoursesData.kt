@@ -12,7 +12,7 @@ object CoursesData {
             title = "Differential Equations",
             stage = 2,
             credits = 15,
-            term = "Autumn Term",
+            term = "Term 1",
             academicYear = "2026/27",
             convenor = Convenor(
                 name = "Dr. Joanne Mason",
@@ -148,7 +148,7 @@ object CoursesData {
             title = "Real Analysis",
             stage = 2,
             credits = 15,
-            term = "Autumn Term",
+            term = "Term 1",
             academicYear = "2026/27",
             convenor = Convenor(
                 name = "Tony Samuel",
@@ -260,7 +260,7 @@ object CoursesData {
             title = "Groups, Rings and Fields",
             stage = 2,
             credits = 15,
-            term = "Autumn Term",
+            term = "Term 1",
             academicYear = "2026/27",
             convenor = Convenor(
                 name = "Gihan Marasingha",
@@ -396,7 +396,7 @@ object CoursesData {
             title = "Numerical Modelling",
             stage = 2,
             credits = 15,
-            term = "Autumn Term",
+            term = "Term 1",
             academicYear = "2026/27",
             convenor = Convenor(
                 name = "Dr. Markus Mueller",
@@ -548,7 +548,7 @@ object CoursesData {
             title = "Mathematical Methods",
             stage = 1,
             credits = 30,
-            term = "Autumn & Spring Term",
+            term = "Terms 1 & 2",
             academicYear = "2025/26",
             convenor = Convenor(
                 name = "Mark Holland & Layal Hakim",
@@ -1092,7 +1092,7 @@ object CoursesData {
             title = "Mathematical Structures",
             stage = 1,
             credits = 30,
-            term = "Autumn & Spring Term",
+            term = "Terms 1 & 2",
             academicYear = "2025/26",
             convenor = Convenor(
                 name = "Prof. Nigel Byott",
@@ -1652,7 +1652,7 @@ object CoursesData {
             title = "Mathematical Modelling",
             stage = 1,
             credits = 30,
-            term = "Autumn & Spring Term",
+            term = "Terms 1 & 2",
             academicYear = "2025/26",
             convenor = Convenor(
                 name = "Dr. Krasimira Tsaneva-Atanasova",
@@ -2188,7 +2188,7 @@ object CoursesData {
             title = "Probability, Statistics and Data",
             stage = 1,
             credits = 30,
-            term = "Autumn & Spring Term",
+            term = "Terms 1 & 2",
             academicYear = "2025/26",
             convenor = Convenor(
                 name = "Dr. Chaitra Nagaraja",
@@ -2748,7 +2748,7 @@ object CoursesData {
             title = "Foundations",
             stage = 1,
             credits = 15,
-            term = "Autumn Term",
+            term = "Term 1",
             academicYear = "2025/26",
             convenor = Convenor(
                 name = "Mathematics Faculty",

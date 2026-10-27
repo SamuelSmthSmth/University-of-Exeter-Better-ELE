@@ -30,7 +30,7 @@ const TERMS = [
   { label: "All Terms", value: "All" },
   { label: "Term 1 (Autumn)", value: "Term 1" },
   { label: "Term 2 (Spring)", value: "Term 2" },
-  { label: "Whole Year", value: "Term 1 and 2" },
+  { label: "Whole Year (Terms 1 & 2)", value: "Terms 1 & 2" },
 ];
 
 const STAGES = [

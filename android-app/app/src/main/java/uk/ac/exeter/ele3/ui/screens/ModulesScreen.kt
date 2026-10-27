@@ -45,10 +45,10 @@ fun ModulesScreen(
             }
 
             val matchesFilter = when (selectedFilter) {
-                "Autumn" -> course.term.contains("Autumn", ignoreCase = true)
-                "Spring" -> course.term.contains("Spring", ignoreCase = true)
                 "Stage 2" -> course.stage == 2
                 "Stage 1" -> course.stage == 1
+                "Term 1" -> course.term == "Term 1"
+                "Terms 1 & 2" -> course.term == "Terms 1 & 2"
                 else -> true
             }
 
@@ -76,7 +76,7 @@ fun ModulesScreen(
                     color = TextPrimary
                 )
                 Text(
-                    text = "${filteredCourses.size} modules available for Stage 2",
+                    text = "${filteredCourses.size} modules available",
                     style = MaterialTheme.typography.bodyMedium,
                     color = TextMuted
                 )
@@ -118,7 +118,7 @@ fun ModulesScreen(
             horizontalArrangement = Arrangement.spacedBy(10.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-            listOf("All", "Autumn", "Spring", "Stage 2", "Stage 1").forEach { filterName ->
+            listOf("All", "Stage 2", "Stage 1", "Term 1", "Terms 1 & 2").forEach { filterName ->
                 val isSelected = selectedFilter == filterName
                 FilterChip(
                     selected = isSelected,
