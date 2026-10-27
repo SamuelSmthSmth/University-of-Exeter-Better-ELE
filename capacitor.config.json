@@ -1,0 +1,10 @@
+{
+  "appId": "uk.ac.exeter.ele3",
+  "appName": "ELE 3",
+  "webDir": "dist",
+  "backgroundColor": "#020909",
+  "android": {
+    "allowMixedContent": true,
+    "backgroundColor": "#020909"
+  }
+}
