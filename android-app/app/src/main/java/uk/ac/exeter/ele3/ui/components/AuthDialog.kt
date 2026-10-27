@@ -104,16 +104,26 @@ fun AuthDialog(
                                 settings.apply {
                                     javaScriptEnabled = true
                                     domStorageEnabled = true
-                                    databaseEnabled = true
                                     setSupportMultipleWindows(true)
                                     mediaPlaybackRequiresUserGesture = false
                                     mixedContentMode = WebSettings.MIXED_CONTENT_ALWAYS_ALLOW
                                     userAgentString = "Mozilla/5.0 (Linux; Android 14; Tablet) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
                                 }
 
-                                val cookieManager = CookieManager.getInstance()
-                                cookieManager.setAcceptCookie(true)
-                                cookieManager.setAcceptThirdPartyCookies(this, true)
+                                try {
+                                    val cookieManager = CookieManager.getInstance()
+                                    cookieManager.setAcceptCookie(true)
+                                    cookieManager.setAcceptThirdPartyCookies(this, true)
+                                } catch (ignored: Exception) {}
+
+                                webChromeClient = object : android.webkit.WebChromeClient() {
+                                    override fun onCreateWindow(view: WebView?, isDialog: Boolean, isUserGesture: Boolean, resultMsg: android.os.Message?): Boolean {
+                                        val transport = resultMsg?.obj as? WebView.WebViewTransport
+                                        transport?.webView = view
+                                        resultMsg?.sendToTarget()
+                                        return true
+                                    }
+                                }
 
                                 webViewClient = object : WebViewClient() {
                                     override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
@@ -125,16 +135,28 @@ fun AuthDialog(
                                         isLoading = false
                                         url?.let { currentUrl = it }
 
-                                        // Check if authenticated on Panopto
-                                        val cookies = cookieManager.getCookie("https://recapexeter.cloud.panopto.eu")
-                                        if (!cookies.isNullOrBlank() && (cookies.contains(".ASPXAUTH") || cookies.contains("instance=MoodleELE2") || cookies.contains("csrfToken"))) {
-                                            authManager.saveCookies(cookies)
-                                            onDismiss()
-                                        }
+                                        try {
+                                            val cookieManager = CookieManager.getInstance()
+                                            val cookies = cookieManager.getCookie("https://recapexeter.cloud.panopto.eu")
+                                            if (!cookies.isNullOrBlank() && (cookies.contains(".ASPXAUTH") || cookies.contains("instance=MoodleELE2") || cookies.contains("csrfToken"))) {
+                                                authManager.saveCookies(cookies)
+                                                onDismiss()
+                                            }
+                                        } catch (ignored: Exception) {}
                                     }
 
                                     override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
-                                        return false
+                                        val url = request?.url?.toString() ?: return false
+                                        if (url.startsWith("http://") || url.startsWith("https://")) {
+                                            return false
+                                        }
+                                        return try {
+                                            val intent = android.content.Intent(android.content.Intent.ACTION_VIEW, request.url)
+                                            context.startActivity(intent)
+                                            true
+                                        } catch (e: Exception) {
+                                            true
+                                        }
                                     }
                                 }
 

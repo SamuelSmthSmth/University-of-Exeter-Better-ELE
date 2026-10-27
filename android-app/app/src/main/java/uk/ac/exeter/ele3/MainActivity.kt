@@ -28,6 +28,16 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        val defaultHandler = Thread.getDefaultUncaughtExceptionHandler()
+        Thread.setDefaultUncaughtExceptionHandler { thread, throwable ->
+            android.util.Log.e("ELE3_FATAL", "FATAL CRASH DETECTED", throwable)
+            try {
+                val file = java.io.File(applicationContext.filesDir, "crash.txt")
+                file.writeText("${java.util.Date()}\n${throwable.stackTraceToString()}")
+            } catch (ignored: Exception) {}
+            defaultHandler?.uncaughtException(thread, throwable)
+        }
+
         val authManager = AuthManager.getInstance(this)
         val repository = PanoptoRepository.getInstance(this)
 
@@ -38,7 +48,7 @@ class MainActivity : ComponentActivity() {
                 var currentRoute by remember { mutableStateOf(NavDestination.Dashboard.route) }
                 var selectedCourse by remember { mutableStateOf<Course?>(null) }
                 var activeRecording by remember { mutableStateOf<Recording?>(null) }
-                var isAuthDialogOpen by remember { mutableStateOf(!isLoggedIn) }
+                var isAuthDialogOpen by remember { mutableStateOf(false) }
 
                 // System Back button navigation handling
                 BackHandler(enabled = activeRecording != null || selectedCourse != null) {
@@ -88,7 +98,9 @@ class MainActivity : ComponentActivity() {
                                             DashboardScreen(
                                                 onSelectCourse = { course -> selectedCourse = course },
                                                 onPlayRecording = { recording -> activeRecording = recording },
-                                                repository = repository
+                                                repository = repository,
+                                                isLoggedIn = isLoggedIn,
+                                                onOpenAuth = { isAuthDialogOpen = true }
                                             )
                                         }
 

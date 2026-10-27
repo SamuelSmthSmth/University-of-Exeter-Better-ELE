@@ -32,12 +32,14 @@ fun ELE3Theme(
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
-            val window = (view.context as? Activity)?.window ?: return@SideEffect
-            window.statusBarColor = DarkBackground.toArgb()
-            window.navigationBarColor = DarkBackground.toArgb()
-            val insetsController = WindowCompat.getInsetsController(window, view)
-            insetsController.isAppearanceLightStatusBars = false
-            insetsController.isAppearanceLightNavigationBars = false
+            try {
+                val window = (view.context as? Activity)?.window ?: return@SideEffect
+                window.statusBarColor = DarkBackground.toArgb()
+                window.navigationBarColor = DarkBackground.toArgb()
+                val insetsController = WindowCompat.getInsetsController(window, view)
+                insetsController.isAppearanceLightStatusBars = false
+                insetsController.isAppearanceLightNavigationBars = false
+            } catch (ignored: Exception) {}
         }
     }
 

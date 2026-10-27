@@ -47,7 +47,7 @@ fun TabletNavRail(
                     contentAlignment = Alignment.Center
                 ) {
                     Image(
-                        painter = painterResource(id = uk.ac.exeter.ele3.R.mipmap.ic_launcher),
+                        painter = painterResource(id = uk.ac.exeter.ele3.R.drawable.ic_exeter_crest),
                         contentDescription = "Exeter Emblem",
                         modifier = Modifier.size(38.dp)
                     )

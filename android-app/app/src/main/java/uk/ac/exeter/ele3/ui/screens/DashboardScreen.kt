@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Videocam
@@ -34,7 +35,9 @@ import uk.ac.exeter.ele3.ui.theme.*
 fun DashboardScreen(
     onSelectCourse: (Course) -> Unit,
     onPlayRecording: (Recording) -> Unit,
-    repository: PanoptoRepository
+    repository: PanoptoRepository,
+    isLoggedIn: Boolean = false,
+    onOpenAuth: () -> Unit = {}
 ) {
     var searchQuery by remember { mutableStateOf("") }
 
@@ -104,6 +107,60 @@ fun DashboardScreen(
                     unfocusedTextColor = TextPrimary
                 )
             )
+        }
+
+        if (!isLoggedIn) {
+            Spacer(modifier = Modifier.height(14.dp))
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable(onClick = onOpenAuth),
+                shape = RoundedCornerShape(14.dp),
+                colors = CardDefaults.cardColors(containerColor = ExeterDeepGreen.copy(alpha = 0.5f)),
+                border = CardDefaults.outlinedCardBorder().copy(brush = androidx.compose.ui.graphics.SolidColor(ExeterTeal))
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 12.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(
+                        modifier = Modifier.weight(1f),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Icon(
+                            imageVector = Icons.Default.Lock,
+                            contentDescription = null,
+                            tint = ExeterMint,
+                            modifier = Modifier.size(20.dp)
+                        )
+                        Spacer(modifier = Modifier.width(12.dp))
+                        Column {
+                            Text(
+                                text = "Sign in with Exeter Single Sign-On",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.Bold,
+                                color = TextPrimary
+                            )
+                            Text(
+                                text = "Connect your Microsoft account to stream Panopto lecture recordings",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = TextSecondary
+                            )
+                        }
+                    }
+
+                    Button(
+                        onClick = onOpenAuth,
+                        colors = ButtonDefaults.buttonColors(containerColor = ExeterMint, contentColor = DarkBackground),
+                        shape = RoundedCornerShape(10.dp)
+                    ) {
+                        Text("Sign In", fontWeight = FontWeight.Bold)
+                    }
+                }
+            }
         }
 
         Spacer(modifier = Modifier.height(20.dp))
